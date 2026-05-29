@@ -1,0 +1,204 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "call": "Call"
+  },
+  "hero": {
+    "slide1": {
+      "tagline": "Professional Building Adhesive Solutions",
+      "title": "Building Trust",
+      "accent": "Bonding the Future",
+      "desc": "High-performance structural adhesives and building sealants trusted by 3,200+ construction projects worldwide."
+    },
+    "slide2": {
+      "tagline": "Advanced Manufacturing",
+      "title": "Precision",
+      "accent": "At Every Stage",
+      "desc": "8 automated production lines running 24/7 with real-time quality monitoring from raw material to finished product."
+    },
+    "slide3": {
+      "tagline": "Quality Assurance",
+      "title": "Every Batch",
+      "accent": "Rigorously Tested",
+      "desc": "CNAS-accredited laboratory conducts 12 mandatory tests per batch — nothing ships without passing."
+    },
+    "slide4": {
+      "tagline": "Innovation Driven",
+      "title": "25 Years",
+      "accent": "Of Technical Excellence",
+      "desc": "20+ national patents and a dedicated R&D team pushing the boundaries of adhesive technology."
+    },
+    "explore": "Explore Products",
+    "touch": "Get in Touch",
+    "stats": {
+      "cert": "Certifications",
+      "projects": "Projects Completed",
+      "capacity": "Annual Capacity"
+    }
+  },
+  "media": {
+    "slogan": "Professional Building Adhesive Solutions",
+    "desc": "From raw material sourcing to final inspection, every step of our manufacturing process is ISO-certified. Watch our factory tour to see how we produce industry-leading adhesives.",
+    "watch": "Watch Factory Tour"
+  },
+  "products": {
+    "label": "Products",
+    "title": "Core Product Series",
+    "desc": "Backed by 25 years of technical expertise, we deliver professional-grade sealing and bonding products for every application.",
+    "catalog": "Product Catalog",
+    "catalogDesc": "Browse our complete range of building sealants and structural adhesives to find the right solution for your project.",
+    "viewDetails": "View Details",
+    "noProducts": "No products in this category yet.",
+    "all": "All Products",
+    "category": {
+      "silicone": "Silicone Structural Sealant",
+      "weather": "Weatherproof Sealant",
+      "stone": "Stone Adhesive",
+      "ig": "IG Sealant"
+    }
+  },
+  "factory": {
+    "label": "Our Factory",
+    "title": "State-of-the-Art Manufacturing",
+    "desc": "Our 80,000 m² production base houses 8 automated production lines with an annual capacity of 50,000 tons. From silicone synthesis to finished product packaging, every step is precisely controlled and monitored.",
+    "features": [
+      "8 fully automated production lines running 24/7",
+      "CNAS-accredited laboratory with 50+ testing instruments",
+      "Real-time quality monitoring at every production stage",
+      "Smart warehouse with climate-controlled storage"
+    ],
+    "badge": "ISO 9001"
+  },
+  "quality": {
+    "label": "Quality Control",
+    "title": "Every Batch, Rigorously Tested",
+    "desc": "Our CNAS-accredited lab conducts 12 mandatory tests on every production batch — from tensile strength and elongation to UV aging and chemical resistance. Nothing ships without passing.",
+    "features": [
+      "12 mandatory quality tests per production batch",
+      "1,000+ hours of accelerated weathering simulation",
+      "Full traceability from raw material to finished product",
+      "Third-party SGS/TÜV certification available"
+    ],
+    "badge": "CNAS Lab"
+  },
+  "gallery": {
+    "label": "Gallery",
+    "title": "Inside Our Factory",
+    "desc": "Take a look at our state-of-the-art production facilities and quality control processes.",
+    "all": "All",
+    "categories": ["All", "Factory", "Products", "Quality"],
+    "view": "View"
+  },
+  "stats": {
+    "capacity": "Annual Capacity",
+    "projects": "Projects Completed",
+    "clients": "Enterprise Clients",
+    "experience": "Industry Experience",
+    "unit1": "K tons",
+    "unit2": "+",
+    "unit3": "+",
+    "unit4": " years"
+  },
+  "partners": {
+    "label": "Partners",
+    "title": "Trusted by Industry Leaders",
+    "desc": "Long-term partnerships with top-tier construction enterprises — a testament to our uncompromising quality.",
+    "prev": "Previous partners",
+    "next": "Next partners"
+  },
+  "cta": {
+    "label": "Contact",
+    "title": "Get Your Custom Solution",
+    "desc": "Tell us about your project requirements. Our technical team will design the optimal product solution for you."
+  },
+  "about": {
+    "label": "About Us",
+    "title": "About Shenghan Industrial",
+    "desc": "Since 2002 — dedicated to the R&D, manufacturing, and distribution of high-performance building sealants.",
+    "storyLabel": "Our Story",
+    "storyTitle1": "Built on Technology",
+    "storyTitle2": "Defined by Quality",
+    "storyP1": "Founded in 2002, Shenghan Industrial is a high-tech enterprise integrating R&D, manufacturing, and sales of building sealants. Headquartered in Guangzhou, we operate an 80,000 m² modern production facility.",
+    "storyP2": "Our CNAS-accredited laboratory houses world-class testing equipment and R&D instrumentation, supported by 20+ national patents. Our core product line includes silicone structural sealants, weatherproof sealants, stone adhesives, and insulating glass sealants.",
+    "storyP3": "For over two decades, Shenghan Industrial has been driven by technological innovation and defined by product quality — delivering reliable bonding and sealing solutions to 3,200+ projects worldwide.",
+    "journeyLabel": "Our Journey",
+    "journeyTitle": "Our Journey",
+    "journeyDesc": "Over two decades of relentless progress — every step has been purposeful and resolute.",
+    "timeline": [
+      { "year": "2002", "title": "Company Founded", "desc": "Shenghan Industrial was established in Guangzhou, starting as a building sealant trading business." },
+      { "year": "2008", "title": "Production Launch", "desc": "Commissioned our first silicone sealant production line, transitioning from trading to manufacturing." },
+      { "year": "2013", "title": "Technology Breakthrough", "desc": "Developed the SG-9000 structural sealant for super high-rise curtain walls, a first-of-its-kind innovation." },
+      { "year": "2018", "title": "National Expansion", "desc": "Built a nationwide sales network serving over 300 enterprise clients across China." },
+      { "year": "2022", "title": "Capacity Scale-Up", "desc": "Opened a new production facility, increasing annual capacity to 50,000 tons." },
+      { "year": "2025", "title": "Going Global", "desc": "Expanded exports to Southeast Asia, the Middle East, and Africa — beginning our global journey." }
+    ],
+    "valuesLabel": "Core Values",
+    "certsLabel": "Certifications",
+    "values": [
+      { "title": "Mission", "desc": "To protect the safety and quality of every building with reliable bonding technology." },
+      { "title": "Vision", "desc": "To become a global benchmark enterprise in the building sealant industry." },
+      { "title": "Core Values", "desc": "Integrity first, quality foremost, innovation-driven, win-win collaboration." },
+      { "title": "Core Competency", "desc": "25 years of technical expertise, proprietary formulation R&D, and end-to-end quality control." }
+    ],
+    "certs": [
+      { "title": "ISO 9001:2015", "desc": "Quality Management System" },
+      { "title": "ISO 14001:2015", "desc": "Environmental Management" },
+      { "title": "CNAS Accredited Lab", "desc": "China National Accreditation" },
+      { "title": "CE Marking", "desc": "European Conformity Certified" }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Get in Touch",
+    "desc": "We would love to hear from you — whether you have a product question or a partnership inquiry.",
+    "call": "Call Us",
+    "email": "Email Us",
+    "visit": "Visit Us",
+    "hours": "Business Hours",
+    "respond": "We respond within 24 hours",
+    "appointment": "Visits by appointment",
+    "connectLabel": "Connect With Us",
+    "connectTitle": "Follow Our Journey",
+    "connectDesc": "Stay updated with our latest product launches, industry insights, and company news on social media.",
+    "formTitle": "Send Us a Message"
+  },
+  "form": {
+    "name": "Your Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "message": "Tell us about your requirements...",
+    "submit": "Submit Inquiry",
+    "sending": "Sending...",
+    "thanks": "Thank You for Your Inquiry",
+    "reply": "We will get back to you within 24 hours.",
+    "again": "Send another message"
+  },
+  "footer": {
+    "products": "Products",
+    "company": "Company",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "rights": "All rights reserved.",
+    "productsList": {
+      "silicone": "Silicone Sealants",
+      "weather": "Weather Sealants",
+      "stone": "Stone Adhesives",
+      "ig": "IG Sealants"
+    },
+    "companyList": {
+      "about": "About Us",
+      "certs": "Certifications",
+      "contact": "Contact"
+    }
+  },
+  "cookie": {
+    "title": "Cookie Notice",
+    "desc": "We use essential cookies to ensure the website functions properly. No tracking or advertising cookies are used without your consent.",
+    "learn": "Learn more",
+    "accept": "Accept & Continue"
+  }
+}

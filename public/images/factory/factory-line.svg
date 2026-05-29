@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a3a4a"/>
+      <stop offset="100%" stop-color="#1e3040"/>
+    </linearGradient>
+    <linearGradient id="over" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0a1018" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#0a1018" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feBlend in="SourceGraphic" mode="multiply" result="n"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)" filter="url(#noise)" opacity="0.3"/>
+  <rect x="0" y="260" width="800" height="160" fill="rgba(255,255,255,0.04)"/>
+    <rect x="80" y="240" width="200" height="80" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <rect x="320" y="250" width="240" height="60" rx="4" fill="rgba(255,255,255,0.05)"/>
+    <rect x="600" y="255" width="120" height="70" rx="4" fill="rgba(255,255,255,0.06)"/>
+    <circle cx="120" cy="200" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+    <line x1="0" y1="280" x2="800" y2="280" stroke="rgba(200,161,76,0.15)" stroke-width="6"/>
+  <rect width="800" height="600" fill="url(#over)"/>
+  <rect x="16" y="16" width="155" height="28" rx="6" fill="rgba(0,0,0,0.45)"/>
+  <text x="26" y="35" fill="#fff" font-size="11" font-family="system-ui,sans-serif" font-weight="600">PRODUCTION LINE</text>
+  <text x="400" y="564" text-anchor="middle" fill="#fff" font-size="17" font-family="system-ui,sans-serif" font-weight="700" opacity="0.95">Automated Production Line</text>
+  <text x="400" y="586" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11" font-family="system-ui,sans-serif">8 lines · 24/7 operation · ISO 9001 certified</text>
+</svg>
