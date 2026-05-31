@@ -160,7 +160,7 @@ export function HeroSection() {
                 href="/contact"
                 className="px-8 py-4 rounded-full border border-white/20 text-white font-semibold text-base hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
               >
-                Get in Touch
+                {t("hero.touch")}
               </Link>
             </div>
           </motion.div>

@@ -14,16 +14,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Shenghan Industrial | Professional Structural Adhesive Solutions",
+  title: "Shenghan Industrial | Furniture, Building Materials & Hardware | Direct Factory Manufacturer",
   description:
-    "Shenghan Industrial specializes in high-performance structural adhesives and building sealants, delivering reliable bonding solutions for construction projects worldwide.",
+    "Shenghan Industrial is a direct factory manufacturer specializing in furniture, building materials, hardware, lighting, home appliances, and industrial products — delivering quality solutions for global buyers.",
   keywords: [
-    "structural adhesive",
-    "building sealant",
-    "silicone sealant",
-    "weatherproof sealant",
-    "stone adhesive",
-    "insulating glass sealant",
+    "furniture manufacturer",
+    "building materials",
+    "hardware supplier",
+    "LED lighting factory",
+    "home appliances",
+    "industrial products",
+    "Shenghan Industrial",
+    "factory direct",
+    "China manufacturer",
+    "sofa factory",
+    "adhesives",
+    "furniture hardware",
   ],
 };
 

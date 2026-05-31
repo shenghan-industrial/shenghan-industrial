@@ -14,8 +14,6 @@ import {
   GraduationCap,
 } from "lucide-react";
 
-const iconList = [Target, Eye, Heart, Zap, Award, FileCheck, GraduationCap, FileCheck];
-
 export default function AboutPage() {
   const { t } = useT();
 
@@ -82,13 +80,27 @@ export default function AboutPage() {
 
             <ScrollReveal direction="left">
               <div className="relative">
-                <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-bg-warm dark:from-brand-800/30 to-brand-800/5 dark:to-brand-700/20 flex items-center justify-center overflow-hidden">
-                  <div className="text-center p-8">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                      H
+                <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-brand-800 to-brand-900 dark:from-brand-800/60 dark:to-brand-900/80 flex items-center justify-center overflow-hidden relative">
+                  <svg viewBox="0 0 400 500" className="w-full h-full absolute inset-0 opacity-30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="60" y="180" width="120" height="200" rx="4" fill="currentColor" className="text-accent/20" />
+                    <rect x="80" y="160" width="80" height="20" rx="2" fill="currentColor" className="text-accent/30" />
+                    <rect x="100" y="130" width="40" height="30" rx="2" fill="currentColor" className="text-accent/25" />
+                    <rect x="220" y="240" width="120" height="140" rx="4" fill="currentColor" className="text-accent/20" />
+                    <rect x="240" y="220" width="80" height="20" rx="2" fill="currentColor" className="text-accent/30" />
+                    <rect x="255" y="190" width="50" height="30" rx="2" fill="currentColor" className="text-accent/25" />
+                    <rect x="50" y="390" width="300" height="8" rx="2" fill="currentColor" className="text-accent/15" />
+                    <rect x="80" y="320" width="12" height="70" fill="currentColor" className="text-accent/15" />
+                    <rect x="310" y="310" width="12" height="80" fill="currentColor" className="text-accent/15" />
+                    <circle cx="200" cy="110" r="30" fill="currentColor" className="text-accent/10" />
+                    <rect x="185" y="110" width="30" height="40" fill="currentColor" className="text-accent/10" />
+                    <rect x="150" y="405" width="100" height="6" rx="2" fill="currentColor" className="text-accent/20" />
+                  </svg>
+                  <div className="relative z-10 text-center p-8">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-brand-900 font-bold text-2xl mx-auto mb-4 shadow-lg shadow-accent/25">
+                      SH
                     </div>
-                    <p className="text-text-muted text-sm">Shenghan Industrial</p>
-                    <p className="text-text-muted text-xs mt-1">Shenghan Industrial</p>
+                    <p className="text-white/70 text-sm font-semibold">Shenghan Industrial</p>
+                    <p className="text-white/35 text-xs mt-1">Est. 2002 · Linyi, Shandong</p>
                   </div>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-accent/10 -z-10" />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 import { X } from "lucide-react";
+import { useT } from "@/lib/LanguageContext";
 
 interface GalleryImage {
   src: string;
@@ -20,6 +21,8 @@ export function GallerySection({
   images,
   categories = ["All", "Factory", "Products", "Quality"],
 }: GallerySectionProps) {
+  const { t } = useT();
+
   const [activeCat, setActiveCat] = useState("All");
   const [lightbox, setLightbox] = useState<string | null>(null);
 
@@ -33,9 +36,9 @@ export function GallerySection({
       <section className="py-20 md:py-28 bg-bg-warm dark:bg-brand-900/80">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
-            label="Gallery"
-            title="Inside Our Factory"
-            description="Take a look at our state-of-the-art production facilities and quality control processes."
+            label={t("gallery.label")}
+            title={t("gallery.title")}
+            description={t("gallery.desc")}
           />
 
           <div className="flex flex-wrap items-center justify-center gap-3 mt-10 mb-12">
@@ -78,7 +81,7 @@ export function GallerySection({
                 <div className="absolute inset-0 bg-brand-900/0 group-hover:bg-brand-900/20 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="px-4 py-2 rounded-full bg-white/90 text-brand-800 text-sm font-medium backdrop-blur-sm">
-                    View
+                    {t("gallery.view")}
                   </span>
                 </div>
                 <span className="absolute bottom-3 left-3 px-2.5 py-1 rounded-md bg-brand-900/60 text-white text-xs backdrop-blur-sm">

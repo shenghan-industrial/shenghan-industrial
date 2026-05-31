@@ -1,89 +1,116 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import fs from "fs";
+import path from "path";
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "info@shenghanindustrial.com";
+interface ContactBody {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+function validate(body: Partial<ContactBody>): { valid: true; data: ContactBody } | { valid: false; error: string } {
+  const { name, email, phone, message } = body;
+
+  if (!name || typeof name !== "string" || name.trim().length < 2) {
+    return { valid: false, error: "Name is required (min 2 characters)." };
+  }
+  if (!email || typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return { valid: false, error: "A valid email address is required." };
+  }
+  if (!phone || typeof phone !== "string" || phone.trim().length < 5) {
+    return { valid: false, error: "Phone number is required." };
+  }
+  if (!message || typeof message !== "string" || message.trim().length < 5) {
+    return { valid: false, error: "Message is required (min 5 characters)." };
+  }
+
+  return {
+    valid: true,
+    data: { name: name.trim(), email: email.trim(), phone: phone.trim(), message: message.trim() },
+  };
+}
+
+async function sendViaResend(data: ContactBody): Promise<{ success: boolean; error?: string }> {
+  const apiKey = process.env.RESEND_API_KEY;
+  const notifyEmail = process.env.NOTIFY_EMAIL || "info@shenghanindustrial.com";
+
+  if (!apiKey || apiKey === "re_xxxxxxxxxxxx") {
+    return { success: false, error: "Resend API key not configured." };
+  }
+
+  try {
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from: `Shenghan Website <noreply@shenghanindustrial.com>`,
+      to: notifyEmail,
+      replyTo: data.email,
+      subject: `New inquiry from ${data.name} — Shenghan Website`,
+      html: `
+        <h2>New Contact Form Inquiry</h2>
+        <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif">
+          <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold;width:100px">Name</td><td style="padding:8px;border-bottom:1px solid #eee">${data.name}</td></tr>
+          <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Email</td><td style="padding:8px;border-bottom:1px solid #eee"><a href="mailto:${data.email}">${data.email}</a></td></tr>
+          <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Phone</td><td style="padding:8px;border-bottom:1px solid #eee"><a href="tel:${data.phone}">${data.phone}</a></td></tr>
+          <tr><td style="padding:8px;border-bottom:1px solid #eee;font-weight:bold">Message</td><td style="padding:8px;border-bottom:1px solid #eee">${data.message.replace(/\n/g, "<br>")}</td></tr>
+        </table>
+        <p style="color:#888;font-size:12px;margin-top:24px">Submitted from shenghanindustrial.com contact form</p>
+      `,
+    });
+    return { success: true };
+  } catch (err) {
+    console.error("Resend send error:", err);
+    return { success: false, error: "Failed to send email notification." };
+  }
+}
+
+function saveToFile(data: ContactBody) {
+  try {
+    const dir = path.join(process.cwd(), ".data");
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+    const file = path.join(dir, "inquiries.jsonl");
+    const entry = JSON.stringify({ ...data, receivedAt: new Date().toISOString() }) + "\n";
+    fs.appendFileSync(file, entry, "utf-8");
+    console.log("Inquiry saved to .data/inquiries.jsonl");
+  } catch (err) {
+    console.error("Failed to save inquiry to file:", err);
+  }
+}
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { name, phone, email, message } = body;
+    const body = await request.json().catch(() => null);
 
-    // Validate required fields
-    if (!name || !phone || !email || !message) {
-      return NextResponse.json(
-        { error: "All fields are required." },
-        { status: 400 }
-      );
+    if (!body) {
+      return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address." },
-        { status: 400 }
-      );
+    const validation = validate(body);
+    if (!validation.valid) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    // If no API key configured, just log and return success
-    if (!RESEND_API_KEY) {
-      console.log("Contact form submission (no email sent — RESEND_API_KEY not set):", {
-        name,
-        phone,
-        email,
-        message,
-        timestamp: new Date().toISOString(),
-      });
-      return NextResponse.json({ success: true, mode: "log-only" });
+    const { data } = validation;
+
+    const emailResult = await sendViaResend(data);
+
+    // Always save to file as backup
+    saveToFile(data);
+
+    if (emailResult.success) {
+      return NextResponse.json({ success: true, message: "Inquiry received. We will get back to you within 24 hours." });
     }
 
-    // Send email via Resend
-    const resend = new Resend(RESEND_API_KEY);
-
-    const { data, error } = await resend.emails.send({
-      from: `${name} <onboarding@resend.dev>`,
-      to: [NOTIFY_EMAIL],
-      subject: `New Inquiry from ${name} — Shenghan Industrial Website`,
-      replyTo: email,
-      html: `
-        <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #F7F6F3;">
-          <div style="background: #0A1628; padding: 24px; border-radius: 12px 12px 0 0;">
-            <h1 style="color: #C8A14C; font-size: 20px; margin: 0;">Shenghan Industrial</h1>
-            <p style="color: rgba(255,255,255,0.5); font-size: 13px; margin: 4px 0 0;">New Contact Form Inquiry</p>
-          </div>
-          <div style="background: #fff; padding: 24px; border: 1px solid #eee; border-top: none; border-radius: 0 0 12px 12px;">
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr><td style="padding: 10px 0; color: #9BA1AA; font-size: 13px; width: 80px;">Name</td><td style="padding: 10px 0; color: #1A1D24; font-size: 15px; font-weight: 600;">${name}</td></tr>
-              <tr><td style="padding: 10px 0; color: #9BA1AA; font-size: 13px;">Phone</td><td style="padding: 10px 0; color: #1A1D24; font-size: 15px; font-weight: 600;">${phone}</td></tr>
-              <tr><td style="padding: 10px 0; color: #9BA1AA; font-size: 13px;">Email</td><td style="padding: 10px 0; color: #1A1D24; font-size: 15px; font-weight: 600;">${email}</td></tr>
-            </table>
-            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-              <p style="color: #9BA1AA; font-size: 13px; margin-bottom: 8px;">Message</p>
-              <p style="color: #1A1D24; font-size: 14px; line-height: 1.6; margin: 0;">${message}</p>
-            </div>
-          </div>
-          <p style="color: #bbb; font-size: 11px; text-align: center; margin-top: 16px;">
-            Submitted ${new Date().toLocaleString("en-US")} from Shenghan Industrial website
-          </p>
-        </div>
-      `,
+    // Resend didn't send but we saved to file
+    return NextResponse.json({
+      success: true,
+      message: "Inquiry received. We will get back to you within 24 hours.",
+      note: emailResult.error,
     });
-
-    if (error) {
-      console.error("Resend error:", error);
-      return NextResponse.json(
-        { error: "Failed to send email. Please try again later." },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({ success: true, id: data?.id });
   } catch (err) {
-    console.error("Contact form error:", err);
-    return NextResponse.json(
-      { error: "Internal server error." },
-      { status: 500 }
-    );
+    console.error("Contact API error:", err);
+    return NextResponse.json({ error: "Internal server error. Please try again later." }, { status: 500 });
   }
 }

@@ -220,5 +220,9 @@
     "desc": "We use essential cookies to ensure the website functions properly. No tracking or advertising cookies are used without your consent.",
     "learn": "Learn more",
     "accept": "Accept & Continue"
+  },
+  "modal": {
+    "features": "Features",
+    "specs": "Specifications"
   }
 }

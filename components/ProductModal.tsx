@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Check, Package, FileText } from "lucide-react";
+import { useT } from "@/lib/LanguageContext";
 import type { Product } from "@/data/products";
 
 interface ProductModalProps {
@@ -11,6 +12,8 @@ interface ProductModalProps {
 }
 
 export function ProductModal({ product, onClose }: ProductModalProps) {
+  const { t } = useT();
+
   useEffect(() => {
     if (product) {
       document.body.style.overflow = "hidden";
@@ -96,7 +99,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
               <div>
                 <h4 className="flex items-center gap-2 text-sm font-semibold text-brand-800 mb-4">
                   <Check className="w-4 h-4 text-accent" />
-                  Features
+                  {t("modal.features")}
                 </h4>
                 <ul className="space-y-3">
                   {product.features.map((f) => (
@@ -114,7 +117,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
               <div>
                 <h4 className="flex items-center gap-2 text-sm font-semibold text-brand-800 mb-4">
                   <Package className="w-4 h-4 text-accent" />
-                  Specifications
+                  {t("modal.specs")}
                 </h4>
                 <div className="space-y-2">
                   {product.specs.map((spec) => (
