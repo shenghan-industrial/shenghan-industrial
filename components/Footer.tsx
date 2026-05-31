@@ -11,10 +11,12 @@ export function Footer() {
   const { brand, contact } = siteConfig;
 
   const productLinks = [
-    { label: t("footer.productsList.silicone"), href: "/products" },
-    { label: t("footer.productsList.weather"), href: "/products" },
-    { label: t("footer.productsList.stone"), href: "/products" },
-    { label: t("footer.productsList.ig"), href: "/products" },
+    { label: t("footer.productsList.furniture"), href: "/products" },
+    { label: t("footer.productsList.buildingMaterials"), href: "/products" },
+    { label: t("footer.productsList.hardware"), href: "/products" },
+    { label: t("footer.productsList.appliances"), href: "/products" },
+    { label: t("footer.productsList.lighting"), href: "/products" },
+    { label: t("footer.productsList.others"), href: "/products" },
   ];
 
   const companyLinks = [

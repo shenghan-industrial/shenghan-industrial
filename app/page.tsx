@@ -57,7 +57,7 @@ export default function HomePage() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-text-secondary dark:text-white/50 leading-relaxed">
-                From raw material sourcing to final inspection, every step of our manufacturing process is ISO-certified. Watch our factory tour to see how we produce industry-leading adhesives.
+                {t("media.desc")}
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
@@ -69,7 +69,7 @@ export default function HomePage() {
                   <span className="w-10 h-10 rounded-full bg-brand-900/10 flex items-center justify-center">
                     <Play className="w-5 h-5 ml-0.5" />
                   </span>
-                  Watch Factory Tour
+                  {t("media.watch")}
                 </a>
               </div>
             </ScrollReveal>
@@ -110,14 +110,14 @@ export default function HomePage() {
         imageSide="left"
         label={t("factory.label")}
         title={t("factory.title")}
-        description="Our 80,000 m² production base houses 8 automated production lines with an annual capacity of 50,000 tons. From silicone synthesis to finished product packaging, every step is precisely controlled and monitored."
+        description={t("factory.desc")}
         features={[
-          "8 fully automated production lines running 24/7",
-          "CNAS-accredited laboratory with 50+ testing instruments",
-          "Real-time quality monitoring at every production stage",
-          "Smart warehouse with climate-controlled storage",
+          t("factory.features.0"),
+          t("factory.features.1"),
+          t("factory.features.2"),
+          t("factory.features.3"),
         ]}
-        badge={{ text: "ISO 9001", Icon: Award }}
+        badge={{ text: t("factory.badge"), Icon: Award }}
         className="bg-white dark:bg-brand-900"
       />
 
@@ -134,14 +134,14 @@ export default function HomePage() {
         imageSide="right"
         label={t("quality.label")}
         title={t("quality.title")}
-        description="Our CNAS-accredited lab conducts 12 mandatory tests on every production batch — from tensile strength and elongation to UV aging and chemical resistance. Nothing ships without passing."
+        description={t("quality.desc")}
         features={[
-          "12 mandatory quality tests per production batch",
-          "1,000+ hours of accelerated weathering simulation",
-          "Full traceability from raw material to finished product",
-          "Third-party SGS/TÜV certification available",
+          t("quality.features.0"),
+          t("quality.features.1"),
+          t("quality.features.2"),
+          t("quality.features.3"),
         ]}
-        badge={{ text: "CNAS Lab", Icon: ShieldCheck }}
+        badge={{ text: t("quality.badge"), Icon: ShieldCheck }}
         className="bg-bg-warm dark:bg-brand-900/80"
       />
 
@@ -151,13 +151,13 @@ export default function HomePage() {
           <SectionHeading
             label={t("partners.label")}
             title={t("partners.title")}
-            description="Long-term partnerships with top-tier construction enterprises — a testament to our uncompromising quality."
+            description={t("partners.desc")}
           />
           <div className="mt-12 flex items-center gap-3 md:gap-4">
             <button
               onClick={prevPartner}
               className="p-2 md:p-3 rounded-full border border-gray-200 dark:border-white/10 hover:bg-accent hover:text-white hover:border-accent transition-all shrink-0"
-              aria-label="Previous partners"
+              aria-label={t("partners.prev")}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -181,7 +181,7 @@ export default function HomePage() {
             <button
               onClick={nextPartner}
               className="p-2 md:p-3 rounded-full border border-gray-200 dark:border-white/10 hover:bg-accent hover:text-white hover:border-accent transition-all shrink-0"
-              aria-label="Next partners"
+              aria-label={t("partners.next")}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -197,7 +197,7 @@ export default function HomePage() {
           <SectionHeading
             label={t("cta.label")}
             title={t("cta.title")}
-            description="Tell us about your project requirements. Our technical team will design the optimal product solution for you."
+            description={t("cta.desc")}
             light
           />
           <div className="mt-12 max-w-xl mx-auto">

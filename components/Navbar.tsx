@@ -74,13 +74,22 @@ export function Navbar() {
                 {brand.logo.text}
               </div>
             )}
-            <span
-              className={`text-lg font-bold tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-brand-800 dark:text-white" : "text-white"
-              }`}
-            >
-              {brand.name}
-            </span>
+            <div className="flex flex-col">
+              <span
+                className={`text-lg font-bold tracking-tight leading-tight transition-colors duration-300 ${
+                  scrolled ? "text-brand-800 dark:text-white" : "text-white"
+                }`}
+              >
+                {brand.name}
+              </span>
+              <span
+                className={`text-[10px] tracking-wide leading-tight transition-colors duration-300 ${
+                  scrolled ? "text-brand-600/70 dark:text-white/60" : "text-white/55"
+                }`}
+              >
+                {brand.slogan}
+              </span>
+            </div>
           </Link>
 
           <div className="hidden lg:flex items-center gap-0.5">

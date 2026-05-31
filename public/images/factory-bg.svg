@@ -23,6 +23,6 @@
     <circle cx="1360" cy="450" r="270" fill="none" stroke="rgba(200,161,76,0.03)" stroke-width="1"/>
   <rect width="1600" height="900" fill="url(#over)"/>
   
-  <text x="800" y="864" text-anchor="middle" fill="#fff" font-size="22" font-family="system-ui,sans-serif" font-weight="700" opacity="0.95">Henggu Materials</text>
+  <text x="800" y="864" text-anchor="middle" fill="#fff" font-size="22" font-family="system-ui,sans-serif" font-weight="700" opacity="0.95">Shenghan Industrial</text>
   <text x="800" y="886" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="13" font-family="system-ui,sans-serif">80,000 m² Modern Manufacturing Base | 8 Production Lines | CNAS Accredited</text>
 </svg>

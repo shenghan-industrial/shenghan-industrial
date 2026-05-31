@@ -50,6 +50,36 @@ export const galleryImages: GalleryImage[] = [
     alt: "Final Quality Inspection",
     category: "Quality",
   },
+  {
+    src: "/images/exhibitions/1.png",
+    alt: "Furniture Exhibition Booth — Guangzhou",
+    category: "Exhibitions",
+  },
+  {
+    src: "/images/exhibitions/2.png",
+    alt: "Furniture Exhibition Booth — Shanghai",
+    category: "Exhibitions",
+  },
+  {
+    src: "/images/exhibitions/3.png",
+    alt: "High Point Market Exhibition — USA",
+    category: "Exhibitions",
+  },
+  {
+    src: "/images/exhibitions/4.png",
+    alt: "Showroom Display",
+    category: "Exhibitions",
+  },
+  {
+    src: "/images/exhibitions/5.png",
+    alt: "Exhibition Product Showcase",
+    category: "Exhibitions",
+  },
+  {
+    src: "/images/exhibitions/6.png",
+    alt: "Trade Fair Booth",
+    category: "Exhibitions",
+  },
 ];
 
 export const galleryCategories = [
@@ -57,4 +87,5 @@ export const galleryCategories = [
   "Factory",
   "Products",
   "Quality",
+  "Exhibitions",
 ];

@@ -17,13 +17,13 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: t("contact.call"),
-      lines: [contact.phone.display, "15163916007"],
+      lines: [contact.phone.display],
       description: contact.hours.weekday,
     },
     {
       icon: Mail,
       title: t("contact.email"),
-      lines: [contact.email, "sales@shenghan-trading.com"],
+      lines: [contact.email],
       description: t("contact.respond"),
     },
     {
@@ -83,13 +83,13 @@ export default function ContactPage() {
             <ScrollReveal>
               <div>
                 <h3 className="text-xs tracking-[0.25em] uppercase font-semibold text-accent-dark mb-3">
-                  Connect With Us
+                  {t("contact.connectLabel")}
                 </h3>
                 <h2 className="text-3xl font-bold text-brand-800 dark:text-white tracking-tight mb-4">
-                  Follow Our Journey
+                  {t("contact.connectTitle")}
                 </h2>
                 <p className="text-text-secondary dark:text-white/40 mb-8">
-                  Stay updated with our latest product launches, industry insights, and company news on social media.
+                  {t("contact.connectDesc")}
                 </p>
                 <SocialIcons variant="card" />
               </div>
@@ -98,7 +98,7 @@ export default function ContactPage() {
             <ScrollReveal direction="left">
               <div className="bg-bg-warm dark:bg-brand-800/40 rounded-2xl border border-gray-100 dark:border-white/5 p-8 shadow-sm">
                 <h3 className="text-lg font-bold text-brand-800 dark:text-white mb-6">
-                  Send Us a Message
+                  {t("contact.formTitle")}
                 </h3>
                 <ContactForm />
               </div>

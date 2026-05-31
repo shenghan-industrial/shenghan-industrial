@@ -8,10 +8,10 @@
   },
   "hero": {
     "slide1": {
-      "tagline": "Professional Building Adhesive Solutions",
-      "title": "Building Trust",
-      "accent": "Bonding the Future",
-      "desc": "High-performance structural adhesives and building sealants trusted by 3,200+ construction projects worldwide."
+      "tagline": "Direct Factory Manufacturer",
+      "title": "Factory Direct",
+      "accent": "Global Quality",
+      "desc": "Furniture, building materials, hardware, lighting, and industrial cleaning products — manufactured in our own facilities, shipped worldwide."
     },
     "slide2": {
       "tagline": "Advanced Manufacturing",
@@ -40,24 +40,42 @@
     }
   },
   "media": {
-    "slogan": "Professional Building Adhesive Solutions",
-    "desc": "From raw material sourcing to final inspection, every step of our manufacturing process is ISO-certified. Watch our factory tour to see how we produce industry-leading adhesives.",
+    "slogan": "Direct Factory, Global Reach",
+    "desc": "From raw material sourcing to final inspection, every step of our manufacturing process is ISO-certified. Watch our factory tour to see our production facilities in action.",
     "watch": "Watch Factory Tour"
   },
   "products": {
     "label": "Products",
-    "title": "Core Product Series",
-    "desc": "Backed by 25 years of technical expertise, we deliver professional-grade sealing and bonding products for every application.",
+    "title": "Five Core Product Lines",
+    "desc": "From furniture and lighting to adhesives, hardware, and industrial cleaning — one source, factory-direct quality across five product categories.",
     "catalog": "Product Catalog",
-    "catalogDesc": "Browse our complete range of building sealants and structural adhesives to find the right solution for your project.",
+    "catalogDesc": "Browse our complete range of products across five categories to find the right solution for your business.",
     "viewDetails": "View Details",
     "noProducts": "No products in this category yet.",
     "all": "All Products",
     "category": {
-      "silicone": "Silicone Structural Sealant",
-      "weather": "Weatherproof Sealant",
-      "stone": "Stone Adhesive",
-      "ig": "IG Sealant"
+      "furniture": "Furniture",
+      "buildingMaterials": "Building Materials",
+      "hardware": "Hardware",
+      "appliances": "Appliances",
+      "lighting": "Lighting",
+      "others": "Others"
+    },
+    "subCategory": {
+      "sofas": "Sofas",
+      "beds": "Beds",
+      "cabinets": "Cabinets",
+      "adhesives": "Adhesives",
+      "panels": "Panels",
+      "fasteners": "Fasteners",
+      "doorWindow": "Door & Window",
+      "bathroom": "Bathroom",
+      "fans": "Fans",
+      "heaters": "Heaters",
+      "kitchen": "Kitchen",
+      "deskLamps": "Desk Lamps",
+      "pendantLights": "Pendant Lights",
+      "floorLamps": "Floor Lamps"
     }
   },
   "factory": {
@@ -117,31 +135,31 @@
   "about": {
     "label": "About Us",
     "title": "About Shenghan Industrial",
-    "desc": "Since 2002 — dedicated to the R&D, manufacturing, and distribution of high-performance building sealants.",
+    "desc": "Since 2002 — a direct factory manufacturer of furniture, building materials, hardware, lighting, and industrial cleaning products.",
     "storyLabel": "Our Story",
     "storyTitle1": "Built on Technology",
     "storyTitle2": "Defined by Quality",
-    "storyP1": "Founded in 2002, Shenghan Industrial is a high-tech enterprise integrating R&D, manufacturing, and sales of building sealants. Headquartered in Guangzhou, we operate an 80,000 m² modern production facility.",
-    "storyP2": "Our CNAS-accredited laboratory houses world-class testing equipment and R&D instrumentation, supported by 20+ national patents. Our core product line includes silicone structural sealants, weatherproof sealants, stone adhesives, and insulating glass sealants.",
-    "storyP3": "For over two decades, Shenghan Industrial has been driven by technological innovation and defined by product quality — delivering reliable bonding and sealing solutions to 3,200+ projects worldwide.",
+    "storyP1": "Founded in 2002, Shenghan Industrial is a comprehensive manufacturer integrating R&D, manufacturing, and global distribution across five core product lines. Headquartered in Guangzhou, we operate an 80,000 m² modern production facility.",
+    "storyP2": "Our CNAS-accredited laboratory houses world-class testing equipment and R&D instrumentation, supported by 20+ national patents. Our product portfolio spans furniture, building adhesives & sealants, LED lighting, construction hardware, and industrial cleaning solutions.",
+    "storyP3": "For over two decades, Shenghan Industrial has been driven by technological innovation and defined by product quality — delivering reliable, factory-direct products to 3,200+ clients worldwide.",
     "journeyLabel": "Our Journey",
     "journeyTitle": "Our Journey",
     "journeyDesc": "Over two decades of relentless progress — every step has been purposeful and resolute.",
     "timeline": [
-      { "year": "2002", "title": "Company Founded", "desc": "Shenghan Industrial was established in Guangzhou, starting as a building sealant trading business." },
-      { "year": "2008", "title": "Production Launch", "desc": "Commissioned our first silicone sealant production line, transitioning from trading to manufacturing." },
-      { "year": "2013", "title": "Technology Breakthrough", "desc": "Developed the SG-9000 structural sealant for super high-rise curtain walls, a first-of-its-kind innovation." },
+      { "year": "2002", "title": "Company Founded", "desc": "Shenghan Industrial was established in Guangzhou, starting as a building materials trading business." },
+      { "year": "2008", "title": "Production Launch", "desc": "Commissioned our first manufacturing line, transitioning from trading to production." },
+      { "year": "2013", "title": "Product Diversification", "desc": "Expanded beyond building materials into furniture and hardware — laying the foundation for a multi-category portfolio." },
       { "year": "2018", "title": "National Expansion", "desc": "Built a nationwide sales network serving over 300 enterprise clients across China." },
-      { "year": "2022", "title": "Capacity Scale-Up", "desc": "Opened a new production facility, increasing annual capacity to 50,000 tons." },
+      { "year": "2022", "title": "New Product Lines", "desc": "Launched LED lighting and industrial cleaning product lines, completing our five-category offering." },
       { "year": "2025", "title": "Going Global", "desc": "Expanded exports to Southeast Asia, the Middle East, and Africa — beginning our global journey." }
     ],
     "valuesLabel": "Core Values",
     "certsLabel": "Certifications",
     "values": [
-      { "title": "Mission", "desc": "To protect the safety and quality of every building with reliable bonding technology." },
-      { "title": "Vision", "desc": "To become a global benchmark enterprise in the building sealant industry." },
+      { "title": "Mission", "desc": "To empower global buyers with factory-direct quality products at competitive prices." },
+      { "title": "Vision", "desc": "To become a world-class multi-category manufacturer and trusted export partner." },
       { "title": "Core Values", "desc": "Integrity first, quality foremost, innovation-driven, win-win collaboration." },
-      { "title": "Core Competency", "desc": "25 years of technical expertise, proprietary formulation R&D, and end-to-end quality control." }
+      { "title": "Core Competency", "desc": "25 years of manufacturing expertise, multi-category product portfolio, end-to-end quality control." }
     ],
     "certs": [
       { "title": "ISO 9001:2015", "desc": "Quality Management System" },
@@ -184,10 +202,12 @@
     "terms": "Terms of Service",
     "rights": "All rights reserved.",
     "productsList": {
-      "silicone": "Silicone Sealants",
-      "weather": "Weather Sealants",
-      "stone": "Stone Adhesives",
-      "ig": "IG Sealants"
+      "furniture": "Furniture",
+      "buildingMaterials": "Building Materials",
+      "hardware": "Hardware",
+      "appliances": "Appliances",
+      "lighting": "Lighting",
+      "others": "Others"
     },
     "companyList": {
       "about": "About Us",

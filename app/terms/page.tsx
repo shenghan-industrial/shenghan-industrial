@@ -105,9 +105,9 @@ export default function TermsPage() {
               For questions regarding these Terms of Service, please contact us at:
             </p>
             <p className="mt-2">
-              Email: info@shenghan-trading.com<br />
-              Phone: +1 (800) 888-9999<br />
-              Address: 88 Huaxia Road, Zhujiang New Town, Guangzhou, Guangdong, China
+              Email: info@shenghanindustrial.com<br />
+              Phone: 15163916007<br />
+              Address: 山东省临沂市河东区, Shandong, China
             </p>
           </section>
         </div>

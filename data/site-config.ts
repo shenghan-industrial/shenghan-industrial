@@ -15,9 +15,9 @@ export const siteConfig = {
   brand: {
     name: "Shenghan Industrial",
     shortName: "Shenghan",
-    slogan: "Professional Building Materials & Adhesive Solutions",
+    slogan: "Furniture, Building Materials & Hardware | Direct Factory Manufacturer",
     description:
-      "Shenghan Industrial specializes in high-performance building materials and structural adhesives, delivering reliable solutions for construction projects worldwide.",
+      "Shenghan Industrial is a direct factory manufacturer specializing in furniture, building materials, hardware, lighting, and industrial cleaning products — delivering quality solutions for global buyers.",
     logo: {
       text: "S", // fallback letter if no image logo
       /** Set to a path like "/images/logo.svg" to use an image logo */
@@ -42,7 +42,7 @@ export const siteConfig = {
   // --- Contact ---
   contact: {
     phone: { display: "15163916007", href: "tel:15163916007" },
-    email: "17861629313@163.com",
+    email: "info@shenghanindustrial.com",
     address: {
       line1: "山东省临沂市河东区",
       line2: "Shandong, China",
@@ -92,13 +92,15 @@ export const siteConfig = {
   // --- Footer ---
   footer: {
     tagline:
-      "High-performance building materials and structural adhesives — reliable solutions for global construction projects.",
+      "Furniture, building materials, hardware, lighting & industrial cleaning — direct from our factory to your market.",
     column1Title: "Products",
     column1Links: [
-      { label: "Silicone Sealants", href: "/products" },
-      { label: "Weather Sealants", href: "/products" },
-      { label: "Stone Adhesives", href: "/products" },
-      { label: "IG Sealants", href: "/products" },
+      { label: "Furniture", href: "/products" },
+      { label: "Building Materials", href: "/products" },
+      { label: "Hardware", href: "/products" },
+      { label: "Appliances", href: "/products" },
+      { label: "Lighting", href: "/products" },
+      { label: "Others", href: "/products" },
     ],
     column2Title: "Company",
     column2Links: [

@@ -48,7 +48,7 @@ export function ProductCard({ product, onSelect, index }: ProductCardProps) {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.55, delay: index * 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
@@ -76,18 +76,16 @@ export function ProductCard({ product, onSelect, index }: ProductCardProps) {
         </div>
       )}
 
-      {/* Image area */}
+      {/* Image */}
       <div className="relative h-56 bg-gray-100 dark:bg-brand-800 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
           style={{ backgroundImage: `url(${product.image})` }}
         />
-        {/* Gradient fade at bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-brand-900/90 via-white/20 dark:via-brand-900/20 to-transparent" />
-        {/* Category label */}
         <div className="absolute bottom-4 left-4">
           <span className="text-[11px] font-medium tracking-wider uppercase text-accent-dark bg-white/85 dark:bg-brand-900/85 backdrop-blur-sm px-2.5 py-1 rounded-md">
-            {product.category}
+            {product.subCategory || product.category}
           </span>
         </div>
       </div>
@@ -124,7 +122,6 @@ export function ProductCard({ product, onSelect, index }: ProductCardProps) {
         >
           <span className="relative z-10">{t("products.viewDetails")}</span>
           <ChevronRight className="w-4 h-4 relative z-10 transition-transform duration-500 group-hover:translate-x-1" />
-          {/* Button hover fill */}
           <div className="absolute inset-0 bg-accent scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
         </button>
       </div>
