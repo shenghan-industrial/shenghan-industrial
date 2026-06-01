@@ -51,32 +51,32 @@ export const galleryImages: GalleryImage[] = [
     category: "Quality",
   },
   {
-    src: "/images/exhibitions/1.png",
+    src: "/images/exhibitions/1.webp",
     alt: "Furniture Exhibition Booth — Guangzhou",
     category: "Exhibitions",
   },
   {
-    src: "/images/exhibitions/2.png",
+    src: "/images/exhibitions/2.webp",
     alt: "Furniture Exhibition Booth — Shanghai",
     category: "Exhibitions",
   },
   {
-    src: "/images/exhibitions/3.png",
+    src: "/images/exhibitions/3.webp",
     alt: "High Point Market Exhibition — USA",
     category: "Exhibitions",
   },
   {
-    src: "/images/exhibitions/4.png",
+    src: "/images/exhibitions/4.webp",
     alt: "Showroom Display",
     category: "Exhibitions",
   },
   {
-    src: "/images/exhibitions/5.png",
+    src: "/images/exhibitions/5.webp",
     alt: "Exhibition Product Showcase",
     category: "Exhibitions",
   },
   {
-    src: "/images/exhibitions/6.png",
+    src: "/images/exhibitions/6.webp",
     alt: "Trade Fair Booth",
     category: "Exhibitions",
   },

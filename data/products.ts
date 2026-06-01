@@ -62,7 +62,7 @@ const sofas: Product[] = Array.from({ length: 15 }, (_, i) => {
       { label: "MOQ", value: "10 units per design" },
       { label: "Lead Time", value: "25–35 days" },
     ],
-    image: `/images/products/sofas/${i + 1}.png`,
+    image: `/images/products/sofas/${i + 1}.webp`,
     badge: i === 0 ? "Best Seller" : undefined,
   };
 });
@@ -91,7 +91,7 @@ const beds: Product[] = Array.from({ length: 6 }, (_, i) => {
       { label: "MOQ", value: "10 units per design" },
       { label: "Lead Time", value: "30–40 days" },
     ],
-    image: `/images/products/beds/${i + 1}.png`,
+    image: `/images/products/beds/${i + 1}.webp`,
     badge: i === 0 ? "New" : undefined,
   };
 });

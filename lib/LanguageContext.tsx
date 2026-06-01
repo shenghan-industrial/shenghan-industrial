@@ -46,14 +46,12 @@ function getNested(obj: Record<string, unknown>, path: string): string {
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("zh");
   const [messages, setMessages] = useState<Record<string, unknown>>({});
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("locale") as Locale | null;
     if (stored === "zh" || stored === "en") {
       setLocaleState(stored);
     }
-    setLoaded(true);
   }, []);
 
   useEffect(() => {
@@ -74,8 +72,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     },
     [messages]
   );
-
-  if (!loaded) return null;
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale, t }}>
