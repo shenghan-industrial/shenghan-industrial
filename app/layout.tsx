@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ClientWrapper } from "@/components/ClientWrapper";
+import { FloatingContact } from "@/components/FloatingContact";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <ScrollToTop />
           <CookieConsent />
+          <FloatingContact />
           <Footer />
         </ClientWrapper>
       </body>

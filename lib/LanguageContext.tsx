@@ -18,7 +18,7 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  locale: "en",
+  locale: "zh",
   setLocale: () => {},
   t: (key: string) => key,
 });
@@ -44,7 +44,7 @@ function getNested(obj: Record<string, unknown>, path: string): string {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+  const [locale, setLocaleState] = useState<Locale>("zh");
   const [messages, setMessages] = useState<Record<string, unknown>>({});
   const [loaded, setLoaded] = useState(false);
 

@@ -6,7 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useT } from "@/lib/LanguageContext";
 import { siteConfig } from "@/data/site-config";
 
@@ -94,7 +93,6 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-0.5">
             <ThemeToggle />
-            <LanguageSwitcher />
             {navigation.map((link) => {
               const isActive = pathname === link.href;
               return (
