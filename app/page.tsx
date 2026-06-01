@@ -47,7 +47,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* ===== 2. MEDIA STRIP (matching template banner-w3l-media-sec) ===== */}
-      <section className="relative -mt-2 py-12 md:py-16 bg-white dark:bg-brand-900">
+      <section className="relative -mt-2 py-8 md:py-16 bg-white dark:bg-brand-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <ScrollReveal>
@@ -78,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 3. PRODUCT SHOWCASE (matching template w3l-3-grids) ===== */}
-      <section id="products" className="py-20 md:py-28 bg-bg-warm dark:bg-brand-900/80">
+      <section id="products" className="py-14 md:py-28 bg-bg-warm dark:bg-brand-900/80">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             label={t("products.label")}
@@ -146,7 +146,7 @@ export default function HomePage() {
       />
 
       {/* ===== 9. PARTNER LOGOS (matching template carousel) ===== */}
-      <section className="py-20 md:py-28 bg-white dark:bg-brand-900">
+      <section className="py-14 md:py-28 bg-white dark:bg-brand-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             label={t("partners.label")}
@@ -190,7 +190,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 10. CTA CONTACT (matching template w3l-join-main) ===== */}
-      <section className="py-20 md:py-28 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url(/images/factory-bg.svg)" }}>
+      <section className="py-14 md:py-28 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url(/images/factory-bg.svg)" }}>
         <div className="absolute inset-0 bg-brand-900/80" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(201,169,110,0.15),transparent_60%)]" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">

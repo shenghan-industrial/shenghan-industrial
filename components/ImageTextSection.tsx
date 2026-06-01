@@ -58,7 +58,7 @@ export function ImageTextSection({
             {label}
           </span>
         )}
-        <h2 className="text-3xl md:text-4xl font-bold text-brand-800 dark:text-white tracking-tight leading-tight mb-6">
+        <h2 className="text-2xl md:text-4xl font-bold text-brand-800 dark:text-white tracking-tight leading-tight mb-4 md:mb-6">
           {title}
         </h2>
         <p className="text-text-secondary dark:text-white/50 leading-relaxed mb-8">
@@ -81,9 +81,9 @@ export function ImageTextSection({
   );
 
   return (
-    <section className={`py-20 md:py-28 ${className}`}>
+    <section className={`py-14 md:py-28 ${className}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           {imageSide === "left" ? (
             <>
               {ImageBlock}

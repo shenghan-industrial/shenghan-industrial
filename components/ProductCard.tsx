@@ -77,7 +77,7 @@ export function ProductCard({ product, onSelect, index }: ProductCardProps) {
       )}
 
       {/* Image */}
-      <div className="relative h-56 bg-gray-100 dark:bg-brand-800 overflow-hidden">
+      <div className="relative h-44 sm:h-56 bg-gray-100 dark:bg-brand-800 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105"
           style={{ backgroundImage: `url(${product.image})` }}
@@ -91,7 +91,7 @@ export function ProductCard({ product, onSelect, index }: ProductCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6 relative">
+      <div className="p-4 md:p-6 relative">
         <h3 className="text-base font-semibold text-brand-800 dark:text-white leading-snug mb-1 group-hover:text-accent-dark dark:group-hover:text-accent transition-colors duration-500 tracking-tight">
           {product.name}
         </h3>

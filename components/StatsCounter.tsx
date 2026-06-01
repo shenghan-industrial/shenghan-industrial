@@ -62,7 +62,7 @@ export function StatsCounter() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-white dark:bg-brand-900">
+    <section className="py-14 md:py-28 bg-white dark:bg-brand-900">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, i) => (
@@ -72,12 +72,12 @@ export function StatsCounter() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="text-center p-8 rounded-2xl bg-bg-warm dark:bg-brand-800/50 border border-gray-100/80 dark:border-white/5 hover:border-accent/20 dark:hover:border-accent/10 hover:shadow-lg transition-all duration-500"
+              className="text-center p-4 md:p-8 rounded-2xl bg-bg-warm dark:bg-brand-800/50 border border-gray-100/80 dark:border-white/5 hover:border-accent/20 dark:hover:border-accent/10 hover:shadow-lg transition-all duration-500"
             >
               <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
                 <stat.icon className="w-5 h-5 text-accent" />
               </div>
-              <div className="text-4xl md:text-5xl font-bold text-brand-800 dark:text-white tracking-[-0.03em] mb-2">
+              <div className="text-3xl md:text-5xl font-bold text-brand-800 dark:text-white tracking-[-0.03em] mb-2">
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               </div>
               <div className="text-sm text-text-muted dark:text-white/35 tracking-wide">

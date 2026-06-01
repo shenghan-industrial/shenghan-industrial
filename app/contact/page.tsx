@@ -54,7 +54,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-white dark:bg-brand-900">
+      <section className="py-14 md:py-28 bg-white dark:bg-brand-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {contactInfo.map((item, i) => (
@@ -79,7 +79,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <ScrollReveal>
               <div>
                 <h3 className="text-xs tracking-[0.25em] uppercase font-semibold text-accent-dark mb-3">

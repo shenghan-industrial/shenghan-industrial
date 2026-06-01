@@ -36,7 +36,7 @@ export function VideoSection({
     <>
       <section className={`relative overflow-hidden ${className}`}>
         <div
-          className="relative h-[320px] md:h-[450px] bg-cover bg-center bg-no-repeat"
+          className="relative h-[200px] md:h-[450px] bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${imageSrc})` }}
         >
           <div className="absolute inset-0 bg-brand-900/60" />

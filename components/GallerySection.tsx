@@ -33,7 +33,7 @@ export function GallerySection({
 
   return (
     <>
-      <section className="py-20 md:py-28 bg-bg-warm dark:bg-brand-900/80">
+      <section className="py-14 md:py-28 bg-bg-warm dark:bg-brand-900/80">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <SectionHeading
             label={t("gallery.label")}

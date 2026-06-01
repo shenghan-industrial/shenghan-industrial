@@ -93,7 +93,7 @@ export function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative h-svh min-h-[600px] md:min-h-[700px] overflow-hidden group"
+      className="relative h-[90vh] min-h-[480px] md:min-h-[700px] overflow-hidden group"
       onMouseEnter={pause}
       onMouseLeave={resume}
     >
@@ -138,13 +138,13 @@ export function HeroSection() {
               {slide.tagline}
             </span>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[1.05] max-w-5xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[1.05] max-w-5xl">
               {slide.title}
               <br />
               <span className="text-accent">{slide.accent}</span>
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-base md:text-xl text-white/50 max-w-2xl leading-relaxed">
               {slide.desc}
             </p>
 
