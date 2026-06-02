@@ -84,7 +84,7 @@ export default function TermsPage() {
               7. Governing Law
             </h2>
             <p>
-              These Terms of Service shall be governed by and construed in accordance with the laws of the People&apos;s Republic of China. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Guangzhou, Guangdong Province.
+              These Terms of Service shall be governed by and construed in accordance with the laws of the People&apos;s Republic of China. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in Linyi, Shandong Province.
             </p>
           </section>
 

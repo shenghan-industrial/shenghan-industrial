@@ -19,14 +19,14 @@ import { siteConfig } from "@/data/site-config";
 import { Play, Factory, ShieldCheck, Award, ChevronLeft, ChevronRight } from "lucide-react";
 
 const partners = [
-  "China State Construction",
-  "China Railway Construction",
-  "Vanke Real Estate",
-  "Country Garden",
-  "Poly Developments",
-  "China Resources Land",
-  "Greenland Group",
-  "CSCEC Group",
+  "Partner 1",
+  "Partner 2",
+  "Partner 3",
+  "Partner 4",
+  "Partner 5",
+  "Partner 6",
+  "Partner 7",
+  "Partner 8",
 ];
 
 export default function HomePage() {
