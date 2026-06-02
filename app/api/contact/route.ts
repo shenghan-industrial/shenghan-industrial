@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import fs from "fs";
-import path from "path";
+
+export const runtime = "edge";
 
 interface ContactBody {
   name: string;
@@ -65,19 +65,6 @@ async function sendViaResend(data: ContactBody): Promise<{ success: boolean; err
   }
 }
 
-function saveToFile(data: ContactBody) {
-  try {
-    const dir = path.join(process.cwd(), ".data");
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-
-    const file = path.join(dir, "inquiries.jsonl");
-    const entry = JSON.stringify({ ...data, receivedAt: new Date().toISOString() }) + "\n";
-    fs.appendFileSync(file, entry, "utf-8");
-    console.log("Inquiry saved to .data/inquiries.jsonl");
-  } catch (err) {
-    console.error("Failed to save inquiry to file:", err);
-  }
-}
 
 export async function POST(request: Request) {
   try {
@@ -96,14 +83,10 @@ export async function POST(request: Request) {
 
     const emailResult = await sendViaResend(data);
 
-    // Always save to file as backup
-    saveToFile(data);
-
     if (emailResult.success) {
       return NextResponse.json({ success: true, message: "Inquiry received. We will get back to you within 24 hours." });
     }
 
-    // Resend didn't send but we saved to file
     return NextResponse.json({
       success: true,
       message: "Inquiry received. We will get back to you within 24 hours.",
