@@ -41,7 +41,7 @@ export const siteConfig = {
 
   // --- Contact ---
   contact: {
-    phone: { display: "15163916007", href: "tel:15163916007" },
+    phone: { display: "13800138000", href: "tel:13800138000" },
     email: "info@shenghanindustrial.com",
     address: {
       line1: "山东省临沂市河东区",

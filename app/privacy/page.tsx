@@ -104,7 +104,7 @@ export default function PrivacyPage() {
             </p>
             <p className="mt-2">
               Email: info@shenghanindustrial.com<br />
-              Phone: 15163916007<br />
+              Phone: 13800138000<br />
               Address: 山东省临沂市河东区, Shandong, China
             </p>
           </section>
