@@ -368,11 +368,8 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
               </div>
             </div>
           </div>
-        </section>
-      )}
-
-      {/* Factory video modal */}
-      {showFactoryVideo && partner?.videoUrl && (
+      {/* Factory video modal — disabled */}
+      {false && (
         <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4" onClick={() => setShowFactoryVideo(false)}>
           <button
             onClick={() => setShowFactoryVideo(false)}
