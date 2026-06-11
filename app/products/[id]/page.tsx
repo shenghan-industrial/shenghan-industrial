@@ -106,7 +106,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
               </h1>
 
               {/* Manufacturer badge */}
-              {partner && (
+              {false && (
                 <div className="flex items-center gap-2 mt-3 px-3 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 text-sm w-fit">
                   <Factory className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
                   <span className="text-blue-700 dark:text-blue-300 font-medium">
@@ -260,7 +260,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
       </section>
 
       {/* Factory info section */}
-      {partner && (
+      {false && (
         <section id="factory" className="bg-white dark:bg-brand-900 border-t border-gray-100 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 lg:px-8 py-10 md:py-14">
             <h2 className="text-xl md:text-2xl font-bold text-brand-800 dark:text-white text-center mb-2">
