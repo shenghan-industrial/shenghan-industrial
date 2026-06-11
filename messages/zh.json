@@ -4,7 +4,7 @@
     "products": "产品",
     "about": "关于我们",
     "contact": "联系我们",
-    "call": "电话"
+    "call": "WhatsApp"
   },
   "hero": {
     "slide1": {
@@ -37,6 +37,12 @@
       "cert": "资质认证",
       "projects": "工程项目",
       "capacity": "年产能"
+    },
+    "overlay": {
+      "title": "从工厂到您的项目",
+      "sub": "工厂直供 · 价格透明 · 全球物流 · 售后无忧",
+      "explore": "探索解决方案",
+      "consult": "免费咨询"
     }
   },
   "media": {
@@ -107,7 +113,12 @@
     "title": "走进我们的工厂",
     "desc": "近距离了解我们先进的生产设施和严格的质量控制流程。",
     "all": "全部",
-    "categories": ["全部", "工厂", "产品", "质检"],
+    "categories": [
+      "全部",
+      "工厂",
+      "产品",
+      "质检"
+    ],
     "view": "查看"
   },
   "stats": {
@@ -121,11 +132,22 @@
     "unit4": " 年"
   },
   "partners": {
-    "label": "合作伙伴",
-    "title": "行业龙头的共同选择",
-    "desc": "与顶尖建筑企业的长期合作，是对我们品质的最好证明。",
-    "prev": "上一组",
-    "next": "下一组"
+    "label": "供应网络",
+    "title": "我们的合作伙伴工厂",
+    "desc": "我们与中国各地的专业工厂合作，为您提供每个品类最优质的产品。每家合作伙伴都经过严格的质量审核、信誉评估和资质认证。",
+    "certifications": "认证资质",
+    "products": "个产品",
+    "productsFrom": "来自",
+    "moreProducts": "更多产品",
+    "watchVideo": "观看工厂视频",
+    "hideVideo": "隐藏视频",
+    "established": "成立",
+    "aboutFactory": "工厂介绍",
+    "specialties": "主营品类",
+    "quickFacts": "基本信息",
+    "location": "所在地",
+    "inquireNow": "询价此工厂",
+    "productsLabel": "旗下产品"
   },
   "cta": {
     "label": "联系我们",
@@ -146,33 +168,97 @@
     "journeyTitle": "发展历程",
     "journeyDesc": "二十余年砥砺前行，每一步都坚实有力。",
     "timeline": [
-      { "year": "2002", "title": "公司成立", "desc": "盛瀚实业在广州成立，起步于建材贸易业务。" },
-      { "year": "2008", "title": "建厂投产", "desc": "投资建设第一条生产线，实现自主生产。" },
-      { "year": "2013", "title": "产品多元化", "desc": "从建材拓展至家具、五金领域，奠定多品类发展基础。" },
-      { "year": "2018", "title": "全国拓展", "desc": "建立覆盖全国的销售网络，服务客户突破300家。" },
-      { "year": "2022", "title": "新增产线", "desc": "推出LED灯具和工业清洁产品线，形成五大品类布局。" },
-      { "year": "2025", "title": "迈向国际", "desc": "产品出口东南亚、中东、非洲，开启全球化新征程。" }
+      {
+        "year": "2002",
+        "title": "公司成立",
+        "desc": "盛瀚实业在广州成立，起步于建材贸易业务。"
+      },
+      {
+        "year": "2008",
+        "title": "建厂投产",
+        "desc": "投资建设第一条生产线，实现自主生产。"
+      },
+      {
+        "year": "2013",
+        "title": "产品多元化",
+        "desc": "从建材拓展至家具、五金领域，奠定多品类发展基础。"
+      },
+      {
+        "year": "2018",
+        "title": "全国拓展",
+        "desc": "建立覆盖全国的销售网络，服务客户突破300家。"
+      },
+      {
+        "year": "2022",
+        "title": "新增产线",
+        "desc": "推出LED灯具和工业清洁产品线，形成五大品类布局。"
+      },
+      {
+        "year": "2025",
+        "title": "迈向国际",
+        "desc": "产品出口东南亚、中东、非洲，开启全球化新征程。"
+      }
     ],
     "valuesLabel": "核心理念",
     "certsLabel": "资质认证",
     "values": [
-      { "title": "企业使命", "desc": "以工厂直供模式为全球客户提供品质可靠、价格优的源头产品。" },
-      { "title": "企业愿景", "desc": "成为世界一流的多品类制造商和值得信赖的出口合作伙伴。" },
-      { "title": "核心价值观", "desc": "诚信为本、品质为先、创新驱动、合作共赢。" },
-      { "title": "核心竞争力", "desc": "25年制造经验，五大品类产品矩阵，全流程品控体系。" }
+      {
+        "title": "企业使命",
+        "desc": "以工厂直供模式为全球客户提供品质可靠、价格优的源头产品。"
+      },
+      {
+        "title": "企业愿景",
+        "desc": "成为世界一流的多品类制造商和值得信赖的出口合作伙伴。"
+      },
+      {
+        "title": "核心价值观",
+        "desc": "诚信为本、品质为先、创新驱动、合作共赢。"
+      },
+      {
+        "title": "核心竞争力",
+        "desc": "25年制造经验，五大品类产品矩阵，全流程品控体系。"
+      }
     ],
     "certs": [
-      { "title": "ISO 9001:2015", "desc": "质量管理体系认证" },
-      { "title": "ISO 14001:2015", "desc": "环境管理体系认证" },
-      { "title": "CNAS认可实验室", "desc": "中国合格评定国家认可" },
-      { "title": "CE 认证", "desc": "欧盟市场准入认证" }
-    ]
+      {
+        "title": "ISO 9001:2015",
+        "desc": "质量管理体系认证"
+      },
+      {
+        "title": "ISO 14001:2015",
+        "desc": "环境管理体系认证"
+      },
+      {
+        "title": "CNAS认可实验室",
+        "desc": "中国合格评定国家认可"
+      },
+      {
+        "title": "CE 认证",
+        "desc": "欧盟市场准入认证"
+      }
+    ],
+    "tagline": "我们消除中间商的加价，但保留您真正需要的中间商服务。",
+    "team": {
+      "title": "我们的团队",
+      "designer": "软装设计师",
+      "designerDesc": "根据您当地市场的审美和预算，定制2D/3D设计方案。",
+      "qc": "质检工程师",
+      "qcDesc": "从原材料到成品的全链路质量监控，实时检验报告。",
+      "supply": "供应链专家",
+      "supplyDesc": "整合100+源头工厂资源，一个对接人覆盖全品类。",
+      "promo": "全球推广负责人",
+      "promoDesc": "为您的市场免费提供营销素材、社媒内容和推广策略。"
+    },
+    "process": {
+      "title": "100%透明流程",
+      "desc": "远程视频看厂、实时参与验货、订单后台全权限开放——我们看到的，您都能看到。"
+    }
   },
   "contact": {
     "label": "联系我们",
     "title": "取得联系",
     "desc": "无论您有任何产品问题或合作意向，我们都期待与您沟通。",
-    "call": "电话咨询",
+    "call": "WhatsApp",
     "email": "邮箱联系",
     "visit": "公司地址",
     "hours": "工作时间",
@@ -201,6 +287,8 @@
     "privacy": "隐私政策",
     "terms": "服务条款",
     "rights": "版权所有。",
+    "needHelp": "需要帮助？",
+    "helpHours": "7×24小时 多语种全球客服",
     "productsList": {
       "furniture": "家居/家具",
       "buildingMaterials": "建材",
@@ -215,6 +303,36 @@
       "contact": "联系我们"
     }
   },
+  "detail": {
+    "backToProducts": "返回产品列表",
+    "manufacturer": "制造商",
+    "keySpecs": "主要规格",
+    "addToCart": "加入询价清单",
+    "added": "已加入！",
+    "relatedLabel": "相关推荐",
+    "relatedTitle": "相关产品",
+    "inquiryNote": "批发询价",
+    "inquiryDesc": "将产品加入询价清单，联系我们获取最优工厂批发价格。",
+    "factoryInfo": "制造商介绍",
+    "factoryInfoDesc": "每件产品都来自经过严格审核的认证制造商。",
+    "inquireNow": "立即询价",
+    "productDesc": "产品描述"
+  },
+  "cart": {
+    "title": "询价清单",
+    "empty": "询价清单为空。浏览产品，将感兴趣的商品加入清单。",
+    "quantity": "数量",
+    "category": "品类",
+    "inquiryList": "询价清单",
+    "total": "共",
+    "items": "件",
+    "website": "网站",
+    "copy": "复制文字",
+    "copied": "已复制",
+    "download": "下载",
+    "contactChat": "联系客服询价",
+    "clearAll": "清空清单"
+  },
   "cookie": {
     "title": "Cookie 提示",
     "desc": "我们使用必要的Cookie确保网站正常运行。未经您的同意，不会使用追踪或广告类Cookie。",
@@ -224,5 +342,106 @@
   "modal": {
     "features": "产品特点",
     "specs": "技术规格"
-  }
+  },
+  "promo": {
+    "title": "本月限时促销",
+    "subtitle": "数量有限，售完为止",
+    "viewAll": "查看全部促销",
+    "limited": "限量",
+    "daysLeft": "仅剩 {n} 天"
+  },
+  "bestseller": {
+    "title": "本月热销榜",
+    "subtitle": "全球买家最受欢迎的产品",
+    "label": "买家首选"
+  },
+  "home": {
+    "featured": "必逛好物",
+    "newThisMonth": "必逛好物",
+    "topPicks": "买家首选",
+    "bestSellers": "本月热销榜",
+    "rankedBy7Days": "排名依据7日销量计算 - 每日更新",
+    "hotRanking": "热销榜",
+    "viewAll": "查看全部",
+    "backToHome": "返回首页",
+    "selectCategory": "请从左侧选择一个品类",
+    "noProducts": "暂无产品",
+    "moreProducts": "更多产品",
+    "noProductsInCategory": "该品类暂无产品",
+    "allProducts": "全部产品",
+    "search": "搜索产品、品类... 回车搜索",
+    "searchPlaceholder": "搜索产品... 回车搜索",
+    "loadMore": "加载更多",
+    "items": "件商品",
+    "all": "全部",
+    "customerReviews": "客户真实反馈",
+    "verifiedBuyer": "已认证买家",
+    "reviewRated": "评分",
+    "reviewStars": "星",
+    "valueCards": {
+      "design": {
+        "title": "设计+选品",
+        "desc": "免费软装设计咨询与产品匹配"
+      },
+      "quality": {
+        "title": "品质护航",
+        "desc": "全链路驻厂品控与第三方检测"
+      },
+      "delivery": {
+        "title": "一站式交付",
+        "desc": "多品类整合，全球门到门物流"
+      }
+    },
+    "trust": {
+      "countries": "覆盖30+国家",
+      "containers": "累计出货1200+集装箱",
+      "rating": "Google 4.8★ 评分",
+      "clients": "全球3200+合作客户"
+    }
+  },
+  "rankings": {
+    "title": "热销排名",
+    "allCategories": "全部品类",
+    "hotSales": "热销榜",
+    "wishlist": "心宜榜",
+    "wishlistSoon": "心宜榜即将上线，敬请期待",
+    "backToHome": "返回首页"
+  },
+  "promotions": {
+    "title": "本月限时促销",
+    "backToHome": "返回首页",
+    "noPromos": "暂无促销产品",
+    "limited": "限量"
+  },
+  "common": {
+    "brand": "盛瀚实业",
+    "slogan": "全球家居建材制造商 | 一站式供应链合作伙伴",
+    "search": "搜索",
+    "searchPlaceholder": "搜索产品、品类...",
+    "backToHome": "返回首页",
+    "noProducts": "暂无产品",
+    "noProductsInCategory": "该品类暂无产品",
+    "selectCategory": "请从左侧选择一个品类",
+    "viewAll": "查看全部",
+    "comingSoon": "即将上线",
+    "subline": "工厂直供 · 价格透明 · 全球物流 · 售后无忧"
+  },
+  "search": {
+    "placeholder": "搜索产品、品类... 回车搜索",
+    "inlinePlaceholder": "搜索...",
+    "button": "搜索",
+    "categoryTag": "品类",
+    "productTag": "产品"
+  },
+  "flashDeals": {
+    "title": "每日闪购",
+    "subtitle": "不定时开放，售完为止",
+    "tag": "闪购"
+  },
+  "newArrivals": {
+    "title": "2026 新品上市",
+    "subtitle": "探索今年最新产品"
+  },
+  "weeklySold": "7日售出 ",
+  "weeklySoldSuffix": " 件"
 }

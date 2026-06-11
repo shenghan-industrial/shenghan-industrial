@@ -9,7 +9,7 @@ import {
   type ReactNode,
 } from "react";
 
-type Locale = "en" | "zh";
+type Locale = "en" | "zh" | "es";
 
 interface LanguageContextType {
   locale: Locale;
@@ -49,7 +49,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("locale") as Locale | null;
-    if (stored === "zh" || stored === "en") {
+    if (stored === "zh" || stored === "en" || stored === "es") {
       setLocaleState(stored);
     }
   }, []);

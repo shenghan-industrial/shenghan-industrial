@@ -1,210 +1,225 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useMemo, useRef, useState, Suspense } from "react";
+import Link from "next/link";
 import { HeroSection } from "@/components/HeroSection";
-import { ProductCard } from "@/components/ProductCard";
-import { ProductModal } from "@/components/ProductModal";
-import { StatsCounter } from "@/components/StatsCounter";
-import { ScrollReveal } from "@/components/ScrollReveal";
-import { SectionHeading } from "@/components/SectionHeading";
-import { VideoSection } from "@/components/VideoSection";
-import { ImageTextSection } from "@/components/ImageTextSection";
-import { GallerySection } from "@/components/GallerySection";
-import { ContactForm } from "@/components/ContactForm";
-import { products, type Product } from "@/data/products";
-import { galleryImages, galleryCategories } from "@/data/gallery-images";
+import { products } from "@/data/products";
+import { categories } from "@/data/categories";
 import { useT } from "@/lib/LanguageContext";
-import { siteConfig } from "@/data/site-config";
-import { Play, Factory, ShieldCheck, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { localizeProduct } from "@/lib/localizeProduct";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ReviewsSection } from "@/components/ReviewsSection";
+import { TrustBar } from "@/components/TrustBar";
+import { FeatureCards } from "@/components/FeatureCards";
 
-const partners = [
-  "Partner 1",
-  "Partner 2",
-  "Partner 3",
-  "Partner 4",
-  "Partner 5",
-  "Partner 6",
-  "Partner 7",
-  "Partner 8",
+const rankColors = [
+  "bg-[#F5A623] text-white",
+  "bg-[#9B9B9B] text-white",
+  "bg-[#D2691E] text-white",
 ];
 
-export default function HomePage() {
-  const { t } = useT();
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [partnerStart, setPartnerStart] = useState(0);
+// Group best sellers by subcategory
+function getBestSellerGroups() {
+  const bests = products.filter((p) => p.monthlyBest);
+  const map: Record<string, { subKey: string; subNameZh: string; subName: string; subNameEs?: string; catNameZh: string; catName: string; catNameEs?: string; productCategory: string; productSubCategory: string; items: typeof bests }> = {};
 
-  const prevPartner = () =>
-    setPartnerStart((s) => (s - 1 < 0 ? partners.length - 4 : s - 1));
-  const nextPartner = () =>
-    setPartnerStart((s) => (s + 1 > partners.length - 4 ? 0 : s + 1));
+  for (const p of bests) {
+    const key = p.subCategory || p.category;
+    if (!map[key]) {
+      let subNameZh = key, subName = key, subNameEs: string | undefined, catNameZh = "", catName = "", catNameEs: string | undefined;
+      for (const cat of categories) {
+        const items = cat.children || cat.groups?.flatMap((g) => g.children) || [];
+        const found = items.find((s) => s.productSubCategory === key);
+        if (found) {
+          subNameZh = found.nameZh;
+          subName = found.name;
+          subNameEs = (found as any).nameEs;
+          catNameZh = cat.nameZh;
+          catName = cat.name;
+          catNameEs = (cat as any).nameEs;
+          break;
+        }
+      }
+      map[key] = { subKey: key, subNameZh, subName, subNameEs, catNameZh, catName, catNameEs, productCategory: p.category, productSubCategory: key, items: [] };
+    }
+    map[key].items.push(p);
+  }
+
+  return Object.values(map).filter((g) => g.items.length > 0);
+}
+
+function HomeContent() {
+  const { t, locale } = useT();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const bestGroups = useMemo(() => getBestSellerGroups(), []);
+
+  const scroll = (dir: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const cardW = 320 + 1; // card width + divider
+    scrollRef.current.scrollBy({ left: dir === "left" ? -cardW * 3 : cardW * 3, behavior: "smooth" });
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setAtStart(scrollLeft < 5);
+    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 5);
+  };
 
   return (
-    <>
-      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
-
-      {/* ===== 1. HERO CAROUSEL ===== */}
+    <main className="min-h-screen bg-[#F5F2EF] dark:bg-[#12100E]">
+      {/* 1. Hero */}
       <HeroSection />
 
-      {/* ===== 2. MEDIA STRIP (matching template banner-w3l-media-sec) ===== */}
-      <section className="relative -mt-2 py-8 md:py-16 bg-white dark:bg-brand-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <ScrollReveal>
-              <h3 className="text-2xl md:text-3xl font-bold text-brand-800 dark:text-white leading-tight">
-                {t("media.slogan")}
-              </h3>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <p className="text-text-secondary dark:text-white/50 leading-relaxed">
-                {t("media.desc")}
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2}>
-              <div className="flex justify-center">
-                <a
-                  href="#factory-video"
-                  className="group flex items-center gap-3 px-6 py-3 rounded-full bg-accent text-brand-900 font-semibold hover:bg-accent-light transition-all shadow-lg shadow-accent/20"
-                >
-                  <span className="w-10 h-10 rounded-full bg-brand-900/10 flex items-center justify-center">
-                    <Play className="w-5 h-5 ml-0.5" />
-                  </span>
-                  {t("media.watch")}
-                </a>
-              </div>
-            </ScrollReveal>
+      {/* 2. Trust Bar */}
+      <TrustBar />
+
+      {/* 3. Feature Cards */}
+      <section className="pt-8 md:pt-20 pb-2 md:pb-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="mb-9 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#3D3730] dark:text-[#D4C8B8] tracking-tight">
+              {t("home.featured")}
+            </h2>
           </div>
+          <FeatureCards />
         </div>
       </section>
 
-      {/* ===== 3. PRODUCT SHOWCASE (matching template w3l-3-grids) ===== */}
-      <section id="products" className="py-14 md:py-28 bg-bg-warm dark:bg-brand-900/80">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeading
-            label={t("products.label")}
-            title={t("products.title")}
-            description={t("products.desc")}
-          />
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.slice(0, 4).map((product, i) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onSelect={setSelectedProduct}
-                index={i}
-              />
-            ))}
+      {/* 4. Best Sellers */}
+      <section className="py-8 md:py-20 bg-white dark:bg-[#1A1816]">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
+          <div className="mb-9">
+            <span className="text-xs text-[#B8A080] font-semibold uppercase tracking-[0.15em]">
+              {t("home.topPicks")}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#3D3730] dark:text-[#D4C8B8] mt-1.5 tracking-tight">
+              {t("home.bestSellers")}
+            </h2>
+            <p className="text-sm text-[#9B8E7E] dark:text-white/30 mt-1.5">
+              {t("home.rankedBy7Days")}
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* ===== 4. VIDEO SECTION (matching template w3l-index5) ===== */}
-      <div id="factory-video">
-        <VideoSection imageSrc="/images/factory-bg.svg" />
-      </div>
-
-      {/* ===== 5. IMAGE+TEXT: Factory Introduction (matching template w3l-passion-mid-sec) ===== */}
-      <ImageTextSection
-        imageSrc="/images/factory/factory-line.svg"
-        imageAlt="Production line"
-        imageSide="left"
-        label={t("factory.label")}
-        title={t("factory.title")}
-        description={t("factory.desc")}
-        features={[
-          t("factory.features.0"),
-          t("factory.features.1"),
-          t("factory.features.2"),
-          t("factory.features.3"),
-        ]}
-        badge={{ text: t("factory.badge"), Icon: Award }}
-        className="bg-white dark:bg-brand-900"
-      />
-
-      {/* ===== 6. GALLERY SECTION (matching template w3l-gallery) ===== */}
-      <GallerySection images={galleryImages} categories={galleryCategories} />
-
-      {/* ===== 7. STATS COUNTER (matching template w3l-midslider stats) ===== */}
-      <StatsCounter />
-
-      {/* ===== 8. IMAGE+TEXT: Quality Control (matching template alternating pattern) ===== */}
-      <ImageTextSection
-        imageSrc="/images/quality/testing-rig.svg"
-        imageAlt="Quality testing"
-        imageSide="right"
-        label={t("quality.label")}
-        title={t("quality.title")}
-        description={t("quality.desc")}
-        features={[
-          t("quality.features.0"),
-          t("quality.features.1"),
-          t("quality.features.2"),
-          t("quality.features.3"),
-        ]}
-        badge={{ text: t("quality.badge"), Icon: ShieldCheck }}
-        className="bg-bg-warm dark:bg-brand-900/80"
-      />
-
-      {/* ===== 9. PARTNER LOGOS (matching template carousel) ===== */}
-      <section className="py-14 md:py-28 bg-white dark:bg-brand-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeading
-            label={t("partners.label")}
-            title={t("partners.title")}
-            description={t("partners.desc")}
-          />
-          <div className="mt-12 flex items-center gap-3 md:gap-4">
-            <button
-              onClick={prevPartner}
-              className="p-2 md:p-3 rounded-full border border-gray-200 dark:border-white/10 hover:bg-accent hover:text-white hover:border-accent transition-all shrink-0"
-              aria-label={t("partners.prev")}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <div className="flex-1 overflow-hidden">
-              <motion.div
-                key={partnerStart}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          {/* Scroll container with arrows */}
+          <div className="relative group">
+            {/* Left arrow */}
+            {!atStart && (
+              <button
+                onClick={() => scroll("left")}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:bg-gray-800 transition-all opacity-0 group-hover:opacity-100"
               >
-                {partners.slice(partnerStart, partnerStart + 4).map((p) => (
-                  <div
-                    key={p}
-                    className="h-20 md:h-24 rounded-xl bg-white dark:bg-brand-800 border border-gray-100 dark:border-white/5 flex items-center justify-center text-text-muted dark:text-white/40 font-bold text-sm md:text-lg tracking-wider px-3 text-center leading-tight hover:border-accent/30 hover:text-accent dark:hover:text-accent hover:shadow-lg transition-all duration-300"
-                  >
-                    {p}
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-            <button
-              onClick={nextPartner}
-              className="p-2 md:p-3 rounded-full border border-gray-200 dark:border-white/10 hover:bg-accent hover:text-white hover:border-accent transition-all shrink-0"
-              aria-label={t("partners.next")}
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+            )}
+
+            {/* Right arrow */}
+            {!atEnd && (
+              <button
+                onClick={() => scroll("right")}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:bg-gray-800 transition-all opacity-0 group-hover:opacity-100"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            )}
+
+            {/* Scrollable card row */}
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex overflow-x-auto scrollbar-hide scroll-smooth"
+              style={{ scrollSnapType: "x mandatory" }}
             >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+              {bestGroups.map((group, idx) => {
+                const top3 = group.items.slice(0, 3);
+                const displayName = locale === "zh" ? group.subNameZh : locale === "es" ? (group.subNameEs || group.subName) : group.subName;
+
+                return (
+                  <Link
+                    key={group.subKey}
+                    href={`/rankings/${group.productCategory}/${group.productSubCategory}`}
+                    className="group/card shrink-0 w-[300px] flex flex-col border-r border-[#E8E2DC] last:border-r-0"
+                  >
+                    {/* Header */}
+                    <div className="bg-[#4A4238] px-5 py-4 flex items-center justify-between">
+                      <div>
+                        <span className="text-white/80 text-[11px] tracking-wide">
+                          {t("home.hotRanking")}
+                        </span>
+                        <h3 className="text-white text-lg font-bold mt-0.5">
+                          {displayName}
+                        </h3>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-white/70 group-hover/card:translate-x-0.5 transition-transform" />
+                    </div>
+
+                    {/* Product rows */}
+                    <div className="flex-1 bg-white dark:bg-[#1A1816]">
+                      {top3.map((product, i) => (
+                        <div
+                          key={product.id}
+                          className={`flex items-center gap-3 px-4 py-3 ${
+                            i < 2 ? "border-b border-[#F0EBE6] dark:border-white/5" : ""
+                          }`}
+                        >
+                          {/* Rank badge — positioned on top-left of thumbnail */}
+                          <div className="relative shrink-0">
+                            <div className="w-[60px] h-[60px] bg-gray-50 dark:bg-brand-800 flex items-center justify-center overflow-hidden">
+                              <img
+                                src={product.image}
+                                alt={localizeProduct(product, locale).name}
+                                className="w-full h-full object-contain p-1"
+                              />
+                            </div>
+                            <div
+                              className={`absolute -top-1.5 -left-1.5 w-5 h-5 flex items-center justify-center text-[10px] font-bold ${rankColors[i]}`}
+                            >
+                              {i + 1}
+                            </div>
+                          </div>
+
+                          {/* Product name — 2 lines */}
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[13px] font-medium text-[#1a1a1a] dark:text-white leading-tight line-clamp-1">
+                              {localizeProduct(product, locale).name}
+                            </p>
+                            <p className="text-[11px] text-[#999] dark:text-white/30 leading-tight mt-0.5 line-clamp-1">
+                              {localizeProduct(product, locale).subtitle}
+                            </p>
+                          </div>
+
+                          {/* Sales count — right aligned */}
+                          <div className="shrink-0 text-right">
+                            {product.weeklySales && (
+                              <span className="text-[13px] font-semibold text-[#333] dark:text-white/70 tabular-nums">
+                                {product.weeklySales.toLocaleString()}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== 10. CTA CONTACT (matching template w3l-join-main) ===== */}
-      <section className="py-14 md:py-28 relative overflow-hidden bg-fixed bg-cover bg-center" style={{ backgroundImage: "url(/images/factory-bg.svg)" }}>
-        <div className="absolute inset-0 bg-brand-900/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(201,169,110,0.15),transparent_60%)]" />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <SectionHeading
-            label={t("cta.label")}
-            title={t("cta.title")}
-            description={t("cta.desc")}
-            light
-          />
-          <div className="mt-12 max-w-xl mx-auto">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-    </>
+      {/* 4. Customer Reviews */}
+      <ReviewsSection />
+    </main>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-[#1A1816]" />}>
+      <HomeContent />
+    </Suspense>
   );
 }

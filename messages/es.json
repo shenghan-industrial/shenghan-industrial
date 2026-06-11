@@ -1,0 +1,451 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "call": "WhatsApp"
+  },
+  "hero": {
+    "slide1": {
+      "tagline": "Fabricante Directo de Fábrica",
+      "title": "Calidad Global",
+      "accent": "Directo de Fábrica",
+      "desc": "Muebles, materiales de construcción, ferretería, iluminación y productos de limpieza industrial — fabricados en nuestras propias instalaciones, enviados a todo el mundo."
+    },
+    "slide2": {
+      "tagline": "Fabricación Avanzada",
+      "title": "Precisión",
+      "accent": "En Cada Etapa",
+      "desc": "8 líneas de producción automatizadas funcionando 24/7 con monitoreo de calidad en tiempo real desde la materia prima hasta el producto terminado."
+    },
+    "slide3": {
+      "tagline": "Garantía de Calidad",
+      "title": "Cada Lote",
+      "accent": "Rigurosamente Probado",
+      "desc": "Laboratorio acreditado por CNAS realiza 12 pruebas obligatorias por lote — nada se envía sin aprobación."
+    },
+    "slide4": {
+      "tagline": "Impulsados por la Innovación",
+      "title": "25 Años",
+      "accent": "De Excelencia Técnica",
+      "desc": "Más de 20 patentes nacionales y un equipo dedicado de I+D ampliando los límites de la tecnología de adhesivos."
+    },
+    "explore": "Explorar Productos",
+    "touch": "Contáctenos",
+    "stats": {
+      "cert": "Certificaciones",
+      "projects": "Proyectos Completados",
+      "capacity": "Capacidad Anual"
+    },
+    "overlay": {
+      "title": "De la Fábrica a Su Proyecto",
+      "sub": "Directo de Fábrica · Precio Competitivo · Logística Global · Soporte Postventa",
+      "explore": "Explorar Soluciones",
+      "consult": "Consulta Gratuita"
+    }
+  },
+  "media": {
+    "slogan": "Fábrica Directa, Alcance Global",
+    "desc": "Desde la obtención de materias primas hasta la inspección final, cada paso de nuestro proceso de fabricación está certificado ISO. Vea nuestro recorrido por la fábrica para conocer nuestras instalaciones de producción en acción.",
+    "watch": "Ver Recorrido de Fábrica"
+  },
+  "products": {
+    "label": "Productos",
+    "title": "Cinco Líneas Principales de Productos",
+    "desc": "Desde muebles e iluminación hasta adhesivos, ferretería y limpieza industrial — una sola fuente, calidad directa de fábrica en cinco categorías de productos.",
+    "catalog": "Catálogo de Productos",
+    "catalogDesc": "Explore nuestra gama completa de productos en cinco categorías para encontrar la solución adecuada para su negocio.",
+    "viewDetails": "Ver Detalles",
+    "noProducts": "Aún no hay productos en esta categoría.",
+    "all": "Todos los Productos",
+    "category": {
+      "furniture": "Muebles",
+      "buildingMaterials": "Materiales de Construcción",
+      "hardware": "Ferretería",
+      "appliances": "Electrodomésticos",
+      "lighting": "Iluminación",
+      "others": "Otros"
+    },
+    "subCategory": {
+      "sofas": "Sofás",
+      "beds": "Camas",
+      "cabinets": "Armarios",
+      "adhesives": "Adhesivos",
+      "panels": "Paneles",
+      "fasteners": "Sujetadores",
+      "doorWindow": "Puertas y Ventanas",
+      "bathroom": "Baño",
+      "fans": "Ventiladores",
+      "heaters": "Calefactores",
+      "kitchen": "Cocina",
+      "deskLamps": "Lámparas de Escritorio",
+      "pendantLights": "Lámparas Colgantes",
+      "floorLamps": "Lámparas de Pie"
+    }
+  },
+  "factory": {
+    "label": "Nuestra Fábrica",
+    "title": "Fabricación de Última Generación",
+    "desc": "Nuestra base de producción de 80.000 m² alberga 8 líneas de producción automatizadas con una capacidad anual de 50.000 toneladas. Desde la síntesis de silicona hasta el embalaje del producto terminado, cada paso está controlado y monitoreado con precisión.",
+    "features": [
+      "8 líneas de producción completamente automatizadas funcionando 24/7",
+      "Laboratorio acreditado CNAS con más de 50 instrumentos de prueba",
+      "Monitoreo de calidad en tiempo real en cada etapa de producción",
+      "Almacén inteligente con almacenamiento climatizado"
+    ],
+    "badge": "ISO 9001"
+  },
+  "quality": {
+    "label": "Control de Calidad",
+    "title": "Cada Lote, Rigurosamente Probado",
+    "desc": "Nuestro laboratorio acreditado CNAS realiza 12 pruebas obligatorias en cada lote de producción — desde resistencia a la tracción y elongación hasta envejecimiento UV y resistencia química. Nada se envía sin aprobación.",
+    "features": [
+      "12 pruebas de calidad obligatorias por lote de producción",
+      "Más de 1.000 horas de simulación de envejecimiento acelerado",
+      "Trazabilidad completa desde la materia prima hasta el producto terminado",
+      "Certificación SGS/TÜV de terceros disponible"
+    ],
+    "badge": "Laboratorio CNAS"
+  },
+  "gallery": {
+    "label": "Galería",
+    "title": "Dentro de Nuestra Fábrica",
+    "desc": "Vea nuestras instalaciones de producción de última generación y procesos de control de calidad.",
+    "all": "Todo",
+    "categories": [
+      "Todo",
+      "Fábrica",
+      "Productos",
+      "Calidad"
+    ],
+    "view": "Ver"
+  },
+  "stats": {
+    "capacity": "Capacidad Anual",
+    "projects": "Proyectos Completados",
+    "clients": "Clientes Empresariales",
+    "experience": "Experiencia en la Industria",
+    "unit1": "K toneladas",
+    "unit2": "+",
+    "unit3": "+",
+    "unit4": " años"
+  },
+  "partners": {
+    "label": "Socios",
+    "title": "Confiado por Líderes de la Industria",
+    "desc": "Asociaciones a largo plazo con empresas de construcción de primer nivel — un testimonio de nuestra calidad sin concesiones.",
+    "prev": "Socios anteriores",
+    "next": "Socios siguientes",
+    "certifications": "Certificaciones",
+    "products": "productos",
+    "productsFrom": "Productos de",
+    "moreProducts": "más productos",
+    "watchVideo": "Ver Video de Fábrica",
+    "hideVideo": "Ocultar Video",
+    "established": "Fundado",
+    "aboutFactory": "Sobre Esta Fábrica",
+    "specialties": "Especialidades",
+    "quickFacts": "Datos Rápidos",
+    "location": "Ubicación",
+    "inquireNow": "Consultar Sobre Esta Fábrica",
+    "productsLabel": "Productos"
+  },
+  "cta": {
+    "label": "Contacto",
+    "title": "Obtenga Su Solución Personalizada",
+    "desc": "Cuéntenos sobre los requisitos de su proyecto. Nuestro equipo técnico diseñará la solución óptima para usted."
+  },
+  "about": {
+    "label": "Sobre Nosotros",
+    "title": "Sobre Shenghan Industrial",
+    "desc": "Desde 2002 — fabricante directo de fábrica de muebles, materiales de construcción, ferretería, iluminación y productos de limpieza industrial.",
+    "storyLabel": "Nuestra Historia",
+    "storyTitle1": "Construido en Tecnología",
+    "storyTitle2": "Definido por la Calidad",
+    "storyP1": "Fundada en 2002, Shenghan Industrial es un fabricante integral que integra I+D, fabricación y distribución global en cinco líneas principales de productos. Con sede en Guangzhou, operamos una moderna instalación de producción de 80.000 m².",
+    "storyP2": "Nuestro laboratorio acreditado CNAS alberga equipos de prueba de clase mundial e instrumentación de I+D, respaldado por más de 20 patentes nacionales. Nuestra cartera de productos abarca muebles, adhesivos y selladores para construcción, iluminación LED, ferretería para construcción y soluciones de limpieza industrial.",
+    "storyP3": "Durante más de dos décadas, Shenghan Industrial ha sido impulsada por la innovación tecnológica y definida por la calidad del producto — entregando productos confiables directamente de fábrica a más de 3.200 clientes en todo el mundo.",
+    "journeyLabel": "Nuestro Trayecto",
+    "journeyTitle": "Nuestro Trayecto",
+    "journeyDesc": "Más de dos décadas de progreso incansable — cada paso ha sido firme y decidido.",
+    "timeline": [
+      {
+        "year": "2002",
+        "title": "Fundación de la Empresa",
+        "desc": "Shenghan Industrial se estableció en Guangzhou, comenzando como un negocio de comercio de materiales de construcción."
+      },
+      {
+        "year": "2008",
+        "title": "Lanzamiento de Producción",
+        "desc": "Puesta en marcha de nuestra primera línea de fabricación, transitando del comercio a la producción."
+      },
+      {
+        "year": "2013",
+        "title": "Diversificación de Productos",
+        "desc": "Expansión más allá de materiales de construcción hacia muebles y ferretería — sentando las bases para una cartera de múltiples categorías."
+      },
+      {
+        "year": "2018",
+        "title": "Expansión Nacional",
+        "desc": "Construcción de una red de ventas a nivel nacional sirviendo a más de 300 clientes empresariales en toda China."
+      },
+      {
+        "year": "2022",
+        "title": "Nuevas Líneas de Productos",
+        "desc": "Lanzamiento de líneas de iluminación LED y limpieza industrial, completando nuestra oferta de cinco categorías."
+      },
+      {
+        "year": "2025",
+        "title": "Expansión Global",
+        "desc": "Exportaciones ampliadas al Sudeste Asiático, Medio Oriente y África — comenzando nuestro viaje global."
+      }
+    ],
+    "valuesLabel": "Valores Fundamentales",
+    "certsLabel": "Certificaciones",
+    "values": [
+      {
+        "title": "Misión",
+        "desc": "Capacitar a compradores globales con productos de calidad directos de fábrica a precios competitivos."
+      },
+      {
+        "title": "Visión",
+        "desc": "Convertirnos en un fabricante multicategoría de clase mundial y socio de exportación de confianza."
+      },
+      {
+        "title": "Valores Fundamentales",
+        "desc": "Integridad primero, calidad ante todo, impulsados por la innovación, colaboración ganar-ganar."
+      },
+      {
+        "title": "Competencia Central",
+        "desc": "25 años de experiencia en fabricación, cartera de productos multicategoría, control de calidad de extremo a extremo."
+      }
+    ],
+    "certs": [
+      {
+        "title": "ISO 9001:2015",
+        "desc": "Sistema de Gestión de Calidad"
+      },
+      {
+        "title": "ISO 14001:2015",
+        "desc": "Gestión Ambiental"
+      },
+      {
+        "title": "Laboratorio Acreditado CNAS",
+        "desc": "Acreditación Nacional de China"
+      },
+      {
+        "title": "Marcado CE",
+        "desc": "Certificado de Conformidad Europea"
+      }
+    ],
+    "tagline": "Eliminamos el margen del intermediario, pero mantenemos los servicios de intermediario que realmente necesita.",
+    "team": {
+      "title": "Conozca a Nuestro Equipo",
+      "designer": "Diseñador de Interiores",
+      "designerDesc": "Crea planos de diseño 2D/3D adaptados a la estética y presupuesto de su mercado local.",
+      "qc": "Ingeniero de Control de Calidad",
+      "qcDesc": "Monitoreo de calidad de cadena completa desde la materia prima hasta el producto terminado. Informes de inspección en tiempo real.",
+      "supply": "Especialista en Cadena de Suministro",
+      "supplyDesc": "Integra más de 100 fábricas de origen. Un solo contacto, todas las categorías cubiertas.",
+      "promo": "Líder de Promoción Global",
+      "promoDesc": "Proporciona materiales de marketing gratuitos, contenido para redes sociales y estrategia de promoción para su mercado."
+    },
+    "process": {
+      "title": "Proceso 100% Transparente",
+      "desc": "Recorridos de fábrica por video remoto, participación en inspección en tiempo real y acceso completo a su panel de pedidos — usted ve todo lo que nosotros vemos."
+    }
+  },
+  "contact": {
+    "label": "Contacto",
+    "title": "Póngase en Contacto",
+    "desc": "Nos encantaría saber de usted — ya sea que tenga una pregunta sobre productos o una consulta de asociación.",
+    "call": "WhatsApp",
+    "email": "Envíenos un Correo",
+    "visit": "Visítenos",
+    "hours": "Horario Comercial",
+    "respond": "Respondemos dentro de las 24 horas",
+    "appointment": "Visitas con cita previa",
+    "connectLabel": "Conéctese Con Nosotros",
+    "connectTitle": "Siga Nuestro Trayecto",
+    "connectDesc": "Manténgase actualizado con nuestros últimos lanzamientos de productos, conocimientos de la industria y noticias de la empresa en redes sociales.",
+    "formTitle": "Envíenos un Mensaje"
+  },
+  "form": {
+    "name": "Su Nombre",
+    "phone": "Número de Teléfono",
+    "email": "Dirección de Correo",
+    "message": "Cuéntenos sobre sus requisitos...",
+    "submit": "Enviar Consulta",
+    "sending": "Enviando...",
+    "thanks": "Gracias por Su Consulta",
+    "reply": "Nos pondremos en contacto con usted dentro de las 24 horas.",
+    "again": "Enviar otro mensaje"
+  },
+  "footer": {
+    "products": "Productos",
+    "company": "Empresa",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "rights": "Todos los derechos reservados.",
+    "needHelp": "¿Necesita ayuda?",
+    "helpHours": "Soporte Multilingüe 24/7",
+    "productsList": {
+      "furniture": "Muebles",
+      "buildingMaterials": "Materiales de Construcción",
+      "hardware": "Ferretería",
+      "appliances": "Electrodomésticos",
+      "lighting": "Iluminación",
+      "others": "Otros"
+    },
+    "companyList": {
+      "about": "Sobre Nosotros",
+      "certs": "Certificaciones",
+      "contact": "Contacto"
+    }
+  },
+  "detail": {
+    "backToProducts": "Volver a Productos",
+    "manufacturer": "Fabricante",
+    "keySpecs": "Especificaciones Clave",
+    "addToCart": "Añadir a Lista de Consulta",
+    "added": "¡Añadido!",
+    "relatedLabel": "Relacionado",
+    "relatedTitle": "Productos Relacionados",
+    "inquiryNote": "Consulta al por Mayor",
+    "inquiryDesc": "Añada productos a su lista de consulta, luego contáctenos para obtener el mejor precio directo de fábrica.",
+    "factoryInfo": "Sobre el Fabricante",
+    "factoryInfoDesc": "Cada producto proviene de un socio fabricante confiable y verificado.",
+    "inquireNow": "Consultar Ahora",
+    "productDesc": "Descripción del Producto"
+  },
+  "cart": {
+    "title": "Lista de Consulta",
+    "empty": "Su lista de consulta está vacía. Explore productos y añada los artículos que le interesen.",
+    "quantity": "Cantidad",
+    "category": "Categoría",
+    "inquiryList": "LISTA DE CONSULTA",
+    "total": "Total",
+    "items": "artículos",
+    "website": "Sitio Web",
+    "copy": "Copiar Texto",
+    "copied": "Copiado",
+    "download": "Descargar",
+    "contactChat": "Contáctenos para Cotización",
+    "clearAll": "Limpiar Todos los Artículos"
+  },
+  "cookie": {
+    "title": "Aviso de Cookies",
+    "desc": "Utilizamos cookies esenciales para garantizar el funcionamiento adecuado del sitio web. No se utilizan cookies de seguimiento o publicidad sin su consentimiento.",
+    "learn": "Más información",
+    "accept": "Aceptar y Continuar"
+  },
+  "modal": {
+    "features": "Características",
+    "specs": "Especificaciones"
+  },
+  "promo": {
+    "title": "Venta Flash Mensual",
+    "subtitle": "Cantidades limitadas — hasta agotar existencias",
+    "viewAll": "Ver Todas las Ofertas",
+    "limited": "Limitado",
+    "daysLeft": "Solo quedan {n} días"
+  },
+  "bestseller": {
+    "title": "Más Vendidos del Mes",
+    "subtitle": "Los más populares entre compradores globales",
+    "label": "Selecciones Principales"
+  },
+  "home": {
+    "featured": "Destacados",
+    "newThisMonth": "Nuevo Este Mes",
+    "topPicks": "Selecciones Principales",
+    "bestSellers": "Más Vendidos del Mes",
+    "rankedBy7Days": "Clasificado por volumen de ventas de 7 días - Actualizado diariamente",
+    "hotRanking": "Más Vendidos",
+    "viewAll": "Ver Todo",
+    "backToHome": "Volver al Inicio",
+    "selectCategory": "Seleccione una categoría de la barra lateral",
+    "noProducts": "No hay productos disponibles",
+    "moreProducts": "Más Productos",
+    "noProductsInCategory": "Aún no hay productos en esta categoría",
+    "allProducts": "Todos los Productos",
+    "search": "Buscar productos... Presione Enter",
+    "searchPlaceholder": "Buscar productos... Presione Enter",
+    "loadMore": "Cargar Más",
+    "items": "artículos",
+    "all": "Todo",
+    "customerReviews": "Lo Que Dicen Nuestros Clientes",
+    "verifiedBuyer": "Comprador Verificado",
+    "reviewRated": "calificado",
+    "reviewStars": "estrellas",
+    "valueCards": {
+      "design": {
+        "title": "Diseño + Selección",
+        "desc": "Consulta gratuita de diseño de interiores y selección de productos para su mercado"
+      },
+      "quality": {
+        "title": "Control de Calidad",
+        "desc": "Inspección de fábrica de cadena completa y pruebas de terceros para cada lote"
+      },
+      "delivery": {
+        "title": "Entrega Integral",
+        "desc": "Consolidación de múltiples categorías, logística puerta a puerta en todo el mundo"
+      }
+    },
+    "trust": {
+      "countries": "30+ Países Atendidos",
+      "containers": "1,200+ Contenedores Enviados",
+      "rating": "Google 4.8★ Calificación",
+      "clients": "3,200+ Clientes en Todo el Mundo"
+    }
+  },
+  "rankings": {
+    "title": "Ranking de Más Vendidos",
+    "allCategories": "Todas las Categorías",
+    "hotSales": "Más Vendidos",
+    "wishlist": "Lista de Deseos",
+    "wishlistSoon": "Ranking de lista de deseos próximamente",
+    "backToHome": "Volver al Inicio",
+    "suffix": " Top"
+  },
+  "promotions": {
+    "title": "Venta Flash Mensual",
+    "backToHome": "Volver al Inicio",
+    "noPromos": "No hay promociones disponibles",
+    "limited": "Limitado",
+    "daysLeft": "Solo quedan {n} días — hasta agotar existencias"
+  },
+  "common": {
+    "brand": "Shenghan Industrial",
+    "slogan": "Fabricante Global de Materiales | Socio Integral de Cadena de Suministro",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar productos...",
+    "backToHome": "Volver al Inicio",
+    "noProducts": "No hay productos disponibles",
+    "noProductsInCategory": "Aún no hay productos en esta categoría",
+    "selectCategory": "Seleccione una categoría de la barra lateral",
+    "viewAll": "Ver Todo",
+    "comingSoon": "Próximamente",
+    "subline": "Directo de Fábrica · Precio Competitivo · Logística Global · Soporte Postventa"
+  },
+  "search": {
+    "placeholder": "Buscar productos... Presione Enter",
+    "inlinePlaceholder": "Buscar...",
+    "button": "Buscar",
+    "categoryTag": "Categoría",
+    "productTag": "Producto"
+  },
+  "flashDeals": {
+    "title": "Venta Flash Diaria",
+    "subtitle": "Abre en horarios aleatorios, hasta agotar existencias",
+    "tag": "Flash"
+  },
+  "newArrivals": {
+    "title": "Novedades 2026",
+    "subtitle": "Descubra nuestros últimos productos este año"
+  },
+  "weeklySold": "Vendidos 7d: ",
+  "weeklySoldSuffix": ""
+}

@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://shenghanindustrial.com";
 
-  const pages = ["/", "/products", "/about", "/contact", "/privacy", "/terms"];
+  const pages = ["/", "/about", "/contact", "/privacy", "/terms"];
 
   return pages.map((path) => ({
     url: `${baseUrl}${path}`,

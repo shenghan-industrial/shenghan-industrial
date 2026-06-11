@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { IconWhatsApp, IconMail, IconMapPin } from "@/components/icons";
 import { SocialIcons } from "./SocialIcons";
 import { useT } from "@/lib/LanguageContext";
 import { siteConfig } from "@/data/site-config";
 
 export function Footer() {
-  const { t } = useT();
+  const { t, locale } = useT();
   const { brand, contact } = siteConfig;
 
   const productLinks = [
@@ -35,10 +35,10 @@ export function Footer() {
       <div className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E\")" }}
       />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-accent/60" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="py-20 md:py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] gap-10 lg:gap-14">
+        <div className="py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] gap-10 lg:gap-14">
           <div>
             <Link href="/" className="flex items-center gap-2.5 mb-5">
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-primary-900 font-bold text-xs">{brand.logo.text}</div>
@@ -70,19 +70,37 @@ export function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/25 mb-6">{t("footer.contact")}</h4>
             <ul className="space-y-5">
               <li className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><Phone className="w-3.5 h-3.5 text-accent/70" /></div>
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><IconWhatsApp /></div>
                 <div><p className="text-white/55 text-sm">{contact.phone.display}</p><p className="text-white/25 text-xs mt-0.5">{contact.hours.weekday}</p></div>
               </li>
               <li className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><Mail className="w-3.5 h-3.5 text-accent/70" /></div>
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><IconMail /></div>
                 <p className="text-white/55 text-sm pt-1">{contact.email}</p>
               </li>
               <li className="flex items-start gap-3 group">
-                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><MapPin className="w-3.5 h-3.5 text-accent/70" /></div>
-                <div className="pt-1"><p className="text-white/55 text-sm">{contact.address.line1}</p><p className="text-white/25 text-xs mt-0.5">{contact.address.line2}</p></div>
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><IconMapPin /></div>
+                <div className="pt-1"><p className="text-white/55 text-sm">{contact.address.line1}</p><p className="text-white/25 text-xs mt-0.5">{contact.address.line2}</p><p className="text-white/20 text-[10px] mt-0.5">{contact.address.line3}</p></div>
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Help row (IKEA-style) */}
+        <div className="border-t border-white/5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+              <span className="text-accent"><IconWhatsApp /></span>
+            </div>
+            <div>
+              <p className="text-white/50 text-xs uppercase tracking-wider">
+                {t("footer.needHelp")}
+              </p>
+              <p className="text-white font-semibold text-sm">{contact.phone.display}</p>
+            </div>
+          </div>
+          <p className="text-white/25 text-xs">
+            {contact.hours.weekday}
+          </p>
         </div>
 
         <div className="border-t border-white/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">

@@ -15,9 +15,9 @@ export const siteConfig = {
   brand: {
     name: "Shenghan Industrial",
     shortName: "Shenghan",
-    slogan: "Furniture, Building Materials & Hardware | Direct Factory Manufacturer",
+    slogan: "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
     description:
-      "Shenghan Industrial is a direct factory manufacturer specializing in furniture, building materials, hardware, lighting, and industrial cleaning products — delivering quality solutions for global buyers.",
+      "Shenghan Industrial is a global manufacturer and one-stop supply chain partner. Factory direct pricing, reliable logistics, full compliance, and global after-sales — serving importers, contractors, and B2B buyers worldwide.",
     logo: {
       text: "S", // fallback letter if no image logo
       /** Set to a path like "/images/logo.svg" to use an image logo */
@@ -41,16 +41,17 @@ export const siteConfig = {
 
   // --- Contact ---
   contact: {
-    phone: { display: "13800138000", href: "tel:13800138000" },
-    email: "info@shenghanindustrial.com",
+    phone: { display: "+86 138 0013 8000", href: "https://wa.me/8613800138000" },
+    email: "shenghanind@163.com",
     address: {
-      line1: "山东省临沂市河东区",
-      line2: "Shandong, China",
+      line1: "Linyi, Shandong, China",
+      line2: "Global Warehouses: Europe · SE Asia · CIS",
+      line3: "山东省临沂市 · 全球仓储：欧洲·东南亚·独联体",
     },
     hours: {
-      weekday: "Mon – Fri: 9:00 AM – 6:00 PM",
-      saturday: "Sat: 9:00 AM – 12:00 PM",
-      note: "Closed Sundays & public holidays",
+      weekday: "24/7 Multilingual Support",
+      saturday: "7 Languages · No Time Zone Gaps",
+      note: "Global After-Sales Service",
     },
   },
 
@@ -92,7 +93,7 @@ export const siteConfig = {
   // --- Footer ---
   footer: {
     tagline:
-      "Furniture, building materials, hardware, lighting & industrial cleaning — direct from our factory to your market.",
+      "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner — factory direct pricing, reliable logistics, and full after-sales support for B2B buyers worldwide.",
     column1Title: "Products",
     column1Links: [
       { label: "Furniture", href: "/products" },

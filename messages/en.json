@@ -4,7 +4,7 @@
     "products": "Products",
     "about": "About",
     "contact": "Contact",
-    "call": "Call"
+    "call": "WhatsApp"
   },
   "hero": {
     "slide1": {
@@ -37,6 +37,12 @@
       "cert": "Certifications",
       "projects": "Projects Completed",
       "capacity": "Annual Capacity"
+    },
+    "overlay": {
+      "title": "From Factory to Your Project",
+      "sub": "Factory Direct · Competitive Price · Reliable Logistics · Global After-sales Support",
+      "explore": "Explore Solutions",
+      "consult": "Free Consultation"
     }
   },
   "media": {
@@ -107,7 +113,12 @@
     "title": "Inside Our Factory",
     "desc": "Take a look at our state-of-the-art production facilities and quality control processes.",
     "all": "All",
-    "categories": ["All", "Factory", "Products", "Quality"],
+    "categories": [
+      "All",
+      "Factory",
+      "Products",
+      "Quality"
+    ],
     "view": "View"
   },
   "stats": {
@@ -121,11 +132,22 @@
     "unit4": " years"
   },
   "partners": {
-    "label": "Partners",
-    "title": "Trusted by Industry Leaders",
-    "desc": "Long-term partnerships with top-tier construction enterprises — a testament to our uncompromising quality.",
-    "prev": "Previous partners",
-    "next": "Next partners"
+    "label": "Our Network",
+    "title": "Our Manufacturing Partners",
+    "desc": "We work with specialized factories across China to bring you the best products in every category. Each partner is carefully vetted for quality, reliability, and certifications.",
+    "certifications": "Certifications",
+    "products": "products",
+    "productsFrom": "Products from",
+    "moreProducts": "more products",
+    "watchVideo": "Watch Factory Video",
+    "hideVideo": "Hide Video",
+    "established": "Est.",
+    "aboutFactory": "About This Factory",
+    "specialties": "Specialties",
+    "quickFacts": "Quick Facts",
+    "location": "Location",
+    "inquireNow": "Inquire About This Factory",
+    "productsLabel": "Products"
   },
   "cta": {
     "label": "Contact",
@@ -146,33 +168,97 @@
     "journeyTitle": "Our Journey",
     "journeyDesc": "Over two decades of relentless progress — every step has been purposeful and resolute.",
     "timeline": [
-      { "year": "2002", "title": "Company Founded", "desc": "Shenghan Industrial was established in Guangzhou, starting as a building materials trading business." },
-      { "year": "2008", "title": "Production Launch", "desc": "Commissioned our first manufacturing line, transitioning from trading to production." },
-      { "year": "2013", "title": "Product Diversification", "desc": "Expanded beyond building materials into furniture and hardware — laying the foundation for a multi-category portfolio." },
-      { "year": "2018", "title": "National Expansion", "desc": "Built a nationwide sales network serving over 300 enterprise clients across China." },
-      { "year": "2022", "title": "New Product Lines", "desc": "Launched LED lighting and industrial cleaning product lines, completing our five-category offering." },
-      { "year": "2025", "title": "Going Global", "desc": "Expanded exports to Southeast Asia, the Middle East, and Africa — beginning our global journey." }
+      {
+        "year": "2002",
+        "title": "Company Founded",
+        "desc": "Shenghan Industrial was established in Guangzhou, starting as a building materials trading business."
+      },
+      {
+        "year": "2008",
+        "title": "Production Launch",
+        "desc": "Commissioned our first manufacturing line, transitioning from trading to production."
+      },
+      {
+        "year": "2013",
+        "title": "Product Diversification",
+        "desc": "Expanded beyond building materials into furniture and hardware — laying the foundation for a multi-category portfolio."
+      },
+      {
+        "year": "2018",
+        "title": "National Expansion",
+        "desc": "Built a nationwide sales network serving over 300 enterprise clients across China."
+      },
+      {
+        "year": "2022",
+        "title": "New Product Lines",
+        "desc": "Launched LED lighting and industrial cleaning product lines, completing our five-category offering."
+      },
+      {
+        "year": "2025",
+        "title": "Going Global",
+        "desc": "Expanded exports to Southeast Asia, the Middle East, and Africa — beginning our global journey."
+      }
     ],
     "valuesLabel": "Core Values",
     "certsLabel": "Certifications",
     "values": [
-      { "title": "Mission", "desc": "To empower global buyers with factory-direct quality products at competitive prices." },
-      { "title": "Vision", "desc": "To become a world-class multi-category manufacturer and trusted export partner." },
-      { "title": "Core Values", "desc": "Integrity first, quality foremost, innovation-driven, win-win collaboration." },
-      { "title": "Core Competency", "desc": "25 years of manufacturing expertise, multi-category product portfolio, end-to-end quality control." }
+      {
+        "title": "Mission",
+        "desc": "To empower global buyers with factory-direct quality products at competitive prices."
+      },
+      {
+        "title": "Vision",
+        "desc": "To become a world-class multi-category manufacturer and trusted export partner."
+      },
+      {
+        "title": "Core Values",
+        "desc": "Integrity first, quality foremost, innovation-driven, win-win collaboration."
+      },
+      {
+        "title": "Core Competency",
+        "desc": "25 years of manufacturing expertise, multi-category product portfolio, end-to-end quality control."
+      }
     ],
     "certs": [
-      { "title": "ISO 9001:2015", "desc": "Quality Management System" },
-      { "title": "ISO 14001:2015", "desc": "Environmental Management" },
-      { "title": "CNAS Accredited Lab", "desc": "China National Accreditation" },
-      { "title": "CE Marking", "desc": "European Conformity Certified" }
-    ]
+      {
+        "title": "ISO 9001:2015",
+        "desc": "Quality Management System"
+      },
+      {
+        "title": "ISO 14001:2015",
+        "desc": "Environmental Management"
+      },
+      {
+        "title": "CNAS Accredited Lab",
+        "desc": "China National Accreditation"
+      },
+      {
+        "title": "CE Marking",
+        "desc": "European Conformity Certified"
+      }
+    ],
+    "tagline": "We eliminate the middleman markup, but keep the middleman services you actually need.",
+    "team": {
+      "title": "Meet Our Team",
+      "designer": "Interior Designer",
+      "designerDesc": "Creates 2D/3D design plans tailored to your local market aesthetic and budget.",
+      "qc": "QC Engineer",
+      "qcDesc": "Full-chain quality monitoring from raw material to finished product. Real-time inspection reports.",
+      "supply": "Supply Chain Specialist",
+      "supplyDesc": "Integrates 100+ source factories. One contact, all categories covered.",
+      "promo": "Global Promotion Lead",
+      "promoDesc": "Provides free marketing materials, social media content, and promotion strategy for your market."
+    },
+    "process": {
+      "title": "100% Transparent Process",
+      "desc": "Remote video factory tours, real-time inspection participation, and full access to your order dashboard — you see everything we see."
+    }
   },
   "contact": {
     "label": "Contact",
     "title": "Get in Touch",
     "desc": "We would love to hear from you — whether you have a product question or a partnership inquiry.",
-    "call": "Call Us",
+    "call": "WhatsApp",
     "email": "Email Us",
     "visit": "Visit Us",
     "hours": "Business Hours",
@@ -201,6 +287,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "rights": "All rights reserved.",
+    "needHelp": "Need help?",
+    "helpHours": "24/7 Multilingual Global Support",
     "productsList": {
       "furniture": "Furniture",
       "buildingMaterials": "Building Materials",
@@ -215,6 +303,36 @@
       "contact": "Contact"
     }
   },
+  "detail": {
+    "backToProducts": "Back to Products",
+    "manufacturer": "Manufacturer",
+    "keySpecs": "Key Specifications",
+    "addToCart": "Add to Inquiry List",
+    "added": "Added!",
+    "relatedLabel": "Related",
+    "relatedTitle": "Related Products",
+    "inquiryNote": "Wholesale Inquiry",
+    "inquiryDesc": "Add products to your inquiry list, then contact us for the best factory-direct pricing.",
+    "factoryInfo": "About the Manufacturer",
+    "factoryInfoDesc": "Every product comes from a trusted, vetted manufacturing partner.",
+    "inquireNow": "Inquire Now",
+    "productDesc": "Product Description"
+  },
+  "cart": {
+    "title": "Inquiry List",
+    "empty": "Your inquiry list is empty. Browse products and add items you're interested in.",
+    "quantity": "Qty",
+    "category": "Category",
+    "inquiryList": "INQUIRY LIST",
+    "total": "Total",
+    "items": "items",
+    "website": "Website",
+    "copy": "Copy Text",
+    "copied": "Copied",
+    "download": "Download",
+    "contactChat": "Contact Us for Quotation",
+    "clearAll": "Clear All Items"
+  },
   "cookie": {
     "title": "Cookie Notice",
     "desc": "We use essential cookies to ensure the website functions properly. No tracking or advertising cookies are used without your consent.",
@@ -224,5 +342,106 @@
   "modal": {
     "features": "Features",
     "specs": "Specifications"
-  }
+  },
+  "promo": {
+    "title": "Monthly Flash Sale",
+    "subtitle": "Limited quantities — while stocks last",
+    "viewAll": "View All Deals",
+    "limited": "Limited",
+    "daysLeft": "Only {n} days left"
+  },
+  "bestseller": {
+    "title": "Monthly Best Sellers",
+    "subtitle": "Most popular with global buyers",
+    "label": "Top Picks"
+  },
+  "home": {
+    "featured": "Featured",
+    "newThisMonth": "New This Month",
+    "topPicks": "Top Picks",
+    "bestSellers": "Monthly Best Sellers",
+    "rankedBy7Days": "Ranked by 7-day sales volume - Updated daily",
+    "hotRanking": "Best Sellers",
+    "viewAll": "View All",
+    "backToHome": "Back to Home",
+    "selectCategory": "Select a category from the sidebar",
+    "noProducts": "No products available",
+    "moreProducts": "More Products",
+    "noProductsInCategory": "No products in this category yet",
+    "allProducts": "All Products",
+    "search": "Search products... Press Enter",
+    "searchPlaceholder": "Search products... Press Enter",
+    "loadMore": "Load More",
+    "items": "items",
+    "all": "All",
+    "customerReviews": "What Our Customers Say",
+    "verifiedBuyer": "Verified Buyer",
+    "reviewRated": "rated",
+    "reviewStars": "stars",
+    "valueCards": {
+      "design": {
+        "title": "Design + Selection",
+        "desc": "Free interior design consultation and product matching for your market"
+      },
+      "quality": {
+        "title": "Quality Control",
+        "desc": "Full-chain factory inspection and third-party testing for every batch"
+      },
+      "delivery": {
+        "title": "One-Stop Delivery",
+        "desc": "Multi-category consolidation, door-to-door logistics worldwide"
+      }
+    },
+    "trust": {
+      "countries": "30+ Countries Served",
+      "containers": "1,200+ Containers Shipped",
+      "rating": "Google 4.8★ Rated",
+      "clients": "3,200+ Clients Worldwide"
+    }
+  },
+  "rankings": {
+    "title": "Best Seller Rankings",
+    "allCategories": "All Categories",
+    "hotSales": "Hot Sales",
+    "wishlist": "Wishlist",
+    "wishlistSoon": "Wishlist rankings coming soon",
+    "backToHome": "Back to Home"
+  },
+  "promotions": {
+    "title": "Monthly Flash Sale",
+    "backToHome": "Back to Home",
+    "noPromos": "No promotions available",
+    "limited": "Limited"
+  },
+  "common": {
+    "brand": "Shenghan Industrial",
+    "slogan": "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
+    "search": "Search",
+    "searchPlaceholder": "Search products...",
+    "backToHome": "Back to Home",
+    "noProducts": "No products available",
+    "noProductsInCategory": "No products in this category yet",
+    "selectCategory": "Select a category from the sidebar",
+    "viewAll": "View all",
+    "comingSoon": "Coming soon",
+    "subline": "Factory Direct · Competitive Price · Reliable Logistics · Global After-sales Support"
+  },
+  "search": {
+    "placeholder": "Search products... Press Enter",
+    "inlinePlaceholder": "Search...",
+    "button": "Search",
+    "categoryTag": "Category",
+    "productTag": "Product"
+  },
+  "flashDeals": {
+    "title": "Daily Flash Sale",
+    "subtitle": "Opens at random times, while stocks last",
+    "tag": "Flash"
+  },
+  "newArrivals": {
+    "title": "2026 New Arrivals",
+    "subtitle": "Discover our latest products this year"
+  },
+  "weeklySold": "7d sold: ",
+  "weeklySoldSuffix": ""
 }

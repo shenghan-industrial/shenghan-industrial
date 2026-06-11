@@ -5,7 +5,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { InquiryCart } from "@/components/InquiryCart";
 import { ClientWrapper } from "@/components/ClientWrapper";
+import { GlobalInfoBar } from "@/components/GlobalInfoBar";
 import Script from "next/script";
 
 const inter = Inter({
@@ -15,22 +17,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Shenghan Industrial | Furniture, Building Materials & Hardware | Direct Factory Manufacturer",
+  title: "Shenghan Industrial | Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
   description:
-    "Shenghan Industrial is a direct factory manufacturer specializing in furniture, building materials, hardware, lighting, home appliances, and industrial products — delivering quality solutions for global buyers.",
+    "Shenghan Industrial is a global B2B manufacturer. Factory direct pricing, reliable multi-channel logistics, full global compliance, and 24/7 after-sales support — serving importers, contractors, and wholesalers worldwide.",
   keywords: [
-    "furniture manufacturer",
-    "building materials",
+    "building materials manufacturer",
+    "home furniture factory",
     "hardware supplier",
     "LED lighting factory",
-    "home appliances",
-    "industrial products",
+    "global B2B manufacturer",
     "Shenghan Industrial",
-    "factory direct",
-    "China manufacturer",
-    "sofa factory",
-    "adhesives",
-    "furniture hardware",
+    "factory direct supply",
+    "one-stop supply chain",
+    "OEM ODM manufacturer",
+    "global logistics",
+    "wholesale building materials",
   ],
 };
 
@@ -48,13 +49,15 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-white dark:bg-[#0A0D12] text-text-primary dark:text-[#E4E5E9]`}>
+      <body className={`${inter.variable} font-sans antialiased bg-white dark:bg-[#12100E] text-text-primary dark:text-[#E4E5E9]`}>
         <ClientWrapper>
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <ScrollToTop />
           <CookieConsent />
+          <GlobalInfoBar />
           <Footer />
+          <InquiryCart />
           <Script
             id="tawk-to"
             strategy="afterInteractive"
