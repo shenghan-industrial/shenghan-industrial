@@ -259,9 +259,18 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
         </div>
       </section>
 
-      {/* Factory info section */}
-      {false && (
-        <section id="factory" className="bg-white dark:bg-brand-900 border-t border-gray-100 dark:border-white/5">
+      {/* Factory info — all products are Shenghan own production */}
+      <section className="bg-white dark:bg-brand-900 border-t border-gray-100 dark:border-white/5 py-8">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+          <p className="text-sm text-text-muted dark:text-white/40">
+            {locale === "zh" ? "所有产品均来自盛瀚自有生产体系，严格品控，工厂直供。" : locale === "es" ? "Todos los productos provienen del sistema de producción propio de Shenghan, con estricto control de calidad." : "All products are manufactured in Shenghan's own production facilities with strict quality control and factory-direct supply."}
+          </p>
+        </div>
+      </section>
+
+      {/* (hidden) */}
+      {false && (<section></section>
+        <section>
           <div className="max-w-7xl mx-auto px-4 lg:px-8 py-10 md:py-14">
             <h2 className="text-xl md:text-2xl font-bold text-brand-800 dark:text-white text-center mb-2">
               {t("detail.factoryInfo")}
