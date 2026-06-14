@@ -6,11 +6,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const product = products.find((p) => p.id === id);
 
   if (!product) {
-    return { title: "Product Not Found | Shenghan Industrial" };
+    return { title: "Product Not Found | Shengyu Industrial" };
   }
 
   return {
-    title: `${product.name} | Shenghan Industrial`,
+    title: `${product.name} | Shengyu Industrial`,
     description: product.description,
     keywords: [product.name, product.category, product.subCategory || "", "factory direct", "China manufacturer", "wholesale", "B2B"],
   };

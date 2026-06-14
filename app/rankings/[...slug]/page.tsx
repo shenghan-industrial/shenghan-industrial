@@ -190,7 +190,7 @@ export default function RankingsPage({ params }: { params: Promise<{ slug: strin
                         <img
                           src={product.image}
                           alt={localizeProduct(product, locale).name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-500"
                         />
                         {/* Rank badge for #1 */}
                         {i === 0 && (

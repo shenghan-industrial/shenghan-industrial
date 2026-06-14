@@ -46,7 +46,7 @@ async function sendViaResend(data: ContactBody): Promise<{ success: boolean; err
       from: `Shenghan Website <noreply@shenghanindustrial.com>`,
       to: notifyEmail,
       replyTo: data.email,
-      subject: `New inquiry from ${data.name} — Shenghan Website`,
+      subject: `New inquiry from ${data.name} — Shengyu Website`,
       html: `
         <h2>New Contact Form Inquiry</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif">

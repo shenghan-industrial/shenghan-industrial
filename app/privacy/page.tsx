@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Shenghan Industrial",
+  title: "Privacy Policy | Shengyu Industrial",
 };
 
 export default function PrivacyPage() {

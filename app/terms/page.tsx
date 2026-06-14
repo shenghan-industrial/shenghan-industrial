@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Shenghan Industrial",
+  title: "Terms of Service | Shengyu Industrial",
 };
 
 export default function TermsPage() {
@@ -48,7 +48,7 @@ export default function TermsPage() {
               3. Intellectual Property
             </h2>
             <p>
-              All content on this website, including text, graphics, logos, images, product descriptions, and technical specifications, is the intellectual property of Shenghan Industrial or its licensors and is protected by applicable copyright and trademark laws. The Shenghan Industrial name and logo are trademarks of our company.
+              All content on this website, including text, graphics, logos, images, product descriptions, and technical specifications, is the intellectual property of Shengyu Industrial or its licensors and is protected by applicable copyright and trademark laws. The Shengyu Industrial name and logo are trademarks of our company.
             </p>
           </section>
 
@@ -66,7 +66,7 @@ export default function TermsPage() {
               5. Limitation of Liability
             </h2>
             <p>
-              Shenghan Industrial shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of, or inability to use, this website or its content. We make no warranties or representations about the accuracy or completeness of the website content.
+              Shengyu Industrial shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of, or inability to use, this website or its content. We make no warranties or representations about the accuracy or completeness of the website content.
             </p>
           </section>
 

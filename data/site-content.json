@@ -1,0 +1,170 @@
+{
+  "hero": {
+    "slides": [
+      {
+        "image": "/images/products/1781404318883-ChatGPT_Image_2026_6_14__10_12_46.webp",
+        "imageZh": "",
+        "imageEn": "/images/products/1781417371714-ChatGPT_Image_2026_6_14__14_02_37.webp",
+        "imageEs": "/images/products/1781418169516-ChatGPT_Image_2026_6_14__14_18_46.webp"
+      },
+      {
+        "image": "/images/products/1781404390717-40e28c649764c6a99647fe1e440e472a.webp",
+        "imageZh": "",
+        "imageEn": "/images/products/1781417375173-ChatGPT_Image_2026_6_14__14_05_41.webp",
+        "imageEs": "/images/products/1781418242223-ChatGPT_Image_2026_6_14__14_23_25.webp"
+      },
+      {
+        "image": "/images/products/1781404393930-5803acd09c35bbe9df2037c9c0900eaa.webp",
+        "imageZh": "",
+        "imageEn": "/images/products/1781417378086-ChatGPT_Image_2026_6_14__14_08_03.webp",
+        "imageEs": "/images/products/1781418246691-ChatGPT_Image_2026_6_14__14_23_37.webp"
+      },
+      {
+        "image": "/images/products/1781404396155-ed52e443c89dd96a8fea7bac150d7ca1.webp",
+        "imageZh": "",
+        "imageEn": "/images/products/1781417393505-ChatGPT_Image_2026_6_14__14_09_41.webp",
+        "imageEs": "/images/products/1781418250533-ChatGPT_Image_2026_6_14__14_23_47.webp"
+      }
+    ],
+    "title": "Global Home & Building Materials Manufacturer",
+    "titleZh": "全球化家居建材源头制造品牌",
+    "titleEs": "Fabricante Global de Materiales",
+    "subtitle": "Factory direct pricing, reliable logistics, full compliance — one-stop supply chain partner for B2B buyers worldwide.",
+    "subtitleZh": "工厂直供价格 · 可靠物流 · 全域合规 — 全球B端一站式供应链合作伙伴",
+    "subtitleEs": "Precios directos de fábrica, logística confiable, cumplimiento global — socio integral para compradores B2B.",
+    "tagline": "One-Stop Global Supply Chain",
+    "taglineZh": "一站式全球供应链",
+    "taglineEs": "Cadena de Suministro Global",
+    "stats": [
+      {
+        "value": 25,
+        "suffix": "+",
+        "label": "Certifications",
+        "labelZh": "国际认证",
+        "labelEs": "Certificaciones"
+      },
+      {
+        "value": 3200,
+        "suffix": "+",
+        "label": "Projects Completed",
+        "labelZh": "项目交付",
+        "labelEs": "Proyectos"
+      },
+      {
+        "value": 50000,
+        "suffix": " tons",
+        "label": "Annual Capacity",
+        "labelZh": "年产能",
+        "labelEs": "Capacidad Anual"
+      }
+    ]
+  },
+  "trustBar": {
+    "items": [
+      {
+        "value": "30+",
+        "label": "Countries Served",
+        "labelZh": "服务国家",
+        "labelEs": "Países"
+      },
+      {
+        "value": "1,200+",
+        "label": "Containers Shipped",
+        "labelZh": "累计发货柜量",
+        "labelEs": "Contenedores"
+      },
+      {
+        "value": "4.8",
+        "label": "Client Rating",
+        "labelZh": "客户评分",
+        "labelEs": "Calificación"
+      },
+      {
+        "value": "3,200+",
+        "label": "Projects Completed",
+        "labelZh": "项目交付",
+        "labelEs": "Proyectos"
+      }
+    ]
+  },
+  "featureCards": {
+    "sectionTitle": "Why Choose Us",
+    "sectionTitleZh": "为什么选择我们",
+    "sectionTitleEs": "Por Qué Elegirnos",
+    "cards": [
+      {
+        "href": "/services",
+        "title": "Our Services",
+        "titleZh": "我们的服务",
+        "titleEs": "Nuestros Servicios",
+        "desc": "Design · Quality Control · Delivery",
+        "descZh": "设计选品 · 品质护航 · 一站式交付",
+        "descEs": "Diseño · Calidad · Entrega",
+        "linkText": "Learn more",
+        "linkTextZh": "了解更多",
+        "linkTextEs": "Más información"
+      },
+      {
+        "href": "/new-arrivals",
+        "title": "2026 New Arrivals",
+        "titleZh": "2026 新品上市",
+        "titleEs": "Novedades 2026",
+        "desc": "Discover our latest collection",
+        "descZh": "探索最新上市产品系列",
+        "descEs": "Descubra nuestra última colección",
+        "linkText": "Explore now",
+        "linkTextZh": "立即探索",
+        "linkTextEs": "Explorar ahora"
+      },
+      {
+        "href": "/promotions",
+        "title": "Monthly Flash Sale",
+        "titleZh": "本月限时促销",
+        "titleEs": "Venta Flash Mensual",
+        "desc": "Limited quantities — while stocks last",
+        "descZh": "数量有限，售完为止",
+        "descEs": "Cantidades limitadas",
+        "linkText": "Shop now",
+        "linkTextZh": "立即抢购",
+        "linkTextEs": "Comprar ahora"
+      }
+    ]
+  },
+  "bestsellers": {
+    "topPicksLabel": "Top Picks",
+    "topPicksLabelZh": "精选推荐",
+    "topPicksLabelEs": "Selección",
+    "title": "Best Sellers This Month",
+    "titleZh": "本月热销排行",
+    "titleEs": "Más Vendidos del Mes",
+    "subtitle": "Ranked by 7-day sales data",
+    "subtitleZh": "基于7天销售数据排名",
+    "subtitleEs": "Clasificado por ventas de 7 días"
+  },
+  "reviews": {
+    "label": "Real Feedback",
+    "labelZh": "真实反馈",
+    "labelEs": "Opiniones Reales",
+    "title": "What Our Customers Say",
+    "titleZh": "客户真实评价",
+    "titleEs": "Lo Que Dicen Nuestros Clientes",
+    "subtitle": "Real experiences from our global customers",
+    "subtitleZh": "来自全球客户的真实使用体验",
+    "subtitleEs": "Experiencias reales de clientes globales"
+  },
+  "brand": {
+    "name": "Shengyu Industrial",
+    "phone": "+86 138 0013 8000",
+    "email": "shenghanind@163.com",
+    "addressEn": "Linyi, Shandong, China",
+    "addressZh": "山东省临沂市"
+  },
+  "about": {
+    "titleEn": "About Shengyu Industrial",
+    "titleZh": "关于盛煜实业",
+    "titleEs": "Sobre Shengyu Industrial",
+    "introEn": "Shengyu Industrial was founded in 2002 — a modern manufacturing brand integrating R&D, large-scale production, global sales and supply chain services.",
+    "introZh": "盛煜实业创立于2002年，是一家集自主研发、规模化生产、全球销售、一站式供应链服务于一体的现代化家居建材制造品牌。",
+    "introEs": "Shengyu Industrial, fundada en 2002, es una marca moderna de fabricación que integra I+D, producción a gran escala, ventas globales y servicios de cadena de suministro."
+  }
+}

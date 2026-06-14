@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3D3730"/>
+      <stop offset="100%" stop-color="#1A1816"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C8A14C"/>
+      <stop offset="100%" stop-color="#DFC278"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C8A14C"/>
+      <stop offset="50%" stop-color="#C8A14C"/>
+      <stop offset="100%" stop-color="#C8A14C"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4A4238"/>
+      <stop offset="100%" stop-color="#3D3730"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cardShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGrad)"/>
+  <!-- Subtle texture dots -->
+  <g opacity="0.03">
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="white"/>
+    </pattern>
+    <rect width="1200" height="600" fill="url(#dots)"/>
+  </g>
+
+  <!-- Top decorative line -->
+  <line x1="60" y1="48" x2="1140" y2="48" stroke="#C8A14C" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Title -->
+  <text x="600" y="100" text-anchor="middle" fill="#DFC278" font-family="Inter, sans-serif" font-size="28" font-weight="700" letter-spacing="4">
+    专业外贸全流程
+  </text>
+  <text x="600" y="132" text-anchor="middle" fill="#9B8E7E" font-family="Inter, sans-serif" font-size="14" font-weight="400" letter-spacing="6">
+    END-TO-END INTERNATIONAL TRADE PROCESS
+  </text>
+
+  <!-- Decorative title line -->
+  <line x1="540" y1="148" x2="600" y2="148" stroke="#C8A14C" stroke-width="1.5" opacity="0.6"/>
+  <line x1="600" y1="148" x2="660" y2="148" stroke="#C8A14C" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- ====== STEP 1: 专业生产 ====== -->
+  <g transform="translate(60, 200)">
+    <!-- Card -->
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="none" stroke="#C8A14C" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Step number badge -->
+    <circle cx="95" cy="40" r="18" fill="#C8A14C" opacity="0.15"/>
+    <circle cx="95" cy="40" r="18" fill="none" stroke="#C8A14C" stroke-width="1.5"/>
+    <text x="95" y="45" text-anchor="middle" fill="#C8A14C" font-family="Inter, sans-serif" font-size="16" font-weight="700">1</text>
+
+    <!-- Icon: Factory/Production -->
+    <g transform="translate(65, 80)" fill="none" stroke="#C8A14C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Factory building -->
+      <rect x="5" y="18" width="50" height="32" rx="2"/>
+      <rect x="10" y="8" width="12" height="10" rx="1"/>
+      <rect x="25" y="2" width="12" height="16" rx="1"/>
+      <rect x="38" y="8" width="12" height="10" rx="1"/>
+      <!-- Windows -->
+      <rect x="10" y="28" width="5" height="5" rx="0.5" fill="#C8A14C" fill-opacity="0.4"/>
+      <rect x="20" y="28" width="5" height="5" rx="0.5" fill="#C8A14C" fill-opacity="0.4"/>
+      <rect x="30" y="28" width="5" height="5" rx="0.5" fill="#C8A14C" fill-opacity="0.4"/>
+      <rect x="40" y="28" width="5" height="5" rx="0.5" fill="#C8A14C" fill-opacity="0.4"/>
+      <!-- Gear -->
+      <circle cx="36" cy="12" r="3" fill="#C8A14C" fill-opacity="0.3"/>
+    </g>
+
+    <!-- Labels -->
+    <text x="95" y="155" text-anchor="middle" fill="#F5F2EF" font-family="Inter, Noto Sans SC, sans-serif" font-size="16" font-weight="600">专业生产</text>
+    <text x="95" y="175" text-anchor="middle" fill="#9B8E7E" font-family="Inter, sans-serif" font-size="10" letter-spacing="1">MANUFACTURING</text>
+    <line x1="65" y1="190" x2="125" y2="190" stroke="#C8A14C" stroke-width="0.5" opacity="0.3"/>
+    <text x="95" y="215" text-anchor="middle" fill="#7B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="11">
+      <tspan x="95" dy="0">现代化生产线</tspan>
+      <tspan x="95" dy="16">严格工艺标准</tspan>
+      <tspan x="95" dy="16">多道工序把关</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <g transform="translate(258, 340)" stroke="#C8A14C" stroke-width="1.5" fill="none">
+    <line x1="0" y1="0" x2="30" y2="0" opacity="0.4"/>
+    <polygon points="30,-5 42,0 30,5" stroke="none" fill="#C8A14C" opacity="0.6"/>
+  </g>
+
+  <!-- ====== STEP 2: 专业质检 ====== -->
+  <g transform="translate(300, 200)">
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="none" stroke="#C8A14C" stroke-width="0.5" opacity="0.2"/>
+
+    <circle cx="95" cy="40" r="18" fill="#C8A14C" opacity="0.15"/>
+    <circle cx="95" cy="40" r="18" fill="none" stroke="#C8A14C" stroke-width="1.5"/>
+    <text x="95" y="45" text-anchor="middle" fill="#C8A14C" font-family="Inter, sans-serif" font-size="16" font-weight="700">2</text>
+
+    <!-- Icon: Quality Check / Clipboard -->
+    <g transform="translate(65, 80)" fill="none" stroke="#C8A14C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Clipboard -->
+      <rect x="12" y="5" width="36" height="42" rx="3"/>
+      <rect x="18" y="1" width="24" height="8" rx="2"/>
+      <!-- Check marks -->
+      <polyline points="18,22 22,28 30,18" fill="none" stroke="#C8A14C" stroke-width="1.2"/>
+      <polyline points="18,32 22,38 30,28" fill="none" stroke="#C8A14C" stroke-width="1.2"/>
+      <polyline points="18,42 22,48 30,38" fill="none" stroke="#C8A14C" stroke-width="1.2"/>
+    </g>
+
+    <text x="95" y="155" text-anchor="middle" fill="#F5F2EF" font-family="Inter, Noto Sans SC, sans-serif" font-size="16" font-weight="600">专业质检</text>
+    <text x="95" y="175" text-anchor="middle" fill="#9B8E7E" font-family="Inter, sans-serif" font-size="10" letter-spacing="1">QUALITY CONTROL</text>
+    <line x1="65" y1="190" x2="125" y2="190" stroke="#C8A14C" stroke-width="0.5" opacity="0.3"/>
+    <text x="95" y="215" text-anchor="middle" fill="#7B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="11">
+      <tspan x="95" dy="0">国际标准检测</tspan>
+      <tspan x="95" dy="16">层层质量把关</tspan>
+      <tspan x="95" dy="16">出库前全项测试</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <g transform="translate(498, 340)" stroke="#C8A14C" stroke-width="1.5" fill="none">
+    <line x1="0" y1="0" x2="30" y2="0" opacity="0.4"/>
+    <polygon points="30,-5 42,0 30,5" stroke="none" fill="#C8A14C" opacity="0.6"/>
+  </g>
+
+  <!-- ====== STEP 3: 实时跟踪 ====== -->
+  <g transform="translate(540, 200)">
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="none" stroke="#C8A14C" stroke-width="0.5" opacity="0.2"/>
+
+    <circle cx="95" cy="40" r="18" fill="#C8A14C" opacity="0.15"/>
+    <circle cx="95" cy="40" r="18" fill="none" stroke="#C8A14C" stroke-width="1.5"/>
+    <text x="95" y="45" text-anchor="middle" fill="#C8A14C" font-family="Inter, sans-serif" font-size="16" font-weight="700">3</text>
+
+    <!-- Icon: Tracking / Map Pin -->
+    <g transform="translate(65, 80)" fill="none" stroke="#C8A14C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Map pin with signal -->
+      <path d="M20,12 C20,5 40,5 40,12 C40,20 30,30 30,30 C30,30 20,20 20,12Z"/>
+      <circle cx="30" cy="12" r="5"/>
+      <!-- Signal waves -->
+      <path d="M8,2 C5,10 5,20 8,28" stroke-opacity="0.4"/>
+      <path d="M52,2 C55,10 55,20 52,28" stroke-opacity="0.4"/>
+    </g>
+
+    <text x="95" y="155" text-anchor="middle" fill="#F5F2EF" font-family="Inter, Noto Sans SC, sans-serif" font-size="16" font-weight="600">实时跟踪</text>
+    <text x="95" y="175" text-anchor="middle" fill="#9B8E7E" font-family="Inter, sans-serif" font-size="10" letter-spacing="1">LIVE TRACKING</text>
+    <line x1="65" y1="190" x2="125" y2="190" stroke="#C8A14C" stroke-width="0.5" opacity="0.3"/>
+    <text x="95" y="215" text-anchor="middle" fill="#7B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="11">
+      <tspan x="95" dy="0">订单状态实时更新</tspan>
+      <tspan x="95" dy="16">物流全程可视化</tspan>
+      <tspan x="95" dy="16">即时消息推送</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <g transform="translate(738, 340)" stroke="#C8A14C" stroke-width="1.5" fill="none">
+    <line x1="0" y1="0" x2="30" y2="0" opacity="0.4"/>
+    <polygon points="30,-5 42,0 30,5" stroke="none" fill="#C8A14C" opacity="0.6"/>
+  </g>
+
+  <!-- ====== STEP 4: 实时出关 ====== -->
+  <g transform="translate(780, 200)">
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="none" stroke="#C8A14C" stroke-width="0.5" opacity="0.2"/>
+
+    <circle cx="95" cy="40" r="18" fill="#C8A14C" opacity="0.15"/>
+    <circle cx="95" cy="40" r="18" fill="none" stroke="#C8A14C" stroke-width="1.5"/>
+    <text x="95" y="45" text-anchor="middle" fill="#C8A14C" font-family="Inter, sans-serif" font-size="16" font-weight="700">4</text>
+
+    <!-- Icon: Customs Clearance / Ship -->
+    <g transform="translate(60, 78)" fill="none" stroke="#C8A14C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Ship hull -->
+      <path d="M5,32 L20,44 L60,44 L75,32"/>
+      <!-- Mast -->
+      <line x1="40" y1="32" x2="40" y2="10"/>
+      <!-- Sail -->
+      <path d="M40,12 L25,22 L40,22Z" fill="#C8A14C" fill-opacity="0.15"/>
+      <path d="M40,12 L55,22 L40,22Z" fill="#C8A14C" fill-opacity="0.1"/>
+      <!-- Waves -->
+      <path d="M2,40 C8,36 14,44 20,40 C26,36 32,44 38,40 C44,36 50,44 56,40 C62,36 68,44 74,40" opacity="0.4"/>
+    </g>
+
+    <text x="95" y="155" text-anchor="middle" fill="#F5F2EF" font-family="Inter, Noto Sans SC, sans-serif" font-size="16" font-weight="600">快速通关</text>
+    <text x="95" y="175" text-anchor="middle" fill="#9B8E7E" font-family="Inter, sans-serif" font-size="10" letter-spacing="1">CUSTOMS CLEARANCE</text>
+    <line x1="65" y1="190" x2="125" y2="190" stroke="#C8A14C" stroke-width="0.5" opacity="0.3"/>
+    <text x="95" y="215" text-anchor="middle" fill="#7B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="11">
+      <tspan x="95" dy="0">专业报关团队</tspan>
+      <tspan x="95" dy="16">高效清关流程</tspan>
+      <tspan x="95" dy="16">合规文件齐全</tspan>
+    </text>
+  </g>
+
+  <!-- Arrow 4→5 -->
+  <g transform="translate(978, 340)" stroke="#C8A14C" stroke-width="1.5" fill="none">
+    <line x1="0" y1="0" x2="30" y2="0" opacity="0.4"/>
+    <polygon points="30,-5 42,0 30,5" stroke="none" fill="#C8A14C" opacity="0.6"/>
+  </g>
+
+  <!-- ====== STEP 5: 送达客户 ====== -->
+  <g transform="translate(1020, 200)">
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="url(#cardGrad)" filter="url(#cardShadow)"/>
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="none" stroke="#C8A14C" stroke-width="0.5" opacity="0.2"/>
+
+    <circle cx="95" cy="40" r="18" fill="#C8A14C" opacity="0.15"/>
+    <circle cx="95" cy="40" r="18" fill="none" stroke="#C8A14C" stroke-width="1.5"/>
+    <text x="95" y="45" text-anchor="middle" fill="#C8A14C" font-family="Inter, sans-serif" font-size="16" font-weight="700">5</text>
+
+    <!-- Icon: Package delivery / Handshake -->
+    <g transform="translate(62, 80)" fill="none" stroke="#C8A14C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Package box -->
+      <rect x="15" y="18" width="36" height="28" rx="3"/>
+      <line x1="15" y1="32" x2="51" y2="32"/>
+      <line x1="33" y1="18" x2="33" y2="46"/>
+      <path d="M33,18 L25,8 L15,18"/>
+      <!-- Checkmark circle -->
+      <circle cx="48" cy="8" r="10" fill="#C8A14C" fill-opacity="0.15"/>
+      <polyline points="43,8 47,12 53,4" stroke="#C8A14C" stroke-width="1.8"/>
+    </g>
+
+    <text x="95" y="155" text-anchor="middle" fill="#F5F2EF" font-family="Inter, Noto Sans SC, sans-serif" font-size="16" font-weight="600">完好送达</text>
+    <text x="95" y="175" text-anchor="middle" fill="#9B8E7E" font-family="Inter, sans-serif" font-size="10" letter-spacing="1">SAFE DELIVERY</text>
+    <line x1="65" y1="190" x2="125" y2="190" stroke="#C8A14C" stroke-width="0.5" opacity="0.3"/>
+    <text x="95" y="215" text-anchor="middle" fill="#7B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="11">
+      <tspan x="95" dy="0">安心交付海外客户</tspan>
+      <tspan x="95" dy="16">包装完好无损</tspan>
+      <tspan x="95" dy="16">售后全程保障</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="600" y="545" text-anchor="middle" fill="#7B7068" font-family="Inter, Noto Sans SC, sans-serif" font-size="12" letter-spacing="2">
+    从工厂到海外客户 · 每一步都值得信赖
+  </text>
+  <text x="600" y="570" text-anchor="middle" fill="#5C5348" font-family="Inter, sans-serif" font-size="9" letter-spacing="3">
+    FROM FACTORY TO GLOBAL CUSTOMERS · EVERY STEP MATTERS
+  </text>
+
+  <!-- Gold accent corner decorations -->
+  <rect x="8" y="8" width="16" height="1.5" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="8" y="8" width="1.5" height="16" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="1176" y="8" width="16" height="1.5" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="1190" y="8" width="1.5" height="16" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="8" y="590" width="16" height="1.5" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="8" y="575" width="1.5" height="16" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="1176" y="590" width="16" height="1.5" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+  <rect x="1190" y="575" width="1.5" height="16" rx="0.5" fill="#C8A14C" opacity="0.3"/>
+</svg>

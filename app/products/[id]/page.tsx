@@ -1,48 +1,42 @@
 "use client";
 
-export const runtime = "edge";
-
-import { use, useState } from "react";
+import { use, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { motion } from "framer-motion";
 import {
   Minus,
   Plus,
   ShoppingCart,
   Check,
-  ArrowLeft,
-  MapPin,
-  Calendar,
-  Award,
-  Factory,
-  Play,
-  X,
-  ShieldCheck,
+  ChevronLeft,
+  ChevronRight,
+  Send,
 } from "lucide-react";
 import { products } from "@/data/products";
-import { getPartnerById } from "@/data/partners";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useT } from "@/lib/LanguageContext";
-import { localizeProduct, localizePartner } from "@/lib/localizeProduct";
+import { localizeProduct } from "@/lib/localizeProduct";
 import { useInquiryCart } from "@/lib/InquiryContext";
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const { t, locale } = useT();
-  const { addItem } = useInquiryCart();
+  const { addItem, setCartOpen } = useInquiryCart();
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
-  const [showFactoryVideo, setShowFactoryVideo] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
+  const [zooming, setZooming] = useState(false);
+  const [zoomPos, setZoomPos] = useState({ x: 0, y: 0 });
+  const imgRef = useRef<HTMLDivElement>(null);
+  const imgSize = useRef({ w: 0, h: 0 });
 
   const product = products.find((p) => p.id === id);
   if (!product) notFound();
 
+  const gallery = [product.image, ...(product.images || [])].filter(Boolean);
   const localized = localizeProduct(product, locale);
-  const partner = product.partnerId ? getPartnerById(product.partnerId) : null;
-  const prt = partner ? localizePartner(partner, locale) : null;
   const relatedProducts = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
@@ -53,230 +47,186 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     setTimeout(() => setAdded(false), 2000);
   };
 
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setZoomPos({ x, y });
+    imgSize.current = { w: rect.width, h: rect.height };
+  }, []);
+
   return (
-    <main className="min-h-screen bg-[#F5F2EF] dark:bg-brand-900">
-      {/* Breadcrumb bar */}
-      <div className="bg-white dark:bg-brand-900 border-b border-gray-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-3">
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-1 text-sm text-text-muted dark:text-white/40 hover:text-accent transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            {t("detail.backToProducts")}
-          </Link>
+    <main className="min-h-screen bg-[#f5f5f5] dark:bg-[#12100E]">
+      {/* Top bar */}
+      <div className="bg-white dark:bg-[#1A1816] border-b border-gray-200 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2.5 flex items-center gap-2 text-xs text-gray-400 dark:text-white/30">
+          <Link href="/" className="hover:text-[#B8A080]">{locale === "zh" ? "首页" : locale === "es" ? "Inicio" : "Home"}</Link>
+          <span>/</span>
+          <Link href="/products" className="hover:text-[#B8A080]">{locale === "zh" ? "全部产品" : locale === "es" ? "Productos" : "Products"}</Link>
+          <span>/</span>
+          <span className="text-gray-600 dark:text-white/60 truncate">{localized.name}</span>
         </div>
       </div>
 
-      {/* Product hero: image + buy box */}
-      <section className="bg-white dark:bg-brand-900">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 md:py-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 lg:gap-12">
-            {/* Left: Image */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="relative aspect-[4/3] rounded-xl overflow-hidden bg-[#F0EBE6] dark:bg-brand-800 border border-gray-100 dark:border-white/5"
-            >
-              <img
-                src={product.image}
-                alt={localized.name}
-                className="w-full h-full object-cover"
-              />
-              {product.badge && (
-                <span className="absolute top-4 left-4 px-3 py-1.5 rounded-md text-xs font-bold bg-accent text-white shadow-lg">
-                  {localized.badge}
-                </span>
-              )}
-            </motion.div>
-
-            {/* Right: Buy box */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="lg:sticky lg:top-24 self-start"
-            >
-              {/* Category tag */}
-              <span className="inline-block px-2.5 py-1 text-xs font-medium bg-accent/10 text-accent rounded">
-                {localized.subtitle.split(" — ")[0]}
-              </span>
-
-              <h1 className="text-xl md:text-2xl font-bold text-brand-800 dark:text-white mt-3 leading-snug">
-                {localized.name}
-              </h1>
-
-              {/* Manufacturer badge */}
-              {false && (
-                <div className="flex items-center gap-2 mt-3 px-3 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 text-sm w-fit">
-                  <Factory className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
-                  <span className="text-blue-700 dark:text-blue-300 font-medium">
-                    {prt?.name || partner?.name}
-                  </span>
-                  <span className="text-blue-400 dark:text-blue-500">|</span>
-                  <span className="flex items-center gap-1 text-blue-500 dark:text-blue-400 text-xs">
-                    <MapPin className="w-3 h-3" />
-                    {prt?.location || partner?.location}
-                  </span>
-                </div>
-              )}
-
-              {/* Price/inquiry hint */}
-              <div className="mt-5 p-4 rounded-lg bg-accent/5 border border-accent/10">
-                <p className="text-sm text-text-secondary dark:text-white/60">
-                  <span className="text-accent font-semibold">{t("detail.inquiryNote")}</span>
-                  {" "}{t("detail.inquiryDesc")}
-                </p>
-              </div>
-
-              {/* Quantity + Add to cart */}
-              <div className="mt-5 flex items-center gap-3">
-                <span className="text-sm text-text-muted dark:text-white/40">{t("cart.quantity")}</span>
-                <div className="flex items-center border border-gray-200 dark:border-white/10 rounded-lg">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="p-2.5 hover:bg-gray-50 dark:hover:bg-brand-800 transition-colors rounded-l-lg"
-                  >
-                    <Minus className="w-3.5 h-3.5" />
-                  </button>
-                  <input
-                    type="number"
-                    value={quantity}
-                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="w-14 text-center text-sm font-semibold bg-transparent border-x border-gray-200 dark:border-white/10 py-2.5 outline-none text-brand-800 dark:text-white"
-                  />
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="p-2.5 hover:bg-gray-50 dark:hover:bg-brand-800 transition-colors rounded-r-lg"
-                  >
-                    <Plus className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="mt-4 flex gap-3">
-                <button
-                  onClick={handleAddToCart}
-                  className={`flex-1 flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold text-sm transition-all ${
-                    added
-                      ? "bg-green-500 text-white"
-                      : "bg-accent text-brand-900 hover:bg-accent-light shadow-lg shadow-accent/20"
-                  }`}
+      {/* Main: image left + info right — 1688 style */}
+      <div className="bg-white dark:bg-[#1A1816]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-5">
+          <div className="flex flex-col md:flex-row gap-5">
+            {/* Left: Image with magnifier */}
+            <div className="md:w-[420px] shrink-0 relative">
+              {/* Image + magnifier row */}
+              <div className="flex gap-2">
+                {/* Main image */}
+                <div
+                  ref={imgRef}
+                  className="relative flex-1 bg-gray-100 dark:bg-[#12100E] rounded overflow-hidden border border-gray-200 dark:border-white/5 cursor-crosshair aspect-square"
+                  onMouseEnter={() => setZooming(true)}
+                  onMouseLeave={() => setZooming(false)}
+                  onMouseMove={handleMouseMove}
                 >
-                  {added ? (
+                  <img
+                    src={gallery[activeImage] || product.image}
+                    alt={localized.name}
+                    className="w-full h-full object-contain"
+                  />
+                  {/* Lens box */}
+                  {zooming && (
+                    <div
+                      className="absolute border-2 border-[#B8A080] bg-[#B8A080]/10 pointer-events-none"
+                      style={{
+                        left: `${Math.max(0, Math.min(70, zoomPos.x - 15))}%`,
+                        top: `${Math.max(0, Math.min(70, zoomPos.y - 15))}%`,
+                        width: "30%",
+                        height: "30%",
+                      }}
+                    />
+                  )}
+                  {gallery.length > 1 && (
                     <>
-                      <Check className="w-4 h-4" />
-                      {t("detail.added")}
-                    </>
-                  ) : (
-                    <>
-                      <ShoppingCart className="w-4 h-4" />
-                      {t("detail.addToCart")}
+                      <button onClick={() => setActiveImage((activeImage - 1 + gallery.length) % gallery.length)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-500 dark:text-white/70 hover:bg-white hover:text-gray-800 shadow-sm transition-colors z-10">
+                        <ChevronLeft className="w-4 h-4" />
+                      </button>
+                      <button onClick={() => setActiveImage((activeImage + 1) % gallery.length)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white/80 dark:bg-black/40 flex items-center justify-center text-gray-500 dark:text-white/70 hover:bg-white hover:text-gray-800 shadow-sm transition-colors z-10">
+                        <ChevronRight className="w-4 h-4" />
+                      </button>
                     </>
                   )}
-                </button>
+                </div>
 
-                <Link
-                  href="/contact"
-                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold text-sm hover:bg-accent hover:text-brand-900 transition-all"
-                >
-                  {t("detail.inquireNow")}
-                </Link>
+                {/* Magnified view — positioned absolute to avoid layout shift */}
+                {zooming && (
+                  <div className="hidden md:block absolute left-full ml-3 top-0 w-[320px] h-[320px] rounded overflow-hidden border border-gray-200 dark:border-white/5 bg-[#12100E] shadow-xl z-20">
+                    <img
+                      src={gallery[activeImage] || product.image}
+                      alt=""
+                      className="absolute w-full h-full object-contain"
+                      style={{
+                        transform: "scale(2.5)",
+                        transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
+                      }}
+                    />
+                  </div>
+                )}
               </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Product details */}
-      <section className="max-w-7xl mx-auto px-4 lg:px-8 py-8 md:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left column: Description + Features */}
-          <div className="lg:col-span-2 space-y-8">
-            {/* Description */}
-            <div className="bg-white dark:bg-brand-800/30 rounded-xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-lg font-bold text-brand-800 dark:text-white mb-4">
-                {t("detail.productDesc")}
-              </h2>
-              <p className="text-text-secondary dark:text-white/60 leading-relaxed">
-                {localized.description}
-              </p>
+              {gallery.length > 1 && (
+                <div className="flex gap-2 mt-2 overflow-x-auto">
+                  {gallery.map((img, i) => (
+                    <button key={i} onClick={() => setActiveImage(i)}
+                      className={`shrink-0 w-14 h-14 rounded overflow-hidden border-2 ${i === activeImage ? "border-[#B8A080]" : "border-gray-200 dark:border-white/10 opacity-60"}`}>
+                      <img src={img} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Features */}
-            <div className="bg-white dark:bg-brand-800/30 rounded-xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-lg font-bold text-brand-800 dark:text-white mb-4">
-                {t("modal.features")}
-              </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {localized.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm text-text-secondary dark:text-white/60">
-                    <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Right: Info */}
+            <div className="flex-1 min-w-0">
+              <h1 className="text-lg font-bold text-gray-900 dark:text-white leading-snug">{localized.name}</h1>
+              <p className="text-sm text-gray-500 dark:text-white/40 mt-1">{localized.subtitle}</p>
 
-            {/* Full specs table */}
-            <div className="bg-white dark:bg-brand-800/30 rounded-xl p-6 md:p-8 border border-gray-100 dark:border-white/5">
-              <h2 className="text-lg font-bold text-brand-800 dark:text-white mb-4">
-                {t("modal.specs")}
-              </h2>
-              <div className="overflow-hidden rounded-lg border border-gray-100 dark:border-white/5">
-                <table className="w-full text-sm">
-                  <tbody>
-                    {localized.specs.map((spec, i) => (
-                      <tr
-                        key={spec.label}
-                        className={i % 2 === 0 ? "bg-[#fafafa] dark:bg-brand-800/20" : "bg-white dark:bg-brand-800/10"}
-                      >
-                        <td className="px-4 py-3 text-text-muted dark:text-white/40 w-1/3">{spec.label}</td>
-                        <td className="px-4 py-3 font-medium text-brand-800 dark:text-white">{spec.value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          {/* Right sidebar: Quick specs */}
-          <div className="space-y-4">
-            <div className="bg-white dark:bg-brand-800/30 rounded-xl p-5 border border-gray-100 dark:border-white/5 sticky top-24">
-              <h3 className="text-sm font-semibold text-brand-800 dark:text-white mb-3">
-                {t("detail.keySpecs")}
-              </h3>
-              <div className="space-y-2.5">
-                {localized.specs.slice(0, 6).map((spec) => (
-                  <div key={spec.label} className="flex justify-between text-xs">
-                    <span className="text-text-muted dark:text-white/40">{spec.label}</span>
-                    <span className="font-medium text-brand-800 dark:text-white text-right">{spec.value}</span>
+              {/* Quick specs */}
+              <div className="mt-4 p-3 bg-gray-50 dark:bg-[#12100E] rounded text-xs text-gray-500 dark:text-white/30 leading-relaxed space-y-1">
+                {localized.specs.slice(0, 6).map((s) => (
+                  <div key={s.label} className="flex gap-2">
+                    <span className="text-gray-400 dark:text-white/20 shrink-0">{s.label}：</span>
+                    <span className="text-gray-700 dark:text-white/60">{s.value}</span>
                   </div>
                 ))}
               </div>
+
+              {/* Actions */}
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <div className="flex items-center border border-gray-200 dark:border-white/10 rounded">
+                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-8 h-8 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 text-sm"><Minus className="w-3 h-3" /></button>
+                  <input type="number" value={quantity} onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                    className="w-12 text-center text-sm font-bold border-x border-gray-200 dark:border-white/10 py-1.5 outline-none bg-transparent text-gray-900 dark:text-white" />
+                  <button onClick={() => setQuantity(quantity + 1)} className="w-8 h-8 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 text-sm"><Plus className="w-3 h-3" /></button>
+                </div>
+                <button onClick={handleAddToCart}
+                  className={`h-9 px-5 rounded text-sm font-bold flex items-center gap-1.5 transition-all ${added ? "bg-green-500 text-white" : "bg-[#B8A080] text-white hover:bg-[#A89070]"}`}>
+                  {added ? <><Check className="w-3.5 h-3.5" />{t("detail.added")}</> : <><ShoppingCart className="w-3.5 h-3.5" />{t("detail.addToCart")}</>}
+                </button>
+                <button onClick={() => { handleAddToCart(); setCartOpen(true); }}
+                  className="h-9 px-5 rounded text-sm font-bold border-2 border-[#B8A080] text-[#B8A080] hover:bg-[#B8A080] hover:text-white transition-all flex items-center gap-1.5">
+                  <Send className="w-3.5 h-3.5" />{t("detail.inquireNow")}
+                </button>
+              </div>
+
+              <p className="mt-3 text-xs text-gray-400 dark:text-white/20">
+                <span className="text-[#B8A080] font-bold">{t("detail.inquiryNote")}</span> {t("detail.inquiryDesc")}
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* Factory info — all products are Shenghan own production */}
-      <section className="bg-white dark:bg-brand-900 border-t border-gray-100 dark:border-white/5 py-8">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 text-center">
-          <p className="text-sm text-text-muted dark:text-white/40">
-            {locale === "zh" ? "所有产品均来自盛瀚自有生产体系，严格品控，工厂直供。" : locale === "es" ? "Todos los productos provienen del sistema de producción propio de Shenghan, con estricto control de calidad." : "All products are manufactured in Shenghan's own production facilities with strict quality control and factory-direct supply."}
-          </p>
+      {/* Details section — full width, simple */}
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
+        {/* Description */}
+        <div className="bg-white dark:bg-[#1A1816] rounded border border-gray-200 dark:border-white/5 p-5 mb-5">
+          <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-3 pb-3 border-b border-gray-100 dark:border-white/5">{t("detail.productDesc")}</h2>
+          <p className="text-sm text-gray-600 dark:text-white/50 leading-relaxed">{localized.description}</p>
         </div>
-      </section>
+
+        {/* Features */}
+        <div className="bg-white dark:bg-[#1A1816] rounded border border-gray-200 dark:border-white/5 p-5 mb-5">
+          <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-3 pb-3 border-b border-gray-100 dark:border-white/5">{t("modal.features")}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+            {localized.features.map((f) => (
+              <div key={f} className="flex items-start gap-2 text-sm text-gray-600 dark:text-white/50">
+                <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                {f}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Full specs table */}
+        <div className="bg-white dark:bg-[#1A1816] rounded border border-gray-200 dark:border-white/5 p-5">
+          <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-3 pb-3 border-b border-gray-100 dark:border-white/5">{t("modal.specs")}</h2>
+          <table className="w-full text-sm">
+            <tbody>
+              {localized.specs.map((spec, i) => (
+                <tr key={spec.label} className={i % 2 === 0 ? "bg-gray-50 dark:bg-[#12100E]/50" : ""}>
+                  <td className="px-4 py-2.5 text-gray-400 dark:text-white/30 w-1/3 text-xs">{spec.label}</td>
+                  <td className="px-4 py-2.5 text-gray-700 dark:text-white/70 text-xs font-medium">{spec.value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       {/* Related products */}
       {relatedProducts.length > 0 && (
-        <section className="py-14 bg-[#F5F2EF] dark:bg-brand-900/80">
-          <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            <SectionHeading
-              label={t("detail.relatedLabel")}
-              title={t("detail.relatedTitle")}
-            />
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section className="border-t border-gray-200 dark:border-white/5 py-10">
+          <div className="max-w-7xl mx-auto px-4 lg:px-6">
+            <SectionHeading label={t("detail.relatedLabel")} title={t("detail.relatedTitle")} />
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
               {relatedProducts.map((p, i) => (
                 <ScrollReveal key={p.id}>
                   <ProductCard product={p} index={i} />

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Products — Sofas, Beds, Building Materials, Hardware & More | Shenghan Industrial",
+  title: "Products — Sofas, Beds, Building Materials, Hardware & More | Shengyu Industrial",
   description:
-    "Browse Shenghan Industrial's full product range: fabric sofas, PU beds, MDF/plywood boards, furniture hardware, LED lighting, home appliances, adhesives, and industrial materials. Factory direct wholesale pricing — inquire today.",
+    "Browse Shengyu Industrial's full product range: fabric sofas, PU beds, MDF/plywood boards, furniture hardware, LED lighting, home appliances, adhesives, and industrial materials. Factory direct wholesale pricing — inquire today.",
   keywords: [
     "sofa factory",
     "bed frame wholesale",

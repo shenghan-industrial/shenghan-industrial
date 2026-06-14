@@ -13,11 +13,11 @@ import {
 export const siteConfig = {
   // --- Brand ---
   brand: {
-    name: "Shenghan Industrial",
-    shortName: "Shenghan",
+    name: "Shengyu Industrial",
+    shortName: "Shengyu",
     slogan: "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
     description:
-      "Shenghan Industrial is a global manufacturer and one-stop supply chain partner. Factory direct pricing, reliable logistics, full compliance, and global after-sales — serving importers, contractors, and B2B buyers worldwide.",
+      "Shengyu Industrial is a global manufacturer and one-stop supply chain partner. Factory direct pricing, reliable logistics, full compliance, and global after-sales — serving importers, contractors, and B2B buyers worldwide.",
     logo: {
       text: "S", // fallback letter if no image logo
       /** Set to a path like "/images/logo.svg" to use an image logo */
@@ -70,10 +70,10 @@ export const siteConfig = {
       description: "Watch product videos",
     },
     {
-      name: "X (Twitter)",
-      href: "https://x.com/henggu",
-      icon: "twitter" as const,
-      description: "Follow us on X",
+      name: "WhatsApp",
+      href: "https://wa.me/8613800138000",
+      icon: "whatsapp" as const,
+      description: "Chat on WhatsApp",
     },
     {
       name: "Facebook",

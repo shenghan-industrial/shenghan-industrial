@@ -11,6 +11,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { ReviewsSection } from "@/components/ReviewsSection";
 import { TrustBar } from "@/components/TrustBar";
 import { FeatureCards } from "@/components/FeatureCards";
+import siteContent from "@/data/site-content.json";
 
 const rankColors = [
   "bg-[#F5A623] text-white",
@@ -80,11 +81,6 @@ function HomeContent() {
       {/* 3. Feature Cards */}
       <section className="pt-8 md:pt-20 pb-2 md:pb-4">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="mb-9 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#3D3730] dark:text-[#D4C8B8] tracking-tight">
-              {t("home.featured")}
-            </h2>
-          </div>
           <FeatureCards />
         </div>
       </section>
@@ -94,13 +90,13 @@ function HomeContent() {
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
           <div className="mb-9">
             <span className="text-xs text-[#B8A080] font-semibold uppercase tracking-[0.15em]">
-              {t("home.topPicks")}
+              {locale === "zh" ? siteContent.bestsellers.topPicksLabelZh : locale === "es" ? siteContent.bestsellers.topPicksLabelEs : siteContent.bestsellers.topPicksLabel}
             </span>
             <h2 className="text-2xl md:text-3xl font-bold text-[#3D3730] dark:text-[#D4C8B8] mt-1.5 tracking-tight">
-              {t("home.bestSellers")}
+              {locale === "zh" ? siteContent.bestsellers.titleZh : locale === "es" ? siteContent.bestsellers.titleEs : siteContent.bestsellers.title}
             </h2>
             <p className="text-sm text-[#9B8E7E] dark:text-white/30 mt-1.5">
-              {t("home.rankedBy7Days")}
+              {locale === "zh" ? siteContent.bestsellers.subtitleZh : locale === "es" ? siteContent.bestsellers.subtitleEs : siteContent.bestsellers.subtitle}
             </p>
           </div>
 

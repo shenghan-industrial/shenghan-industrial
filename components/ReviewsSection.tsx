@@ -5,6 +5,7 @@ import { reviews, type Review } from "@/data/reviews";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { IconStar } from "@/components/icons";
 import { CheckCircle, MessageSquare } from "lucide-react";
+import siteContent from "@/data/site-content.json";
 
 const langLabels: Record<string, string> = { zh: "中文", th: "ภาษาไทย", en: "English", es: "Español" };
 
@@ -52,20 +53,19 @@ function ReviewCard({ review, t }: { review: Review; t: (k: string) => string })
 
 export function ReviewsSection() {
   const { t, locale } = useT();
+  const r = siteContent.reviews;
+
+  const label = locale === "zh" ? r.labelZh : locale === "es" ? r.labelEs : r.label;
+  const title = locale === "zh" ? r.titleZh : locale === "es" ? r.titleEs : r.title;
+  const subtitle = locale === "zh" ? r.subtitleZh : locale === "es" ? r.subtitleEs : r.subtitle;
 
   return (
     <section className="py-12 md:py-20 bg-[#F5F2EF] dark:bg-[#12100E]">
       <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
         <div className="mb-10">
-          <span className="text-xs text-[#B8A080] font-semibold uppercase tracking-[0.15em]">
-            {locale === "zh" ? "真实反馈" : locale === "es" ? "Opiniones Reales" : "Real Feedback"}
-          </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-[#3D3730] dark:text-[#D4C8B8] mt-1.5 tracking-tight">
-            {locale === "zh" ? "客户真实评价" : locale === "es" ? "Lo Que Dicen Nuestros Clientes" : "What Our Customers Say"}
-          </h2>
-          <p className="text-sm text-[#9B8E7E] dark:text-white/30 mt-1.5">
-            {locale === "zh" ? "来自全球客户的真实使用体验" : locale === "es" ? "Experiencias reales de clientes globales" : "Real experiences from our global customers"}
-          </p>
+          <span className="text-xs text-[#B8A080] font-semibold uppercase tracking-[0.15em]">{label}</span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#3D3730] dark:text-[#D4C8B8] mt-1.5 tracking-tight">{title}</h2>
+          <p className="text-sm text-[#9B8E7E] dark:text-white/30 mt-1.5">{subtitle}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
           {reviews.map((review) => (

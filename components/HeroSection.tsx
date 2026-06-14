@@ -5,15 +5,18 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { IconChevronLeft, IconChevronRight, IconArrowRight } from "@/components/icons";
 import Link from "next/link";
 import { useT } from "@/lib/LanguageContext";
+import siteContent from "@/data/site-content.json";
 
 export function HeroSection() {
-  const { t } = useT();
-  const slides = [
-    { image: "/images/factory-bg.svg" },
-    { image: "/images/factory/factory-line.svg" },
-    { image: "/images/quality/testing-rig.svg" },
-    { image: "/images/factory/r-and-d-center.svg" },
-  ];
+  const { t, locale } = useT();
+  const hero = siteContent.hero;
+  const slides = hero.slides;
+
+  const getText = (key: "title" | "subtitle" | "tagline"): string => {
+    const localeKey = key + (locale === "zh" ? "Zh" : locale === "es" ? "Es" : "");
+    return ((hero as unknown as Record<string, string | undefined>)[localeKey] || (hero as unknown as Record<string, string | undefined>)[key] || "");
+  };
+
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -38,12 +41,12 @@ export function HeroSection() {
   const next = useCallback(() => {
     setDirection(1);
     setCurrent((prev) => (prev + 1) % slides.length);
-  }, []);
+  }, [slides.length]);
 
   const prev = useCallback(() => {
     setDirection(-1);
     setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  }, []);
+  }, [slides.length]);
 
   useEffect(() => {
     intervalRef.current = setInterval(next, 6000);
@@ -60,11 +63,14 @@ export function HeroSection() {
   };
 
   const slide = slides[current];
+  const slideImage = locale === "zh" ? ((slide as any).imageZh || slide.image)
+    : locale === "es" ? ((slide as any).imageEs || slide.image)
+    : ((slide as any).imageEn || slide.image);
 
   return (
     <section
       ref={ref}
-      className="relative h-[85vh] min-h-[480px] md:min-h-[560px] overflow-hidden group"
+      className="relative w-full aspect-[1717/916] overflow-hidden group"
       onMouseEnter={pause}
       onMouseLeave={resume}
     >
@@ -78,66 +84,40 @@ export function HeroSection() {
           exit={{ x: direction * -30 + "%", opacity: 0 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
           style={{ y: bgY, scale: bgScale }}
-          className="absolute inset-0 -top-[15%] h-[130%]"
+          className="absolute inset-0 bg-[#1E1B18] flex items-center justify-center"
         >
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.image})` }}
+          <img
+            src={slideImage}
+            alt="Shengyu Industrial"
+            className="w-full h-full object-cover"
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-900/40 via-brand-900/30 to-brand-900/60" />
+      {/* Bottom gradient for button readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-      {/* Fixed text overlay — stays while images rotate */}
-      <div className="absolute inset-0 flex items-center justify-center z-10">
-        <div className="text-center max-w-3xl px-4">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-accent text-sm md:text-base font-semibold uppercase tracking-[0.2em] mb-4"
+      {/* Buttons at bottom */}
+      <div className="absolute bottom-8 md:bottom-12 left-0 right-0 z-10 flex items-center justify-center gap-4 flex-wrap px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-brand-900 font-semibold text-sm hover:bg-accent-light transition-all shadow-lg shadow-accent/20"
           >
-            {t("hero.slide1.tagline")}
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
+            {t("hero.overlay.explore")}
+            <IconArrowRight />
+          </Link>
+          <Link
+            href="/contact"
+            className="ml-4 inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-white/40 text-white font-semibold text-sm hover:bg-white/10 transition-all"
           >
-            {t("hero.overlay.title")}
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-white/60 text-sm md:text-lg max-w-xl mx-auto mb-8"
-          >
-            {t("hero.overlay.sub")}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex items-center justify-center gap-4 flex-wrap"
-          >
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-brand-900 font-semibold text-sm hover:bg-accent-light transition-all shadow-lg shadow-accent/20"
-            >
-              {t("hero.overlay.explore")}
-              <IconArrowRight />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-all"
-            >
-              {t("hero.overlay.consult")}
-            </Link>
-          </motion.div>
-        </div>
+            {t("hero.overlay.consult")}
+          </Link>
+        </motion.div>
       </div>
 
       {/* Left/Right Arrows */}

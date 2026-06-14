@@ -57,15 +57,15 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4 lg:px-8 py-10 md:py-24">
           <SectionHeader
             label={locale === "zh" ? "品牌定位" : locale === "es" ? "Posicionamiento" : "Positioning"}
-            title={locale === "zh" ? "关于盛瀚实业" : locale === "es" ? "Sobre Shenghan Industrial" : "About Shenghan Industrial"}
+            title={locale === "zh" ? "关于盛煜实业" : locale === "es" ? "Sobre Shengyu Industrial" : "About Shengyu Industrial"}
           />
           <div className="space-y-5 text-[15px] leading-relaxed text-[#6B6058] dark:text-white/50">
             <p>
               {locale === "zh"
-                ? "盛瀚实业创立于2002年，是一家集自主研发、规模化生产、全球销售、一站式供应链服务于一体的现代化家居建材制造品牌。我们以自有生产基地为核心，面向全球进口商、工程承包商、连锁零售商、跨境B端卖家提供工厂直供全品类建材与一体化解决方案。"
+                ? "盛煜实业创立于2002年，是一家集自主研发、规模化生产、全球销售、一站式供应链服务于一体的现代化家居建材制造品牌。我们以自有生产基地为核心，面向全球进口商、工程承包商、连锁零售商、跨境B端卖家提供工厂直供全品类建材与一体化解决方案。"
                 : locale === "es"
-                  ? "Shenghan Industrial, fundada en 2002, es una marca moderna de fabricación que integra I+D, producción a gran escala, ventas globales y servicios de cadena de suministro. Proporcionamos productos directos de fábrica para importadores, contratistas y minoristas globales."
-                  : "Shenghan Industrial was founded in 2002 — a modern manufacturing brand integrating R&D, large-scale production, global sales and supply chain services. Operating self-owned production bases, we deliver factory-direct products and integrated solutions for global importers, contractors, chain retailers and B2B cross-border sellers."}
+                  ? "Shengyu Industrial, fundada en 2002, es una marca moderna de fabricación que integra I+D, producción a gran escala, ventas globales y servicios de cadena de suministro. Proporcionamos productos directos de fábrica para importadores, contratistas y minoristas globales."
+                  : "Shengyu Industrial was founded in 2002 — a modern manufacturing brand integrating R&D, large-scale production, global sales and supply chain services. Operating self-owned production bases, we deliver factory-direct products and integrated solutions for global importers, contractors, chain retailers and B2B cross-border sellers."}
             </p>
             <p>
               {locale === "zh"

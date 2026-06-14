@@ -46,7 +46,7 @@ export function CategorySidebar({ activeCategory, onSelectCategory }: CategorySi
                     : "text-text-secondary dark:text-white/60 hover:bg-bg-warm dark:hover:bg-brand-800/30"
                 }`}
               >
-                <span>{catName}</span>
+                <span className="truncate">{catName}</span>
                 <ChevronRight className="w-3.5 h-3.5 opacity-40" />
               </button>
 

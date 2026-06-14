@@ -18,6 +18,7 @@ export interface Product {
   specsZh?: { label: string; value: string }[];
   specsEs?: { label: string; value: string }[];
   image: string;
+  images?: string[];
   badge?: string;
   badgeZh?: string;
   badgeEs?: string;
@@ -27,6 +28,7 @@ export interface Product {
   price?: string;
   weeklySales?: number;
   promoTag?: string;
+  notes?: string;
 }
 
 const categoryPartnerMap: Record<string, string> = {
@@ -68,9 +70,9 @@ function placeholder(name: string, cat: string, sub: string, img: string, badge?
     category: cat,
     subCategory: sub,
     partnerId: categoryPartnerMap[cat] || "shenghan-industrial",
-    description: "Shenghan Industrial " + sub.toLowerCase() + " — " + name + ". Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
-    descriptionZh: "盛瀚实业 " + (subZhMap[sub] || sub) + " — " + zhName + "。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
-    descriptionEs: "Shenghan Industrial " + (subEsMap[sub] || sub).toLowerCase() + " — " + esName + ". Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    description: "Shengyu Industrial " + sub.toLowerCase() + " — " + name + ". Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    descriptionZh: "盛煜实业 " + (subZhMap[sub] || sub) + " — " + zhName + "。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    descriptionEs: "Shengyu Industrial " + (subEsMap[sub] || sub).toLowerCase() + " — " + esName + ". Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
     features: [
       "Premium materials and expert workmanship",
       "ISO-certified production process",
@@ -121,17 +123,17 @@ const sofas: Product[] = Array.from({ length: 15 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return {
     id: "sofa-" + n,
-    name: "Shenghan Sofa " + n,
-    nameZh: "盛瀚沙发 " + n,
-    nameEs: "Shenghan Sofá " + n,
+    name: "Shengyu Sofa " + n,
+    nameZh: "盛煜沙发 " + n,
+    nameEs: "Shengyu Sofá " + n,
     subtitle: "Premium upholstered sofa — factory direct",
     subtitleZh: "高端软体沙发 — 工厂直供",
     subtitleEs: "Sofá tapizado premium — directo de fábrica",
     category: "Furniture",
     subCategory: "Sofas",
-    description: "Shenghan designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
-    descriptionZh: "盛瀚设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
-    descriptionEs: "Sofá de diseño Shenghan con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    description: "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    descriptionZh: "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    descriptionEs: "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
     features: [
       "High-density foam with premium fabric or genuine leather",
       "Solid hardwood frame with reinforced joinery",
@@ -187,17 +189,17 @@ const beds: Product[] = Array.from({ length: 6 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return {
     id: "bed-" + n,
-    name: "Shenghan Bed " + n,
-    nameZh: "盛瀚床 " + n,
-    nameEs: "Shenghan Cama " + n,
+    name: "Shengyu Bed " + n,
+    nameZh: "盛煜床 " + n,
+    nameEs: "Shengyu Cama " + n,
     subtitle: "Luxurious upholstered bed — factory direct",
     subtitleZh: "豪华软体床 — 工厂直供",
     subtitleEs: "Cama tapizada de lujo — directo de fábrica",
     category: "Furniture",
     subCategory: "Beds",
-    description: "Shenghan premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
-    descriptionZh: "盛瀚高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
-    descriptionEs: "Cama suave premium Shenghan con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    description: "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    descriptionZh: "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    descriptionEs: "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
     features: [
       "Soft-touch fabric or leather-upholstered headboard",
       "Solid wood slatted base with center support",
@@ -259,9 +261,9 @@ const cabinets: Product[] = ["Display Cabinet", "TV Stand Cabinet", "Storage Cab
 const adhesives: Product[] = [
   {
     id: "silicone-sealant-sg9000",
-    name: "Shenghan SG-9000 Silicone Structural Sealant",
-    nameZh: "盛瀚 SG-9000 硅酮结构密封胶",
-    nameEs: "Shenghan SG-9000 Sellador Estructural de Silicona",
+    name: "Shengyu SG-9000 Silicone Structural Sealant",
+    nameZh: "盛煜 SG-9000 硅酮结构密封胶",
+    nameEs: "Shengyu SG-9000 Sellador Estructural de Silicona",
     // Self-owned production,
     subtitle: "For high-rise curtain wall structural bonding",
     category: "Building Materials",
@@ -302,9 +304,9 @@ const panels: Product[] = ["MDF Board", "Plywood Panel", "Particle Board"].map((
 const fasteners: Product[] = [
   {
     id: "anchor-kit-hw500",
-    name: "Shenghan Heavy-Duty Anchor Fastener Kit HW-500",
-    nameZh: "盛瀚 重型锚固套件 HW-500",
-    nameEs: "Shenghan Kit de Anclaje de Alta Resistencia HW-500",
+    name: "Shengyu Heavy-Duty Anchor Fastener Kit HW-500",
+    nameZh: "盛煜 重型锚固套件 HW-500",
+    nameEs: "Shengyu Kit de Anclaje de Alta Resistencia HW-500",
     // Self-owned production,
     subtitle: "Professional anchoring for concrete and masonry",
     category: "Hardware",
@@ -372,9 +374,9 @@ const deskLamps: Product[] = ["LED Desk Lamp", "Architect Task Lamp"].map((name,
 const pendantLights: Product[] = [
   {
     id: "led-highbay-lt200",
-    name: "Shenghan LED High Bay Light LT-200",
-    nameZh: "盛瀚 LED 高棚灯 LT-200",
-    nameEs: "Shenghan Luz LED de Alta Bahía LT-200",
+    name: "Shengyu LED High Bay Light LT-200",
+    nameZh: "盛煜 LED 高棚灯 LT-200",
+    nameEs: "Shengyu Luz LED de Alta Bahía LT-200",
     // Self-owned production,
     subtitle: "Energy-efficient industrial lighting",
     category: "Lighting",
@@ -410,9 +412,9 @@ const floorLamps: Product[] = ["Tripod Floor Lamp", "Arc Floor Lamp"].map((name,
 const others: Product[] = [
   {
     id: "industrial-degreaser-cc300",
-    name: "Shenghan Industrial Multi-Surface Degreaser CC-300",
-    nameZh: "盛瀚 工业多表面除油剂 CC-300",
-    nameEs: "Shenghan Industrial Desengrasante Multiuso CC-300",
+    name: "Shengyu Industrial Multi-Surface Degreaser CC-300",
+    nameZh: "盛煜 工业多表面除油剂 CC-300",
+    nameEs: "Shengyu Industrial Desengrasante Multiuso CC-300",
     // Self-owned production,
     subtitle: "Heavy-duty cleaning for commercial and industrial use",
     category: "Others",
@@ -436,7 +438,7 @@ const others: Product[] = [
 ];
 
 // ======== 全部产品 ========
-export const products: Product[] = [
+const staticProducts: Product[] = [
   ...sofas,
   ...beds,
   ...cabinets,
@@ -454,8 +456,19 @@ export const products: Product[] = [
   ...others,
 ];
 
-// Apply promotion, monthly best seller flags, price, sales data
+// Dynamic import from JSON — falls back to static data when JSON doesn't exist
+let products: Product[] = staticProducts;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  products = require("./products.json") as Product[];
+} catch {
+  products = staticProducts;
+}
+export { products };
+
+// Apply promotion, monthly best seller flags, price, sales data to static products
 (function applyFlags() {
+  const products = staticProducts;
   const byId = (id: string) => products.find((p) => p.id === id);
 
   const promoIds = [

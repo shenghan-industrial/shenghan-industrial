@@ -158,14 +158,14 @@
   },
   "about": {
     "label": "Sobre Nosotros",
-    "title": "Sobre Shenghan Industrial",
+    "title": "Sobre Shengyu Industrial",
     "desc": "Desde 2002 — fabricante directo de fábrica de muebles, materiales de construcción, ferretería, iluminación y productos de limpieza industrial.",
     "storyLabel": "Nuestra Historia",
     "storyTitle1": "Construido en Tecnología",
     "storyTitle2": "Definido por la Calidad",
-    "storyP1": "Fundada en 2002, Shenghan Industrial es un fabricante integral que integra I+D, fabricación y distribución global en cinco líneas principales de productos. Con sede en Guangzhou, operamos una moderna instalación de producción de 80.000 m².",
+    "storyP1": "Fundada en 2002, Shengyu Industrial es un fabricante integral que integra I+D, fabricación y distribución global en cinco líneas principales de productos. Con sede en Guangzhou, operamos una moderna instalación de producción de 80.000 m².",
     "storyP2": "Nuestro laboratorio acreditado CNAS alberga equipos de prueba de clase mundial e instrumentación de I+D, respaldado por más de 20 patentes nacionales. Nuestra cartera de productos abarca muebles, adhesivos y selladores para construcción, iluminación LED, ferretería para construcción y soluciones de limpieza industrial.",
-    "storyP3": "Durante más de dos décadas, Shenghan Industrial ha sido impulsada por la innovación tecnológica y definida por la calidad del producto — entregando productos confiables directamente de fábrica a más de 3.200 clientes en todo el mundo.",
+    "storyP3": "Durante más de dos décadas, Shengyu Industrial ha sido impulsada por la innovación tecnológica y definida por la calidad del producto — entregando productos confiables directamente de fábrica a más de 3.200 clientes en todo el mundo.",
     "journeyLabel": "Nuestro Trayecto",
     "journeyTitle": "Nuestro Trayecto",
     "journeyDesc": "Más de dos décadas de progreso incansable — cada paso ha sido firme y decidido.",
@@ -173,7 +173,7 @@
       {
         "year": "2002",
         "title": "Fundación de la Empresa",
-        "desc": "Shenghan Industrial se estableció en Guangzhou, comenzando como un negocio de comercio de materiales de construcción."
+        "desc": "Shengyu Industrial se estableció en Guangzhou, comenzando como un negocio de comercio de materiales de construcción."
       },
       {
         "year": "2008",
@@ -333,7 +333,13 @@
     "copied": "Copiado",
     "download": "Descargar",
     "contactChat": "Contáctenos para Cotización",
-    "clearAll": "Limpiar Todos los Artículos"
+    "clearAll": "Limpiar Todos los Artículos",
+    "submitInquiry": "Enviar Consulta",
+    "formName": "Su Nombre *",
+    "formEmail": "Correo Electrónico *",
+    "formMessage": "Notas adicionales (opcional)",
+    "cancel": "Cancelar",
+    "formPhone": "WhatsApp / Teléfono *"
   },
   "cookie": {
     "title": "Aviso de Cookies",
@@ -418,7 +424,7 @@
     "daysLeft": "Solo quedan {n} días — hasta agotar existencias"
   },
   "common": {
-    "brand": "Shenghan Industrial",
+    "brand": "Shengyu Industrial",
     "slogan": "Fabricante Global de Materiales | Socio Integral de Cadena de Suministro",
     "search": "Buscar",
     "searchPlaceholder": "Buscar productos...",

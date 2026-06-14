@@ -1,0 +1,4935 @@
+[
+  {
+    "id": "sofa-01",
+    "name": "Shengyu Sofa 01",
+    "nameZh": "盛煜凯xx系列沙发",
+    "nameEs": "Shengyu Sofá 01",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/1.webp",
+    "badge": "Best Seller",
+    "badgeZh": "热卖",
+    "badgeEs": "Más Vendido",
+    "onPromotion": true,
+    "monthlyBest": true,
+    "price": "$89",
+    "weeklySales": 2847,
+    "promoTag": "热卖",
+    "notes": "意大利进口",
+    "images": []
+  },
+  {
+    "id": "sofa-02",
+    "name": "Shengyu Sofa 02",
+    "nameZh": "盛煜沙发 02",
+    "nameEs": "Shengyu Sofá 02",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/2.webp",
+    "monthlyBest": true,
+    "price": "$76",
+    "weeklySales": 2103,
+    "promoTag": "热卖"
+  },
+  {
+    "id": "sofa-03",
+    "name": "Shengyu Sofa 03",
+    "nameZh": "盛煜沙发 03",
+    "nameEs": "Shengyu Sofá 03",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/3.webp",
+    "onPromotion": true,
+    "price": "$95",
+    "weeklySales": 1892
+  },
+  {
+    "id": "sofa-04",
+    "name": "Shengyu Sofa 04",
+    "nameZh": "盛煜沙发 04",
+    "nameEs": "Shengyu Sofá 04",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/4.webp",
+    "price": "$68",
+    "weeklySales": 1654
+  },
+  {
+    "id": "sofa-05",
+    "name": "Shengyu Sofa 05",
+    "nameZh": "盛煜沙发 05",
+    "nameEs": "Shengyu Sofá 05",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/5.webp",
+    "monthlyBest": true,
+    "price": "$112",
+    "weeklySales": 1521,
+    "promoTag": "新品"
+  },
+  {
+    "id": "sofa-06",
+    "name": "Shengyu Sofa 06",
+    "nameZh": "盛煜沙发 06",
+    "nameEs": "Shengyu Sofá 06",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/6.webp",
+    "price": "$83",
+    "weeklySales": 1356
+  },
+  {
+    "id": "sofa-07",
+    "name": "Shengyu Sofa 07",
+    "nameZh": "盛煜沙发 07",
+    "nameEs": "Shengyu Sofá 07",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/7.webp",
+    "price": "$79",
+    "weeklySales": 1201
+  },
+  {
+    "id": "sofa-08",
+    "name": "Shengyu Sofa 08",
+    "nameZh": "盛煜沙发 08",
+    "nameEs": "Shengyu Sofá 08",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/8.webp",
+    "price": "$91",
+    "weeklySales": 1045
+  },
+  {
+    "id": "sofa-09",
+    "name": "Shengyu Sofa 09",
+    "nameZh": "盛煜沙发 09",
+    "nameEs": "Shengyu Sofá 09",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/9.webp",
+    "price": "$74",
+    "weeklySales": 987
+  },
+  {
+    "id": "sofa-10",
+    "name": "Shengyu Sofa 10",
+    "nameZh": "盛煜沙发 10",
+    "nameEs": "Shengyu Sofá 10",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/10.webp",
+    "price": "$88",
+    "weeklySales": 845
+  },
+  {
+    "id": "sofa-11",
+    "name": "Shengyu Sofa 11",
+    "nameZh": "盛煜沙发 11",
+    "nameEs": "Shengyu Sofá 11",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/11.webp",
+    "price": "$67",
+    "weeklySales": 723
+  },
+  {
+    "id": "sofa-12",
+    "name": "Shengyu Sofa 12",
+    "nameZh": "盛煜沙发 12",
+    "nameEs": "Shengyu Sofá 12",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/12.webp",
+    "price": "$99",
+    "weeklySales": 612
+  },
+  {
+    "id": "sofa-13",
+    "name": "Shengyu Sofa 13",
+    "nameZh": "盛煜沙发 13",
+    "nameEs": "Shengyu Sofá 13",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/13.webp",
+    "price": "$82",
+    "weeklySales": 534
+  },
+  {
+    "id": "sofa-14",
+    "name": "Shengyu Sofa 14",
+    "nameZh": "盛煜沙发 14",
+    "nameEs": "Shengyu Sofá 14",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/14.webp",
+    "price": "$93",
+    "weeklySales": 456
+  },
+  {
+    "id": "sofa-15",
+    "name": "Shengyu Sofa 15",
+    "nameZh": "盛煜沙发 15",
+    "nameEs": "Shengyu Sofá 15",
+    "subtitle": "Premium upholstered sofa — factory direct",
+    "subtitleZh": "高端软体沙发 — 工厂直供",
+    "subtitleEs": "Sofá tapizado premium — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Sofas",
+    "description": "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame. Available in custom configurations.",
+    "descriptionZh": "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。支持定制配置。",
+    "descriptionEs": "Sofá de diseño Shengyu con tapizado premium de tela/cuero, espuma de alta resiliencia y estructura de madera maciza. Disponible en configuraciones personalizadas.",
+    "features": [
+      "High-density foam with premium fabric or genuine leather",
+      "Solid hardwood frame with reinforced joinery",
+      "Customizable configurations — 2-seater, 3-seater, L-shape",
+      "15+ designer colorways available"
+    ],
+    "featuresZh": [
+      "高密度海绵搭配高端布艺或真皮面料",
+      "实木硬木框架，加固榫接工艺",
+      "可定制配置 — 双人位、三人位、L型",
+      "15+ 设计师配色可选"
+    ],
+    "featuresEs": [
+      "Espuma de alta densidad con tela premium o cuero genuino",
+      "Estructura de madera dura maciza con carpintería reforzada",
+      "Configuraciones personalizables — 2 plazas, 3 plazas, forma L",
+      "Más de 15 colores de diseño disponibles"
+    ],
+    "specs": [
+      {
+        "label": "Frame Material",
+        "value": "Solid hardwood + plywood"
+      },
+      {
+        "label": "Upholstery",
+        "value": "Fabric / PU / Genuine Leather"
+      },
+      {
+        "label": "Foam Density",
+        "value": "≥35 kg/m³ (seat)"
+      },
+      {
+        "label": "Seat Depth",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "框架材质",
+        "value": "实木硬木 + 胶合板"
+      },
+      {
+        "label": "面料",
+        "value": "布艺 / PU / 真皮"
+      },
+      {
+        "label": "海绵密度",
+        "value": "≥35 kg/m³（座面）"
+      },
+      {
+        "label": "座深",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material del Marco",
+        "value": "Madera dura maciza + contrachapado"
+      },
+      {
+        "label": "Tapicería",
+        "value": "Tela / PU / Cuero Genuino"
+      },
+      {
+        "label": "Densidad de Espuma",
+        "value": "≥35 kg/m³ (asiento)"
+      },
+      {
+        "label": "Profundidad de Asiento",
+        "value": "55–65 cm"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      }
+    ],
+    "image": "/images/products/sofas/15.webp",
+    "price": "$71",
+    "weeklySales": 389
+  },
+  {
+    "id": "bed-01",
+    "name": "Shengyu Bed 01",
+    "nameZh": "盛煜床 01",
+    "nameEs": "Shengyu Cama 01",
+    "subtitle": "Luxurious upholstered bed — factory direct",
+    "subtitleZh": "豪华软体床 — 工厂直供",
+    "subtitleEs": "Cama tapizada de lujo — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Beds",
+    "description": "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    "descriptionZh": "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    "descriptionEs": "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    "features": [
+      "Soft-touch fabric or leather-upholstered headboard",
+      "Solid wood slatted base with center support",
+      "Modern minimalist to luxury wingback styles",
+      "Tool-free slat assembly"
+    ],
+    "featuresZh": [
+      "亲肤面料或皮革软包床头板",
+      "实木排骨架底座，带中心支撑",
+      "现代简约至奢华翼背款式",
+      "免工具安装排骨架"
+    ],
+    "featuresEs": [
+      "Cabecero tapizado en tela suave o cuero",
+      "Base de listones de madera maciza con soporte central",
+      "Estilos desde minimalista moderno hasta wingback de lujo",
+      "Montaje de listones sin herramientas"
+    ],
+    "specs": [
+      {
+        "label": "Sizes",
+        "value": "1.5m / 1.8m / 2.0m (custom)"
+      },
+      {
+        "label": "Headboard",
+        "value": "Fabric / PU Leather / Velvet"
+      },
+      {
+        "label": "Frame",
+        "value": "Solid wood + MDF"
+      },
+      {
+        "label": "Slats",
+        "value": "Solid birch, 12 pcs"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "30–40 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "尺寸",
+        "value": "1.5m / 1.8m / 2.0m（可定制）"
+      },
+      {
+        "label": "床头材质",
+        "value": "布艺 / PU皮革 / 丝绒"
+      },
+      {
+        "label": "框架",
+        "value": "实木 + MDF"
+      },
+      {
+        "label": "排骨架",
+        "value": "桦木实木，12根"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "30–40 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Tamaños",
+        "value": "1.5m / 1.8m / 2.0m (personalizado)"
+      },
+      {
+        "label": "Cabecero",
+        "value": "Tela / Cuero PU / Terciopelo"
+      },
+      {
+        "label": "Estructura",
+        "value": "Madera maciza + MDF"
+      },
+      {
+        "label": "Listones",
+        "value": "Abedul macizo, 12 uds"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "30–40 días"
+      }
+    ],
+    "image": "/images/products/beds/1.webp",
+    "badge": "New",
+    "badgeZh": "新品",
+    "badgeEs": "Nuevo",
+    "onPromotion": true,
+    "monthlyBest": true,
+    "price": "$156",
+    "weeklySales": 1934,
+    "promoTag": "热卖"
+  },
+  {
+    "id": "bed-02",
+    "name": "Shengyu Bed 02",
+    "nameZh": "盛煜床 02",
+    "nameEs": "Shengyu Cama 02",
+    "subtitle": "Luxurious upholstered bed — factory direct",
+    "subtitleZh": "豪华软体床 — 工厂直供",
+    "subtitleEs": "Cama tapizada de lujo — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Beds",
+    "description": "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    "descriptionZh": "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    "descriptionEs": "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    "features": [
+      "Soft-touch fabric or leather-upholstered headboard",
+      "Solid wood slatted base with center support",
+      "Modern minimalist to luxury wingback styles",
+      "Tool-free slat assembly"
+    ],
+    "featuresZh": [
+      "亲肤面料或皮革软包床头板",
+      "实木排骨架底座，带中心支撑",
+      "现代简约至奢华翼背款式",
+      "免工具安装排骨架"
+    ],
+    "featuresEs": [
+      "Cabecero tapizado en tela suave o cuero",
+      "Base de listones de madera maciza con soporte central",
+      "Estilos desde minimalista moderno hasta wingback de lujo",
+      "Montaje de listones sin herramientas"
+    ],
+    "specs": [
+      {
+        "label": "Sizes",
+        "value": "1.5m / 1.8m / 2.0m (custom)"
+      },
+      {
+        "label": "Headboard",
+        "value": "Fabric / PU Leather / Velvet"
+      },
+      {
+        "label": "Frame",
+        "value": "Solid wood + MDF"
+      },
+      {
+        "label": "Slats",
+        "value": "Solid birch, 12 pcs"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "30–40 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "尺寸",
+        "value": "1.5m / 1.8m / 2.0m（可定制）"
+      },
+      {
+        "label": "床头材质",
+        "value": "布艺 / PU皮革 / 丝绒"
+      },
+      {
+        "label": "框架",
+        "value": "实木 + MDF"
+      },
+      {
+        "label": "排骨架",
+        "value": "桦木实木，12根"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "30–40 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Tamaños",
+        "value": "1.5m / 1.8m / 2.0m (personalizado)"
+      },
+      {
+        "label": "Cabecero",
+        "value": "Tela / Cuero PU / Terciopelo"
+      },
+      {
+        "label": "Estructura",
+        "value": "Madera maciza + MDF"
+      },
+      {
+        "label": "Listones",
+        "value": "Abedul macizo, 12 uds"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "30–40 días"
+      }
+    ],
+    "image": "/images/products/beds/2.webp",
+    "price": "$138",
+    "weeklySales": 1456
+  },
+  {
+    "id": "bed-03",
+    "name": "Shengyu Bed 03",
+    "nameZh": "盛煜床 03",
+    "nameEs": "Shengyu Cama 03",
+    "subtitle": "Luxurious upholstered bed — factory direct",
+    "subtitleZh": "豪华软体床 — 工厂直供",
+    "subtitleEs": "Cama tapizada de lujo — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Beds",
+    "description": "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    "descriptionZh": "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    "descriptionEs": "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    "features": [
+      "Soft-touch fabric or leather-upholstered headboard",
+      "Solid wood slatted base with center support",
+      "Modern minimalist to luxury wingback styles",
+      "Tool-free slat assembly"
+    ],
+    "featuresZh": [
+      "亲肤面料或皮革软包床头板",
+      "实木排骨架底座，带中心支撑",
+      "现代简约至奢华翼背款式",
+      "免工具安装排骨架"
+    ],
+    "featuresEs": [
+      "Cabecero tapizado en tela suave o cuero",
+      "Base de listones de madera maciza con soporte central",
+      "Estilos desde minimalista moderno hasta wingback de lujo",
+      "Montaje de listones sin herramientas"
+    ],
+    "specs": [
+      {
+        "label": "Sizes",
+        "value": "1.5m / 1.8m / 2.0m (custom)"
+      },
+      {
+        "label": "Headboard",
+        "value": "Fabric / PU Leather / Velvet"
+      },
+      {
+        "label": "Frame",
+        "value": "Solid wood + MDF"
+      },
+      {
+        "label": "Slats",
+        "value": "Solid birch, 12 pcs"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "30–40 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "尺寸",
+        "value": "1.5m / 1.8m / 2.0m（可定制）"
+      },
+      {
+        "label": "床头材质",
+        "value": "布艺 / PU皮革 / 丝绒"
+      },
+      {
+        "label": "框架",
+        "value": "实木 + MDF"
+      },
+      {
+        "label": "排骨架",
+        "value": "桦木实木，12根"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "30–40 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Tamaños",
+        "value": "1.5m / 1.8m / 2.0m (personalizado)"
+      },
+      {
+        "label": "Cabecero",
+        "value": "Tela / Cuero PU / Terciopelo"
+      },
+      {
+        "label": "Estructura",
+        "value": "Madera maciza + MDF"
+      },
+      {
+        "label": "Listones",
+        "value": "Abedul macizo, 12 uds"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "30–40 días"
+      }
+    ],
+    "image": "/images/products/beds/3.webp",
+    "price": "$172",
+    "weeklySales": 1203
+  },
+  {
+    "id": "bed-04",
+    "name": "Shengyu Bed 04",
+    "nameZh": "盛煜床 04",
+    "nameEs": "Shengyu Cama 04",
+    "subtitle": "Luxurious upholstered bed — factory direct",
+    "subtitleZh": "豪华软体床 — 工厂直供",
+    "subtitleEs": "Cama tapizada de lujo — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Beds",
+    "description": "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    "descriptionZh": "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    "descriptionEs": "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    "features": [
+      "Soft-touch fabric or leather-upholstered headboard",
+      "Solid wood slatted base with center support",
+      "Modern minimalist to luxury wingback styles",
+      "Tool-free slat assembly"
+    ],
+    "featuresZh": [
+      "亲肤面料或皮革软包床头板",
+      "实木排骨架底座，带中心支撑",
+      "现代简约至奢华翼背款式",
+      "免工具安装排骨架"
+    ],
+    "featuresEs": [
+      "Cabecero tapizado en tela suave o cuero",
+      "Base de listones de madera maciza con soporte central",
+      "Estilos desde minimalista moderno hasta wingback de lujo",
+      "Montaje de listones sin herramientas"
+    ],
+    "specs": [
+      {
+        "label": "Sizes",
+        "value": "1.5m / 1.8m / 2.0m (custom)"
+      },
+      {
+        "label": "Headboard",
+        "value": "Fabric / PU Leather / Velvet"
+      },
+      {
+        "label": "Frame",
+        "value": "Solid wood + MDF"
+      },
+      {
+        "label": "Slats",
+        "value": "Solid birch, 12 pcs"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "30–40 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "尺寸",
+        "value": "1.5m / 1.8m / 2.0m（可定制）"
+      },
+      {
+        "label": "床头材质",
+        "value": "布艺 / PU皮革 / 丝绒"
+      },
+      {
+        "label": "框架",
+        "value": "实木 + MDF"
+      },
+      {
+        "label": "排骨架",
+        "value": "桦木实木，12根"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "30–40 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Tamaños",
+        "value": "1.5m / 1.8m / 2.0m (personalizado)"
+      },
+      {
+        "label": "Cabecero",
+        "value": "Tela / Cuero PU / Terciopelo"
+      },
+      {
+        "label": "Estructura",
+        "value": "Madera maciza + MDF"
+      },
+      {
+        "label": "Listones",
+        "value": "Abedul macizo, 12 uds"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "30–40 días"
+      }
+    ],
+    "image": "/images/products/beds/4.webp",
+    "price": "$145",
+    "weeklySales": 987
+  },
+  {
+    "id": "bed-05",
+    "name": "Shengyu Bed 05",
+    "nameZh": "盛煜床 05",
+    "nameEs": "Shengyu Cama 05",
+    "subtitle": "Luxurious upholstered bed — factory direct",
+    "subtitleZh": "豪华软体床 — 工厂直供",
+    "subtitleEs": "Cama tapizada de lujo — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Beds",
+    "description": "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    "descriptionZh": "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    "descriptionEs": "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    "features": [
+      "Soft-touch fabric or leather-upholstered headboard",
+      "Solid wood slatted base with center support",
+      "Modern minimalist to luxury wingback styles",
+      "Tool-free slat assembly"
+    ],
+    "featuresZh": [
+      "亲肤面料或皮革软包床头板",
+      "实木排骨架底座，带中心支撑",
+      "现代简约至奢华翼背款式",
+      "免工具安装排骨架"
+    ],
+    "featuresEs": [
+      "Cabecero tapizado en tela suave o cuero",
+      "Base de listones de madera maciza con soporte central",
+      "Estilos desde minimalista moderno hasta wingback de lujo",
+      "Montaje de listones sin herramientas"
+    ],
+    "specs": [
+      {
+        "label": "Sizes",
+        "value": "1.5m / 1.8m / 2.0m (custom)"
+      },
+      {
+        "label": "Headboard",
+        "value": "Fabric / PU Leather / Velvet"
+      },
+      {
+        "label": "Frame",
+        "value": "Solid wood + MDF"
+      },
+      {
+        "label": "Slats",
+        "value": "Solid birch, 12 pcs"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "30–40 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "尺寸",
+        "value": "1.5m / 1.8m / 2.0m（可定制）"
+      },
+      {
+        "label": "床头材质",
+        "value": "布艺 / PU皮革 / 丝绒"
+      },
+      {
+        "label": "框架",
+        "value": "实木 + MDF"
+      },
+      {
+        "label": "排骨架",
+        "value": "桦木实木，12根"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "30–40 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Tamaños",
+        "value": "1.5m / 1.8m / 2.0m (personalizado)"
+      },
+      {
+        "label": "Cabecero",
+        "value": "Tela / Cuero PU / Terciopelo"
+      },
+      {
+        "label": "Estructura",
+        "value": "Madera maciza + MDF"
+      },
+      {
+        "label": "Listones",
+        "value": "Abedul macizo, 12 uds"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "30–40 días"
+      }
+    ],
+    "image": "/images/products/beds/5.webp",
+    "price": "$198",
+    "weeklySales": 756
+  },
+  {
+    "id": "bed-06",
+    "name": "Shengyu Bed 06",
+    "nameZh": "盛煜床 06",
+    "nameEs": "Shengyu Cama 06",
+    "subtitle": "Luxurious upholstered bed — factory direct",
+    "subtitleZh": "豪华软体床 — 工厂直供",
+    "subtitleEs": "Cama tapizada de lujo — directo de fábrica",
+    "category": "Furniture",
+    "subCategory": "Beds",
+    "description": "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base. Queen, King, and custom sizes.",
+    "descriptionZh": "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。支持1.5m/1.8m/2.0m及定制尺寸。",
+    "descriptionEs": "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza. Tamaños Queen, King y personalizados.",
+    "features": [
+      "Soft-touch fabric or leather-upholstered headboard",
+      "Solid wood slatted base with center support",
+      "Modern minimalist to luxury wingback styles",
+      "Tool-free slat assembly"
+    ],
+    "featuresZh": [
+      "亲肤面料或皮革软包床头板",
+      "实木排骨架底座，带中心支撑",
+      "现代简约至奢华翼背款式",
+      "免工具安装排骨架"
+    ],
+    "featuresEs": [
+      "Cabecero tapizado en tela suave o cuero",
+      "Base de listones de madera maciza con soporte central",
+      "Estilos desde minimalista moderno hasta wingback de lujo",
+      "Montaje de listones sin herramientas"
+    ],
+    "specs": [
+      {
+        "label": "Sizes",
+        "value": "1.5m / 1.8m / 2.0m (custom)"
+      },
+      {
+        "label": "Headboard",
+        "value": "Fabric / PU Leather / Velvet"
+      },
+      {
+        "label": "Frame",
+        "value": "Solid wood + MDF"
+      },
+      {
+        "label": "Slats",
+        "value": "Solid birch, 12 pcs"
+      },
+      {
+        "label": "MOQ",
+        "value": "10 units per design"
+      },
+      {
+        "label": "Lead Time",
+        "value": "30–40 days"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "尺寸",
+        "value": "1.5m / 1.8m / 2.0m（可定制）"
+      },
+      {
+        "label": "床头材质",
+        "value": "布艺 / PU皮革 / 丝绒"
+      },
+      {
+        "label": "框架",
+        "value": "实木 + MDF"
+      },
+      {
+        "label": "排骨架",
+        "value": "桦木实木，12根"
+      },
+      {
+        "label": "起订量",
+        "value": "每款10件起"
+      },
+      {
+        "label": "交期",
+        "value": "30–40 天"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Tamaños",
+        "value": "1.5m / 1.8m / 2.0m (personalizado)"
+      },
+      {
+        "label": "Cabecero",
+        "value": "Tela / Cuero PU / Terciopelo"
+      },
+      {
+        "label": "Estructura",
+        "value": "Madera maciza + MDF"
+      },
+      {
+        "label": "Listones",
+        "value": "Abedul macizo, 12 uds"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "10 unidades por diseño"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "30–40 días"
+      }
+    ],
+    "image": "/images/products/beds/6.webp",
+    "price": "$163",
+    "weeklySales": 621
+  },
+  {
+    "id": "furniture-cabinets-display-cabinet",
+    "name": "Display Cabinet",
+    "nameZh": "Display Cabinet — 柜子",
+    "nameEs": "Display Cabinet — Armarios",
+    "subtitle": "Cabinets — factory direct quality",
+    "subtitleZh": "柜子 — 工厂直供品质",
+    "subtitleEs": "Armarios — calidad directa de fábrica",
+    "category": "Furniture",
+    "subCategory": "Cabinets",
+    "partnerId": "kaidi-feiluo",
+    "description": "Shengyu Industrial cabinets — Display Cabinet. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 柜子 — Display Cabinet — 柜子。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial armarios — Display Cabinet — Armarios. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-6.svg",
+    "badge": "New",
+    "badgeZh": "新品",
+    "badgeEs": "Nuevo",
+    "price": "$85",
+    "weeklySales": 1890
+  },
+  {
+    "id": "furniture-cabinets-tv-stand-cabinet",
+    "name": "TV Stand Cabinet",
+    "nameZh": "TV Stand Cabinet — 柜子",
+    "nameEs": "TV Stand Cabinet — Armarios",
+    "subtitle": "Cabinets — factory direct quality",
+    "subtitleZh": "柜子 — 工厂直供品质",
+    "subtitleEs": "Armarios — calidad directa de fábrica",
+    "category": "Furniture",
+    "subCategory": "Cabinets",
+    "partnerId": "kaidi-feiluo",
+    "description": "Shengyu Industrial cabinets — TV Stand Cabinet. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 柜子 — TV Stand Cabinet — 柜子。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial armarios — TV Stand Cabinet — Armarios. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-7.svg",
+    "price": "$85",
+    "weeklySales": 1456
+  },
+  {
+    "id": "furniture-cabinets-storage-cabinet",
+    "name": "Storage Cabinet",
+    "nameZh": "Storage Cabinet — 柜子",
+    "nameEs": "Storage Cabinet — Armarios",
+    "subtitle": "Cabinets — factory direct quality",
+    "subtitleZh": "柜子 — 工厂直供品质",
+    "subtitleEs": "Armarios — calidad directa de fábrica",
+    "category": "Furniture",
+    "subCategory": "Cabinets",
+    "partnerId": "kaidi-feiluo",
+    "description": "Shengyu Industrial cabinets — Storage Cabinet. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 柜子 — Storage Cabinet — 柜子。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial armarios — Storage Cabinet — Armarios. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-8.svg",
+    "price": "$85",
+    "weeklySales": 2341
+  },
+  {
+    "id": "silicone-sealant-sg9000",
+    "name": "Shengyu SG-9000 Silicone Structural Sealant",
+    "nameZh": "盛煜 SG-9000 硅酮结构密封胶",
+    "nameEs": "Shengyu SG-9000 Sellador Estructural de Silicona",
+    "subtitle": "For high-rise curtain wall structural bonding",
+    "category": "Building Materials",
+    "subCategory": "Adhesives",
+    "description": "Two-component silicone structural sealant for high-rise building curtain walls. Exceptional weather resistance and structural strength.",
+    "features": [
+      "Tensile strength ≥ 1.2 MPa for structural applications",
+      "50-year design life with superior UV/aging resistance",
+      "Two-component fast-cure system",
+      "Zero VOC emissions"
+    ],
+    "specs": [
+      {
+        "label": "Tensile Strength",
+        "value": "≥1.2 MPa"
+      },
+      {
+        "label": "Elongation at Break",
+        "value": "≥400%"
+      },
+      {
+        "label": "Tack-free Time",
+        "value": "≤45 min"
+      },
+      {
+        "label": "Service Temperature",
+        "value": "-50°C ~ +150°C"
+      },
+      {
+        "label": "Packaging",
+        "value": "Part A 20L / Part B 200L"
+      },
+      {
+        "label": "Color",
+        "value": "Black / White / Grey / Custom"
+      }
+    ],
+    "image": "/images/product-2.svg",
+    "badge": "Best Seller",
+    "badgeZh": "热卖",
+    "badgeEs": "Más Vendido",
+    "onPromotion": true,
+    "monthlyBest": true,
+    "price": "$12/L",
+    "weeklySales": 4521,
+    "promoTag": "爆款"
+  },
+  {
+    "id": "building-materials-adhesives-weatherproof-sealant-ws-7000",
+    "name": "Weatherproof Sealant WS-7000",
+    "nameZh": "Weatherproof Sealant WS-7000 — 胶粘剂",
+    "nameEs": "Weatherproof Sealant WS-7000 — Adhesivos",
+    "subtitle": "Adhesives — factory direct quality",
+    "subtitleZh": "胶粘剂 — 工厂直供品质",
+    "subtitleEs": "Adhesivos — calidad directa de fábrica",
+    "category": "Building Materials",
+    "subCategory": "Adhesives",
+    "partnerId": "hengda-materials",
+    "description": "Shengyu Industrial adhesives — Weatherproof Sealant WS-7000. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 胶粘剂 — Weatherproof Sealant WS-7000 — 胶粘剂。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial adhesivos — Weatherproof Sealant WS-7000 — Adhesivos. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-3.svg",
+    "price": "$15",
+    "weeklySales": 987
+  },
+  {
+    "id": "building-materials-adhesives-epoxy-stone-adhesive-sa-5000",
+    "name": "Epoxy Stone Adhesive SA-5000",
+    "nameZh": "Epoxy Stone Adhesive SA-5000 — 胶粘剂",
+    "nameEs": "Epoxy Stone Adhesive SA-5000 — Adhesivos",
+    "subtitle": "Adhesives — factory direct quality",
+    "subtitleZh": "胶粘剂 — 工厂直供品质",
+    "subtitleEs": "Adhesivos — calidad directa de fábrica",
+    "category": "Building Materials",
+    "subCategory": "Adhesives",
+    "partnerId": "hengda-materials",
+    "description": "Shengyu Industrial adhesives — Epoxy Stone Adhesive SA-5000. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 胶粘剂 — Epoxy Stone Adhesive SA-5000 — 胶粘剂。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial adhesivos — Epoxy Stone Adhesive SA-5000 — Adhesivos. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-4.svg",
+    "price": "$15",
+    "weeklySales": 1654
+  },
+  {
+    "id": "building-materials-panels-mdf-board",
+    "name": "MDF Board",
+    "nameZh": "MDF Board — 板材",
+    "nameEs": "MDF Board — Paneles",
+    "subtitle": "Panels — factory direct quality",
+    "subtitleZh": "板材 — 工厂直供品质",
+    "subtitleEs": "Paneles — calidad directa de fábrica",
+    "category": "Building Materials",
+    "subCategory": "Panels",
+    "partnerId": "hengda-materials",
+    "description": "Shengyu Industrial panels — MDF Board. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 板材 — MDF Board — 板材。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial paneles — MDF Board — Paneles. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-8.svg",
+    "monthlyBest": true,
+    "price": "$15",
+    "weeklySales": 2103
+  },
+  {
+    "id": "building-materials-panels-plywood-panel",
+    "name": "Plywood Panel",
+    "nameZh": "Plywood Panel — 板材",
+    "nameEs": "Plywood Panel — Paneles",
+    "subtitle": "Panels — factory direct quality",
+    "subtitleZh": "板材 — 工厂直供品质",
+    "subtitleEs": "Paneles — calidad directa de fábrica",
+    "category": "Building Materials",
+    "subCategory": "Panels",
+    "partnerId": "hengda-materials",
+    "description": "Shengyu Industrial panels — Plywood Panel. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 板材 — Plywood Panel — 板材。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial paneles — Plywood Panel — Paneles. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-9.svg",
+    "price": "$15",
+    "weeklySales": 756
+  },
+  {
+    "id": "building-materials-panels-particle-board",
+    "name": "Particle Board",
+    "nameZh": "Particle Board — 板材",
+    "nameEs": "Particle Board — Paneles",
+    "subtitle": "Panels — factory direct quality",
+    "subtitleZh": "板材 — 工厂直供品质",
+    "subtitleEs": "Paneles — calidad directa de fábrica",
+    "category": "Building Materials",
+    "subCategory": "Panels",
+    "partnerId": "hengda-materials",
+    "description": "Shengyu Industrial panels — Particle Board. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 板材 — Particle Board — 板材。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial paneles — Particle Board — Paneles. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-10.svg",
+    "price": "$15",
+    "weeklySales": 1320
+  },
+  {
+    "id": "anchor-kit-hw500",
+    "name": "Shengyu Heavy-Duty Anchor Fastener Kit HW-500",
+    "nameZh": "盛煜 重型锚固套件 HW-500",
+    "nameEs": "Shengyu Kit de Anclaje de Alta Resistencia HW-500",
+    "subtitle": "Professional anchoring for concrete and masonry",
+    "category": "Hardware",
+    "subCategory": "Fasteners",
+    "description": "High-strength AISI 304 stainless steel anchor fastener kit for structural anchoring in concrete, brick, and masonry.",
+    "features": [
+      "AISI 304 stainless steel — corrosion resistant",
+      "6 anchor sizes from M6 to M20",
+      "Wedge, sleeve, and drop-in types",
+      "TÜV-tested load ratings with 4× safety factor"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "AISI 304 Stainless Steel"
+      },
+      {
+        "label": "Size Range",
+        "value": "M6 / M8 / M10 / M12 / M16 / M20"
+      },
+      {
+        "label": "Tensile Load",
+        "value": "Up to 45 kN"
+      },
+      {
+        "label": "Types",
+        "value": "Wedge / Sleeve / Drop-in"
+      },
+      {
+        "label": "Packaging",
+        "value": "200 pcs per kit"
+      },
+      {
+        "label": "MOQ",
+        "value": "100 kits"
+      }
+    ],
+    "image": "/images/product-4.svg",
+    "badge": "New",
+    "badgeZh": "新品",
+    "badgeEs": "Nuevo",
+    "onPromotion": true,
+    "monthlyBest": true,
+    "price": "$28/kit",
+    "weeklySales": 3210,
+    "promoTag": "热卖"
+  },
+  {
+    "id": "hardware-fasteners-self-tapping-screw-set",
+    "name": "Self-Tapping Screw Set",
+    "nameZh": "Self-Tapping Screw Set — 紧固件",
+    "nameEs": "Self-Tapping Screw Set — Sujetadores",
+    "subtitle": "Fasteners — factory direct quality",
+    "subtitleZh": "紧固件 — 工厂直供品质",
+    "subtitleEs": "Sujetadores — calidad directa de fábrica",
+    "category": "Hardware",
+    "subCategory": "Fasteners",
+    "partnerId": "jinying-hardware",
+    "description": "Shengyu Industrial fasteners — Self-Tapping Screw Set. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 紧固件 — Self-Tapping Screw Set — 紧固件。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial sujetadores — Self-Tapping Screw Set — Sujetadores. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-11.svg",
+    "price": "$22",
+    "weeklySales": 2890
+  },
+  {
+    "id": "hardware-fasteners-expansion-bolt-kit",
+    "name": "Expansion Bolt Kit",
+    "nameZh": "Expansion Bolt Kit — 紧固件",
+    "nameEs": "Expansion Bolt Kit — Sujetadores",
+    "subtitle": "Fasteners — factory direct quality",
+    "subtitleZh": "紧固件 — 工厂直供品质",
+    "subtitleEs": "Sujetadores — calidad directa de fábrica",
+    "category": "Hardware",
+    "subCategory": "Fasteners",
+    "partnerId": "jinying-hardware",
+    "description": "Shengyu Industrial fasteners — Expansion Bolt Kit. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 紧固件 — Expansion Bolt Kit — 紧固件。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial sujetadores — Expansion Bolt Kit — Sujetadores. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-12.svg",
+    "price": "$22",
+    "weeklySales": 654
+  },
+  {
+    "id": "hardware-door---window-door-handle-set",
+    "name": "Door Handle Set",
+    "nameZh": "Door Handle Set — 门窗配件",
+    "nameEs": "Door Handle Set — Puertas y Ventanas",
+    "subtitle": "Door & Window — factory direct quality",
+    "subtitleZh": "门窗配件 — 工厂直供品质",
+    "subtitleEs": "Puertas y Ventanas — calidad directa de fábrica",
+    "category": "Hardware",
+    "subCategory": "Door & Window",
+    "partnerId": "jinying-hardware",
+    "description": "Shengyu Industrial door & window — Door Handle Set. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 门窗配件 — Door Handle Set — 门窗配件。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial puertas y ventanas — Door Handle Set — Puertas y Ventanas. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-13.svg",
+    "price": "$22",
+    "weeklySales": 1123
+  },
+  {
+    "id": "hardware-door---window-window-hinge-kit",
+    "name": "Window Hinge Kit",
+    "nameZh": "Window Hinge Kit — 门窗配件",
+    "nameEs": "Window Hinge Kit — Puertas y Ventanas",
+    "subtitle": "Door & Window — factory direct quality",
+    "subtitleZh": "门窗配件 — 工厂直供品质",
+    "subtitleEs": "Puertas y Ventanas — calidad directa de fábrica",
+    "category": "Hardware",
+    "subCategory": "Door & Window",
+    "partnerId": "jinying-hardware",
+    "description": "Shengyu Industrial door & window — Window Hinge Kit. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 门窗配件 — Window Hinge Kit — 门窗配件。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial puertas y ventanas — Window Hinge Kit — Puertas y Ventanas. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-14.svg",
+    "price": "$22",
+    "weeklySales": 876
+  },
+  {
+    "id": "hardware-bathroom-towel-rack-set",
+    "name": "Towel Rack Set",
+    "nameZh": "Towel Rack Set — 卫浴配件",
+    "nameEs": "Towel Rack Set — Accesorios de Baño",
+    "subtitle": "Bathroom — factory direct quality",
+    "subtitleZh": "卫浴配件 — 工厂直供品质",
+    "subtitleEs": "Accesorios de Baño — calidad directa de fábrica",
+    "category": "Hardware",
+    "subCategory": "Bathroom",
+    "partnerId": "jinying-hardware",
+    "description": "Shengyu Industrial bathroom — Towel Rack Set. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 卫浴配件 — Towel Rack Set — 卫浴配件。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial accesorios de baño — Towel Rack Set — Accesorios de Baño. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-15.svg",
+    "price": "$22",
+    "weeklySales": 1543
+  },
+  {
+    "id": "hardware-bathroom-shower-hinge-kit",
+    "name": "Shower Hinge Kit",
+    "nameZh": "Shower Hinge Kit — 卫浴配件",
+    "nameEs": "Shower Hinge Kit — Accesorios de Baño",
+    "subtitle": "Bathroom — factory direct quality",
+    "subtitleZh": "卫浴配件 — 工厂直供品质",
+    "subtitleEs": "Accesorios de Baño — calidad directa de fábrica",
+    "category": "Hardware",
+    "subCategory": "Bathroom",
+    "partnerId": "jinying-hardware",
+    "description": "Shengyu Industrial bathroom — Shower Hinge Kit. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 卫浴配件 — Shower Hinge Kit — 卫浴配件。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial accesorios de baño — Shower Hinge Kit — Accesorios de Baño. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-16.svg",
+    "price": "$22",
+    "weeklySales": 1987
+  },
+  {
+    "id": "appliances-fans-industrial-stand-fan",
+    "name": "Industrial Stand Fan",
+    "nameZh": "Industrial Stand Fan — 电风扇",
+    "nameEs": "Industrial Stand Fan — Ventiladores",
+    "subtitle": "Fans — factory direct quality",
+    "subtitleZh": "电风扇 — 工厂直供品质",
+    "subtitleEs": "Ventiladores — calidad directa de fábrica",
+    "category": "Appliances",
+    "subCategory": "Fans",
+    "partnerId": "aolis-home",
+    "description": "Shengyu Industrial fans — Industrial Stand Fan. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 电风扇 — Industrial Stand Fan — 电风扇。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial ventiladores — Industrial Stand Fan — Ventiladores. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-17.svg",
+    "onPromotion": true,
+    "price": "$35",
+    "weeklySales": 723
+  },
+  {
+    "id": "appliances-fans-wall-mounted-fan",
+    "name": "Wall-Mounted Fan",
+    "nameZh": "Wall-Mounted Fan — 电风扇",
+    "nameEs": "Wall-Mounted Fan — Ventiladores",
+    "subtitle": "Fans — factory direct quality",
+    "subtitleZh": "电风扇 — 工厂直供品质",
+    "subtitleEs": "Ventiladores — calidad directa de fábrica",
+    "category": "Appliances",
+    "subCategory": "Fans",
+    "partnerId": "aolis-home",
+    "description": "Shengyu Industrial fans — Wall-Mounted Fan. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 电风扇 — Wall-Mounted Fan — 电风扇。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial ventiladores — Wall-Mounted Fan — Ventiladores. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-18.svg",
+    "price": "$35",
+    "weeklySales": 432
+  },
+  {
+    "id": "appliances-heaters-infrared-heater",
+    "name": "Infrared Heater",
+    "nameZh": "Infrared Heater — 取暖器",
+    "nameEs": "Infrared Heater — Calefactores",
+    "subtitle": "Heaters — factory direct quality",
+    "subtitleZh": "取暖器 — 工厂直供品质",
+    "subtitleEs": "Calefactores — calidad directa de fábrica",
+    "category": "Appliances",
+    "subCategory": "Heaters",
+    "partnerId": "aolis-home",
+    "description": "Shengyu Industrial heaters — Infrared Heater. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 取暖器 — Infrared Heater — 取暖器。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial calefactores — Infrared Heater — Calefactores. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-19.svg",
+    "price": "$35",
+    "weeklySales": 1890
+  },
+  {
+    "id": "appliances-heaters-oil-filled-radiator",
+    "name": "Oil-Filled Radiator",
+    "nameZh": "Oil-Filled Radiator — 取暖器",
+    "nameEs": "Oil-Filled Radiator — Calefactores",
+    "subtitle": "Heaters — factory direct quality",
+    "subtitleZh": "取暖器 — 工厂直供品质",
+    "subtitleEs": "Calefactores — calidad directa de fábrica",
+    "category": "Appliances",
+    "subCategory": "Heaters",
+    "partnerId": "aolis-home",
+    "description": "Shengyu Industrial heaters — Oil-Filled Radiator. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 取暖器 — Oil-Filled Radiator — 取暖器。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial calefactores — Oil-Filled Radiator — Calefactores. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-20.svg",
+    "price": "$35",
+    "weeklySales": 1456
+  },
+  {
+    "id": "appliances-kitchen-electric-kettle",
+    "name": "Electric Kettle",
+    "nameZh": "Electric Kettle — 厨房小家电",
+    "nameEs": "Electric Kettle — Electrodomésticos de Cocina",
+    "subtitle": "Kitchen — factory direct quality",
+    "subtitleZh": "厨房小家电 — 工厂直供品质",
+    "subtitleEs": "Electrodomésticos de Cocina — calidad directa de fábrica",
+    "category": "Appliances",
+    "subCategory": "Kitchen",
+    "partnerId": "aolis-home",
+    "description": "Shengyu Industrial kitchen — Electric Kettle. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 厨房小家电 — Electric Kettle — 厨房小家电。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial electrodomésticos de cocina — Electric Kettle — Electrodomésticos de Cocina. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-21.svg",
+    "price": "$35",
+    "weeklySales": 2341
+  },
+  {
+    "id": "appliances-kitchen-blender-set",
+    "name": "Blender Set",
+    "nameZh": "Blender Set — 厨房小家电",
+    "nameEs": "Blender Set — Electrodomésticos de Cocina",
+    "subtitle": "Kitchen — factory direct quality",
+    "subtitleZh": "厨房小家电 — 工厂直供品质",
+    "subtitleEs": "Electrodomésticos de Cocina — calidad directa de fábrica",
+    "category": "Appliances",
+    "subCategory": "Kitchen",
+    "partnerId": "aolis-home",
+    "description": "Shengyu Industrial kitchen — Blender Set. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 厨房小家电 — Blender Set — 厨房小家电。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial electrodomésticos de cocina — Blender Set — Electrodomésticos de Cocina. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-22.svg",
+    "price": "$35",
+    "weeklySales": 987
+  },
+  {
+    "id": "lighting-desk-lamps-led-desk-lamp",
+    "name": "LED Desk Lamp",
+    "nameZh": "LED Desk Lamp — 台灯",
+    "nameEs": "LED Desk Lamp — Lámparas de Escritorio",
+    "subtitle": "Desk Lamps — factory direct quality",
+    "subtitleZh": "台灯 — 工厂直供品质",
+    "subtitleEs": "Lámparas de Escritorio — calidad directa de fábrica",
+    "category": "Lighting",
+    "subCategory": "Desk Lamps",
+    "partnerId": "brightlux-lighting",
+    "description": "Shengyu Industrial desk lamps — LED Desk Lamp. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 台灯 — LED Desk Lamp — 台灯。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial lámparas de escritorio — LED Desk Lamp — Lámparas de Escritorio. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-23.svg",
+    "price": "$28",
+    "weeklySales": 1654
+  },
+  {
+    "id": "lighting-desk-lamps-architect-task-lamp",
+    "name": "Architect Task Lamp",
+    "nameZh": "Architect Task Lamp — 台灯",
+    "nameEs": "Architect Task Lamp — Lámparas de Escritorio",
+    "subtitle": "Desk Lamps — factory direct quality",
+    "subtitleZh": "台灯 — 工厂直供品质",
+    "subtitleEs": "Lámparas de Escritorio — calidad directa de fábrica",
+    "category": "Lighting",
+    "subCategory": "Desk Lamps",
+    "partnerId": "brightlux-lighting",
+    "description": "Shengyu Industrial desk lamps — Architect Task Lamp. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 台灯 — Architect Task Lamp — 台灯。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial lámparas de escritorio — Architect Task Lamp — Lámparas de Escritorio. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-24.svg",
+    "price": "$28",
+    "weeklySales": 2103
+  },
+  {
+    "id": "led-highbay-lt200",
+    "name": "Shengyu LED High Bay Light LT-200",
+    "nameZh": "盛煜 LED 高棚灯 LT-200",
+    "nameEs": "Shengyu Luz LED de Alta Bahía LT-200",
+    "subtitle": "Energy-efficient industrial lighting",
+    "category": "Lighting",
+    "subCategory": "Pendant Lights",
+    "description": "High-efficiency LED industrial pendant/high bay light delivering 150 lm/W. IP65-rated for harsh environments.",
+    "features": [
+      "150 lm/W ultra-high efficiency",
+      "IP65 dustproof and waterproof",
+      "Flicker-free driver with 0-10V dimming",
+      "50,000-hour rated lifespan"
+    ],
+    "specs": [
+      {
+        "label": "Power",
+        "value": "100W / 150W / 200W"
+      },
+      {
+        "label": "Efficacy",
+        "value": "150 lm/W"
+      },
+      {
+        "label": "CCT",
+        "value": "3000K / 4000K / 5000K / 6500K"
+      },
+      {
+        "label": "CRI",
+        "value": "Ra ≥ 80"
+      },
+      {
+        "label": "Beam Angle",
+        "value": "90° / 120°"
+      },
+      {
+        "label": "IP Rating",
+        "value": "IP65"
+      }
+    ],
+    "image": "/images/product-3.svg",
+    "onPromotion": true,
+    "monthlyBest": true,
+    "price": "$45",
+    "weeklySales": 2678,
+    "promoTag": "新品"
+  },
+  {
+    "id": "lighting-pendant-lights-crystal-pendant-light",
+    "name": "Crystal Pendant Light",
+    "nameZh": "Crystal Pendant Light — 吊灯",
+    "nameEs": "Crystal Pendant Light — Lámparas Colgantes",
+    "subtitle": "Pendant Lights — factory direct quality",
+    "subtitleZh": "吊灯 — 工厂直供品质",
+    "subtitleEs": "Lámparas Colgantes — calidad directa de fábrica",
+    "category": "Lighting",
+    "subCategory": "Pendant Lights",
+    "partnerId": "brightlux-lighting",
+    "description": "Shengyu Industrial pendant lights — Crystal Pendant Light. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 吊灯 — Crystal Pendant Light — 吊灯。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial lámparas colgantes — Crystal Pendant Light — Lámparas Colgantes. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-25.svg",
+    "onPromotion": true,
+    "price": "$28",
+    "weeklySales": 756
+  },
+  {
+    "id": "lighting-pendant-lights-modern-dome-pendant",
+    "name": "Modern Dome Pendant",
+    "nameZh": "Modern Dome Pendant — 吊灯",
+    "nameEs": "Modern Dome Pendant — Lámparas Colgantes",
+    "subtitle": "Pendant Lights — factory direct quality",
+    "subtitleZh": "吊灯 — 工厂直供品质",
+    "subtitleEs": "Lámparas Colgantes — calidad directa de fábrica",
+    "category": "Lighting",
+    "subCategory": "Pendant Lights",
+    "partnerId": "brightlux-lighting",
+    "description": "Shengyu Industrial pendant lights — Modern Dome Pendant. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 吊灯 — Modern Dome Pendant — 吊灯。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial lámparas colgantes — Modern Dome Pendant — Lámparas Colgantes. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-26.svg",
+    "price": "$28",
+    "weeklySales": 1320
+  },
+  {
+    "id": "lighting-floor-lamps-tripod-floor-lamp",
+    "name": "Tripod Floor Lamp",
+    "nameZh": "Tripod Floor Lamp — 落地灯",
+    "nameEs": "Tripod Floor Lamp — Lámparas de Pie",
+    "subtitle": "Floor Lamps — factory direct quality",
+    "subtitleZh": "落地灯 — 工厂直供品质",
+    "subtitleEs": "Lámparas de Pie — calidad directa de fábrica",
+    "category": "Lighting",
+    "subCategory": "Floor Lamps",
+    "partnerId": "brightlux-lighting",
+    "description": "Shengyu Industrial floor lamps — Tripod Floor Lamp. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 落地灯 — Tripod Floor Lamp — 落地灯。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial lámparas de pie — Tripod Floor Lamp — Lámparas de Pie. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-27.svg",
+    "price": "$28",
+    "weeklySales": 2890
+  },
+  {
+    "id": "lighting-floor-lamps-arc-floor-lamp",
+    "name": "Arc Floor Lamp",
+    "nameZh": "Arc Floor Lamp — 落地灯",
+    "nameEs": "Arc Floor Lamp — Lámparas de Pie",
+    "subtitle": "Floor Lamps — factory direct quality",
+    "subtitleZh": "落地灯 — 工厂直供品质",
+    "subtitleEs": "Lámparas de Pie — calidad directa de fábrica",
+    "category": "Lighting",
+    "subCategory": "Floor Lamps",
+    "partnerId": "brightlux-lighting",
+    "description": "Shengyu Industrial floor lamps — Arc Floor Lamp. Manufactured in our own facilities with strict quality control. Suitable for residential, commercial, and export markets.",
+    "descriptionZh": "盛煜实业 落地灯 — Arc Floor Lamp — 落地灯。自有工厂制造，严格品控。适用于住宅、商业及出口市场。",
+    "descriptionEs": "Shengyu Industrial lámparas de pie — Arc Floor Lamp — Lámparas de Pie. Fabricado en nuestras propias instalaciones con estricto control de calidad. Adecuado para mercados residenciales, comerciales y de exportación.",
+    "features": [
+      "Premium materials and expert workmanship",
+      "ISO-certified production process",
+      "Custom specifications available",
+      "Export-standard packaging"
+    ],
+    "featuresZh": [
+      "优质材料与精湛工艺",
+      "ISO认证生产流程",
+      "支持定制规格",
+      "出口标准包装"
+    ],
+    "featuresEs": [
+      "Materiales premium y mano de obra experta",
+      "Proceso de producción certificado ISO",
+      "Especificaciones personalizadas disponibles",
+      "Embalaje estándar de exportación"
+    ],
+    "specs": [
+      {
+        "label": "Material",
+        "value": "Premium grade"
+      },
+      {
+        "label": "MOQ",
+        "value": "Negotiable"
+      },
+      {
+        "label": "Lead Time",
+        "value": "25–35 days"
+      },
+      {
+        "label": "Customization",
+        "value": "Available"
+      }
+    ],
+    "specsZh": [
+      {
+        "label": "材质",
+        "value": "优质等级"
+      },
+      {
+        "label": "起订量",
+        "value": "可协商"
+      },
+      {
+        "label": "交期",
+        "value": "25–35 天"
+      },
+      {
+        "label": "定制",
+        "value": "支持"
+      }
+    ],
+    "specsEs": [
+      {
+        "label": "Material",
+        "value": "Grado premium"
+      },
+      {
+        "label": "Cantidad Mínima",
+        "value": "Negociable"
+      },
+      {
+        "label": "Plazo de Entrega",
+        "value": "25–35 días"
+      },
+      {
+        "label": "Personalización",
+        "value": "Disponible"
+      }
+    ],
+    "image": "/images/product-28.svg",
+    "price": "$28",
+    "weeklySales": 654
+  },
+  {
+    "id": "industrial-degreaser-cc300",
+    "name": "Shengyu Industrial Multi-Surface Degreaser CC-300",
+    "nameZh": "盛煜 工业多表面除油剂 CC-300",
+    "nameEs": "Shengyu Industrial Desengrasante Multiuso CC-300",
+    "subtitle": "Heavy-duty cleaning for commercial and industrial use",
+    "category": "Others",
+    "description": "Professional-grade water-based degreaser for heavy-duty cleaning. Biodegradable and phosphate-free.",
+    "features": [
+      "Water-based, non-corrosive formula",
+      "Rapid penetration — under 3 minutes",
+      "Biodegradable — meets EU Ecolabel",
+      "Dilutable concentrate up to 1:20"
+    ],
+    "specs": [
+      {
+        "label": "pH",
+        "value": "12.5 ± 0.5"
+      },
+      {
+        "label": "Dilution",
+        "value": "1:5 to 1:20"
+      },
+      {
+        "label": "Dwell Time",
+        "value": "2–3 min"
+      },
+      {
+        "label": "Packaging",
+        "value": "1L / 5L / 25L"
+      },
+      {
+        "label": "Shelf Life",
+        "value": "24 months"
+      },
+      {
+        "label": "Certification",
+        "value": "EU Ecolabel / SGS"
+      }
+    ],
+    "image": "/images/product-5.svg",
+    "monthlyBest": true,
+    "price": "$8/L",
+    "weeklySales": 1890
+  }
+]
