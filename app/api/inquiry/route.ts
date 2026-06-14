@@ -1,11 +1,20 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import type { Resend } from "resend";
 import fs from "fs";
 import path from "path";
 
 const INQUIRIES_JSON = path.join(process.cwd(), "data", "inquiries.json");
-const resend = new Resend(process.env.RESEND_API_KEY);
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
+
+let resend: Resend | null = null;
+async function getResend() {
+  if (!process.env.RESEND_API_KEY) return null;
+  if (!resend) {
+    const { Resend: R } = await import("resend");
+    resend = new R(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 interface InquiryItem {
   productId: string;
@@ -66,9 +75,11 @@ export async function POST(request: Request) {
       .map((i) => `• ${i.name} × ${i.quantity} (${i.category})`)
       .join("\n");
 
-    // Send email notification
+    // Send email notification (only if RESEND_API_KEY is configured)
     try {
-      await resend.emails.send({
+      const r = await getResend();
+      if (r) {
+        await r.emails.send({
         from: "Shengyu Industrial <noreply@shenghanindustrial.com>",
         to: NOTIFY_EMAIL,
         subject: `New Inquiry from ${name} — ${items.length} product(s)`,
@@ -88,7 +99,8 @@ export async function POST(request: Request) {
           </div>
         `,
       });
-      console.log(`Inquiry email sent to ${NOTIFY_EMAIL}`);
+        console.log(`Inquiry email sent to ${NOTIFY_EMAIL}`);
+      }
     } catch (emailErr) {
       console.error("Email send failed:", emailErr);
       // Still return success — inquiry was saved even if email fails

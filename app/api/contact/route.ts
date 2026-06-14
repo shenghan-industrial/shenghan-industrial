@@ -1,7 +1,15 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import type { Resend } from "resend";
 
-export const runtime = "edge";
+let resend: Resend | null = null;
+async function getResend() {
+  if (!process.env.RESEND_API_KEY) return null;
+  if (!resend) {
+    const { Resend: R } = await import("resend");
+    resend = new R(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 interface ContactBody {
   name: string;
@@ -33,16 +41,15 @@ function validate(body: Partial<ContactBody>): { valid: true; data: ContactBody 
 }
 
 async function sendViaResend(data: ContactBody): Promise<{ success: boolean; error?: string }> {
-  const apiKey = process.env.RESEND_API_KEY;
   const notifyEmail = process.env.NOTIFY_EMAIL || "info@shenghanindustrial.com";
+  const r = await getResend();
 
-  if (!apiKey || apiKey === "re_xxxxxxxxxxxx") {
+  if (!r) {
     return { success: false, error: "Resend API key not configured." };
   }
 
   try {
-    const resend = new Resend(apiKey);
-    await resend.emails.send({
+    await r.emails.send({
       from: `Shenghan Website <noreply@shenghanindustrial.com>`,
       to: notifyEmail,
       replyTo: data.email,
