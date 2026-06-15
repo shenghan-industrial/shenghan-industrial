@@ -1,1 +1,9 @@
 compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "KV_STORE"
+id = "KV_NAMESPACE_ID_PLACEHOLDER"
+
+[[r2_buckets]]
+binding = "R2_STORE"
+bucket_name = "shengyu-assets"

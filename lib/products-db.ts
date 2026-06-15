@@ -1,38 +1,28 @@
 import { products as staticProducts } from "@/data/products";
 import type { Product } from "@/data/products";
-import fs from "fs";
-import path from "path";
+import { kvGetJSON, kvPutJSON, kvSeedIfEmpty } from "@/lib/kv-storage";
 
-const JSON_PATH = path.join(process.cwd(), "data", "products.json");
+const KEY = "products";
 
-function readJson(): Product[] {
-  try {
-    if (fs.existsSync(JSON_PATH)) {
-      return JSON.parse(fs.readFileSync(JSON_PATH, "utf8"));
-    }
-  } catch {}
-  return staticProducts;
+export async function getAllProducts(): Promise<Product[]> {
+  await kvSeedIfEmpty(KEY, staticProducts);
+  return (await kvGetJSON<Product[]>(KEY)) ?? staticProducts;
 }
 
-function writeJson(products: Product[]) {
-  fs.writeFileSync(JSON_PATH, JSON.stringify(products, null, 2), "utf8");
+export async function getProductById(id: string): Promise<Product | undefined> {
+  const products = await getAllProducts();
+  return products.find((p) => p.id === id);
 }
 
-export function getAllProducts(): Product[] {
-  return readJson();
+export async function getProductsByCategory(cat: string): Promise<Product[]> {
+  const products = await getAllProducts();
+  return products.filter((p) => p.category === cat);
 }
 
-export function getProductById(id: string): Product | undefined {
-  return readJson().find((p) => p.id === id);
-}
-
-export function getProductsByCategory(cat: string): Product[] {
-  return readJson().filter((p) => p.category === cat);
-}
-
-export function searchProducts(q: string): Product[] {
+export async function searchProducts(q: string): Promise<Product[]> {
+  const products = await getAllProducts();
   const lower = q.toLowerCase();
-  return readJson().filter(
+  return products.filter(
     (p) =>
       p.name.toLowerCase().includes(lower) ||
       p.subtitle.toLowerCase().includes(lower) ||
@@ -41,28 +31,28 @@ export function searchProducts(q: string): Product[] {
   );
 }
 
-export function createProduct(product: Product): Product {
-  const products = readJson();
+export async function createProduct(product: Product): Promise<Product> {
+  const products = await getAllProducts();
   products.push(product);
-  writeJson(products);
+  await kvPutJSON(KEY, products);
   return product;
 }
 
-export function updateProduct(id: string, updates: Partial<Product>): Product | null {
-  const products = readJson();
+export async function updateProduct(id: string, updates: Partial<Product>): Promise<Product | null> {
+  const products = await getAllProducts();
   const idx = products.findIndex((p) => p.id === id);
   if (idx === -1) return null;
   products[idx] = { ...products[idx], ...updates, id };
-  writeJson(products);
+  await kvPutJSON(KEY, products);
   return products[idx];
 }
 
-export function deleteProduct(id: string): boolean {
-  const products = readJson();
+export async function deleteProduct(id: string): Promise<boolean> {
+  const products = await getAllProducts();
   const idx = products.findIndex((p) => p.id === id);
   if (idx === -1) return false;
   products.splice(idx, 1);
-  writeJson(products);
+  await kvPutJSON(KEY, products);
   return true;
 }
 

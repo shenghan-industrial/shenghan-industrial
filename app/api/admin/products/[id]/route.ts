@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const product = getProductById(id);
+  const product = await getProductById(id);
   if (!product) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(product);
 }
@@ -14,7 +14,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
   const { id } = await params;
   try {
     const body = await request.json();
-    const updated = updateProduct(id, body);
+    const updated = await updateProduct(id, body);
     if (!updated) return NextResponse.json({ error: "Not found" }, { status: 404 });
     return NextResponse.json(updated);
   } catch {
@@ -24,7 +24,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
 
 export async function DELETE(_: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const ok = deleteProduct(id);
+  const ok = await deleteProduct(id);
   if (!ok) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json({ success: true });
 }

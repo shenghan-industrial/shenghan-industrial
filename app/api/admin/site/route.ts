@@ -1,28 +1,17 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { siteConfig } from "@/data/site-config";
+import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
 export const runtime = "edge";
 
-const SITE_JSON = path.join(process.cwd(), "data", "site-custom.json");
-const SITE_TS = path.join(process.cwd(), "data", "site-config.ts");
-
 function getDefaults() {
-  // Read from site-config.ts to get current values
-  const content = fs.readFileSync(SITE_TS, "utf8");
-
-  const extract = (key: string): string => {
-    const match = content.match(new RegExp(`${key}[:\s]+["\`]([^"\`]+)["\`]`));
-    return match?.[1] || "";
-  };
-
   return {
-    brandName: extract("name") || "Shengyu Industrial",
-    slogan: extract("slogan") || "Global Home & Building Materials Manufacturer",
-    phone: extract("display") || "+86 138 0013 8000",
-    email: extract("email") || "shenghanind@163.com",
-    addressZh: extract("line3") || "山东省临沂市",
-    addressEn: extract("line1") || "Linyi, Shandong, China",
+    brandName: siteConfig.brand.name,
+    slogan: siteConfig.brand.slogan,
+    phone: siteConfig.contact.phone.display,
+    email: siteConfig.contact.email,
+    addressZh: siteConfig.contact.address.line3,
+    addressEn: siteConfig.contact.address.line1,
     stats1: "25+ Certifications",
     stats2: "3200+ Projects Completed",
     stats3: "50000 tons Annual Capacity",
@@ -39,9 +28,8 @@ function getDefaults() {
 
 export async function GET() {
   try {
-    if (fs.existsSync(SITE_JSON)) {
-      return NextResponse.json(JSON.parse(fs.readFileSync(SITE_JSON, "utf8")));
-    }
+    const data = await kvGetJSON("site-config");
+    if (data) return NextResponse.json(data);
     return NextResponse.json(getDefaults());
   } catch {
     return NextResponse.json(getDefaults());
@@ -51,7 +39,7 @@ export async function GET() {
 export async function PUT(request: Request) {
   try {
     const body = await request.json();
-    fs.writeFileSync(SITE_JSON, JSON.stringify(body, null, 2), "utf8");
+    await kvPutJSON("site-config", body);
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json({ error: "Save failed" }, { status: 500 });

@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export async function GET() {
   try {
-    const products = getAllProducts();
+    const products = await getAllProducts();
     return NextResponse.json(products);
   } catch {
     return NextResponse.json({ error: "Failed to fetch products" }, { status: 500 });
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     if (!body.id || !body.name || !body.category || !body.image) {
       return NextResponse.json({ error: "id, name, category, image are required" }, { status: 400 });
     }
-    const product = createProduct(body);
+    const product = await createProduct(body);
     return NextResponse.json(product, { status: 201 });
   } catch {
     return NextResponse.json({ error: "Failed to create product" }, { status: 500 });

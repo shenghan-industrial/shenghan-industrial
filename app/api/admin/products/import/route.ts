@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 import { categories } from "@/data/categories";
+import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
 export const runtime = "edge";
-
-const PRODUCTS_JSON = path.join(process.cwd(), "data", "products.json");
 
 // Same auto-generate logic as ProductForm
 function generateProduct(
@@ -154,7 +151,7 @@ export async function POST(request: Request) {
     }
 
     // Read existing products
-    const existing = JSON.parse(fs.readFileSync(PRODUCTS_JSON, "utf8"));
+    const existing = (await kvGetJSON<{ id: string }[]>("products")) ?? [];
     const existingIds = new Set(existing.map((p: { id: string }) => p.id));
 
     const errors: string[] = [];
@@ -184,7 +181,7 @@ export async function POST(request: Request) {
 
     // Merge and save
     const allProducts = [...existing, ...newProducts];
-    fs.writeFileSync(PRODUCTS_JSON, JSON.stringify(allProducts, null, 2), "utf8");
+    await kvPutJSON("products", allProducts);
 
     return NextResponse.json({ imported: newProducts.length, errors });
   } catch (e) {

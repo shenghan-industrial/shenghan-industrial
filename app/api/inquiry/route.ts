@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import type { Resend } from "resend";
-import fs from "fs";
-import path from "path";
+import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
 export const runtime = "edge";
 
-const INQUIRIES_JSON = path.join(process.cwd(), "data", "inquiries.json");
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
 
 let resend: Resend | null = null;
@@ -25,15 +23,14 @@ interface InquiryItem {
   category: string;
 }
 
-function readInquiries() {
-  if (!fs.existsSync(INQUIRIES_JSON)) return [];
-  try { return JSON.parse(fs.readFileSync(INQUIRIES_JSON, "utf8")); }
+async function readInquiries() {
+  try { return (await kvGetJSON<any[]>("inquiries")) ?? []; }
   catch { return []; }
 }
 
 export async function GET() {
   try {
-    return NextResponse.json(readInquiries());
+    return NextResponse.json(await readInquiries());
   } catch {
     return NextResponse.json({ error: "Read failed" }, { status: 500 });
   }
@@ -65,12 +62,10 @@ export async function POST(request: Request) {
       createdAt: new Date().toISOString(),
     };
 
-    // Save to JSON
-    const inquiries = readInquiries();
+    // Save to KV
+    const inquiries = await readInquiries();
     inquiries.unshift(inquiry);
-    const dir = path.dirname(INQUIRIES_JSON);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(INQUIRIES_JSON, JSON.stringify(inquiries, null, 2), "utf8");
+    await kvPutJSON("inquiries", inquiries);
 
     // Build product list for email
     const productList = items

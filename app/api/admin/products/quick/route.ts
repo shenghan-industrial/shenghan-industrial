@@ -1,10 +1,7 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
 export const runtime = "edge";
-
-const PRODUCTS_JSON = path.join(process.cwd(), "data", "products.json");
 
 // Keyword extraction: find the core type word in Chinese name
 // e.g. "现代L型真皮沙发" → type="沙发", style="现代", material="真皮"
@@ -162,12 +159,12 @@ export async function POST(request: Request) {
     };
 
     // Save
-    const existing = JSON.parse(fs.readFileSync(PRODUCTS_JSON, "utf8"));
+    const existing = (await kvGetJSON<{ id: string }[]>("products")) ?? [];
     if (existing.find((p: { id: string }) => p.id === product.id)) {
       return NextResponse.json({ error: "产品ID重复，请重试" }, { status: 409 });
     }
     existing.push(product);
-    fs.writeFileSync(PRODUCTS_JSON, JSON.stringify(existing, null, 2), "utf8");
+    await kvPutJSON("products", existing);
 
     return NextResponse.json({ success: true, id: product.id, name: enName, nameEs: esName });
   } catch (e) {
