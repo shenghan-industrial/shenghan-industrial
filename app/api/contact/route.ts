@@ -43,7 +43,7 @@ function validate(body: Partial<ContactBody>): { valid: true; data: ContactBody 
 }
 
 async function sendViaResend(data: ContactBody): Promise<{ success: boolean; error?: string }> {
-  const notifyEmail = process.env.NOTIFY_EMAIL || "info@shenghanindustrial.com";
+  const notifyEmail = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
   const r = await getResend();
 
   if (!r) {
