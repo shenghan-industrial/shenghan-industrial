@@ -3,6 +3,8 @@ import fs from "fs";
 import path from "path";
 import { categories } from "@/data/categories";
 
+export const runtime = "edge";
+
 const PRODUCTS_JSON = path.join(process.cwd(), "data", "products.json");
 
 // Same auto-generate logic as ProductForm

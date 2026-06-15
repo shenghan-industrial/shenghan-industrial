@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import type { Resend } from "resend";
 
+export const runtime = "edge";
+
 let resend: Resend | null = null;
 async function getResend() {
   if (!process.env.RESEND_API_KEY) return null;

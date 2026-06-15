@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+export const runtime = "edge";
+
 const SITE_JSON = path.join(process.cwd(), "data", "site-custom.json");
 const SITE_TS = path.join(process.cwd(), "data", "site-config.ts");
 

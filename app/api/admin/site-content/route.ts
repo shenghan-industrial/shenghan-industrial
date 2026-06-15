@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+export const runtime = "edge";
+
 const SITE_JSON = path.join(process.cwd(), "data", "site-content.json");
 
 export async function GET() {

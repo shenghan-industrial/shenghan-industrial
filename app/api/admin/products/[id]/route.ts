@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getProductById, updateProduct, deleteProduct } from "@/lib/products-db";
 
+export const runtime = "edge";
+
 export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const product = getProductById(id);

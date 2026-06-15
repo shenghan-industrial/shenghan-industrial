@@ -3,6 +3,8 @@
 import { use, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+
+export const runtime = "edge";
 import {
   Minus,
   Plus,

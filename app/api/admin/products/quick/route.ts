@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+export const runtime = "edge";
+
 const PRODUCTS_JSON = path.join(process.cwd(), "data", "products.json");
 
 // Keyword extraction: find the core type word in Chinese name

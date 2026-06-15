@@ -3,6 +3,8 @@ import type { Resend } from "resend";
 import fs from "fs";
 import path from "path";
 
+export const runtime = "edge";
+
 const INQUIRIES_JSON = path.join(process.cwd(), "data", "inquiries.json");
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
 
