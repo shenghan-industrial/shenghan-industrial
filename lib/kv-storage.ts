@@ -1,28 +1,21 @@
-// Cloudflare KV + file-based storage (dev fallback)
-// Uses require() via try/catch — Edge runtime skips it, Node.js uses it
+import fs from "fs";
+import path from "path";
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const nodeFS: any = (() => { try { return require("fs"); } catch { return null; } })();
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const nodePath: any = (() => { try { return require("path"); } catch { return null; } })();
-
-const DATA_DIR = nodePath ? nodePath.join(process.cwd(), "data", "dynamic") : null;
+const DATA_DIR = path.join(process.cwd(), "data", "dynamic");
 
 function readFileJSON<T>(key: string): T | undefined {
-  if (!nodeFS) return undefined;
   try {
-    if (!nodeFS.existsSync(DATA_DIR)) nodeFS.mkdirSync(DATA_DIR, { recursive: true });
-    const fp = nodePath.join(DATA_DIR, `${key}.json`);
-    if (!nodeFS.existsSync(fp)) return undefined;
-    return JSON.parse(nodeFS.readFileSync(fp, "utf-8")) as T;
+    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+    const fp = path.join(DATA_DIR, `${key}.json`);
+    if (!fs.existsSync(fp)) return undefined;
+    return JSON.parse(fs.readFileSync(fp, "utf-8")) as T;
   } catch { return undefined; }
 }
 
 function writeFileJSON<T>(key: string, value: T): void {
-  if (!nodeFS) return;
   try {
-    if (!nodeFS.existsSync(DATA_DIR)) nodeFS.mkdirSync(DATA_DIR, { recursive: true });
-    nodeFS.writeFileSync(nodePath.join(DATA_DIR, `${key}.json`), JSON.stringify(value, null, 2), "utf-8");
+    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.writeFileSync(path.join(DATA_DIR, `${key}.json`), JSON.stringify(value, null, 2), "utf-8");
   } catch (e: any) {
     console.error("[kv-storage] Write failed:", e?.message || e);
   }

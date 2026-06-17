@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { getAllProducts, createProduct } from "@/lib/products-db";
 
-export const runtime = "edge";
-
 export async function GET() {
   try {
     const products = await getAllProducts();

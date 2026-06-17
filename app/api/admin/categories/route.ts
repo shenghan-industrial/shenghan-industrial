@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { getAllCategories, saveAllCategories, createCategory } from "@/lib/categories-db";
 
-export const runtime = "edge";
-
 export async function GET() {
   try {
     const cats = await getAllCategories();
