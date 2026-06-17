@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { hasR2, getR2 } from "@/lib/kv-storage";
+import fs from "fs";
+import path from "path";
 
 export async function POST(request: Request) {
   try {
@@ -21,20 +23,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ url: `/api/images/products/${filename}`, filename });
     }
 
-    // Local dev: write to public/images/products/
-    // eslint-disable-next-line
-    const nr: any = (typeof __non_webpack_require__ !== "undefined" ? __non_webpack_require__ : null);
-    if (nr) {
-      const fs = nr("fs");
-      const path = nr("path");
-      const dir = path.join(process.cwd(), "public", "images", "products");
-      if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-      const uint8 = new Uint8Array(bytes);
-      fs.writeFileSync(path.join(dir, filename), uint8);
-      return NextResponse.json({ url: `/images/products/${filename}`, filename });
-    }
-
-    return NextResponse.json({ error: "Upload not available" }, { status: 503 });
+    // Local / Vercel: write to public/images/products/
+    const dir = path.join(process.cwd(), "public", "images", "products");
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, filename), new Uint8Array(bytes));
+    return NextResponse.json({ url: `/images/products/${filename}`, filename });
   } catch (e) {
     console.error("Upload error:", e);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });
