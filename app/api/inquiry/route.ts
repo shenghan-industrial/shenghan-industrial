@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import type { Resend } from "resend";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
-export const runtime = "edge";
-
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
 
 let resend: Resend | null = null;

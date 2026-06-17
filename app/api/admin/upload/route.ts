@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { hasR2, getR2 } from "@/lib/kv-storage";
 
-export const runtime = "edge";
-
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
