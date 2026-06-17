@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const runtime = "edge";
+
 const API_KEY = process.env.DASHSCOPE_API_KEY || "";
 const API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
 
