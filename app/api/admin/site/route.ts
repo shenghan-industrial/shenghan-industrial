@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { siteConfig } from "@/data/site-config";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
+export const runtime = "edge";
+
 function getDefaults() {
   return {
     brandName: siteConfig.brand.name,

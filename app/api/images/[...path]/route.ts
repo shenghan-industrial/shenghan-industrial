@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getR2 } from "@/lib/kv-storage";
 
+export const runtime = "edge";
+
 export async function GET(_: Request, { params }: { params: Promise<{ path: string[] }> }) {
   const { path: segments } = await params;
   const r2Key = segments.join("/");

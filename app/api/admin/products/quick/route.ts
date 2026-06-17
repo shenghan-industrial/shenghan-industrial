@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 import { genEnName, genEsName, catZhMap } from "@/lib/translate-name";
 
+export const runtime = "edge";
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
