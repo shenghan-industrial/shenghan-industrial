@@ -1,6 +1,32 @@
-// Cloudflare KV + in-memory fallback (works in both Edge and Node.js runtimes)
+// Cloudflare KV + file-based storage (dev fallback)
+// Uses require() via try/catch — Edge runtime skips it, Node.js uses it
 
-const memory = new Map<string, string>();
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const nodeFS: any = (() => { try { return require("fs"); } catch { return null; } })();
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const nodePath: any = (() => { try { return require("path"); } catch { return null; } })();
+
+const DATA_DIR = nodePath ? nodePath.join(process.cwd(), "data", "dynamic") : null;
+
+function readFileJSON<T>(key: string): T | undefined {
+  if (!nodeFS) return undefined;
+  try {
+    if (!nodeFS.existsSync(DATA_DIR)) nodeFS.mkdirSync(DATA_DIR, { recursive: true });
+    const fp = nodePath.join(DATA_DIR, `${key}.json`);
+    if (!nodeFS.existsSync(fp)) return undefined;
+    return JSON.parse(nodeFS.readFileSync(fp, "utf-8")) as T;
+  } catch { return undefined; }
+}
+
+function writeFileJSON<T>(key: string, value: T): void {
+  if (!nodeFS) return;
+  try {
+    if (!nodeFS.existsSync(DATA_DIR)) nodeFS.mkdirSync(DATA_DIR, { recursive: true });
+    nodeFS.writeFileSync(nodePath.join(DATA_DIR, `${key}.json`), JSON.stringify(value, null, 2), "utf-8");
+  } catch (e: any) {
+    console.error("[kv-storage] Write failed:", e?.message || e);
+  }
+}
 
 function getKV(): KVNamespace | null {
   try {
@@ -18,8 +44,7 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     const val = await kv.get(key, "json");
     return (val ?? fallback) as T | undefined;
   }
-  const raw = memory.get(key);
-  return raw !== undefined ? (JSON.parse(raw) as T) : fallback;
+  return readFileJSON<T>(key) ?? fallback;
 }
 
 export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
@@ -28,7 +53,7 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
     await kv.put(key, JSON.stringify(value));
     return;
   }
-  memory.set(key, JSON.stringify(value));
+  writeFileJSON(key, value);
 }
 
 export async function kvSeedIfEmpty<T>(key: string, seed: T): Promise<void> {
