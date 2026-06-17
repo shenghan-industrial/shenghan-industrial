@@ -1,0 +1,48 @@
+[
+  {
+    "id": "inq-1781688432937",
+    "name": "11",
+    "email": "11",
+    "phone": "11",
+    "message": "",
+    "items": [
+      {
+        "productId": "sofa-03",
+        "name": "Premium Sofas — 盛煜云眠沙发",
+        "model": "SY-JJ-YM-KC-03",
+        "quantity": 1,
+        "category": "Furniture"
+      },
+      {
+        "productId": "sofa-02",
+        "name": "Premium Sofas — 盛煜揽辰沙发",
+        "model": "SY-JJ-LC-KC-02",
+        "quantity": 1,
+        "category": "Furniture"
+      },
+      {
+        "productId": "furniture-beds",
+        "name": "Genuine Leather Bed — 盛煜·揽辰系列真皮床",
+        "model": "SY-JJ-LC-PC-01",
+        "quantity": 1,
+        "category": "Furniture"
+      },
+      {
+        "productId": "draft-1781685952348-mn0x",
+        "name": "Genuine Leather Bed — 盛煜揽辰真皮床",
+        "model": "SY-JJ-LC-PC-01",
+        "quantity": 1,
+        "category": "Furniture"
+      },
+      {
+        "productId": "draft-1781685961928-mfvx",
+        "name": "Premium Mattresses — 盛煜云眠床垫",
+        "model": "SY-JJ-YM-SC-01",
+        "quantity": 5,
+        "category": "Furniture"
+      }
+    ],
+    "totalItems": 9,
+    "createdAt": "2026-06-17T09:27:12.937Z"
+  }
+]
