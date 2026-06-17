@@ -1,54 +1,6 @@
-// Cloudflare KV + file-based storage (dev fallback)
-// Uses __non_webpack_require__ to access Node.js fs without breaking Edge runtime builds
+// Cloudflare KV + in-memory fallback (works in both Edge and Node.js runtimes)
 
-type FileStore = {
-  readFileJSON<T>(key: string): T | undefined;
-  writeFileJSON<T>(key: string, value: T): void;
-  deleteFile(key: string): void;
-};
-
-function createFileStore(): FileStore | null {
-  try {
-    // eslint-disable-next-line
-    const nr: any = (typeof __non_webpack_require__ !== "undefined" ? __non_webpack_require__ : null);
-    if (!nr) return null;
-    const fs = nr("fs");
-    const path = nr("path");
-    const dataDir = path.join(process.cwd(), "data", "dynamic");
-    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-
-    return {
-      readFileJSON<T>(key: string): T | undefined {
-        try {
-          const fp = path.join(dataDir, `${key}.json`);
-          if (!fs.existsSync(fp)) return undefined;
-          return JSON.parse(fs.readFileSync(fp, "utf-8")) as T;
-        } catch { return undefined; }
-      },
-      writeFileJSON<T>(key: string, value: T): void {
-        try {
-          const fp = path.join(dataDir, `${key}.json`);
-          fs.writeFileSync(fp, JSON.stringify(value, null, 2), "utf-8");
-        } catch (e: any) {
-          console.error("[kv-storage] Write failed:", e?.message || e);
-        }
-      },
-      deleteFile(key: string): void {
-        try {
-          const fp = path.join(dataDir, `${key}.json`);
-          if (fs.existsSync(fp)) fs.unlinkSync(fp);
-        } catch { /* ignore */ }
-      },
-    };
-  } catch { return null; }
-}
-
-// Lazy-initialized file store (null in Edge/browser)
-let _fileStore: FileStore | null | undefined;
-function getFileStore(): FileStore | null {
-  if (_fileStore === undefined) _fileStore = createFileStore();
-  return _fileStore;
-}
+const memory = new Map<string, string>();
 
 function getKV(): KVNamespace | null {
   try {
@@ -66,8 +18,8 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     const val = await kv.get(key, "json");
     return (val ?? fallback) as T | undefined;
   }
-  const val = getFileStore()?.readFileJSON<T>(key);
-  return val !== undefined ? val : fallback;
+  const raw = memory.get(key);
+  return raw !== undefined ? (JSON.parse(raw) as T) : fallback;
 }
 
 export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
@@ -76,7 +28,7 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
     await kv.put(key, JSON.stringify(value));
     return;
   }
-  getFileStore()?.writeFileJSON(key, value);
+  memory.set(key, JSON.stringify(value));
 }
 
 export async function kvSeedIfEmpty<T>(key: string, seed: T): Promise<void> {
@@ -100,4 +52,3 @@ export function getR2(): R2Bucket | null {
   } catch { /* not on Cloudflare */ }
   return null;
 }
-
