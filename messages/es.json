@@ -339,7 +339,9 @@
     "formEmail": "Correo Electrónico *",
     "formMessage": "Notas adicionales (opcional)",
     "cancel": "Cancelar",
-    "formPhone": "WhatsApp / Teléfono *"
+    "formPhone": "WhatsApp / Teléfono *",
+    "successTitle": "¡Consulta enviada!",
+    "successMsg": "Responderemos dentro de 24 horas."
   },
   "cookie": {
     "title": "Aviso de Cookies",

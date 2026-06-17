@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { categories } from "@/data/categories";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
-export const runtime = "edge";
-
 // Same auto-generate logic as ProductForm
 function generateProduct(
   name: string, nameZh: string, category: string, subCategory: string,

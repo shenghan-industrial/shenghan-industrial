@@ -29,6 +29,7 @@ export interface Product {
   weeklySales?: number;
   promoTag?: string;
   notes?: string;
+  model?: string;
 }
 
 const categoryPartnerMap: Record<string, string> = {
@@ -456,15 +457,19 @@ const staticProducts: Product[] = [
   ...others,
 ];
 
-// Dynamic import from JSON — falls back to static data when JSON doesn't exist
-let products: Product[] = staticProducts;
-try {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  products = require("./products.json") as Product[];
-} catch {
-  products = staticProducts;
+// Dynamic override from products.json for admin dashboard
+// Uses staticProducts as base, JSON overrides individual products
+import productsJson from "./products.json";
+
+function mergeProducts(base: Product[], overrides: Product[]): Product[] {
+  const map = new Map<string, Product>();
+  for (const p of base) map.set(p.id, p);
+  for (const p of overrides) map.set(p.id, p);
+  return [...map.values()];
 }
-export { products };
+
+const products: Product[] = mergeProducts(staticProducts, productsJson);
+export { products, staticProducts };
 
 // Apply promotion, monthly best seller flags, price, sales data to static products
 (function applyFlags() {

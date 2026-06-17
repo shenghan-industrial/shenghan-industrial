@@ -3,9 +3,10 @@
 import { useMemo, useRef, useState, Suspense } from "react";
 import Link from "next/link";
 import { HeroSection } from "@/components/HeroSection";
-import { products } from "@/data/products";
-import { categories } from "@/data/categories";
+import { categories as staticCategories } from "@/data/categories";
 import { useT } from "@/lib/LanguageContext";
+import { useCategories } from "@/lib/use-categories";
+import { useProducts } from "@/lib/use-products";
 import { localizeProduct } from "@/lib/localizeProduct";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { ReviewsSection } from "@/components/ReviewsSection";
@@ -20,7 +21,7 @@ const rankColors = [
 ];
 
 // Group best sellers by subcategory
-function getBestSellerGroups() {
+function getBestSellerGroups(products: import("@/data/products").Product[], categories: typeof staticCategories) {
   const bests = products.filter((p) => p.monthlyBest);
   const map: Record<string, { subKey: string; subNameZh: string; subName: string; subNameEs?: string; catNameZh: string; catName: string; catNameEs?: string; productCategory: string; productSubCategory: string; items: typeof bests }> = {};
 
@@ -54,8 +55,10 @@ function HomeContent() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
+  const categories = useCategories();
+  const { products } = useProducts();
 
-  const bestGroups = useMemo(() => getBestSellerGroups(), []);
+  const bestGroups = useMemo(() => getBestSellerGroups(products, categories), [products, categories]);
 
   const scroll = (dir: "left" | "right") => {
     if (!scrollRef.current) return;

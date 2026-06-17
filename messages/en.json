@@ -337,7 +337,9 @@
     "formEmail": "Email Address *",
     "formMessage": "Additional notes (optional)",
     "cancel": "Cancel",
-    "formPhone": "WhatsApp / Phone *"
+    "formPhone": "WhatsApp / Phone *",
+    "successTitle": "Inquiry Submitted!",
+    "successMsg": "We'll reply within 24 hours."
   },
   "cookie": {
     "title": "Cookie Notice",

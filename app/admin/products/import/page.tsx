@@ -1,125 +1,160 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Upload, Download, Check, Loader2, AlertCircle } from "lucide-react";
+import { useState, useRef } from "react";
+import Link from "next/link";
+import { Upload, Loader2, Check, Image, Edit, X } from "lucide-react";
 
-const CSV_HEADER = "name,nameZh,category,subCategory,image,price,notes";
-const SAMPLE = [
-  "Modern Fabric Sofa,现代布艺沙发,Furniture,Sofas,/images/products/your-image.webp,$299,High-density foam with premium velvet upholstery and solid wood frame",
-  "LED Desk Lamp,LED台灯,Lighting,Desk Lamps,/images/products/your-image.webp,$45,Adjustable arm with 3 color temperatures and USB charging port",
-  "Wood Adhesive,木材胶粘剂,Building Materials,Adhesives,/images/products/your-image.webp,$18,High-strength waterproof formula for indoor and outdoor use",
-].join("\n");
+export default function BatchUploadPage() {
+  const [files, setFiles] = useState<File[]>([]);
+  const [uploading, setUploading] = useState(false);
+  const [results, setResults] = useState<{ url: string; filename: string; productId?: string }[]>([]);
+  const [dragOver, setDragOver] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-export default function ImportProductsPage() {
-  const router = useRouter();
-  const [csv, setCsv] = useState("");
-  const [importing, setImporting] = useState(false);
-  const [result, setResult] = useState<{ imported: number; errors: string[] } | null>(null);
-  const [file, setFile] = useState<File | null>(null);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const f = e.target.files?.[0]; if (!f) return;
-    setFile(f);
-    const reader = new FileReader();
-    reader.onload = (ev) => setCsv(ev.target?.result as string || "");
-    reader.readAsText(f);
+  const addFiles = (newFiles: FileList | null) => {
+    if (!newFiles) return;
+    const imgs = Array.from(newFiles).filter((f) => f.type.startsWith("image/"));
+    setFiles((p) => [...p, ...imgs]);
   };
 
-  const handlePaste = () => { navigator.clipboard.readText().then(t => setCsv(t)).catch(() => {}); };
-
-  const handleImport = async () => {
-    if (!csv.trim()) return;
-    setImporting(true); setResult(null);
-    try {
-      const res = await fetch("/api/admin/products/import", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ csv: csv.trim() }),
-      });
-      const data = await res.json();
-      setResult(data);
-      if (data.imported > 0) setCsv("");
-    } catch { setResult({ imported: 0, errors: ["网络错误"] }); }
-    setImporting(false);
+  const removeFile = (i: number) => {
+    setFiles((p) => p.filter((_, idx) => idx !== i));
   };
 
-  const handleDownloadTemplate = () => {
-    const blob = new Blob([CSV_HEADER + "\n" + SAMPLE], { type: "text/csv;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a"); a.href = url; a.download = "product-import-template.csv"; a.click();
-    URL.revokeObjectURL(url);
+  const handleUpload = async () => {
+    if (files.length === 0) return;
+    setUploading(true);
+    const res: typeof results = [];
+
+    for (const file of files) {
+      try {
+        const fd = new FormData();
+        fd.append("file", file);
+        const r = await fetch("/api/admin/upload", { method: "POST", body: fd });
+        if (!r.ok) { res.push({ url: "", filename: file.name }); continue; }
+        const data = await r.json();
+
+        // Create draft product with just the image
+        const timestamp = Date.now();
+        const productId = `draft-${timestamp}-${Math.random().toString(36).slice(2, 6)}`;
+        await fetch("/api/admin/products", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: productId,
+            name: `Draft - ${file.name}`,
+            nameZh: `草稿 - ${file.name.split(".")[0]}`,
+            nameEs: "",
+            category: "Others",
+            image: data.url,
+            subtitle: "",
+            description: "",
+            descriptionZh: "",
+            descriptionEs: "",
+            features: [],
+            featuresZh: [],
+            featuresEs: [],
+            specs: [],
+            specsZh: [],
+            specsEs: [],
+            partnerId: "shenghan-industrial",
+          }),
+        });
+
+        res.push({ url: data.url, filename: file.name, productId });
+      } catch {
+        res.push({ url: "", filename: file.name });
+      }
+    }
+
+    setResults(res);
+    setFiles([]);
+    setUploading(false);
   };
+
+  const done = results.filter((r) => r.url).length;
+  const failed = results.filter((r) => !r.url).length;
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <h1 className="text-2xl font-bold text-[#3D3730] dark:text-[#D4C8B8]">批量导入</h1>
-          <p className="text-sm text-[#9B8E7E] dark:text-white/30 mt-1">上传CSV文件或粘贴数据，批量导入产品</p>
-        </div>
-        <button onClick={handleDownloadTemplate} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#E8E2DC] dark:border-white/10 text-sm font-medium text-[#6B6058] dark:text-white/40 hover:bg-[#F5F2EF] dark:hover:bg-white/5 transition-colors">
-          <Download className="w-4 h-4" />下载模板
-        </button>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-[#3D3730] dark:text-[#D4C8B8]">批量上传产品图片</h1>
+        <p className="text-sm text-[#9B8E7E] dark:text-white/30 mt-1">拖入多张产品图片，一键上传生成草稿，后续编辑填写详细信息</p>
       </div>
 
-      <div className="bg-white dark:bg-[#1A1816] rounded-xl border border-[#E8E2DC] dark:border-white/10 p-5 mb-4">
-        <h3 className="text-sm font-bold text-[#3D3730] dark:text-[#D4C8B8] mb-2">CSV格式说明</h3>
-        <p className="text-xs text-[#9B8E7E] dark:text-white/30 mb-3">
-          字段：<code className="px-1.5 py-0.5 bg-[#F5F2EF] dark:bg-brand-800 rounded text-[#B8A080]">name, nameZh, category, subCategory, image, price, notes</code>
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
-          <div><span className="text-[#B8A080] font-semibold">name</span> <span className="text-[#9B8E7E]">英文名称 *</span></div>
-          <div><span className="text-[#B8A080] font-semibold">nameZh</span> <span className="text-[#9B8E7E]">中文名称</span></div>
-          <div><span className="text-[#B8A080] font-semibold">category</span> <span className="text-[#9B8E7E]">品类（Furniture / Building Materials / Hardware / Lighting / Appliances / Others）</span></div>
-          <div><span className="text-[#B8A080] font-semibold">subCategory</span> <span className="text-[#9B8E7E]">子品类（Sofas / Beds / Adhesives / Desk Lamps ...）</span></div>
-          <div><span className="text-[#B8A080] font-semibold">image</span> <span className="text-[#9B8E7E]">图片路径/URL</span></div>
-          <div><span className="text-[#B8A080] font-semibold">price</span> <span className="text-[#9B8E7E]">价格（如 $299）</span></div>
-          <div><span className="text-[#B8A080] font-semibold">notes</span> <span className="text-[#9B8E7E]">简要描述，自动扩展为三语商品介绍</span></div>
-        </div>
+      {/* Drop zone */}
+      <div
+        onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
+        onDragLeave={() => setDragOver(false)}
+        onDrop={(e) => { e.preventDefault(); setDragOver(false); addFiles(e.dataTransfer.files); }}
+        onClick={() => inputRef.current?.click()}
+        className={`mb-5 border-2 border-dashed rounded-2xl p-10 text-center cursor-pointer transition-all ${
+          dragOver ? "border-[#B8A080] bg-[#B8A080]/5" : "border-[#E8E2DC] dark:border-white/10 hover:border-[#B8A080]/40"
+        }`}
+      >
+        <Image className="w-10 h-10 text-[#B8A080]/40 mx-auto mb-3" />
+        <p className="text-sm font-medium text-[#3D3730] dark:text-white">拖拽或点击上传产品图片</p>
+        <p className="text-xs text-[#9B8E7E] dark:text-white/30 mt-1">支持 JPG/PNG/WEBP，可一次选择多张</p>
+        <input ref={inputRef} type="file" accept="image/*" multiple className="hidden"
+          onChange={(e) => addFiles(e.target.files)} />
       </div>
 
-      <div className="bg-white dark:bg-[#1A1816] rounded-xl border border-[#E8E2DC] dark:border-white/10 p-5 mb-4">
-        <div className="flex items-center justify-between mb-3">
-          <h3 className="text-sm font-bold text-[#3D3730] dark:text-[#D4C8B8]">上传CSV</h3>
-          <div className="flex gap-2">
-            <label className="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 text-xs font-medium text-[#6B6058] dark:text-white/40 hover:bg-[#F5F2EF] dark:hover:bg-white/5 transition-colors">
-              <Upload className="w-3.5 h-3.5" />{file ? file.name : "选择文件"}
-              <input type="file" accept=".csv,.txt,text/csv" onChange={handleFileChange} className="hidden" />
-            </label>
-            <button onClick={handlePaste} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 text-xs font-medium text-[#6B6058] dark:text-white/40 hover:bg-[#F5F2EF] dark:hover:bg-white/5 transition-colors">
-              从剪贴板粘贴
-            </button>
+      {/* File list */}
+      {files.length > 0 && (
+        <div className="mb-5 bg-white dark:bg-[#1A1816] rounded-xl border border-[#E8E2DC] dark:border-white/10 p-4">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-bold text-[#3D3730] dark:text-[#D4C8B8]">
+              待上传 {files.length} 张图片
+            </h3>
+            <button onClick={() => setFiles([])} className="text-xs text-[#9B8E7E] hover:text-red-500">清空</button>
           </div>
-        </div>
-        <textarea value={csv} onChange={(e) => setCsv(e.target.value)}
-          placeholder={`在此粘贴CSV数据，或上传文件...\n\n示例：\n${SAMPLE}`} rows={8}
-          className="w-full px-4 py-3 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white placeholder:text-[#9B8E7E] focus:outline-none focus:border-[#B8A080] transition-colors resize-y font-mono"
-        />
-      </div>
-
-      <div className="flex items-center gap-4">
-        <button onClick={handleImport} disabled={!csv.trim() || importing}
-          className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#B8A080] text-white font-semibold text-sm hover:bg-[#A89070] transition-all disabled:opacity-50 shadow-sm">
-          {importing ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
-          {importing ? "导入中..." : "开始导入"}
-        </button>
-        <span className="text-xs text-[#9B8E7E] dark:text-white/30">
-          {csv.trim() ? `${csv.trim().split("\n").filter(l => l.trim()).length} 行数据` : ""}
-        </span>
-      </div>
-
-      {result && (
-        <div className={`mt-4 p-4 rounded-xl border ${result.errors.length === 0 ? "bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800/30" : "bg-amber-50 border-amber-200 dark:bg-amber-900/20 dark:border-amber-800/30"}`}>
-          <div className="flex items-center gap-2 mb-2">
-            {result.errors.length === 0 ? <Check className="w-5 h-5 text-green-600" /> : <AlertCircle className="w-5 h-5 text-amber-600" />}
-            <span className="font-bold text-sm text-[#3D3730] dark:text-white">已导入 {result.imported} 个产品</span>
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+            {files.map((f, i) => (
+              <div key={i} className="relative group">
+                <img src={URL.createObjectURL(f)} alt={f.name}
+                  className="w-full aspect-square object-cover rounded-lg border border-[#E8E2DC] dark:border-white/5" />
+                <button onClick={(e) => { e.stopPropagation(); removeFile(i); }}
+                  className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-red-500 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <X className="w-3 h-3" /></button>
+                <p className="text-[10px] text-[#9B8E7E] truncate mt-1">{f.name}</p>
+              </div>
+            ))}
           </div>
-          {result.errors.length > 0 && (
-            <ul className="space-y-1">{result.errors.map((err, i) => <li key={i} className="text-xs text-red-600 dark:text-red-400">{err}</li>)}</ul>
-          )}
-          {result.imported > 0 && (
-            <button onClick={() => { router.push("/admin"); router.refresh(); }} className="mt-3 text-xs text-[#B8A080] hover:text-[#A89070] font-medium">查看产品列表 →</button>
-          )}
+          <button onClick={handleUpload} disabled={uploading}
+            className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#B8A080] text-white font-semibold text-sm hover:bg-[#A89070] transition-colors disabled:opacity-50">
+            {uploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
+            {uploading ? "上传中..." : `开始上传 ${files.length} 张图片`}
+          </button>
+        </div>
+      )}
+
+      {/* Results */}
+      {results.length > 0 && (
+        <div className="bg-white dark:bg-[#1A1816] rounded-xl border border-[#E8E2DC] dark:border-white/10 p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <Check className="w-4 h-4 text-green-500" />
+            <span className="text-sm font-bold text-[#3D3730] dark:text-[#D4C8B8]">
+              完成 — {done} 张成功{failed > 0 ? `，${failed} 张失败` : ""}
+            </span>
+          </div>
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 mb-4">
+            {results.filter((r) => r.url).map((r, i) => (
+              <div key={i} className="relative group">
+                <img src={r.url} alt={r.filename}
+                  className="w-full aspect-square object-contain rounded-lg border border-[#E8E2DC] dark:border-white/5 bg-gray-100" />
+                {r.productId && (
+                  <Link href={`/admin/products/${r.productId}/edit`}
+                    className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg">
+                    <Edit className="w-5 h-5 text-white" />
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+          <Link href="/admin"
+            className="inline-flex items-center gap-1 text-sm text-[#B8A080] hover:text-[#A89070] font-medium">
+            返回产品列表，开始编辑草稿
+          </Link>
         </div>
       )}
     </div>

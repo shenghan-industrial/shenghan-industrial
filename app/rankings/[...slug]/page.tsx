@@ -1,16 +1,14 @@
 "use client";
 
-export const runtime = "edge";
-
 import { use, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Flame, Heart, TrendingUp, Crown } from "lucide-react";
-import { products } from "@/data/products";
-import { categories } from "@/data/categories";
 import { useT } from "@/lib/LanguageContext";
+import { useProducts } from "@/lib/use-products";
 import { localizeProduct } from "@/lib/localizeProduct";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { useCategories } from "@/lib/use-categories";
 
 const categoryColors: Record<string, { banner: string; light: string; text: string; tag: string }> = {
   Furniture: { banner: "from-[#4A4238] via-[#5C554D] to-[#3D3730]", light: "bg-stone-50 dark:bg-stone-950/20", text: "text-stone-700 dark:text-stone-300", tag: "bg-[#5C554D]" },
@@ -23,7 +21,7 @@ const categoryColors: Record<string, { banner: string; light: string; text: stri
 
 const defaultColor = { banner: "from-[#4A4238] to-[#3D3730]", light: "bg-stone-50", text: "text-stone-700", tag: "bg-[#5C554D]" };
 
-function getAllSubCategories() {
+function getAllSubCategories(categories: ReturnType<typeof useCategories>) {
   const result: { productCategory: string; productSubCategory: string; nameZh: string; name: string }[] = [];
   for (const cat of categories) {
     const items = cat.children || cat.groups?.flatMap((g) => g.children) || [];
@@ -40,12 +38,14 @@ export default function RankingsPage({ params }: { params: Promise<{ slug: strin
   const { slug } = use(params);
   const { t, locale } = useT();
   const router = useRouter();
+  const categories = useCategories();
+  const { products } = useProducts();
 
   const currentCat = slug?.[0] || "";
   const currentSub = slug?.[1] || "";
   const [activeTab, setActiveTab] = useState<"hot" | "wish">("hot");
 
-  const allSubs = useMemo(() => getAllSubCategories(), []);
+  const allSubs = useMemo(() => getAllSubCategories(categories), [categories]);
 
   const currentSubInfo = allSubs.find(
     (s) => s.productCategory === currentCat && s.productSubCategory === currentSub

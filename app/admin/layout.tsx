@@ -49,13 +49,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <Plus className="w-3.5 h-3.5 inline mr-1" />新增产品
             </Link>
             <Link href="/admin/products/import" className="text-xs font-medium text-[#6B6058] dark:text-white/40 hover:text-[#3D3730] dark:hover:text-white transition-colors">
-              <Upload className="w-3.5 h-3.5 inline mr-1" />批量导入
-            </Link>
-            <Link href="/admin/products/quick" className="text-xs font-medium text-[#B8A080] hover:text-[#A89070] transition-colors">
-              <Zap className="w-3.5 h-3.5 inline mr-1" />快速添加
+              <Upload className="w-3.5 h-3.5 inline mr-1" />批量传图
             </Link>
             <Link href="/admin/site" className="text-xs font-medium text-[#6B6058] dark:text-white/40 hover:text-[#3D3730] dark:hover:text-white transition-colors">
               <LayoutGrid className="w-3.5 h-3.5 inline mr-1" />站点编辑
+            </Link>
+            <Link href="/admin/categories" className="text-xs font-medium text-[#6B6058] dark:text-white/40 hover:text-[#3D3730] dark:hover:text-white transition-colors">
+              <LayoutGrid className="w-3.5 h-3.5 inline mr-1" />品类管理
             </Link>
             <Link href="/admin/inquiries" className="text-xs font-medium text-[#6B6058] dark:text-white/40 hover:text-[#3D3730] dark:hover:text-white transition-colors">
               <Mail className="w-3.5 h-3.5 inline mr-1" />询价管理

@@ -6,6 +6,7 @@ import type { Product } from "@/data/products";
 export interface CartItem {
   productId: string;
   name: string;
+  model?: string;
   image: string;
   category: string;
   specs: { label: string; value: string }[];
@@ -69,6 +70,7 @@ export function InquiryProvider({ children }: { children: ReactNode }) {
         {
           productId: product.id,
           name: product.name,
+          model: product.model,
           image: product.image,
           category: product.category,
           specs: product.specs.slice(0, 4),

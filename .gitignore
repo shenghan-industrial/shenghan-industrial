@@ -43,4 +43,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local KV data (not for deployment)
+data/dynamic/
+
 .vercel

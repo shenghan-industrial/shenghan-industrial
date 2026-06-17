@@ -337,7 +337,9 @@
     "formEmail": "邮箱地址 *",
     "formMessage": "补充说明（选填）",
     "cancel": "取消",
-    "formPhone": "WhatsApp / 手机号 *"
+    "formPhone": "WhatsApp / 手机号 *",
+    "successTitle": "询价已提交！",
+    "successMsg": "我们会在24小时内回复您。"
   },
   "cookie": {
     "title": "Cookie 提示",

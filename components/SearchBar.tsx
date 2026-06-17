@@ -3,36 +3,10 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, X } from "lucide-react";
-import { categories, type SubCategory } from "@/data/categories";
-import { products } from "@/data/products";
+import type { SubCategory } from "@/data/categories";
 import { useT } from "@/lib/LanguageContext";
-
-// Flatten all subcategories with their Chinese/English names for matching
-function buildSearchIndex() {
-  const index: { sub: SubCategory; catZh: string; catEn: string }[] = [];
-  for (const cat of categories) {
-    const items = cat.children || cat.groups?.flatMap((g) => g.children) || [];
-    for (const item of items) {
-      index.push({ sub: item, catZh: cat.nameZh, catEn: cat.name });
-    }
-  }
-  return index;
-}
-
-const searchIndex = buildSearchIndex();
-
-// All subcategory keywords for autocomplete
-function getAllKeywords() {
-  const kw = new Set<string>();
-  for (const { sub, catZh } of searchIndex) {
-    kw.add(sub.nameZh);
-    kw.add(sub.name);
-    kw.add(catZh);
-  }
-  return [...kw];
-}
-
-const allKeywords = getAllKeywords();
+import { useCategories } from "@/lib/use-categories";
+import { useProducts } from "@/lib/use-products";
 
 interface SearchBarProps {
   variant?: "standalone" | "inline";
@@ -45,6 +19,20 @@ export function SearchBar({ variant = "standalone", onClose }: SearchBarProps) {
   const [focused, setFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const categories = useCategories();
+  const { products } = useProducts();
+
+  // Build dynamic search index from categories
+  const searchIndex = useMemo(() => {
+    const index: { sub: SubCategory; catZh: string; catEn: string }[] = [];
+    for (const cat of categories) {
+      const items = cat.children || cat.groups?.flatMap((g) => g.children) || [];
+      for (const item of items) {
+        index.push({ sub: item, catZh: cat.nameZh, catEn: cat.name });
+      }
+    }
+    return index;
+  }, [categories]);
 
   // Find matching subcategory for a query (Chinese or English)
   const findMatch = useCallback((q: string) => {

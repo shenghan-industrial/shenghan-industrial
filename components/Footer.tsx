@@ -44,7 +44,7 @@ export function Footer() {
               <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center text-primary-900 font-bold text-xs">{brand.logo.text}</div>
               <span className="text-lg font-bold tracking-tight text-white">{brand.name}</span>
             </Link>
-            <p className="text-white/35 text-sm leading-relaxed mb-8 max-w-xs">{siteConfig.footer.tagline}</p>
+            <p className="text-white/35 text-sm leading-relaxed mb-8 max-w-xs">{locale === "zh" ? siteConfig.footer.taglineZh || siteConfig.footer.tagline : locale === "es" ? siteConfig.footer.taglineEs || siteConfig.footer.tagline : siteConfig.footer.tagline}</p>
             <div className="flex items-center gap-3"><SocialIcons /></div>
           </div>
 
@@ -71,7 +71,7 @@ export function Footer() {
             <ul className="space-y-5">
               <li className="flex items-start gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><IconWhatsApp /></div>
-                <div><p className="text-white/55 text-sm">{contact.phone.display}</p><p className="text-white/25 text-xs mt-0.5">{contact.hours.weekday}</p></div>
+                <div><p className="text-white/55 text-sm">{contact.phone.display}</p><p className="text-white/25 text-xs mt-0.5">{locale === "zh" ? contact.hours.weekdayZh || contact.hours.weekday : locale === "es" ? contact.hours.weekdayEs || contact.hours.weekday : contact.hours.weekday}</p></div>
               </li>
               <li className="flex items-start gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><IconMail /></div>
@@ -79,7 +79,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 group">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-accent/15 transition-colors duration-300"><IconMapPin /></div>
-                <div className="pt-1"><p className="text-white/55 text-sm">{contact.address.line1}</p><p className="text-white/25 text-xs mt-0.5">{contact.address.line2}</p><p className="text-white/20 text-[10px] mt-0.5">{contact.address.line3}</p></div>
+                <div className="pt-1"><p className="text-white/55 text-sm">{locale === "zh" ? contact.address.line1Zh || contact.address.line1 : locale === "es" ? contact.address.line1Es || contact.address.line1 : contact.address.line1}</p><p className="text-white/25 text-xs mt-0.5">{locale === "zh" ? contact.address.line2Zh || contact.address.line2 : locale === "es" ? contact.address.line2Es || contact.address.line2 : contact.address.line2}</p><p className="text-white/20 text-[10px] mt-0.5">{contact.address.line3}</p></div>
               </li>
             </ul>
           </div>

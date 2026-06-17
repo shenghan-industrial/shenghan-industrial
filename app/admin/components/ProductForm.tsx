@@ -1,92 +1,116 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ImageUpload } from "./ImageUpload";
+import { AIAssistant } from "./AIAssistant";
 import type { Product } from "@/data/products";
-import { categories } from "@/data/categories";
+import type { Category } from "@/data/categories";
+import { categories as staticCategories } from "@/data/categories";
+import { genEnName, genEsName, catZhMap, subZhMap, analyzeChineseName } from "@/lib/translate-name";
 import { Save, ArrowLeft } from "lucide-react";
 
-function generateProduct(name: string, nameZh: string, category: string, subCategory: string, image: string, price: string, notes: string): Product {
-  const id = (category + "-" + (subCategory || "product") + "-" + name)
-    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+// Shared EN→ES translation map
+const ES_MAP: Record<string, string> = {
+  Modern: "Moderno", Nordic: "Nórdico", Minimalist: "Minimalista", Luxury: "Lujo",
+  "Genuine Leather": "Cuero Genuino", Fabric: "Tela", "Solid Wood": "Madera Maciza",
+  "Stainless Steel": "Acero Inoxidable", Aluminum: "Aluminio", Marble: "Mármol",
+  Sofa: "Sofá", "Dining Table": "Mesa de Comedor", Bed: "Cama", Mattress: "Colchón",
+  Desk: "Escritorio", Chair: "Silla", Cabinet: "Armario",
+  Light: "Lámpara", Fan: "Ventilador", Heater: "Calefactor", Sink: "Fregadero",
+};
 
-  const subZhMap: Record<string, string> = {
-    Sofas: "沙发", Beds: "床", Cabinets: "柜子",
-    Adhesives: "胶粘剂", Panels: "板材", Fasteners: "紧固件",
-    "Door & Window": "门窗配件", Bathroom: "卫浴配件",
-    Fans: "电风扇", Heaters: "取暖器", Kitchen: "厨房小家电",
-    "Desk Lamps": "台灯", "Pendant Lights": "吊灯", "Floor Lamps": "落地灯",
-  };
+function translateES(en: string): string {
+  if (!en) return "";
+  return en.split(" ").map((w) => ES_MAP[w] || w).join(" ");
+}
+
+// Feature templates by category
+const FEAT_TEMPLATES: Record<string, { en: string[]; zh: string[] }> = {
+  Furniture: { en: ["Premium materials", "Expert workmanship", "ISO-certified", "Custom specs", "Export packaging"], zh: ["优质材料", "精湛工艺", "ISO认证", "支持定制", "出口包装"] },
+  Lighting: { en: ["Energy-efficient LED", "Long lifespan", "Multiple color temps", "IP-rated durable"], zh: ["高效节能LED", "长寿命", "多色温可选", "IP防护"] },
+  Hardware: { en: ["Corrosion-resistant", "Precision engineering", "TÜV-tested", "Industrial-grade"], zh: ["耐腐蚀", "精密工艺", "TÜV认证", "工业级耐用"] },
+  "Building Materials": { en: ["High-performance", "Weather-resistant", "International standards", "Professional grade"], zh: ["高性能", "耐候持久", "国际标准", "专业级"] },
+  Appliances: { en: ["Energy-efficient", "Safety-certified", "User-friendly", "Modern design"], zh: ["节能设计", "安全认证", "人性化操作", "现代设计"] },
+  Others: { en: ["Factory direct", "Reliable performance", "Competitive pricing", "Bulk supply"], zh: ["工厂直供", "性能可靠", "价格竞争力", "大宗供应"] },
+};
+
+function generateProduct(nameZh: string, category: string, subCategory: string, image: string, price: string, notes: string, featuresInput: string): Product {
   const subZh = subZhMap[subCategory] || subCategory;
-  const catZhMap: Record<string, string> = {
-    Furniture: "家具", "Building Materials": "建材", Hardware: "五金",
-    Appliances: "家电", Lighting: "灯具", Others: "其他",
-  };
-  const catZh = catZhMap[category] || category;
-  const zhName = nameZh || name + " — " + subZh;
-  const esName = name + " — " + subCategory;
+  const enName = genEnName(nameZh, subCategory);
+  const esName = genEsName(nameZh, enName);
+  const kw = analyzeChineseName(nameZh);
+  const enType = kw.type || subCategory || "Product";
+  const enStyle = kw.style;
+  const enMaterial = kw.material;
+  const esStyle = ES_MAP[enStyle] || enStyle;
+  const esMaterial = ES_MAP[enMaterial] || enMaterial;
+  const esType = ES_MAP[enType] || enType;
+  const notesClean = notes?.replace(/[，,。；;、\s]+$/, "").trim() || "";
 
-  const featTemplates: Record<string, { en: string[]; zh: string[] }> = {
-    Furniture: {
-      en: ["Premium materials and expert workmanship", "ISO-certified production process", "Custom specifications available", "Export-standard packaging"],
-      zh: ["优质材料与精湛工艺", "ISO认证生产流程", "支持定制规格", "出口标准包装"],
-    },
-    Lighting: {
-      en: ["Energy-efficient LED technology", "Long lifespan and low maintenance", "Multiple color temperature options", "IP-rated for durability"],
-      zh: ["高效节能LED技术", "长寿命低维护", "多色温可选", "IP防护等级持久耐用"],
-    },
-    Hardware: {
-      en: ["Corrosion-resistant materials", "Precision engineering", "TÜV-tested quality standards", "Industrial-grade durability"],
-      zh: ["耐腐蚀材质", "精密工艺", "TÜV检测品质标准", "工业级耐用性"],
-    },
-    "Building Materials": {
-      en: ["High-performance formulation", "Weather-resistant and durable", "Meets international standards", "Professional-grade quality"],
-      zh: ["高性能配方", "耐候持久", "符合国际标准", "专业级品质"],
-    },
-    Appliances: {
-      en: ["Energy-efficient design", "Safety-certified components", "User-friendly operation", "Modern aesthetic"],
-      zh: ["节能设计", "安全认证组件", "人性化操作", "现代美学外观"],
-    },
-    Others: {
-      en: ["Factory direct quality", "Reliable performance", "Competitive pricing", "Bulk supply available"],
-      zh: ["工厂直供品质", "性能可靠", "价格竞争力", "大宗供应"],
-    },
-  };
-  const ft = featTemplates[category] || featTemplates.Others;
+  const id = (category + "-" + (subCategory || "product") + "-" + nameZh)
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "").substring(0, 50);
+
+  const ft = FEAT_TEMPLATES[category] || FEAT_TEMPLATES.Others;
+
+  // Features
+  const zhFeatures = featuresInput.trim()
+    ? featuresInput.split(/\n+/).map((s) => s.trim()).filter(Boolean).slice(0, 10)
+    : ft.zh;
+  const enFeatures = featuresInput.trim()
+    ? zhFeatures
+        .map((f) => {
+          const k = analyzeChineseName(f);
+          return [k.style, k.material, k.type].filter(Boolean).join(" ") || "";
+        })
+        .filter(Boolean)
+        .slice(0, 10)
+    : ft.en;
+  if (enFeatures.length === 0 && featuresInput.trim()) {
+    // All features untranslatable — use defaults
+    enFeatures.push(...ft.en);
+  }
+  const esFeatures = enFeatures.map(translateES);
+
+  // Descriptions
+  const zhDescription = notes
+    ? `${notesClean}。${nameZh}，盛煜实业工厂直供。支持来样定制，ISO认证生产流程，出口标准包装。`
+    : `${nameZh}，盛煜实业工厂直供。自有工厂严格品控，支持来样定制，ISO认证生产流程，出口标准包装。`;
+
+  const enDescKeywords = [enStyle, enMaterial ? enMaterial.toLowerCase() : "", enType.toLowerCase()].filter(Boolean);
+  const enDescLead = enDescKeywords.length > 0
+    ? `${enDescKeywords.join(", ")} design.`
+    : "Quality craftsmanship and functional design.";
+  const enDescription = `${enName} — ${enDescLead} Factory direct from Shengyu Industrial. ISO-certified, custom specs available, export-grade packaging.`;
+
+  const esDescKeywords = [esStyle?.toLowerCase(), esMaterial?.toLowerCase(), esType?.toLowerCase()].filter(Boolean);
+  const esDescLead = esDescKeywords.length > 0
+    ? `Diseño ${esDescKeywords.join(", ")}.`
+    : "Calidad artesanal y diseño funcional.";
+  const esDescription = `${esName} — ${esDescLead} Directo de fábrica de Shengyu Industrial. Certificación ISO, especificaciones personalizadas, embalaje de exportación.`;
 
   return {
-    id, name,
-    nameZh: zhName,
-    nameEs: esName,
-    subtitle: subCategory + " — factory direct quality",
-    subtitleZh: subZh + " — 工厂直供品质",
-    subtitleEs: subCategory + " — calidad directa de fábrica",
+    id, name: enName, nameZh, nameEs: esName,
     category, subCategory: subCategory || undefined,
-    description: notes
-      ? `${notes}. ${subCategory} — ${name}. Factory direct from Shengyu Industrial.`
-      : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${name}. Manufactured in our own facilities with strict quality control.`,
-    descriptionZh: notes
-      ? `${notes}。${subZh} — ${zhName}。盛煜实业工厂直供。`
-      : `盛煜实业 ${subZh} — ${zhName}。自有工厂制造，严格品控。`,
-    descriptionEs: notes
-      ? `${notes}. ${subCategory} — ${esName}. Directo de fábrica de Shengyu Industrial.`
-      : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${esName}. Fabricado en nuestras propias instalaciones con estricto control de calidad.`,
-    features: ft.en, featuresZh: ft.zh, featuresEs: ft.en,
+    description: enDescription, descriptionZh: zhDescription, descriptionEs: esDescription,
+    features: enFeatures, featuresZh: zhFeatures, featuresEs: esFeatures,
+    subtitle: (enStyle ? enStyle + " " : "") + (enMaterial || subCategory || "Product") + " — factory direct",
+    subtitleZh: (notesClean ? notesClean.substring(0, 30) + " — " : "") + subZh + " — 工厂直供品质",
+    subtitleEs: (esStyle ? esStyle + " " : "") + (esMaterial || subCategory || "Producto") + " — calidad directa",
     specs: [
-      { label: "Material", value: "Premium grade" },
+      { label: "Material", value: enMaterial || "Premium grade" },
       { label: "MOQ", value: "Negotiable" },
       { label: "Lead Time", value: "25–35 days" },
       { label: "Customization", value: "Available" },
     ],
     specsZh: [
-      { label: "材质", value: "优质等级" },
+      { label: "材质", value: enMaterial || "优质等级" },
       { label: "起订量", value: "可协商" },
       { label: "交期", value: "25–35 天" },
       { label: "定制", value: "支持" },
     ],
     specsEs: [
-      { label: "Material", value: "Grado premium" },
+      { label: "Material", value: esMaterial || "Grado premium" },
       { label: "Cantidad Mínima", value: "Negociable" },
       { label: "Plazo de Entrega", value: "25–35 días" },
       { label: "Personalización", value: "Disponible" },
@@ -97,52 +121,77 @@ function generateProduct(name: string, nameZh: string, category: string, subCate
   };
 }
 
-const allSubCategories: { name: string; category: string }[] = [];
-for (const cat of categories) {
-  const items = cat.children || cat.groups?.flatMap((g) => g.children) || [];
-  for (const item of items) {
-    if (item.productSubCategory) allSubCategories.push({ name: item.productSubCategory, category: cat.productCategory });
-  }
-}
-
 interface Props { product?: Product; isNew?: boolean; }
 
 export function ProductForm({ product, isNew }: Props) {
   const router = useRouter();
+  const [categories, setCategories] = useState<Category[]>([]);
   const [saving, setSaving] = useState(false);
-  const [name, setName] = useState(product?.name || "");
+  const [saved, setSaved] = useState(false);
   const [nameZh, setNameZh] = useState(product?.nameZh || "");
   const [category, setCategory] = useState(product?.category || "Furniture");
   const [subCategory, setSubCategory] = useState(product?.subCategory || "");
   const [image, setImage] = useState(product?.image || "");
   const [extraImages, setExtraImages] = useState<string[]>(product?.images || []);
   const [price, setPrice] = useState(product?.price || "");
+  const [model, setModel] = useState(product?.model || "");
   const [notes, setNotes] = useState(product?.notes || "");
+  const [featuresInput, setFeaturesInput] = useState(product?.featuresZh?.join("\n") || "");
 
+  useEffect(() => {
+    fetch("/api/admin/categories")
+      .then((r) => r.json())
+      .then((data) => Array.isArray(data) && data.length > 0 ? setCategories(data) : setCategories(staticCategories))
+      .catch(() => setCategories(staticCategories));
+  }, []);
+
+  const allSubCategories: { name: string; nameZh: string; category: string }[] = [];
+  for (const cat of (categories.length > 0 ? categories : staticCategories)) {
+    const items = cat.children || cat.groups?.flatMap((g) => g.children) || [];
+    for (const item of items) {
+      if (item.productSubCategory) {
+        allSubCategories.push({ name: item.productSubCategory, nameZh: item.nameZh, category: cat.productCategory });
+      }
+    }
+  }
+
+  const displayCats = categories.length > 0 ? categories : staticCategories;
   const subOptions = allSubCategories.filter((s) => s.category === category);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) return;
+    if (!nameZh.trim()) { alert("请输入产品中文名称"); return; }
     setSaving(true);
 
     let data: Product;
+    const gen = generateProduct(nameZh.trim(), category, subCategory, image, price.trim(), notes.trim(), featuresInput.trim());
     if (isNew) {
-      data = { ...generateProduct(name.trim(), nameZh.trim(), category, subCategory, image, price.trim(), notes.trim()), images: extraImages.filter(Boolean), notes: notes.trim() };
+      data = { ...gen, images: extraImages.filter(Boolean), notes: notes.trim(), model: model.trim() };
     } else {
-      data = { ...product!, name: name.trim(), nameZh: nameZh.trim(), category, subCategory, image, images: extraImages.filter(Boolean), price: price.trim(), notes: notes.trim() };
+      data = { ...gen, id: product!.id, partnerId: product!.partnerId, images: extraImages.filter(Boolean), notes: notes.trim(), model: model.trim() };
     }
 
-    const url = isNew ? "/api/admin/products" : `/api/admin/products/${product!.id}`;
-    const method = isNew ? "POST" : "PUT";
-    const res = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
-
-    if (res.ok) { router.push("/admin"); router.refresh(); }
-    else { alert("保存失败"); setSaving(false); }
+    try {
+      const url = isNew ? "/api/admin/products" : `/api/admin/products/${product!.id}`;
+      const method = isNew ? "POST" : "PUT";
+      const res = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
+      if (res.ok) { setSaved(true); setSaving(false); return; }
+      const err = await res.json().catch(() => ({ error: res.statusText }));
+      alert("保存失败: " + (err.error || "未知错误"));
+    } catch {
+      alert("网络错误，请确认服务器在运行");
+    }
+    setSaving(false);
   };
 
   return (
     <div>
+      {saved && (
+        <div className="mb-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 flex items-center justify-between">
+          <span className="text-sm font-medium text-green-700 dark:text-green-400">保存成功</span>
+          <button onClick={() => { router.push("/admin"); setTimeout(() => router.refresh(), 200); }} className="text-xs text-[#B8A080] hover:underline">返回产品列表</button>
+        </div>
+      )}
       <div className="flex items-center gap-4 mb-6">
         <button type="button" onClick={() => router.push("/admin")} className="p-2 rounded-lg hover:bg-white dark:hover:bg-white/5 text-[#6B6058] dark:text-white/40 transition-colors">
           <ArrowLeft className="w-5 h-5" />
@@ -154,7 +203,6 @@ export function ProductForm({ product, isNew }: Props) {
 
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6">
-          {/* Left: Images */}
           <div className="space-y-5">
             <div>
               <h3 className="text-sm font-semibold text-[#3D3730] dark:text-[#D4C8B8] mb-4">产品图片</h3>
@@ -164,9 +212,8 @@ export function ProductForm({ product, isNew }: Props) {
               <div className="space-y-2">
                 {extraImages.map((img, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <input type="text" value={img} onChange={(e) => {
-                      const next = [...extraImages]; next[i] = e.target.value; setExtraImages(next);
-                    }} className="flex-1 px-3 py-2 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-xs text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080]" placeholder="图片URL" />
+                    <input type="text" value={img} onChange={(e) => { const next = [...extraImages]; next[i] = e.target.value; setExtraImages(next); }}
+                      className="flex-1 px-3 py-2 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-xs text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080]" placeholder="图片URL" />
                     <button type="button" onClick={() => setExtraImages(extraImages.filter((_, j) => j !== i))}
                       className="p-1.5 rounded text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20"><span className="text-xs">×</span></button>
                   </div>
@@ -179,57 +226,68 @@ export function ProductForm({ product, isNew }: Props) {
             </div>
           </div>
 
-          {/* Right: Info */}
           <div className="space-y-5">
             <div>
-              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品名称（英文）*</label>
-              <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：Modern L-Shape Sofa" required />
+              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品名称（中文）*</label>
+              <input type="text" value={nameZh} onChange={(e) => setNameZh(e.target.value)}
+                className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：现代L型真皮沙发" required />
+              <p className="text-[10px] text-[#B8A080] mt-1">英文和西班牙语名称将自动生成</p>
             </div>
             <div>
-              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品名称（中文）</label>
-              <input type="text" value={nameZh} onChange={(e) => setNameZh(e.target.value)} className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：现代L型沙发" />
+              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品型号</label>
+              <input type="text" value={model} onChange={(e) => setModel(e.target.value)}
+                className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：SY-JJ-LC-PC-01" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">品类</label>
-                <select value={category} onChange={(e) => { setCategory(e.target.value); setSubCategory(""); }} className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors">
-                  {categories.map((c) => <option key={c.productCategory} value={c.productCategory}>{c.name}</option>)}
+                <select value={category} onChange={(e) => { setCategory(e.target.value); setSubCategory(""); }}
+                  className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors">
+                  {displayCats.map((c) => <option key={c.productCategory} value={c.productCategory}>{c.nameZh}</option>)}
                 </select>
               </div>
               <div>
                 <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">子品类</label>
-                <select value={subCategory} onChange={(e) => setSubCategory(e.target.value)} className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors">
+                <select value={subCategory} onChange={(e) => setSubCategory(e.target.value)}
+                  className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors">
                   <option value="">— 不限 —</option>
-                  {subOptions.map((s) => <option key={s.name} value={s.name}>{s.name}</option>)}
+                  {subOptions.map((s) => <option key={s.name} value={s.name}>{s.nameZh}{s.nameZh !== s.name ? ` (${s.name})` : ""}</option>)}
                 </select>
               </div>
             </div>
             <div>
               <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">价格</label>
-              <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：$299 或留空" />
+              <input type="text" value={price} onChange={(e) => setPrice(e.target.value)}
+                className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：$299 或留空" />
             </div>
             <div>
-              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">备注</label>
-              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={2} className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors resize-y" placeholder="内部备注（不公开展示）" />
+              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品描述（备注）</label>
+              <textarea value={notes} onChange={(e) => setNotes(e.target.value)} rows={3}
+                className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors resize-y"
+                placeholder="输入产品的大体描述，系统会自动扩写成三语的产品描述" />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品特点</label>
+              <textarea value={featuresInput} onChange={(e) => setFeaturesInput(e.target.value)} rows={4}
+                className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors resize-y"
+                placeholder={"每行一个特点\n例如：\n黄麻纤维面料，抗湿透气抗菌\n欧洲3区静音独立支撑系统\n精工全环绕稳定围边"} />
             </div>
           </div>
         </div>
 
-        {/* Preview */}
         <div className="mt-6 bg-white dark:bg-[#1A1816] rounded-xl border border-[#E8E2DC] dark:border-white/10 p-6">
           <h3 className="text-sm font-semibold text-[#3D3730] dark:text-[#D4C8B8] mb-3">预览</h3>
           <div className="flex gap-4 items-start">
-            {image && <img src={image} alt={name} className="w-24 h-24 rounded-lg object-contain border border-[#E8E2DC] dark:border-white/10 bg-gray-100" />}
+            {image && <img src={image} alt={nameZh} className="w-24 h-24 rounded-lg object-contain border border-[#E8E2DC] dark:border-white/10 bg-gray-100" />}
             <div>
-              <p className="font-bold text-[#3D3730] dark:text-[#D4C8B8]">{name || "（产品名称）"}</p>
-              <p className="text-xs text-[#9B8E7E] dark:text-white/30">{category}{subCategory ? " / " + subCategory : ""}</p>
+              <p className="font-bold text-[#3D3730] dark:text-[#D4C8B8]">{nameZh || "（产品名称）"}</p>
+              <p className="text-xs text-[#9B8E7E] dark:text-white/30">{catZhMap[category] || category}{subCategory ? " / " + (subZhMap[subCategory] || subCategory) : ""}</p>
               {price && <p className="text-sm font-semibold text-[#B8A080] mt-1">{price}</p>}
-              {isNew && name && <p className="text-[10px] text-[#B8A080] mt-2">自动生成：三语描述、特性、规格（基于品类模板）</p>}
+              {isNew && nameZh && <p className="text-[10px] text-[#B8A080] mt-2">自动生成：三语名称、描述、特性、规格</p>}
             </div>
           </div>
         </div>
 
-        {/* Submit */}
         <div className="mt-6">
           <button type="submit" disabled={saving}
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#B8A080] text-white font-semibold text-sm hover:bg-[#A89070] transition-colors disabled:opacity-50">
@@ -238,6 +296,16 @@ export function ProductForm({ product, isNew }: Props) {
           </button>
         </div>
       </form>
+
+      <AIAssistant
+        context={`品类: ${catZhMap[category] || category}${subCategory ? ", 子品类: " + (subZhMap[subCategory] || subCategory) : ""}, 产品名: ${nameZh || "未填写"}${notes ? ", 备注: " + notes : ""}`}
+        onApply={(aiData) => {
+          if (aiData.code) setModel(aiData.code);
+          if (aiData.name) setNameZh(aiData.name);
+          if (aiData.description) setNotes(aiData.description);
+          if (aiData.features?.length) setFeaturesInput(aiData.features.join("\n"));
+        }}
+      />
     </div>
   );
 }

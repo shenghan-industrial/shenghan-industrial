@@ -38,7 +38,7 @@ export function InquiryCart() {
           email: form.email,
           phone: form.phone,
           message: form.message,
-          items: items.map(i => ({ productId: i.productId, name: i.name, quantity: i.quantity, category: i.category })),
+          items: items.map(i => ({ productId: i.productId, name: i.name, model: i.model, quantity: i.quantity, category: i.category })),
         }),
       });
       if (res.ok) {
@@ -170,8 +170,8 @@ export function InquiryCart() {
                   {submitted ? (
                     <div className="text-center py-4">
                       <Check className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                      <p className="text-sm font-bold text-green-600 dark:text-green-400">Inquiry Submitted!</p>
-                      <p className="text-xs text-gray-400 mt-1">We&apos;ll reply within 24 hours.</p>
+                      <p className="text-sm font-bold text-green-600 dark:text-green-400">{t("cart.successTitle")}</p>
+                      <p className="text-xs text-gray-400 mt-1">{t("cart.successMsg")}</p>
                     </div>
                   ) : showForm ? (
                     /* Inquiry Form */

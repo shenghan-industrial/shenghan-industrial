@@ -1,19 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { categories } from "@/data/categories";
+import type { Category } from "@/data/categories";
+import { categories as staticCategories } from "@/data/categories";
 import { Zap, Loader2, Check } from "lucide-react";
-
-const subMap: { name: string; cat: string }[] = [];
-categories.forEach(c => {
-  (c.children || c.groups?.flatMap(g => g.children) || []).forEach(child => {
-    if (child.productSubCategory) subMap.push({ name: child.productSubCategory, cat: c.productCategory });
-  });
-});
 
 export default function QuickAddPage() {
   const router = useRouter();
+  const [cats, setCats] = useState<Category[]>([]);
   const [category, setCategory] = useState("Furniture");
   const [subCategory, setSubCategory] = useState("");
   const [imagePrefix, setImagePrefix] = useState("/images/products/");
@@ -21,6 +16,22 @@ export default function QuickAddPage() {
   const [list, setList] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState("");
+
+  useEffect(() => {
+    fetch("/api/admin/categories")
+      .then((r) => r.json())
+      .then((data) => Array.isArray(data) && data.length > 0 ? setCats(data) : setCats(staticCategories))
+      .catch(() => setCats(staticCategories));
+  }, []);
+
+  const displayCats = cats.length > 0 ? cats : staticCategories;
+
+  const subMap: { name: string; nameZh: string; cat: string }[] = [];
+  displayCats.forEach(c => {
+    (c.children || c.groups?.flatMap(g => g.children) || []).forEach(child => {
+      if (child.productSubCategory) subMap.push({ name: child.productSubCategory, nameZh: child.nameZh, cat: c.productCategory });
+    });
+  });
 
   const subOptions = subMap.filter(s => s.cat === category);
 
@@ -32,7 +43,6 @@ export default function QuickAddPage() {
     const errors: string[] = [];
 
     for (const line of lines) {
-      // Format: 中文名称，简要描述（可选）
       const parts = line.split(/[,，]/).map(s => s.trim());
       const nameZh = parts[0];
       const notesZh = parts[1] || "";
@@ -70,7 +80,7 @@ export default function QuickAddPage() {
             <label className="block text-xs text-[#9B8E7E] dark:text-white/30 mb-1">品类</label>
             <select value={category} onChange={(e) => { setCategory(e.target.value); setSubCategory(""); }}
               className="w-full px-3 py-2 rounded-lg border text-sm">
-              {categories.map(c => <option key={c.productCategory} value={c.productCategory}>{c.nameZh || c.name}</option>)}
+              {displayCats.map(c => <option key={c.productCategory} value={c.productCategory}>{c.nameZh}</option>)}
             </select>
           </div>
           <div>
@@ -78,7 +88,7 @@ export default function QuickAddPage() {
             <select value={subCategory} onChange={(e) => setSubCategory(e.target.value)}
               className="w-full px-3 py-2 rounded-lg border text-sm">
               <option value="">不限</option>
-              {subOptions.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
+              {subOptions.map(s => <option key={s.name} value={s.name}>{s.nameZh}{s.nameZh !== s.name ? ` (${s.name})` : ""}</option>)}
             </select>
           </div>
           <div>

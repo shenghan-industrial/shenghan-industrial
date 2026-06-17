@@ -3,8 +3,6 @@
 import { use, useState, useRef, useCallback } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-export const runtime = "edge";
 import {
   Minus,
   Plus,
@@ -14,17 +12,18 @@ import {
   ChevronRight,
   Send,
 } from "lucide-react";
-import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useT } from "@/lib/LanguageContext";
 import { localizeProduct } from "@/lib/localizeProduct";
 import { useInquiryCart } from "@/lib/InquiryContext";
+import { useProducts } from "@/lib/use-products";
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const { t, locale } = useT();
+  const { products, loaded } = useProducts();
   const { addItem, setCartOpen } = useInquiryCart();
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
@@ -35,15 +34,14 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   const imgSize = useRef({ w: 0, h: 0 });
 
   const product = products.find((p) => p.id === id);
-  if (!product) notFound();
-
-  const gallery = [product.image, ...(product.images || [])].filter(Boolean);
-  const localized = localizeProduct(product, locale);
-  const relatedProducts = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
+  const gallery = product ? [product.image, ...(product.images || [])].filter(Boolean) : [];
+  const localized = product ? localizeProduct(product, locale) : null;
+  const relatedProducts = product
+    ? products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 4)
+    : [];
 
   const handleAddToCart = () => {
+    if (!product) return;
     addItem(product, quantity);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
@@ -57,6 +55,16 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     setZoomPos({ x, y });
     imgSize.current = { w: rect.width, h: rect.height };
   }, []);
+
+  if (!product && loaded) notFound();
+
+  if (!product || !localized) {
+    return (
+      <div className="min-h-screen bg-[#F5F2EF] dark:bg-[#12100E] flex items-center justify-center">
+        <div className="w-6 h-6 border-2 border-[#B8A080] border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[#f5f5f5] dark:bg-[#12100E]">
@@ -148,6 +156,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
             {/* Right: Info */}
             <div className="flex-1 min-w-0">
               <h1 className="text-lg font-bold text-gray-900 dark:text-white leading-snug">{localized.name}</h1>
+              {product.model && <p className="text-xs text-[#B8A080] mt-0.5 font-mono">{product.model}</p>}
               <p className="text-sm text-gray-500 dark:text-white/40 mt-1">{localized.subtitle}</p>
 
               {/* Quick specs */}

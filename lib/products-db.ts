@@ -6,7 +6,10 @@ const KEY = "products";
 
 export async function getAllProducts(): Promise<Product[]> {
   await kvSeedIfEmpty(KEY, staticProducts);
-  return (await kvGetJSON<Product[]>(KEY)) ?? staticProducts;
+  const products = (await kvGetJSON<Product[]>(KEY)) ?? staticProducts;
+  // Deduplicate by ID
+  const seen = new Set<string>();
+  return products.filter((p) => { if (seen.has(p.id)) return false; seen.add(p.id); return true; });
 }
 
 export async function getProductById(id: string): Promise<Product | undefined> {
@@ -33,7 +36,10 @@ export async function searchProducts(q: string): Promise<Product[]> {
 
 export async function createProduct(product: Product): Promise<Product> {
   const products = await getAllProducts();
-  products.push(product);
+  // Replace existing product with same ID
+  const idx = products.findIndex((p) => p.id === product.id);
+  if (idx >= 0) products[idx] = product;
+  else products.push(product);
   await kvPutJSON(KEY, products);
   return product;
 }

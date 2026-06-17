@@ -11,7 +11,7 @@ import { useInquiryCart } from "@/lib/InquiryContext";
 import { siteConfig } from "@/data/site-config";
 
 export function Navbar() {
-  const { t } = useT();
+  const { t, locale } = useT();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { totalItems, setCartOpen } = useInquiryCart();
@@ -50,7 +50,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8 h-12 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
             <span className="text-sm font-bold tracking-wide text-white">{brand.name}</span>
-            <span className="hidden sm:inline text-[10px] text-white/25 tracking-wider">{brand.slogan}</span>
+            <span className="hidden sm:inline text-[10px] text-white/25 tracking-wider">{locale === "zh" ? brand.sloganZh || brand.slogan : locale === "es" ? brand.sloganEs || brand.slogan : brand.slogan}</span>
           </Link>
         </div>
       </div>

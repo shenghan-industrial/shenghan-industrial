@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { categories, type Category } from "@/data/categories";
+import type { Category } from "@/data/categories";
 import { MegaMenu } from "@/components/MegaMenu";
 import { useT } from "@/lib/LanguageContext";
 import { localizeCategoryName } from "@/lib/localizeProduct";
+import { useCategories } from "@/lib/use-categories";
 
 interface CategorySidebarProps {
   activeCategory?: string;
@@ -16,6 +17,7 @@ interface CategorySidebarProps {
 export function CategorySidebar({ activeCategory, onSelectCategory }: CategorySidebarProps) {
   const { locale } = useT();
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const categories = useCategories();
 
   return (
     <div className="w-full bg-white dark:bg-brand-900 rounded-xl border border-gray-100 dark:border-white/10 shadow-sm overflow-visible">

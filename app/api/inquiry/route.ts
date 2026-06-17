@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import type { Resend } from "resend";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
-export const runtime = "edge";
-
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
 
 let resend: Resend | null = null;
@@ -19,6 +17,7 @@ async function getResend() {
 interface InquiryItem {
   productId: string;
   name: string;
+  model?: string;
   quantity: number;
   category: string;
 }
@@ -69,7 +68,7 @@ export async function POST(request: Request) {
 
     // Build product list for email
     const productList = items
-      .map((i) => `• ${i.name} × ${i.quantity} (${i.category})`)
+      .map((i) => `• ${i.model ? `[${i.model}] ` : ""}${i.name} x ${i.quantity} (${i.category})`)
       .join("\n");
 
     // Send email notification (only if RESEND_API_KEY is configured)
@@ -79,7 +78,7 @@ export async function POST(request: Request) {
         await r.emails.send({
         from: "Shengyu Industrial <noreply@shenghanindustrial.com>",
         to: NOTIFY_EMAIL,
-        subject: `New Inquiry from ${name} — ${items.length} product(s)`,
+        subject: `New Inquiry from ${name} - ${items.length} product(s)`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #B8A080;">New Inquiry Received</h2>
@@ -100,7 +99,6 @@ export async function POST(request: Request) {
       }
     } catch (emailErr) {
       console.error("Email send failed:", emailErr);
-      // Still return success — inquiry was saved even if email fails
     }
 
     return NextResponse.json({ success: true, id: inquiry.id });

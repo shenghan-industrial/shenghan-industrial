@@ -7,9 +7,10 @@ import { SearchBar } from "@/components/SearchBar";
 import { CategorySidebar } from "@/components/CategorySidebar";
 import { ProductCard } from "@/components/ProductCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { products } from "@/data/products";
-import { categories, type Category } from "@/data/categories";
+import type { Category } from "@/data/categories";
 import { useT } from "@/lib/LanguageContext";
+import { useCategories } from "@/lib/use-categories";
+import { useProducts } from "@/lib/use-products";
 import { ChevronDown, Flame, Package } from "lucide-react";
 
 const PRODUCTS_PER_PAGE = 12;
@@ -23,6 +24,8 @@ function ProductsContent() {
 
   const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(PRODUCTS_PER_PAGE);
+  const categories = useCategories();
+  const { products } = useProducts();
 
   useEffect(() => {
     if (subFilter && catFilter) {

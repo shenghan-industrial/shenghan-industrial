@@ -16,6 +16,8 @@ export const siteConfig = {
     name: "Shengyu Industrial",
     shortName: "Shengyu",
     slogan: "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
+    sloganZh: "全球家居建材制造商 | 一站式供应链合作伙伴",
+    sloganEs: "Fabricante Global de Materiales para el Hogar y Construcción | Socio de Cadena de Suministro Integral",
     description:
       "Shengyu Industrial is a global manufacturer and one-stop supply chain partner. Factory direct pricing, reliable logistics, full compliance, and global after-sales — serving importers, contractors, and B2B buyers worldwide.",
     logo: {
@@ -45,13 +47,20 @@ export const siteConfig = {
     email: "shenghanind@163.com",
     address: {
       line1: "Linyi, Shandong, China",
+      line1Zh: "中国山东省临沂市",
+      line1Es: "Linyi, Shandong, China",
       line2: "Global Warehouses: Europe · SE Asia · CIS",
+      line2Zh: "全球仓储网络：欧洲 · 东南亚 · 独联体",
+      line2Es: "Almacenes Globales: Europa · Sudeste Asiático · CEI",
       line3: "山东省临沂市 · 全球仓储：欧洲·东南亚·独联体",
     },
     hours: {
       weekday: "24/7 Multilingual Support",
-      saturday: "7 Languages · No Time Zone Gaps",
+      weekdayZh: "24小时多语言支持",
+      weekdayEs: "Soporte Multilingüe 24/7",
       note: "Global After-Sales Service",
+      noteZh: "全球售后服务",
+      noteEs: "Servicio Postventa Global",
     },
   },
 
@@ -94,6 +103,10 @@ export const siteConfig = {
   footer: {
     tagline:
       "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner — factory direct pricing, reliable logistics, and full after-sales support for B2B buyers worldwide.",
+    taglineZh:
+      "全球家居建材制造商 | 一站式供应链合作伙伴 — 工厂直供价格、可靠物流、完善的售后服务，服务全球B2B采购商。",
+    taglineEs:
+      "Fabricante Global de Materiales para el Hogar y Construcción | Socio de Cadena de Suministro Integral — precios directos de fábrica, logística confiable y soporte postventa completo para compradores B2B en todo el mundo.",
     column1Title: "Products",
     column1Links: [
       { label: "Furniture", href: "/products" },
