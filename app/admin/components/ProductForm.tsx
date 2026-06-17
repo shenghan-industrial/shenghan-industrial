@@ -48,8 +48,9 @@ function generateProduct(nameZh: string, category: string, subCategory: string, 
   const esType = ES_MAP[enType] || enType;
   const notesClean = notes?.replace(/[，,。；;、\s]+$/, "").trim() || "";
 
-  const id = (category + "-" + (subCategory || "product") + "-" + nameZh)
-    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "").substring(0, 50);
+  const baseId = (category + "-" + (subCategory || "product") + "-" + nameZh)
+    .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "").substring(0, 40);
+  const id = baseId + "-" + Date.now().toString(36);
 
   const ft = FEAT_TEMPLATES[category] || FEAT_TEMPLATES.Others;
 

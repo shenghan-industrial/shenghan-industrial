@@ -7,9 +7,10 @@ const KEY = "products";
 export async function getAllProducts(): Promise<Product[]> {
   await kvSeedIfEmpty(KEY, staticProducts);
   const products = (await kvGetJSON<Product[]>(KEY)) ?? staticProducts;
-  // Deduplicate by ID
-  const seen = new Set<string>();
-  return products.filter((p) => { if (seen.has(p.id)) return false; seen.add(p.id); return true; });
+  // Deduplicate by ID (keep LAST = most recent)
+  const map = new Map<string, Product>();
+  for (const p of products) map.set(p.id, p);
+  return [...map.values()];
 }
 
 export async function getProductById(id: string): Promise<Product | undefined> {
