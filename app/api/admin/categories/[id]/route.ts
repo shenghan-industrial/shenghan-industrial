@@ -7,6 +7,8 @@ import {
   deleteCategory,
 } from "@/lib/categories-db";
 
+export const runtime = "edge";
+
 // PUT: update category or subcategory
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {

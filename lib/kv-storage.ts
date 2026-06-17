@@ -1,25 +1,5 @@
-import fs from "fs";
-import path from "path";
-
-const DATA_DIR = path.join(process.cwd(), "data", "dynamic");
-
-function readFileJSON<T>(key: string): T | undefined {
-  try {
-    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-    const fp = path.join(DATA_DIR, `${key}.json`);
-    if (!fs.existsSync(fp)) return undefined;
-    return JSON.parse(fs.readFileSync(fp, "utf-8")) as T;
-  } catch { return undefined; }
-}
-
-function writeFileJSON<T>(key: string, value: T): void {
-  try {
-    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-    fs.writeFileSync(path.join(DATA_DIR, `${key}.json`), JSON.stringify(value, null, 2), "utf-8");
-  } catch (e: any) {
-    console.error("[kv-storage] Write failed:", e?.message || e);
-  }
-}
+// Cloudflare KV + in-memory fallback
+const memory = new Map<string, string>();
 
 function getKV(): KVNamespace | null {
   try {
@@ -37,7 +17,8 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     const val = await kv.get(key, "json");
     return (val ?? fallback) as T | undefined;
   }
-  return readFileJSON<T>(key) ?? fallback;
+  const raw = memory.get(key);
+  return raw !== undefined ? (JSON.parse(raw) as T) : fallback;
 }
 
 export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
@@ -46,7 +27,7 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
     await kv.put(key, JSON.stringify(value));
     return;
   }
-  writeFileJSON(key, value);
+  memory.set(key, JSON.stringify(value));
 }
 
 export async function kvSeedIfEmpty<T>(key: string, seed: T): Promise<void> {
