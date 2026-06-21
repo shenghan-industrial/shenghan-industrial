@@ -4,14 +4,15 @@ import { useMemo } from "react";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { products } from "@/data/products";
+import { useProducts } from "@/lib/use-products";
 import { useT } from "@/lib/LanguageContext";
 import { ArrowLeft, Clock, Sparkles } from "lucide-react";
 
 export default function PromotionsPage() {
-  const { t, locale } = useT();
+  const { t } = useT();
 
-  const promoProducts = useMemo(() => products.filter((p) => p.onPromotion), []);
+  const { products } = useProducts();
+  const promoProducts = useMemo(() => products.filter((p) => p.onPromotion), [products]);
 
   const daysLeft = useMemo(() => {
     const now = new Date();
@@ -38,7 +39,7 @@ export default function PromotionsPage() {
               <div className="flex items-center gap-2 mt-2">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#B8A080]/20 text-[#D4C8B8] text-xs font-medium">
                   <Clock className="w-3 h-3" />
-                  {locale === "zh" ? `仅剩 ${daysLeft} 天` : locale === "es" ? `Solo ${daysLeft} días` : `${daysLeft} days left`}
+                  {t("promotions.daysLeft").replace("{n}", String(daysLeft))}
                 </span>
                 <span className="text-white/30 text-xs">{t("promo.subtitle")}</span>
               </div>

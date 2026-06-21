@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.11.1",
+    "bcryptjs": "^3.0.3",
     "framer-motion": "^11.0.0",
+    "jose": "^6.2.3",
     "lucide-react": "^0.460.0",
     "next": "^15.1.0",
     "openai": "^6.43.0",
+    "pinyin": "^4.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "resend": "^6.12.4"
+    "resend": "^6.12.4",
+    "sharp": "^0.35.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
@@ -25,6 +29,7 @@
     "@types/react-dom": "^19.0.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.1.0",
+    "playwright": "^1.61.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.0.0"
   }

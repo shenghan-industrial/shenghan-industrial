@@ -1,13 +1,25 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-
-export const runtime = "edge";
+import { verifyJWT, getCookieName } from "@/lib/auth";
 
 export async function GET() {
   const cookieStore = await cookies();
-  const token = cookieStore.get("admin_token");
-  if (token?.value === "authenticated") {
-    return NextResponse.json({ authed: true });
+  const token = cookieStore.get(getCookieName())?.value;
+
+  if (!token) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const payload = await verifyJWT(token);
+  if (!payload) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  return NextResponse.json({
+    authed: true,
+    user: {
+      username: payload.username,
+      role: payload.role,
+    },
+  });
 }

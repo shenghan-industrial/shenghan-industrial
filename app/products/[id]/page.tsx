@@ -13,14 +13,22 @@ import {
   ChevronLeft,
   ChevronRight,
   Send,
+  MessageCircle,
+  Factory,
+  ShieldCheck,
+  Clock,
 } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { InquiryStickyBar } from "@/components/InquiryStickyBar";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { useT } from "@/lib/LanguageContext";
 import { localizeProduct } from "@/lib/localizeProduct";
 import { useInquiryCart } from "@/lib/InquiryContext";
 import { useProducts } from "@/lib/use-products";
+import { productSchema, breadcrumbSchema, JsonLD } from "@/lib/schema-org";
+import { siteConfig } from "@/data/site-config";
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -69,13 +77,21 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
   }
 
   return (
-    <main className="min-h-screen bg-[#f5f5f5] dark:bg-[#12100E]">
+    <main className="min-h-screen bg-[#f5f5f5] dark:bg-[#12100E] pb-24 md:pb-0">
+      {/* Schema.org structured data */}
+      <JsonLD data={productSchema(product)} />
+      <JsonLD data={breadcrumbSchema([
+        { name: "Home", url: "https://shenghanindustrial.com" },
+        { name: "Products", url: "https://shenghanindustrial.com/products" },
+        { name: product.category, url: `https://shenghanindustrial.com/products?cat=${product.category}` },
+        { name: localized.name, url: `https://shenghanindustrial.com/products/${product.id}` },
+      ])} />
       {/* Top bar */}
       <div className="bg-white dark:bg-[#1A1816] border-b border-gray-200 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-2.5 flex items-center gap-2 text-xs text-gray-400 dark:text-white/30">
-          <Link href="/" className="hover:text-[#B8A080]">{locale === "zh" ? "首页" : locale === "es" ? "Inicio" : "Home"}</Link>
+          <Link href="/" className="hover:text-[#B8A080]">{t("nav.home")}</Link>
           <span>/</span>
-          <Link href="/products" className="hover:text-[#B8A080]">{locale === "zh" ? "全部产品" : locale === "es" ? "Productos" : "Products"}</Link>
+          <Link href="/products" className="hover:text-[#B8A080]">{t("nav.products")}</Link>
           <span>/</span>
           <span className="text-gray-600 dark:text-white/60 truncate">{localized.name}</span>
         </div>
@@ -97,9 +113,12 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                   onMouseLeave={() => setZooming(false)}
                   onMouseMove={handleMouseMove}
                 >
-                  <img
+                  <ResponsiveImage
                     src={gallery[activeImage] || product.image}
                     alt={localized.name}
+                    width={420}
+                    height={420}
+                    isLCP
                     className="w-full h-full object-contain"
                   />
                   {/* Lens box */}
@@ -131,9 +150,11 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 {/* Magnified view — positioned absolute to avoid layout shift */}
                 {zooming && (
                   <div className="hidden md:block absolute left-full ml-3 top-0 w-[320px] h-[320px] rounded overflow-hidden border border-gray-200 dark:border-white/5 bg-[#12100E] shadow-xl z-20">
-                    <img
+                    <ResponsiveImage
                       src={gallery[activeImage] || product.image}
                       alt=""
+                      width={320}
+                      height={320}
                       className="absolute w-full h-full object-contain"
                       style={{
                         transform: "scale(2.5)",
@@ -148,7 +169,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                   {gallery.map((img, i) => (
                     <button key={i} onClick={() => setActiveImage(i)}
                       className={`shrink-0 w-14 h-14 rounded overflow-hidden border-2 ${i === activeImage ? "border-[#B8A080]" : "border-gray-200 dark:border-white/10 opacity-60"}`}>
-                      <img src={img} alt="" className="w-full h-full object-cover" />
+                      <ResponsiveImage src={img} alt="" width={56} height={56} className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>
@@ -171,22 +192,45 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
                 ))}
               </div>
 
+              {/* Trust Badges — above CTAs */}
+              <div className="mt-4 flex flex-wrap items-center gap-3 text-[10px] text-[#6B6058] dark:text-white/40">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#F5F2EF] dark:bg-white/5">
+                  <Factory className="w-3 h-3 text-[#B8A080]" />{t("detail.trustFactory")}
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#F5F2EF] dark:bg-white/5">
+                  <ShieldCheck className="w-3 h-3 text-[#B8A080]" />{t("detail.trustISO")}
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-[#F5F2EF] dark:bg-white/5">
+                  <Clock className="w-3 h-3 text-[#B8A080]" />{t("detail.trustResponse")}
+                </span>
+              </div>
+
               {/* Actions */}
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <div className="flex items-center border border-gray-200 dark:border-white/10 rounded">
-                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-8 h-8 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 text-sm"><Minus className="w-3 h-3" /></button>
+              <div className="mt-4 flex flex-wrap items-center gap-3">
+                <div className="flex items-center border border-gray-200 dark:border-white/10 rounded-lg overflow-hidden">
+                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="w-9 h-10 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 text-sm"><Minus className="w-3.5 h-3.5" /></button>
                   <input type="number" value={quantity} onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    className="w-12 text-center text-sm font-bold border-x border-gray-200 dark:border-white/10 py-1.5 outline-none bg-transparent text-gray-900 dark:text-white" />
-                  <button onClick={() => setQuantity(quantity + 1)} className="w-8 h-8 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 text-sm"><Plus className="w-3 h-3" /></button>
+                    className="w-14 text-center text-sm font-bold border-x border-gray-200 dark:border-white/10 py-2.5 outline-none bg-transparent text-gray-900 dark:text-white" />
+                  <button onClick={() => setQuantity(quantity + 1)} className="w-9 h-10 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 text-sm"><Plus className="w-3.5 h-3.5" /></button>
                 </div>
                 <button onClick={handleAddToCart}
-                  className={`h-9 px-5 rounded text-sm font-bold flex items-center gap-1.5 transition-all ${added ? "bg-green-500 text-white" : "bg-[#B8A080] text-white hover:bg-[#A89070]"}`}>
-                  {added ? <><Check className="w-3.5 h-3.5" />{t("detail.added")}</> : <><ShoppingCart className="w-3.5 h-3.5" />{t("detail.addToCart")}</>}
+                  className={`h-10 px-5 rounded-lg text-sm font-bold flex items-center gap-1.5 transition-all ${added ? "bg-green-500 text-white" : "bg-[#B8A080] text-white hover:bg-[#A89070]"}`}>
+                  {added ? <><Check className="w-4 h-4" />{t("detail.added")}</> : <><ShoppingCart className="w-4 h-4" />{t("detail.addToCart")}</>}
                 </button>
                 <button onClick={() => { handleAddToCart(); setCartOpen(true); }}
-                  className="h-9 px-5 rounded text-sm font-bold border-2 border-[#B8A080] text-[#B8A080] hover:bg-[#B8A080] hover:text-white transition-all flex items-center gap-1.5">
-                  <Send className="w-3.5 h-3.5" />{t("detail.inquireNow")}
+                  className="h-10 px-5 rounded-lg text-sm font-bold bg-[#C8A14C] text-white hover:bg-[#B8943A] transition-all flex items-center gap-1.5 shadow-sm">
+                  <Send className="w-4 h-4" />{t("detail.requestQuote")}
                 </button>
+                {/* WhatsApp quick contact (desktop) */}
+                <a
+                  href={siteConfig.contact.phone.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden md:inline-flex h-10 px-4 rounded-lg text-sm font-bold border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white transition-all items-center gap-1.5"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp
+                </a>
               </div>
 
               <p className="mt-3 text-xs text-gray-400 dark:text-white/20">
@@ -249,6 +293,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
           </div>
         </section>
       )}
+
+      {/* Mobile Sticky Inquiry Bar */}
+      <InquiryStickyBar
+        onAddToCart={handleAddToCart}
+        onInquire={() => { handleAddToCart(); setCartOpen(true); }}
+        isAdded={added}
+      />
     </main>
   );
 }

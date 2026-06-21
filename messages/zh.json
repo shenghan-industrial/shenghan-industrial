@@ -7,6 +7,8 @@
     "call": "WhatsApp"
   },
   "hero": {
+    "title": "全球家居建材源头制造品牌",
+    "subtitle": "工厂直供价格 · 可靠物流 · 全域合规 — 全球B端一站式供应链合作伙伴",
     "slide1": {
       "tagline": "工厂直供制造商",
       "title": "源头工厂",
@@ -51,38 +53,8 @@
     "watch": "观看工厂参观"
   },
   "products": {
-    "label": "产品系列",
-    "title": "五大核心产品线",
-    "desc": "从家具、灯具到胶粘剂、五金和工业清洁——五大品类，一个源头，工厂直供品质。",
-    "catalog": "产品目录",
-    "catalogDesc": "浏览我们五大品类的完整产品线，找到适合您业务的解决方案。",
-    "viewDetails": "查看详情",
-    "noProducts": "该分类暂无产品。",
-    "all": "全部产品",
-    "category": {
-      "furniture": "家居/家具",
-      "buildingMaterials": "建材",
-      "hardware": "五金",
-      "appliances": "家电",
-      "lighting": "照明",
-      "others": "其他"
-    },
-    "subCategory": {
-      "sofas": "沙发",
-      "beds": "床",
-      "cabinets": "柜子",
-      "adhesives": "胶",
-      "panels": "板材",
-      "fasteners": "紧固件",
-      "doorWindow": "门窗配件",
-      "bathroom": "卫浴配件",
-      "fans": "电风扇",
-      "heaters": "取暖器",
-      "kitchen": "厨房小家电",
-      "deskLamps": "台灯",
-      "pendantLights": "吊灯",
-      "floorLamps": "落地灯"
-    }
+    "searchPrefix": "搜索：",
+    "allCategories": "全部品类"
   },
   "factory": {
     "label": "制造基地",
@@ -132,22 +104,8 @@
     "unit4": " 年"
   },
   "partners": {
-    "label": "供应网络",
-    "title": "我们的合作伙伴工厂",
-    "desc": "我们与中国各地的专业工厂合作，为您提供每个品类最优质的产品。每家合作伙伴都经过严格的质量审核、信誉评估和资质认证。",
-    "certifications": "认证资质",
-    "products": "个产品",
-    "productsFrom": "来自",
-    "moreProducts": "更多产品",
-    "watchVideo": "观看工厂视频",
-    "hideVideo": "隐藏视频",
-    "established": "成立",
-    "aboutFactory": "工厂介绍",
-    "specialties": "主营品类",
-    "quickFacts": "基本信息",
-    "location": "所在地",
-    "inquireNow": "询价此工厂",
-    "productsLabel": "旗下产品"
+    "prev": "上一页",
+    "next": "下一页"
   },
   "cta": {
     "label": "联系我们",
@@ -252,7 +210,27 @@
     "process": {
       "title": "100%透明流程",
       "desc": "远程视频看厂、实时参与验货、订单后台全权限开放——我们看到的，您都能看到。"
-    }
+    },
+    "heroTitle": "全球化家居建材源头制造品牌",
+    "heroSubtitle": "集自主研发、规模化生产、全球销售与一站式供应链服务于一体的现代化制造品牌",
+    "positioning": "品牌定位",
+    "aboutShengyu": "关于盛煜实业",
+    "introP1": "盛煜实业创立于2002年，是一家集自主研发、规模化生产、全球销售、一站式供应链服务于一体的现代化家居建材制造品牌。我们以自有生产基地为核心，面向全球进口商、工程承包商、连锁零售商、跨境B端卖家提供工厂直供全品类建材与一体化解决方案。",
+    "introP2": "深耕行业二十余年，我们秉持「品质为基、合规为先、服务为本、长期共赢」的核心价值观。不依靠产品差价盈利，仅收取标准化服务费用。如今产品与服务已覆盖全球30+国家，成为众多海外工程企业、连锁商超、区域分销商的长期战略合作伙伴。",
+    "philosophy": "品牌理念",
+    "teamLabel": "专业团队",
+    "teamSubtitle": "四大职能团队覆盖研发、品控、商务与物流清关",
+    "beyondLabel": "不止产品",
+    "beyondTitle": "9大增值服务，全方位赋能您的业务",
+    "beyondDesc": "从设计选品到品质管控，从柔性定制到全球物流——查看我们的完整服务体系",
+    "viewServices": "查看全部服务",
+    "partnership": "携手共赢",
+    "partnershipTitle": "成为我们的长期战略合作伙伴",
+    "partnershipDesc": "无论您是中小零售商、跨境卖家还是大型工程集团，我们都将以统一的品牌标准与专业的服务能力，成为您值得信赖的全球供应链伙伴。",
+    "getInTouch": "洽谈合作",
+    "compliance": "全域合规",
+    "complianceSubtitle": "所有证书均为工厂原厂出具，支持按目标国家一键打包下载",
+    "access": "远程看厂"
   },
   "contact": {
     "label": "联系我们",
@@ -267,7 +245,24 @@
     "connectLabel": "关注我们",
     "connectTitle": "关注我们的社媒",
     "connectDesc": "关注盛煜实业官方社媒账号，获取最新产品资讯和行业动态。",
-    "formTitle": "在线咨询"
+    "formTitle": "在线咨询",
+    "faq": {
+      "label": "常见问题",
+      "title": "常见问题解答",
+      "desc": "关于产品、订单和物流的常见疑问解答",
+      "q1": "最小起订量（MOQ）是多少？",
+      "a1": "起订量因产品而异，多数从每款10件起。具体产品起订量请联系我们，支持试单。",
+      "q2": "是否支持OEM/ODM定制？",
+      "a2": "是的。我们提供完整的OEM/ODM服务，包括定制尺寸、材质、颜色、表面处理和品牌。工程团队将按您的规格设计。",
+      "q3": "典型交货期是多久？",
+      "a3": "标准交期为25-35天。定制订单可能需要35-45天。支持加急订单。",
+      "q4": "可以在大货前获取样品吗？",
+      "a4": "可以。样品费用在首单中退还。我们通过DHL/FedEx/UPS发货并提供追踪。",
+      "q5": "接受哪些付款方式？",
+      "a5": "我们接受T/T（30%定金，70%发货前）、即期信用证和西联汇款。长期合作伙伴可申请账期。",
+      "q6": "是否提供物流和运输支持？",
+      "a6": "是的。我们与主要货代合作，可安排FOB/CIF/DDP全球运输，含集装箱优化。"
+    }
   },
   "form": {
     "name": "您的姓名",
@@ -304,19 +299,11 @@
     }
   },
   "detail": {
-    "backToProducts": "返回产品列表",
-    "manufacturer": "制造商",
-    "keySpecs": "主要规格",
-    "addToCart": "加入询价清单",
-    "added": "已加入！",
-    "relatedLabel": "相关推荐",
-    "relatedTitle": "相关产品",
-    "inquiryNote": "批发询价",
-    "inquiryDesc": "将产品加入询价清单，联系我们获取最优工厂批发价格。",
-    "factoryInfo": "制造商介绍",
-    "factoryInfoDesc": "每件产品都来自经过严格审核的认证制造商。",
-    "inquireNow": "立即询价",
-    "productDesc": "产品描述"
+    "trustFactory": "自有工厂",
+    "trustISO": "ISO认证",
+    "trustResponse": "24h内回复",
+    "requestQuote": "立即询价",
+    "whatsappLabel": "WhatsApp咨询"
   },
   "cart": {
     "title": "询价清单",
@@ -408,18 +395,10 @@
     }
   },
   "rankings": {
-    "title": "热销排名",
-    "allCategories": "全部品类",
-    "hotSales": "热销榜",
-    "wishlist": "心宜榜",
-    "wishlistSoon": "心宜榜即将上线，敬请期待",
-    "backToHome": "返回首页"
+    "suffix": "榜"
   },
   "promotions": {
-    "title": "本月限时促销",
-    "backToHome": "返回首页",
-    "noPromos": "暂无促销产品",
-    "limited": "限量"
+    "daysLeft": "仅剩 {n} 天 — 售完为止"
   },
   "common": {
     "brand": "盛煜实业",
@@ -444,12 +423,37 @@
   "flashDeals": {
     "title": "每日闪购",
     "subtitle": "不定时开放，售完为止",
-    "tag": "闪购"
+    "tag": "闪购",
+    "emptyState": "闪购即将开启，敬请期待！"
   },
   "newArrivals": {
     "title": "2026 新品上市",
-    "subtitle": "探索今年最新产品"
+    "subtitle": "探索今年最新产品",
+    "emptyState": "新品即将上线，敬请期待！"
+  },
+  "quickInquiry": {
+    "title": "快速询价",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "您的邮箱",
+    "phonePlaceholder": "WhatsApp / 电话",
+    "submit": "发送询盘",
+    "sending": "发送中...",
+    "success": "询盘已发送！",
+    "successMsg": "我们将在24小时内与您联系",
+    "close": "关闭",
+    "footerNote": "我们将在24小时内回复",
+    "validationError": "请填写姓名和邮箱",
+    "networkError": "网络错误，请重试"
   },
   "weeklySold": "7日售出 ",
-  "weeklySoldSuffix": " 件"
+  "weeklySoldSuffix": " 件",
+  "services": {
+    "heroLabel": "不止供货 · 全方位赋能",
+    "heroTitle": "全方位增值服务体系",
+    "heroSubtitle": "从设计选品到品质管控，从柔性定制到全球物流——九大核心服务模块，为全球B端合作伙伴提供一站式供应链解决方案",
+    "ctaTitle": "所有增值服务对合作客户免费开放",
+    "ctaDesc": "我们不靠服务赚钱——服务是我们的差异化壁垒。九大增值服务对合作客户完全免费，仅第三方工本费按实收取。",
+    "getStarted": "立即咨询",
+    "browseProducts": "浏览产品"
+  }
 }

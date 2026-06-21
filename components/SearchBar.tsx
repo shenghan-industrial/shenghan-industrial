@@ -42,14 +42,14 @@ export function SearchBar({ variant = "standalone", onClose }: SearchBarProps) {
     // Try exact match first
     for (const { sub, catZh, catEn } of searchIndex) {
       if (sub.nameZh === q || sub.name.toLowerCase() === qLower) {
-        return { cat: sub.productCategory, sub: sub.productSubCategory, label: locale === "zh" ? sub.nameZh : locale === "es" ? (sub as any).nameEs || sub.name : sub.name };
+        return { cat: sub.productCategory, sub: sub.productSubCategory, label: locale === "zh" ? sub.nameZh : locale === "es" ? (sub as { nameEs?: string }).nameEs || sub.name : sub.name };
       }
     }
 
     // Try contains match - subcategory name
     for (const { sub, catZh, catEn } of searchIndex) {
       if (sub.nameZh.includes(q) || sub.name.toLowerCase().includes(qLower)) {
-        return { cat: sub.productCategory, sub: sub.productSubCategory, label: locale === "zh" ? sub.nameZh : locale === "es" ? (sub as any).nameEs || sub.name : sub.name };
+        return { cat: sub.productCategory, sub: sub.productSubCategory, label: locale === "zh" ? sub.nameZh : locale === "es" ? (sub as { nameEs?: string }).nameEs || sub.name : sub.name };
       }
     }
 
@@ -85,11 +85,11 @@ export function SearchBar({ variant = "standalone", onClose }: SearchBarProps) {
       .filter((p) => {
         const mapping = searchIndex.find(({ sub }) => sub.productSubCategory === p.subCategory);
         const zhMatch = mapping ? mapping.sub.nameZh.includes(query) || mapping.catZh.includes(query) : false;
-        return p.name.toLowerCase().includes(q) || p.subtitle.toLowerCase().includes(q) || zhMatch;
+        return p.name.en.toLowerCase().includes(q) || p.subtitle.en.toLowerCase().includes(q) || zhMatch;
       })
       .slice(0, 3)
       .map((p) => ({
-        label: p.name,
+        label: p.name.en,
         productId: p.id,
       }));
 
@@ -113,7 +113,7 @@ export function SearchBar({ variant = "standalone", onClose }: SearchBarProps) {
     }
 
     // 2. Product name match
-    const productMatch = products.find((p) => p.name.toLowerCase().includes(q.toLowerCase()));
+    const productMatch = products.find((p) => p.name.en.toLowerCase().includes(q.toLowerCase()));
     if (productMatch) {
       window.location.href = `/products/${productMatch.id}`;
       return;

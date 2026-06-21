@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getAllCategories, saveAllCategories, createCategory } from "@/lib/categories-db";
+import { requirePermission } from "@/lib/auth";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export async function GET() {
   try {
@@ -15,9 +16,17 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    requirePermission(request, "category:manage");
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : "";
+    if (msg.startsWith("UNAUTHORIZED")) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  try {
     const body = await request.json();
 
-    // If array, save all (batch sync)
+    // If array, save all (batch sync) — requires product:edit permission
     if (Array.isArray(body)) {
       await saveAllCategories(body);
       return NextResponse.json({ success: true });

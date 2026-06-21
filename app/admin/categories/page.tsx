@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import type { Category, SubCategory } from "@/data/categories";
-import { translateCategory, translateSubCategory } from "@/lib/translate-name";
+import { translateCategory, translateSubCategory, translateCategoryAI, translateSubCategoryAI } from "@/lib/translate-name";
+import { bustCategoriesCache } from "@/lib/use-categories";
 import { Plus, Edit, Trash2, Save, X } from "lucide-react";
 
 interface SubForm {
@@ -37,24 +38,36 @@ export default function CategoriesPage() {
 
   useEffect(() => { fetchCats(); }, []);
 
-  // Auto-translate category from Chinese
-  const onCatZhChange = (zh: string) => {
+  // Auto-translate category from Chinese (keyword first, then AI)
+  const onCatZhChange = async (zh: string) => {
     if (!zh.trim()) {
       setCatData((prev) => ({ ...prev, nameZh: "", name: "", nameEs: "", productCategory: "" }));
       return;
     }
-    const t = translateCategory(zh.trim());
-    setCatData((prev) => ({ ...prev, nameZh: zh, name: t.name, nameEs: t.nameEs, productCategory: t.productCategory }));
+    // Instant keyword-based
+    const kw = translateCategory(zh.trim());
+    setCatData((prev) => ({ ...prev, nameZh: zh, name: kw.name, nameEs: kw.nameEs, productCategory: kw.productCategory }));
+    // AI refinement (if available)
+    try {
+      const ai = await translateCategoryAI(zh.trim());
+      setCatData((prev) => ({ ...prev, name: ai.name, nameEs: ai.nameEs }));
+    } catch { /* keep keyword result */ }
   };
 
-  // Auto-translate subcategory from Chinese
-  const onSubZhChange = (zh: string, catProductCategory: string) => {
+  // Auto-translate subcategory from Chinese (keyword first, then AI)
+  const onSubZhChange = async (zh: string, catProductCategory: string) => {
     if (!zh.trim()) {
       setSubData((prev) => ({ ...prev, nameZh: "", name: "", nameEs: "", productSubCategory: "" }));
       return;
     }
-    const t = translateSubCategory(zh.trim(), catProductCategory);
-    setSubData((prev) => ({ ...prev, nameZh: zh, name: t.name, nameEs: t.nameEs, productSubCategory: t.productSubCategory }));
+    // Instant keyword-based
+    const kw = translateSubCategory(zh.trim(), catProductCategory);
+    setSubData((prev) => ({ ...prev, nameZh: zh, name: kw.name, nameEs: kw.nameEs, productSubCategory: kw.productSubCategory }));
+    // AI refinement (if available)
+    try {
+      const ai = await translateSubCategoryAI(zh.trim());
+      setSubData((prev) => ({ ...prev, name: ai.name, nameEs: ai.nameEs }));
+    } catch { /* keep keyword result */ }
   };
 
   // --- Subcategory handlers ---
@@ -102,12 +115,14 @@ export default function CategoriesPage() {
 
     setSaving(false);
     closeForm();
+    bustCategoriesCache();
     fetchCats();
   };
 
   const handleDeleteSub = async (catId: string, sub: SubCategory) => {
     if (!confirm(`确定删除子品类 "${sub.nameZh || sub.name}"？`)) return;
     await fetch(`/api/admin/categories/${catId}?subId=${sub.id}`, { method: "DELETE" });
+    bustCategoriesCache();
     fetchCats();
   };
 
@@ -144,12 +159,14 @@ export default function CategoriesPage() {
 
     setSaving(false);
     setCatFormOpen(false);
+    bustCategoriesCache();
     fetchCats();
   };
 
   const handleDeleteCat = async (cat: Category) => {
     if (!confirm(`确定删除品类 "${cat.nameZh}" 及其所有子品类？`)) return;
     await fetch(`/api/admin/categories/${cat.id}`, { method: "DELETE" });
+    bustCategoriesCache();
     fetchCats();
   };
 
@@ -206,7 +223,7 @@ export default function CategoriesPage() {
               </div>
               <div className="divide-y divide-[#E8E2DC] dark:divide-white/5">
                 {items.length === 0 ? (
-                  <div className="px-5 py-4 text-xs text-[#9B8E7E] dark:text-white/30">暂无子品类，点击"添加子品类"创建</div>
+                  <div className="px-5 py-4 text-xs text-[#9B8E7E] dark:text-white/30">暂无子品类，点击&ldquo;添加子品类&rdquo;创建</div>
                 ) : (
                   items.map((sub) => (
                     <div key={sub.id} className="flex items-center justify-between px-5 py-2.5 hover:bg-[#F5F2EF]/50 dark:hover:bg-white/[0.02] transition-colors">

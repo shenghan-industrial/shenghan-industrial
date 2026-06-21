@@ -4,12 +4,15 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, User, Phone, Mail, MessageSquare, Loader2, AlertCircle } from "lucide-react";
 import { useT } from "@/lib/LanguageContext";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 
 export function ContactForm() {
   const { t } = useT();
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const [resetKey, setResetKey] = useState(0);
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -26,6 +29,7 @@ export function ContactForm() {
       phone: formData.get("phone") as string,
       email: formData.get("email") as string,
       message: formData.get("message") as string,
+      turnstileToken,
     };
 
     try {
@@ -37,8 +41,10 @@ export function ContactForm() {
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Failed to send message.");
       setSent(true);
+      setResetKey((k) => k + 1); // reset Turnstile
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setResetKey((k) => k + 1); // reset Turnstile on error
     } finally {
       setSending(false);
     }
@@ -87,6 +93,8 @@ export function ContactForm() {
         <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-text-muted" />
         <textarea name="message" required rows={4} placeholder={t("form.message")} className={`${inputClass} resize-none`} />
       </div>
+
+      <TurnstileWidget onToken={setTurnstileToken} resetKey={resetKey} />
 
       <button type="submit" disabled={sending} className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-accent text-brand-900 font-semibold text-sm hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-lg hover:shadow-accent/20">
         {sending ? <><Loader2 className="w-4 h-4 animate-spin" />{t("form.sending")}</> : <><Send className="w-4 h-4" />{t("form.submit")}</>}

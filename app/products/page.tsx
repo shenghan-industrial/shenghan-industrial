@@ -49,7 +49,7 @@ function ProductsContent() {
       }
     }
     return map;
-  }, []);
+  }, [categories]);
 
   const filteredProducts = useMemo(() => {
     let filtered = products;
@@ -57,8 +57,8 @@ function ProductsContent() {
     if (qFilter) {
       const q = qFilter.toLowerCase();
       filtered = filtered.filter((p) => {
-        if (p.name.toLowerCase().includes(q)) return true;
-        if (p.subtitle.toLowerCase().includes(q)) return true;
+        if (p.name.en.toLowerCase().includes(q) || p.name.zh.includes(qFilter)) return true;
+        if (p.subtitle.en.toLowerCase().includes(q)) return true;
         const m = catSearchMap[p.subCategory || ""];
         if (m) {
           if (m.catZh.includes(qFilter)) return true;
@@ -124,7 +124,7 @@ function ProductsContent() {
                 <Flame className="w-5 h-5 text-accent" />
                 <h2 className="text-lg font-bold text-brand-800 dark:text-white">
                   {qFilter
-                    ? (locale === "zh" ? "搜索: " : locale === "es" ? "Buscar: " : "Search: ") + qFilter
+                    ? t("products.searchPrefix") + qFilter
                     : activeCategoryId
                       ? (() => {
                           const cat = categories.find((c) => c.id === activeCategoryId);

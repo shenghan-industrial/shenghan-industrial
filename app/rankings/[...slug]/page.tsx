@@ -100,8 +100,8 @@ export default function RankingsPage({ params }: { params: Promise<{ slug: strin
           {/* Title */}
           <div className="text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-              {locale === "zh" ? (currentSubInfo?.nameZh || currentSub) : locale === "es" ? ((currentSubInfo as any)?.nameEs || currentSubInfo?.name || currentSub) : (currentSubInfo?.name || currentSub)}
-              <span className="text-white/80">{locale === "zh" ? "榜" : locale === "es" ? " Top" : " Top"}</span>
+              {locale === "zh" ? (currentSubInfo?.nameZh || currentSub) : locale === "es" ? ((currentSubInfo as { nameEs?: string } | undefined)?.nameEs || currentSubInfo?.name || currentSub) : (currentSubInfo?.name || currentSub)}
+              <span className="text-white/80">{t("rankings.suffix")}</span>
             </h1>
             <p className="text-white/50 text-sm mt-3">
               {t("home.rankedBy7Days")}
@@ -122,7 +122,7 @@ export default function RankingsPage({ params }: { params: Promise<{ slug: strin
                 : "text-text-secondary dark:text-white/50 border border-gray-200 dark:border-white/10 hover:border-accent/30"
             }`}
           >
-            {currentSubInfo ? (locale === "zh" ? currentSubInfo.nameZh : locale === "es" ? ((currentSubInfo as any)?.nameEs || currentSubInfo.name) : currentSubInfo.name) : currentSub}
+            {currentSubInfo ? (locale === "zh" ? currentSubInfo.nameZh : locale === "es" ? ((currentSubInfo as { nameEs?: string })?.nameEs || currentSubInfo.name) : currentSubInfo.name) : currentSub}
           </Link>
 
           {siblingSubs
@@ -133,7 +133,7 @@ export default function RankingsPage({ params }: { params: Promise<{ slug: strin
                 href={`/rankings/${sub.productCategory}/${sub.productSubCategory}`}
                 className="shrink-0 px-4 py-1.5 rounded-full text-xs font-medium text-text-secondary dark:text-white/50 border border-gray-200 dark:border-white/10 hover:border-accent/30 transition-all"
               >
-                {locale === "zh" ? sub.nameZh : locale === "es" ? ((sub as any)?.nameEs || sub.name) : sub.name}
+                {locale === "zh" ? sub.nameZh : locale === "es" ? ((sub as { nameEs?: string })?.nameEs || sub.name) : sub.name}
               </Link>
             ))}
         </div>

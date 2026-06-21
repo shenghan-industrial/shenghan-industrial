@@ -35,10 +35,10 @@ function getBestSellerGroups(products: import("@/data/products").Product[], cate
         if (found) {
           subNameZh = found.nameZh;
           subName = found.name;
-          subNameEs = (found as any).nameEs;
+          subNameEs = (found as { nameEs?: string }).nameEs;
           catNameZh = cat.nameZh;
           catName = cat.name;
-          catNameEs = (cat as any).nameEs;
+          catNameEs = (cat as { nameEs?: string }).nameEs;
           break;
         }
       }
@@ -78,17 +78,10 @@ function HomeContent() {
       {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. Trust Bar */}
+      {/* 2. Trust Bar — immediately after Hero */}
       <TrustBar />
 
-      {/* 3. Feature Cards */}
-      <section className="pt-8 md:pt-20 pb-2 md:pb-4">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <FeatureCards />
-        </div>
-      </section>
-
-      {/* 4. Best Sellers */}
+      {/* 3. Best Sellers — products first (conversion priority) */}
       <section className="py-8 md:py-20 bg-white dark:bg-[#1A1816]">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
           <div className="mb-9">
@@ -209,7 +202,14 @@ function HomeContent() {
         </div>
       </section>
 
-      {/* 4. Customer Reviews */}
+      {/* 4. Feature Cards */}
+      <section className="pt-8 md:pt-16 pb-2 md:pb-4">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <FeatureCards />
+        </div>
+      </section>
+
+      {/* 5. Customer Reviews */}
       <ReviewsSection />
     </main>
   );

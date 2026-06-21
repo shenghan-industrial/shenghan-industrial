@@ -29,6 +29,42 @@ export interface Category {
   productCategory: string;
 }
 
+// ── Sub-category 3-letter code map ─────────────────────────
+// Used for SKU/model generation: SY-{code}-{seq}
+// Furniture has special series+material encoding
+export const SUB_CATEGORY_CODES: Record<string, string> = {
+  // Furniture 家具
+  "Sofas": "SOF", "Beds": "BED", "Cabinets": "CAB",
+  // Lighting 灯具
+  "Desk Lamps": "DSK", "Pendant Lights": "PEN", "Floor Lamps": "FLR",
+  "Portable Lights": "PTL", "Industrial Lights": "IND", "Floodlights": "FLD",
+  "Solar Lights": "SOL", "Street Lights": "STL",
+  // Building Materials 建材
+  "Adhesives": "ADH", "Panels": "PNL",
+  // Hardware 五金
+  "Fasteners": "FAS", "Door & Window": "DRW", "Bathroom": "BTH",
+  // Appliances 家电
+  "Fans": "FAN", "Heaters": "HTR", "Kitchen": "KIT",
+  // Others 其他
+  "Others": "OTH",
+};
+
+// Category-level 2-letter prefix
+export const CATEGORY_PREFIX: Record<string, string> = {
+  "Furniture": "JJ", "Lighting": "DJ", "Building Materials": "JC",
+  "Hardware": "WJ", "Appliances": "JD", "Others": "QT",
+};
+
+/** Get 3-letter sub-category code, falls back to auto-generation */
+export function getSubCategoryCode(subCategory: string): string {
+  return SUB_CATEGORY_CODES[subCategory] || subCategory.slice(0, 3).toUpperCase().replace(/[^A-Z]/g, "X");
+}
+
+/** Get model number prefix: SY-{3-letter-code} */
+export function getModelPrefix(subCategory: string): string {
+  return `SY-${getSubCategoryCode(subCategory)}`;
+}
+
 export const categories: Category[] = [
   {
     id: "furniture",

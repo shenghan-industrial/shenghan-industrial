@@ -43,23 +43,38 @@ function getNested(obj: Record<string, unknown>, path: string): string {
   return typeof current === "string" ? current : path;
 }
 
+function getInitialLocale(): Locale {
+  if (typeof window !== "undefined") {
+    try {
+      const stored = localStorage.getItem("locale");
+      if (stored === "zh" || stored === "en" || stored === "es") return stored;
+    } catch {}
+    // Fallback: browser language
+    const nav = navigator.language || "";
+    if (nav.startsWith("zh")) return "zh";
+    if (nav.startsWith("es")) return "es";
+  }
+  return "en";
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
+  // Always start with "en" for SSR/hydration consistency.
+  // Client preference is applied in the effect below.
   const [locale, setLocaleState] = useState<Locale>("en");
+  const [hydrated, setHydrated] = useState(false);
   const [messages, setMessages] = useState<Record<string, unknown>>({});
 
   useEffect(() => {
-    const stored = localStorage.getItem("locale") as Locale | null;
-    if (stored === "zh" || stored === "en" || stored === "es") {
-      setLocaleState(stored);
+    if (!hydrated) {
+      setHydrated(true);
+      const clientLocale = getInitialLocale();
+      if (clientLocale !== "en") setLocaleState(clientLocale);
     }
-  }, []);
-
-  useEffect(() => {
     loadMessages(locale).then((msgs) => {
       setMessages(msgs);
       document.documentElement.lang = locale;
     });
-  }, [locale]);
+  }, [locale, hydrated]);
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);

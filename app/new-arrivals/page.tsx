@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { products } from "@/data/products";
+import { useProducts } from "@/lib/use-products";
 import { useT } from "@/lib/LanguageContext";
 import { ArrowLeft, Sparkles } from "lucide-react";
 
 export default function NewArrivalsPage() {
-  const { t, locale } = useT();
+  const { t } = useT();
 
-  const newProducts = products.filter((p) => p.badge === "New" || p.badge === "新品");
+  const { products } = useProducts();
+  const newProducts = products.filter((p) => p.badge?.en === "New" || p.badge?.zh === "新品");
 
   return (
     <main className="min-h-screen bg-[#F5F2EF] dark:bg-[#12100E]">
@@ -57,7 +58,7 @@ export default function NewArrivalsPage() {
           <div className="text-center py-20 text-text-muted dark:text-white/30">
             <Sparkles className="w-16 h-16 mx-auto mb-4 opacity-30" />
             <p className="text-sm">
-              {locale === "zh" ? "新品即将上线，敬请期待" : locale === "es" ? "Novedades próximamente" : "New arrivals coming soon"}
+              {t("newArrivals.emptyState")}
             </p>
           </div>
         )}

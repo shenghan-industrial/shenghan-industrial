@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { categories } from "@/data/categories";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
+import { requirePermission } from "@/lib/auth";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
-// Same auto-generate logic as ProductForm
+// ── generateProduct (unchanged logic, adds Phase 2 fields) ──
 function generateProduct(
   name: string, nameZh: string, category: string, subCategory: string,
   image: string, price: string, notes: string
@@ -26,7 +27,6 @@ function generateProduct(
     Furniture: "家具", "Building Materials": "建材", Hardware: "五金",
     Appliances: "家电", Lighting: "灯具", Others: "其他",
   };
-  const catZh = catZhMap[category] || category;
 
   const featTemplates: Record<string, { en: string[]; zh: string[] }> = {
     Furniture: {
@@ -58,49 +58,57 @@ function generateProduct(
   const ft = featTemplates[category] || featTemplates.Others;
   const zhName = nameZh || name + " — " + subZh;
 
+  const now = new Date().toISOString();
+
   return {
     id,
-    name,
-    nameZh: zhName,
-    nameEs: esName,
-    subtitle: subCategory + " — factory direct quality",
-    subtitleZh: subZh + " — 工厂直供品质",
-    subtitleEs: subCategory + " — calidad directa de fábrica",
+    name: { en: name, zh: zhName, es: esName },
+    subtitle: { en: subCategory + " — factory direct quality", zh: subZh + " — 工厂直供品质", es: subCategory + " — calidad directa de fábrica" },
     category,
     subCategory: subCategory || undefined,
-    description: notes
-      ? `${notes}. ${subCategory} — ${name}. Factory direct from Shengyu Industrial.`
-      : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${name}. Manufactured in our own facilities with strict quality control.`,
-    descriptionZh: notes
-      ? `${notes}。${subZh} — ${zhName}。盛煜实业工厂直供。`
-      : `盛煜实业 ${subZh} — ${zhName}。自有工厂制造，严格品控。`,
-    descriptionEs: notes
-      ? `${notes}. ${subCategory} — ${esName}. Directo de fábrica de Shengyu Industrial.`
-      : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${esName}. Fabricado en nuestras propias instalaciones con estricto control de calidad.`,
-    features: ft.en,
-    featuresZh: ft.zh,
-    featuresEs: ft.en.map(f => f), // basic ES fallback
-    specs: [
-      { label: "Material", value: "Premium grade" },
-      { label: "MOQ", value: "Negotiable" },
-      { label: "Lead Time", value: "25–35 days" },
-      { label: "Customization", value: "Available" },
-    ],
-    specsZh: [
-      { label: "材质", value: "优质等级" },
-      { label: "起订量", value: "可协商" },
-      { label: "交期", value: "25–35 天" },
-      { label: "定制", value: "支持" },
-    ],
-    specsEs: [
-      { label: "Material", value: "Grado premium" },
-      { label: "Cantidad Mínima", value: "Negociable" },
-      { label: "Plazo de Entrega", value: "25–35 días" },
-      { label: "Personalización", value: "Disponible" },
-    ],
+    description: {
+      en: notes
+        ? `${notes}. ${subCategory} — ${name}. Factory direct from Shengyu Industrial.`
+        : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${name}. Manufactured in our own facilities.`,
+      zh: notes
+        ? `${notes}。${subZh} — ${zhName}。盛煜实业工厂直供。`
+        : `盛煜实业 ${subZh} — ${zhName}。自有工厂制造，严格品控。`,
+      es: notes
+        ? `${notes}. ${subCategory} — ${esName}. Directo de fábrica de Shengyu Industrial.`
+        : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${esName}. Fabricado en nuestras propias instalaciones.`,
+    },
+    features: { en: ft.en, zh: ft.zh, es: ft.en.map(f => f) },
+    specs: {
+      en: [
+        { label: "Material", value: "Premium grade" },
+        { label: "MOQ", value: "Negotiable" },
+        { label: "Lead Time", value: "25–35 days" },
+        { label: "Customization", value: "Available" },
+      ],
+      zh: [
+        { label: "材质", value: "优质等级" },
+        { label: "起订量", value: "可协商" },
+        { label: "交期", value: "25–35 天" },
+        { label: "定制", value: "支持" },
+      ],
+      es: [
+        { label: "Material", value: "Grado premium" },
+        { label: "Cantidad Mínima", value: "Negociable" },
+        { label: "Plazo de Entrega", value: "25–35 días" },
+        { label: "Personalización", value: "Disponible" },
+      ],
+    },
     image: image || "/images/product-1.svg",
     price: price || "",
     partnerId: "shenghan-industrial",
+    // Phase 2 fields
+    sku: `SY-${category.slice(0, 2).toUpperCase()}-${id.slice(0, 8).toUpperCase()}`,
+    slug: id,
+    status: "published" as const,
+    gallery: [image || "/images/product-1.svg"],
+    tags: [category, subCategory],
+    createdAt: now,
+    updatedAt: now,
   };
 }
 
@@ -130,13 +138,20 @@ categories.forEach(c => {
 
 export async function POST(request: Request) {
   try {
+    requirePermission(request, "product:create");
+  } catch (e: unknown) {
+    const msg = e instanceof Error ? e.message : "";
+    if (msg.startsWith("UNAUTHORIZED")) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  try {
     const { csv } = await request.json() as { csv: string };
     if (!csv) return NextResponse.json({ imported: 0, errors: ["No CSV data"] }, { status: 400 });
 
     const lines = csv.split("\n").filter(l => l.trim());
     if (lines.length < 2) return NextResponse.json({ imported: 0, errors: ["CSV must have header + at least one data row"] }, { status: 400 });
 
-    // Read header
     const header = parseCSVLine(lines[0]).map(h => h.trim());
     const nameIdx = header.indexOf("name");
     const nameZhIdx = header.indexOf("nameZh");
@@ -150,7 +165,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ imported: 0, errors: ["CSV must have 'name' and 'category' columns"] }, { status: 400 });
     }
 
-    // Read existing products
     const existing = (await kvGetJSON<{ id: string }[]>("products")) ?? [];
     const existingIds = new Set(existing.map((p: { id: string }) => p.id));
 
@@ -179,7 +193,6 @@ export async function POST(request: Request) {
       existingIds.add(product.id);
     }
 
-    // Merge and save
     const allProducts = [...existing, ...newProducts];
     await kvPutJSON("products", allProducts);
 

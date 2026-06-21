@@ -7,6 +7,8 @@
     "call": "WhatsApp"
   },
   "hero": {
+    "title": "Fabricante Global de Materiales para el Hogar y Construcción",
+    "subtitle": "Precios directos de fábrica, logística confiable, cumplimiento global — socio integral de cadena de suministro para compradores B2B.",
     "slide1": {
       "tagline": "Fabricante Directo de Fábrica",
       "title": "Calidad Global",
@@ -51,38 +53,8 @@
     "watch": "Ver Recorrido de Fábrica"
   },
   "products": {
-    "label": "Productos",
-    "title": "Cinco Líneas Principales de Productos",
-    "desc": "Desde muebles e iluminación hasta adhesivos, ferretería y limpieza industrial — una sola fuente, calidad directa de fábrica en cinco categorías de productos.",
-    "catalog": "Catálogo de Productos",
-    "catalogDesc": "Explore nuestra gama completa de productos en cinco categorías para encontrar la solución adecuada para su negocio.",
-    "viewDetails": "Ver Detalles",
-    "noProducts": "Aún no hay productos en esta categoría.",
-    "all": "Todos los Productos",
-    "category": {
-      "furniture": "Muebles",
-      "buildingMaterials": "Materiales de Construcción",
-      "hardware": "Ferretería",
-      "appliances": "Electrodomésticos",
-      "lighting": "Iluminación",
-      "others": "Otros"
-    },
-    "subCategory": {
-      "sofas": "Sofás",
-      "beds": "Camas",
-      "cabinets": "Armarios",
-      "adhesives": "Adhesivos",
-      "panels": "Paneles",
-      "fasteners": "Sujetadores",
-      "doorWindow": "Puertas y Ventanas",
-      "bathroom": "Baño",
-      "fans": "Ventiladores",
-      "heaters": "Calefactores",
-      "kitchen": "Cocina",
-      "deskLamps": "Lámparas de Escritorio",
-      "pendantLights": "Lámparas Colgantes",
-      "floorLamps": "Lámparas de Pie"
-    }
+    "searchPrefix": "Buscar: ",
+    "allCategories": "Todas las Categorías"
   },
   "factory": {
     "label": "Nuestra Fábrica",
@@ -132,24 +104,8 @@
     "unit4": " años"
   },
   "partners": {
-    "label": "Socios",
-    "title": "Confiado por Líderes de la Industria",
-    "desc": "Asociaciones a largo plazo con empresas de construcción de primer nivel — un testimonio de nuestra calidad sin concesiones.",
     "prev": "Socios anteriores",
-    "next": "Socios siguientes",
-    "certifications": "Certificaciones",
-    "products": "productos",
-    "productsFrom": "Productos de",
-    "moreProducts": "más productos",
-    "watchVideo": "Ver Video de Fábrica",
-    "hideVideo": "Ocultar Video",
-    "established": "Fundado",
-    "aboutFactory": "Sobre Esta Fábrica",
-    "specialties": "Especialidades",
-    "quickFacts": "Datos Rápidos",
-    "location": "Ubicación",
-    "inquireNow": "Consultar Sobre Esta Fábrica",
-    "productsLabel": "Productos"
+    "next": "Socios siguientes"
   },
   "cta": {
     "label": "Contacto",
@@ -254,7 +210,27 @@
     "process": {
       "title": "Proceso 100% Transparente",
       "desc": "Recorridos de fábrica por video remoto, participación en inspección en tiempo real y acceso completo a su panel de pedidos — usted ve todo lo que nosotros vemos."
-    }
+    },
+    "heroTitle": "Marca Global de Fabricación de Materiales",
+    "heroSubtitle": "Marca moderna que integra I+D, producción a gran escala y servicios globales de cadena de suministro",
+    "positioning": "Posicionamiento",
+    "aboutShengyu": "Sobre Shengyu Industrial",
+    "introP1": "Shengyu Industrial, fundada en 2002, es una marca moderna de fabricación que integra I+D, producción a gran escala, ventas globales y servicios de cadena de suministro. Proporcionamos productos directos de fábrica para importadores, contratistas y minoristas globales.",
+    "introP2": "Con más de 20 años en la industria, nos adherimos a los valores de Calidad, Cumplimiento, Servicio y Cooperación. No dependemos del margen de productos. Hoy servimos a clientes en más de 30 países.",
+    "philosophy": "Filosofía",
+    "teamLabel": "Equipo Profesional",
+    "teamSubtitle": "Cuatro equipos especializados cubriendo I+D, calidad, negocios y logística",
+    "beyondLabel": "Más Allá del Producto",
+    "beyondTitle": "9 Servicios Integrales para su Negocio",
+    "beyondDesc": "Desde diseño hasta logística — vea nuestros servicios completos",
+    "viewServices": "Ver Todos los Servicios",
+    "partnership": "Asociación",
+    "partnershipTitle": "Conviértase en Nuestro Socio Estratégico a Largo Plazo",
+    "partnershipDesc": "Ya sea minorista, vendedor transfronterizo o gran grupo de ingeniería — proporcionamos estándares unificados y capacidades profesionales como su socio global de confianza.",
+    "getInTouch": "Contactar",
+    "compliance": "Cumplimiento",
+    "complianceSubtitle": "Todos los certificados son originales de fábrica, disponibles para descarga por país",
+    "access": "Acceso"
   },
   "contact": {
     "label": "Contacto",
@@ -269,7 +245,24 @@
     "connectLabel": "Conéctese Con Nosotros",
     "connectTitle": "Siga Nuestro Trayecto",
     "connectDesc": "Manténgase actualizado con nuestros últimos lanzamientos de productos, conocimientos de la industria y noticias de la empresa en redes sociales.",
-    "formTitle": "Envíenos un Mensaje"
+    "formTitle": "Envíenos un Mensaje",
+    "faq": {
+      "label": "Preguntas Frecuentes",
+      "title": "Preguntas Frecuentes",
+      "desc": "Respuestas a preguntas comunes sobre productos, pedidos y logística",
+      "q1": "¿Cuál es la cantidad mínima de pedido (MOQ)?",
+      "a1": "El MOQ varía según el producto. La mayoría comienza desde 10 unidades por diseño. Contáctenos para detalles específicos — podemos acomodar pedidos de prueba.",
+      "q2": "¿Ofrecen personalización OEM/ODM?",
+      "a2": "Sí. Ofrecemos servicios completos OEM/ODM que incluyen dimensiones, materiales, colores, acabados y marca personalizados. Nuestro equipo de ingeniería trabaja con sus especificaciones.",
+      "q3": "¿Cuál es el plazo de entrega típico?",
+      "a3": "El plazo estándar es de 25-35 días para la mayoría de los productos. Pedidos personalizados pueden tomar 35-45 días. Pedidos urgentes disponibles bajo solicitud.",
+      "q4": "¿Puedo obtener muestras antes del pedido al por mayor?",
+      "a4": "Sí, hay muestras disponibles. El costo de la muestra es reembolsable con su primer pedido al por mayor. Enviamos por DHL/FedEx/UPS con seguimiento.",
+      "q5": "¿Qué condiciones de pago aceptan?",
+      "a5": "Aceptamos T/T (30% depósito, 70% antes del envío), L/C a la vista y Western Union. Los socios a largo plazo pueden calificar para términos netos.",
+      "q6": "¿Ofrecen soporte logístico y de envío?",
+      "a6": "Sí. Tenemos asociaciones con los principales transitarios y podemos organizar envíos FOB/CIF/DDP a todo el mundo. Optimización de contenedores incluida."
+    }
   },
   "form": {
     "name": "Su Nombre",
@@ -306,19 +299,11 @@
     }
   },
   "detail": {
-    "backToProducts": "Volver a Productos",
-    "manufacturer": "Fabricante",
-    "keySpecs": "Especificaciones Clave",
-    "addToCart": "Añadir a Lista de Consulta",
-    "added": "¡Añadido!",
-    "relatedLabel": "Relacionado",
-    "relatedTitle": "Productos Relacionados",
-    "inquiryNote": "Consulta al por Mayor",
-    "inquiryDesc": "Añada productos a su lista de consulta, luego contáctenos para obtener el mejor precio directo de fábrica.",
-    "factoryInfo": "Sobre el Fabricante",
-    "factoryInfoDesc": "Cada producto proviene de un socio fabricante confiable y verificado.",
-    "inquireNow": "Consultar Ahora",
-    "productDesc": "Descripción del Producto"
+    "trustFactory": "Fábrica Propia",
+    "trustISO": "Cert. ISO",
+    "trustResponse": "Resp. < 24h",
+    "requestQuote": "Solicitar Cotización",
+    "whatsappLabel": "Chatear por WhatsApp"
   },
   "cart": {
     "title": "Lista de Consulta",
@@ -410,19 +395,9 @@
     }
   },
   "rankings": {
-    "title": "Ranking de Más Vendidos",
-    "allCategories": "Todas las Categorías",
-    "hotSales": "Más Vendidos",
-    "wishlist": "Lista de Deseos",
-    "wishlistSoon": "Ranking de lista de deseos próximamente",
-    "backToHome": "Volver al Inicio",
     "suffix": " Top"
   },
   "promotions": {
-    "title": "Venta Flash Mensual",
-    "backToHome": "Volver al Inicio",
-    "noPromos": "No hay promociones disponibles",
-    "limited": "Limitado",
     "daysLeft": "Solo quedan {n} días — hasta agotar existencias"
   },
   "common": {
@@ -448,12 +423,37 @@
   "flashDeals": {
     "title": "Venta Flash Diaria",
     "subtitle": "Abre en horarios aleatorios, hasta agotar existencias",
-    "tag": "Flash"
+    "tag": "Flash",
+    "emptyState": "¡Ofertas flash próximamente!"
   },
   "newArrivals": {
     "title": "Novedades 2026",
-    "subtitle": "Descubra nuestros últimos productos este año"
+    "subtitle": "Descubra nuestros últimos productos este año",
+    "emptyState": "¡Novedades próximamente — vuelva pronto!"
+  },
+  "quickInquiry": {
+    "title": "Consulta Rápida",
+    "namePlaceholder": "Su nombre",
+    "emailPlaceholder": "Su email",
+    "phonePlaceholder": "WhatsApp / Teléfono",
+    "submit": "Enviar Consulta",
+    "sending": "Enviando...",
+    "success": "¡Consulta Enviada!",
+    "successMsg": "Le contactaremos en 24 horas",
+    "close": "Cerrar",
+    "footerNote": "Respondemos en 24h",
+    "validationError": "Nombre y email requeridos",
+    "networkError": "Error de red. Reintente."
   },
   "weeklySold": "Vendidos 7d: ",
-  "weeklySoldSuffix": ""
+  "weeklySoldSuffix": "",
+  "services": {
+    "heroLabel": "Más Allá del Suministro · Empoderamiento Total",
+    "heroTitle": "Servicios Integrales de Valor Agregado",
+    "heroSubtitle": "Desde diseño hasta logística — nueve módulos de servicios centrales para socios B2B globales",
+    "ctaTitle": "Todos los Servicios Gratuitos para Clientes Cooperativos",
+    "ctaDesc": "No ganamos con los servicios — son nuestra ventaja competitiva. Los nueve servicios son gratuitos para clientes cooperativos.",
+    "getStarted": "Comenzar",
+    "browseProducts": "Ver Productos"
+  }
 }

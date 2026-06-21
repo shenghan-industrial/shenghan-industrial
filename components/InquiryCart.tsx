@@ -57,7 +57,7 @@ export function InquiryCart() {
       {/* Floating button */}
       <button
         onClick={() => setCartOpen(true)}
-        className="fixed bottom-6 right-6 z-[90] flex items-center gap-2 px-5 py-3.5 rounded-full bg-accent text-brand-900 font-semibold text-sm shadow-xl shadow-accent/30 hover:bg-accent-light transition-all hover:scale-105 active:scale-95"
+        className="fixed bottom-20 right-6 z-[90] flex items-center gap-2 px-5 py-3.5 rounded-full bg-accent text-brand-900 font-semibold text-sm shadow-xl shadow-accent/30 hover:bg-accent-light transition-all hover:scale-105 active:scale-95"
       >
         <ShoppingCart className="w-5 h-5" />
         {totalItems > 0 && (

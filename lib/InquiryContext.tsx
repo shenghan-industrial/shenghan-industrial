@@ -69,11 +69,11 @@ export function InquiryProvider({ children }: { children: ReactNode }) {
         ...prev,
         {
           productId: product.id,
-          name: product.name,
+          name: product.name.en || product.name.zh,
           model: product.model,
           image: product.image,
           category: product.category,
-          specs: product.specs.slice(0, 4),
+          specs: product.specs.en.slice(0, 4),
           quantity: qty,
         },
       ];

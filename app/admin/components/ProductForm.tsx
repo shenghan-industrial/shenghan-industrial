@@ -7,7 +7,8 @@ import { AIAssistant } from "./AIAssistant";
 import type { Product } from "@/data/products";
 import type { Category } from "@/data/categories";
 import { categories as staticCategories } from "@/data/categories";
-import { genEnName, genEsName, catZhMap, subZhMap, analyzeChineseName } from "@/lib/translate-name";
+import { getSubCategoryCode, getModelPrefix } from "@/data/categories";
+import { genEnName, genEsName, catZhMap, subZhMap, analyzeChineseName, translateWithAIFallback } from "@/lib/translate-name";
 import { Save, ArrowLeft } from "lucide-react";
 
 // Shared EN→ES translation map
@@ -90,32 +91,37 @@ function generateProduct(nameZh: string, category: string, subCategory: string, 
     : "Calidad artesanal y diseño funcional.";
   const esDescription = `${esName} — ${esDescLead} Directo de fábrica de Shengyu Industrial. Certificación ISO, especificaciones personalizadas, embalaje de exportación.`;
 
+  const enSubtitle = (enStyle ? enStyle + " " : "") + (enMaterial || subCategory || "Product") + " — factory direct";
+  const zhSubtitle = (notesClean ? notesClean.substring(0, 30) + " — " : "") + subZh + " — 工厂直供品质";
+  const esSubtitle = (esStyle ? esStyle + " " : "") + (esMaterial || subCategory || "Producto") + " — calidad directa";
+
   return {
-    id, name: enName, nameZh, nameEs: esName,
+    id,
+    name: { en: enName, zh: nameZh, es: esName },
     category, subCategory: subCategory || undefined,
-    description: enDescription, descriptionZh: zhDescription, descriptionEs: esDescription,
-    features: enFeatures, featuresZh: zhFeatures, featuresEs: esFeatures,
-    subtitle: (enStyle ? enStyle + " " : "") + (enMaterial || subCategory || "Product") + " — factory direct",
-    subtitleZh: (notesClean ? notesClean.substring(0, 30) + " — " : "") + subZh + " — 工厂直供品质",
-    subtitleEs: (esStyle ? esStyle + " " : "") + (esMaterial || subCategory || "Producto") + " — calidad directa",
-    specs: [
-      { label: "Material", value: enMaterial || "Premium grade" },
-      { label: "MOQ", value: "Negotiable" },
-      { label: "Lead Time", value: "25–35 days" },
-      { label: "Customization", value: "Available" },
-    ],
-    specsZh: [
-      { label: "材质", value: enMaterial || "优质等级" },
-      { label: "起订量", value: "可协商" },
-      { label: "交期", value: "25–35 天" },
-      { label: "定制", value: "支持" },
-    ],
-    specsEs: [
-      { label: "Material", value: esMaterial || "Grado premium" },
-      { label: "Cantidad Mínima", value: "Negociable" },
-      { label: "Plazo de Entrega", value: "25–35 días" },
-      { label: "Personalización", value: "Disponible" },
-    ],
+    description: { en: enDescription, zh: zhDescription, es: esDescription },
+    features: { en: enFeatures, zh: zhFeatures, es: esFeatures },
+    subtitle: { en: enSubtitle, zh: zhSubtitle, es: esSubtitle },
+    specs: {
+      en: [
+        { label: "Material", value: enMaterial || "Premium grade" },
+        { label: "MOQ", value: "Negotiable" },
+        { label: "Lead Time", value: "25–35 days" },
+        { label: "Customization", value: "Available" },
+      ],
+      zh: [
+        { label: "材质", value: enMaterial || "优质等级" },
+        { label: "起订量", value: "可协商" },
+        { label: "交期", value: "25–35 天" },
+        { label: "定制", value: "支持" },
+      ],
+      es: [
+        { label: "Material", value: esMaterial || "Grado premium" },
+        { label: "Cantidad Mínima", value: "Negociable" },
+        { label: "Plazo de Entrega", value: "25–35 días" },
+        { label: "Personalización", value: "Disponible" },
+      ],
+    },
     image: image || "/images/product-1.svg",
     price: price || "",
     partnerId: "shenghan-industrial",
@@ -129,7 +135,7 @@ export function ProductForm({ product, isNew }: Props) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
-  const [nameZh, setNameZh] = useState(product?.nameZh || "");
+  const [nameZh, setNameZh] = useState(product?.name?.zh || "");
   const [category, setCategory] = useState(product?.category || "Furniture");
   const [subCategory, setSubCategory] = useState(product?.subCategory || "");
   const [image, setImage] = useState(product?.image || "");
@@ -137,7 +143,9 @@ export function ProductForm({ product, isNew }: Props) {
   const [price, setPrice] = useState(product?.price || "");
   const [model, setModel] = useState(product?.model || "");
   const [notes, setNotes] = useState(product?.notes || "");
-  const [featuresInput, setFeaturesInput] = useState(product?.featuresZh?.join("\n") || "");
+  const [featuresInput, setFeaturesInput] = useState(product?.features?.zh?.join("\n") || "");
+  const [aiPreview, setAiPreview] = useState<{ en: string; es: string } | null>(null);
+  const [aiLoading, setAiLoading] = useState(false);
 
   useEffect(() => {
     fetch("/api/admin/categories")
@@ -145,6 +153,18 @@ export function ProductForm({ product, isNew }: Props) {
       .then((data) => Array.isArray(data) && data.length > 0 ? setCategories(data) : setCategories(staticCategories))
       .catch(() => setCategories(staticCategories));
   }, []);
+
+  // Auto AI-translate when user types Chinese name (debounced 1s)
+  useEffect(() => {
+    if (!nameZh.trim() || nameZh.trim().length < 2 || product) return; // Only auto for new products
+    const timer = setTimeout(async () => {
+      setAiLoading(true);
+      const result = await translateWithAIFallback(nameZh.trim());
+      setAiPreview(result);
+      setAiLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [nameZh, product]);
 
   const allSubCategories: { name: string; nameZh: string; category: string }[] = [];
   for (const cat of (categories.length > 0 ? categories : staticCategories)) {
@@ -166,10 +186,31 @@ export function ProductForm({ product, isNew }: Props) {
 
     let data: Product;
     const gen = generateProduct(nameZh.trim(), category, subCategory, image, price.trim(), notes.trim(), featuresInput.trim());
+    // Apply AI translations if available
+    if (aiPreview) {
+      gen.name = { en: aiPreview.en, zh: nameZh.trim(), es: aiPreview.es };
+    }
+    // Auto-generate sequential model per subcategory: SY-{3-letter code}-{SEQ}
+    const subCode = subCategory ? getSubCategoryCode(subCategory) : "XXX";
+    const prefix = `SY-${subCode}`;
+    let computedModel = model.trim();
+    if (!computedModel) {
+      try {
+        const res = await fetch("/api/admin/products");
+        const all: { model?: string; category?: string; subCategory?: string }[] = await res.json();
+        const nums = all
+          .filter(p => p.model?.startsWith(prefix + "-"))
+          .map(p => parseInt(p.model!.split("-").pop() || "0", 10))
+          .filter(n => !isNaN(n));
+        const next = Math.max(0, ...nums) + 1;
+        computedModel = `${prefix}-${String(next).padStart(3, "0")}`;
+      } catch { computedModel = `${prefix}-001`; }
+    }
+
     if (isNew) {
-      data = { ...gen, images: extraImages.filter(Boolean), notes: notes.trim(), model: model.trim() };
+      data = { ...gen, images: extraImages.filter(Boolean), notes: notes.trim(), model: computedModel };
     } else {
-      data = { ...gen, id: product!.id, partnerId: product!.partnerId, images: extraImages.filter(Boolean), notes: notes.trim(), model: model.trim() };
+      data = { ...gen, id: product!.id, partnerId: product!.partnerId, images: extraImages.filter(Boolean), notes: notes.trim(), model: computedModel };
     }
 
     try {
@@ -190,7 +231,7 @@ export function ProductForm({ product, isNew }: Props) {
       {saved && (
         <div className="mb-4 p-4 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 flex items-center justify-between">
           <span className="text-sm font-medium text-green-700 dark:text-green-400">保存成功</span>
-          <button onClick={() => { router.push("/admin"); setTimeout(() => router.refresh(), 200); }} className="text-xs text-[#B8A080] hover:underline">返回产品列表</button>
+          <button onClick={() => { const page = localStorage.getItem("admin-product-page") || "0"; router.push(`/admin?page=${page}`); setTimeout(() => router.refresh(), 200); }} className="text-xs text-[#B8A080] hover:underline">返回产品列表</button>
         </div>
       )}
       <div className="flex items-center gap-4 mb-6">
@@ -232,7 +273,24 @@ export function ProductForm({ product, isNew }: Props) {
               <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品名称（中文）*</label>
               <input type="text" value={nameZh} onChange={(e) => setNameZh(e.target.value)}
                 className="w-full px-3 py-2.5 rounded-lg border border-[#E8E2DC] dark:border-white/10 bg-[#F5F2EF] dark:bg-[#12100E] text-sm text-[#3D3730] dark:text-white focus:outline-none focus:border-[#B8A080] transition-colors" placeholder="例如：现代L型真皮沙发" required />
-              <p className="text-[10px] text-[#B8A080] mt-1">英文和西班牙语名称将自动生成</p>
+              <div className="flex items-center gap-2 mt-1">
+                <p className="text-[10px] text-[#B8A080]">英文和西班牙语名称将自动生成</p>
+                <button type="button" onClick={async () => {
+                  if (!nameZh.trim() || aiLoading) return;
+                  setAiLoading(true);
+                  const result = await translateWithAIFallback(nameZh.trim());
+                  setAiPreview(result);
+                  setAiLoading(false);
+                }} className="text-[10px] text-[#C8A14C] hover:text-[#B8943A] underline font-medium">
+                  {aiLoading ? "翻译中..." : aiPreview ? "✓ 已AI翻译" : "🤖 AI智能翻译"}
+                </button>
+              </div>
+              {aiPreview && (
+                <div className="mt-1.5 flex gap-3 text-[11px]">
+                  <span className="text-[#6B6058] dark:text-white/50">EN: <strong>{aiPreview.en}</strong></span>
+                  <span className="text-[#6B6058] dark:text-white/50">ES: <strong>{aiPreview.es}</strong></span>
+                </div>
+              )}
             </div>
             <div>
               <label className="block text-xs font-medium text-[#6B6058] dark:text-white/50 mb-1">产品型号</label>
@@ -299,7 +357,9 @@ export function ProductForm({ product, isNew }: Props) {
       </form>
 
       <AIAssistant
-        context={`品类: ${catZhMap[category] || category}${subCategory ? ", 子品类: " + (subZhMap[subCategory] || subCategory) : ""}, 产品名: ${nameZh || "未填写"}${notes ? ", 备注: " + notes : ""}`}
+        category={catZhMap[category] || category}
+        subCategory={subCategory ? (subZhMap[subCategory] || subCategory) : undefined}
+        context={nameZh ? `产品名: ${nameZh}${notes ? ", 备注: " + notes : ""}` : undefined}
         onApply={(aiData) => {
           if (aiData.code) setModel(aiData.code);
           if (aiData.name) setNameZh(aiData.name);

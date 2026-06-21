@@ -1,5 +1,19 @@
-// Cloudflare KV + in-memory fallback
+// Cloudflare KV + file-based fallback (Node.js dev)
+import fs from "fs";
+import path from "path";
+
+const DATA_DIR = path.join(process.cwd(), ".data");
 const memory = new Map<string, string>();
+
+function ensureDataDir() {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+}
+
+function filePath(key: string): string {
+  return path.join(DATA_DIR, `${key}.json`);
+}
 
 function getKV(): KVNamespace | null {
   try {
@@ -17,8 +31,15 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     const val = await kv.get(key, "json");
     return (val ?? fallback) as T | undefined;
   }
-  const raw = memory.get(key);
-  return raw !== undefined ? (JSON.parse(raw) as T) : fallback;
+  // File-based fallback
+  try {
+    ensureDataDir();
+    if (fs.existsSync(filePath(key))) {
+      const raw = fs.readFileSync(filePath(key), "utf-8");
+      return JSON.parse(raw) as T;
+    }
+  } catch { /* ignore */ }
+  return fallback;
 }
 
 export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
@@ -27,7 +48,11 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
     await kv.put(key, JSON.stringify(value));
     return;
   }
-  memory.set(key, JSON.stringify(value));
+  // File-based fallback
+  try {
+    ensureDataDir();
+    fs.writeFileSync(filePath(key), JSON.stringify(value, null, 2), "utf-8");
+  } catch { /* ignore */ }
 }
 
 export async function kvSeedIfEmpty<T>(key: string, seed: T): Promise<void> {

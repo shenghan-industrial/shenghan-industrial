@@ -7,6 +7,8 @@
     "call": "WhatsApp"
   },
   "hero": {
+    "title": "Global Home & Building Materials Manufacturer",
+    "subtitle": "Factory direct pricing, reliable logistics, full compliance — one-stop supply chain partner for B2B buyers worldwide.",
     "slide1": {
       "tagline": "Direct Factory Manufacturer",
       "title": "Factory Direct",
@@ -51,38 +53,8 @@
     "watch": "Watch Factory Tour"
   },
   "products": {
-    "label": "Products",
-    "title": "Five Core Product Lines",
-    "desc": "From furniture and lighting to adhesives, hardware, and industrial cleaning — one source, factory-direct quality across five product categories.",
-    "catalog": "Product Catalog",
-    "catalogDesc": "Browse our complete range of products across five categories to find the right solution for your business.",
-    "viewDetails": "View Details",
-    "noProducts": "No products in this category yet.",
-    "all": "All Products",
-    "category": {
-      "furniture": "Furniture",
-      "buildingMaterials": "Building Materials",
-      "hardware": "Hardware",
-      "appliances": "Appliances",
-      "lighting": "Lighting",
-      "others": "Others"
-    },
-    "subCategory": {
-      "sofas": "Sofas",
-      "beds": "Beds",
-      "cabinets": "Cabinets",
-      "adhesives": "Adhesives",
-      "panels": "Panels",
-      "fasteners": "Fasteners",
-      "doorWindow": "Door & Window",
-      "bathroom": "Bathroom",
-      "fans": "Fans",
-      "heaters": "Heaters",
-      "kitchen": "Kitchen",
-      "deskLamps": "Desk Lamps",
-      "pendantLights": "Pendant Lights",
-      "floorLamps": "Floor Lamps"
-    }
+    "searchPrefix": "Search: ",
+    "allCategories": "All Categories"
   },
   "factory": {
     "label": "Our Factory",
@@ -132,22 +104,8 @@
     "unit4": " years"
   },
   "partners": {
-    "label": "Our Network",
-    "title": "Our Manufacturing Partners",
-    "desc": "We work with specialized factories across China to bring you the best products in every category. Each partner is carefully vetted for quality, reliability, and certifications.",
-    "certifications": "Certifications",
-    "products": "products",
-    "productsFrom": "Products from",
-    "moreProducts": "more products",
-    "watchVideo": "Watch Factory Video",
-    "hideVideo": "Hide Video",
-    "established": "Est.",
-    "aboutFactory": "About This Factory",
-    "specialties": "Specialties",
-    "quickFacts": "Quick Facts",
-    "location": "Location",
-    "inquireNow": "Inquire About This Factory",
-    "productsLabel": "Products"
+    "prev": "Previous partners",
+    "next": "Next partners"
   },
   "cta": {
     "label": "Contact",
@@ -252,7 +210,27 @@
     "process": {
       "title": "100% Transparent Process",
       "desc": "Remote video factory tours, real-time inspection participation, and full access to your order dashboard — you see everything we see."
-    }
+    },
+    "heroTitle": "Global Home & Building Materials Manufacturer",
+    "heroSubtitle": "Integrating R&D, large-scale production, global distribution and supply chain services",
+    "positioning": "Positioning",
+    "aboutShengyu": "About Shengyu Industrial",
+    "introP1": "Shengyu Industrial was founded in 2002 — a modern manufacturing brand integrating R&D, large-scale production, global sales and supply chain services. Operating self-owned production bases, we deliver factory-direct products and integrated solutions for global importers, contractors, chain retailers and B2B cross-border sellers.",
+    "introP2": "With over 20 years of expertise, we uphold Quality First, Compliance First, Service-Oriented and Win-win Cooperation. We do not profit from product markup — charging only standardized service fees. Today we serve B2B partners across 30+ countries.",
+    "philosophy": "Philosophy",
+    "teamLabel": "Professional Team",
+    "teamSubtitle": "Four specialized teams covering R&D, QC, global business and logistics",
+    "beyondLabel": "Beyond Products",
+    "beyondTitle": "9 Value-Added Services to Empower Your Business",
+    "beyondDesc": "From design to logistics — explore our complete service system",
+    "viewServices": "View All Services",
+    "partnership": "Partnership",
+    "partnershipTitle": "Become Our Long-Term Strategic Partner",
+    "partnershipDesc": "Whether small retailer, cross-border seller or large engineering group — we provide unified brand standards and professional capabilities as your trusted global supply chain partner.",
+    "getInTouch": "Get in Touch",
+    "compliance": "Compliance",
+    "complianceSubtitle": "All certificates factory-original, available for per-country download",
+    "access": "Access"
   },
   "contact": {
     "label": "Contact",
@@ -267,7 +245,24 @@
     "connectLabel": "Connect With Us",
     "connectTitle": "Follow Our Journey",
     "connectDesc": "Stay updated with our latest product launches, industry insights, and company news on social media.",
-    "formTitle": "Send Us a Message"
+    "formTitle": "Send Us a Message",
+    "faq": {
+      "label": "FAQ",
+      "title": "Frequently Asked Questions",
+      "desc": "Common questions about products, ordering, and logistics",
+      "q1": "What is the minimum order quantity (MOQ)?",
+      "a1": "MOQ varies by product. Most items start from 10 units per design. Contact us for specific product MOQ details — we can accommodate trial orders.",
+      "q2": "Do you offer OEM/ODM customization?",
+      "a2": "Yes. We provide full OEM/ODM services including custom dimensions, materials, colors, finishes, and branding. Our engineering team works with your specifications.",
+      "q3": "What is the typical lead time?",
+      "a3": "Standard lead time is 25-35 days for most products. Custom orders may take 35-45 days. Rush orders available upon request.",
+      "q4": "Can I get samples before bulk order?",
+      "a4": "Yes, samples are available. Sample cost is refundable with your first bulk order. We ship via DHL/FedEx/UPS with tracking.",
+      "q5": "What payment terms do you accept?",
+      "a5": "We accept T/T (30% deposit, 70% before shipment), L/C at sight, and Western Union. Long-term partners may qualify for net terms.",
+      "q6": "Do you provide logistics and shipping support?",
+      "a6": "Yes. We have partnerships with major freight forwarders and can arrange FOB/CIF/DDP shipping worldwide. Container optimization included."
+    }
   },
   "form": {
     "name": "Your Name",
@@ -304,19 +299,11 @@
     }
   },
   "detail": {
-    "backToProducts": "Back to Products",
-    "manufacturer": "Manufacturer",
-    "keySpecs": "Key Specifications",
-    "addToCart": "Add to Inquiry List",
-    "added": "Added!",
-    "relatedLabel": "Related",
-    "relatedTitle": "Related Products",
-    "inquiryNote": "Wholesale Inquiry",
-    "inquiryDesc": "Add products to your inquiry list, then contact us for the best factory-direct pricing.",
-    "factoryInfo": "About the Manufacturer",
-    "factoryInfoDesc": "Every product comes from a trusted, vetted manufacturing partner.",
-    "inquireNow": "Inquire Now",
-    "productDesc": "Product Description"
+    "trustFactory": "Own Factory",
+    "trustISO": "ISO Certified",
+    "trustResponse": "Reply < 24h",
+    "requestQuote": "Request Quote",
+    "whatsappLabel": "Chat on WhatsApp"
   },
   "cart": {
     "title": "Inquiry List",
@@ -408,18 +395,10 @@
     }
   },
   "rankings": {
-    "title": "Best Seller Rankings",
-    "allCategories": "All Categories",
-    "hotSales": "Hot Sales",
-    "wishlist": "Wishlist",
-    "wishlistSoon": "Wishlist rankings coming soon",
-    "backToHome": "Back to Home"
+    "suffix": " Top"
   },
   "promotions": {
-    "title": "Monthly Flash Sale",
-    "backToHome": "Back to Home",
-    "noPromos": "No promotions available",
-    "limited": "Limited"
+    "daysLeft": "{n} days left — while stocks last"
   },
   "common": {
     "brand": "Shengyu Industrial",
@@ -444,12 +423,37 @@
   "flashDeals": {
     "title": "Daily Flash Sale",
     "subtitle": "Opens at random times, while stocks last",
-    "tag": "Flash"
+    "tag": "Flash",
+    "emptyState": "Flash deals coming soon — stay tuned!"
   },
   "newArrivals": {
     "title": "2026 New Arrivals",
-    "subtitle": "Discover our latest products this year"
+    "subtitle": "Discover our latest products this year",
+    "emptyState": "New arrivals coming soon — check back later!"
+  },
+  "quickInquiry": {
+    "title": "Quick Inquiry",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "phonePlaceholder": "WhatsApp / Phone",
+    "submit": "Send Inquiry",
+    "sending": "Sending...",
+    "success": "Inquiry Sent!",
+    "successMsg": "We will contact you within 24 hours",
+    "close": "Close",
+    "footerNote": "We reply within 24 hours",
+    "validationError": "Please fill in your name and email",
+    "networkError": "Network error. Please retry."
   },
   "weeklySold": "7d sold: ",
-  "weeklySoldSuffix": ""
+  "weeklySoldSuffix": "",
+  "services": {
+    "heroLabel": "Beyond Supply · Full Empowerment",
+    "heroTitle": "Comprehensive Value-Added Services",
+    "heroSubtitle": "From design to logistics — nine core service modules for global B2B partners",
+    "ctaTitle": "All Services Free for Cooperative Clients",
+    "ctaDesc": "We don't profit from services — they are our competitive edge. All nine services free for cooperative clients.",
+    "getStarted": "Get Started",
+    "browseProducts": "Browse Products"
+  }
 }

@@ -7,10 +7,12 @@ interface Message { role: "user" | "assistant"; content: string; }
 
 interface Props {
   context?: string;
+  category?: string;
+  subCategory?: string;
   onApply?: (data: { code?: string; name?: string; description?: string; features?: string[] }) => void;
 }
 
-export function AIAssistant({ context, onApply }: Props) {
+export function AIAssistant({ context, category, subCategory, onApply }: Props) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -50,11 +52,18 @@ export function AIAssistant({ context, onApply }: Props) {
     setLoading(true);
 
     try {
-      const userMessages = context
-        ? [{ role: "user" as const, content: `【当前产品上下文】${context}` }, { role: "user" as const, content: label }]
+      // Build rich context with category info for better AI generation
+      const contextParts: string[] = [];
+      if (category) contextParts.push(`产品大类: ${category}`);
+      if (subCategory) contextParts.push(`产品子类: ${subCategory}`);
+      if (context) contextParts.push(context);
+      const fullContext = contextParts.length > 0 ? `【产品上下文】\n${contextParts.join("\n")}\n请根据以上分类信息生成专业的产品文案。` : "";
+
+      const userMessages = fullContext
+        ? [{ role: "user" as const, content: fullContext }, { role: "user" as const, content: label }]
         : [{ role: "user" as const, content: label }];
 
-      const body: any = { messages: userMessages };
+      const body: Record<string, unknown> = { messages: userMessages };
       if (image) { body.imageBase64 = image; body.imageType = imageType; }
 
       const res = await fetch("/api/admin/ai", {
@@ -113,11 +122,14 @@ export function AIAssistant({ context, onApply }: Props) {
             {messages.length === 0 && (
               <div className="text-center py-8">
                 <Bot className="w-10 h-10 text-[#B8A080]/30 mx-auto mb-3" />
-                <p className="text-xs text-[#9B8E7E] dark:text-white/30">拖拽产品图片到这里，输入品类即可生成文案</p>
-                {context && (
-                  <p className="text-[10px] text-[#B8A080] mt-2 px-3 py-1.5 bg-[#F5F2EF] dark:bg-[#12100E] rounded-lg mx-4">
-                    已读取当前产品信息
-                  </p>
+                <p className="text-xs text-[#9B8E7E] dark:text-white/30">
+                  {category ? "拖拽产品图片，AI 将按已选品类生成文案" : "请先在右侧选择产品品类再使用 AI 助手"}
+                </p>
+                {(category || context) && (
+                  <div className="text-[10px] text-[#B8A080] mt-2 px-3 py-2 bg-[#F5F2EF] dark:bg-[#12100E] rounded-lg mx-4 text-left space-y-0.5">
+                    {category && <p>📂 品类: {category}{subCategory ? ` > ${subCategory}` : ""}</p>}
+                    {context && <p className="text-[#9B8E7E]">{context}</p>}
+                  </div>
                 )}
               </div>
             )}

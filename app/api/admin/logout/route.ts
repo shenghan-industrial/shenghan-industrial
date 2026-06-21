@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
-
-export const runtime = "edge";
+import { getCookieName } from "@/lib/auth";
 
 export async function POST() {
   const cookieStore = await cookies();
-  cookieStore.delete("admin_token");
+  cookieStore.delete(getCookieName());
   return NextResponse.json({ success: true });
 }

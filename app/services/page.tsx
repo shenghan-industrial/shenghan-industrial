@@ -165,7 +165,7 @@ const services: ServiceModule[] = [
 ];
 
 export default function ServicesPage() {
-  const { locale } = useT();
+  const { t, locale } = useT();
 
   return (
     <main className="bg-[#F5F2EF] dark:bg-[#12100E]">
@@ -173,13 +173,13 @@ export default function ServicesPage() {
       <section className="relative bg-[#3D3730] pt-[56px] pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center pt-14">
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-[10px] text-[#B8A080] font-semibold uppercase tracking-[0.25em] mb-4">
-            {locale === "zh" ? "不止供货 · 全方位赋能" : locale === "es" ? "Más Allá del Suministro" : "Beyond Supply · Full Empowerment"}
+            {t("services.heroLabel")}
           </motion.p>
           <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="text-3xl md:text-5xl font-bold text-white mb-5 tracking-[-0.02em] leading-tight">
-            {locale === "zh" ? "全方位增值服务体系" : locale === "es" ? "Servicios Integrales de Valor Agregado" : "Comprehensive Value-Added Services"}
+            {t("services.heroTitle")}
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-white/35 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            {locale === "zh" ? "从设计选品到品质管控，从柔性定制到全球物流——九大核心服务模块，为全球B端合作伙伴提供一站式供应链解决方案" : locale === "es" ? "Desde diseño hasta logística — nueve módulos para socios B2B globales" : "From design to logistics — nine core service modules for global B2B partners"}
+            {t("services.heroSubtitle")}
           </motion.p>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-[#F5F2EF] dark:to-[#12100E]" />
@@ -234,18 +234,17 @@ export default function ServicesPage() {
           <div className="bg-white dark:bg-[#1A1816] rounded-2xl border border-[#E8E2DC] dark:border-white/[0.06] p-8 md:p-12">
             <Star className="w-8 h-8 text-[#B8A080] mx-auto mb-4" strokeWidth={1} />
             <h2 className="text-xl md:text-2xl font-bold text-[#3D3730] dark:text-[#D4C8B8] mb-3 tracking-tight">
-              {locale === "zh" ? "所有增值服务对合作客户免费开放" : locale === "es" ? "Servicios Gratuitos para Clientes" : "All Services Free for Cooperative Clients"}
+              {t("services.ctaTitle")}
             </h2>
             <p className="text-[14px] text-[#7B7068] dark:text-white/35 mb-8 max-w-lg mx-auto leading-relaxed">
-              {locale === "zh" ? "我们不靠服务赚钱——服务是我们的差异化壁垒。九大增值服务对合作客户完全免费，仅第三方工本费按实收取。" : locale === "es" ? "No ganamos con los servicios — son nuestra ventaja. Los nueve servicios son gratuitos." : "We don't profit from services — they are our competitive edge. All nine services free for cooperative clients."}
+              {t("services.ctaDesc")}
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#B8A080] text-white font-semibold text-sm hover:bg-[#C8B8A0] transition-all duration-300 shadow-sm">
-                {locale === "zh" ? "立即咨询" : locale === "es" ? "Consultar" : "Get Started"}
-                <ArrowRight className="w-4 h-4" />
+                {t("services.getStarted")}<ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/products" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[#E8E2DC] dark:border-white/10 text-[#6B6058] dark:text-white/40 font-medium text-sm hover:border-[#B8A080] hover:text-[#B8A080] transition-all duration-300">
-                {locale === "zh" ? "浏览产品" : locale === "es" ? "Ver Productos" : "Browse Products"}
+                {t("services.browseProducts")}
               </Link>
             </div>
           </div>

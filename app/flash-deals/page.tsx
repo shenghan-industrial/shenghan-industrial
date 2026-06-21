@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { products } from "@/data/products";
+import { useProducts } from "@/lib/use-products";
 import { useT } from "@/lib/LanguageContext";
 import { ArrowLeft, Zap } from "lucide-react";
 
 export default function FlashDealsPage() {
-  const { t, locale } = useT();
+  const { t } = useT();
 
+  const { products } = useProducts();
   const flashProducts = products.filter((p) => p.onPromotion);
 
   return (
@@ -62,7 +63,7 @@ export default function FlashDealsPage() {
           <div className="text-center py-20 text-text-muted dark:text-white/30">
             <Zap className="w-16 h-16 mx-auto mb-4 opacity-30" />
             <p className="text-sm">
-              {locale === "zh" ? "闪购即将开启，敬请期待" : locale === "es" ? "Ofertas flash próximamente" : "Flash deals coming soon"}
+              {t("flashDeals.emptyState")}
             </p>
           </div>
         )}

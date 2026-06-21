@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 const API_KEY = process.env.DASHSCOPE_API_KEY || "";
 const API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
@@ -8,10 +8,57 @@ const API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completi
 const SYSTEM_PROMPT = `你是盛煜实业产品文案专员。**必须仔细观察用户上传的图片**，根据图片中产品的实际外观（颜色、材质、造型、风格）生成文案。禁止使用模板话术，每款产品文案必须不同。
 
 ## 编码规则
-品牌SY，品类码：家具JJ、灯具DJ、建材JC、五金WJ、家电JD
+品牌SY，每个子品类有专属3字母编码，编码唯一不变，序号从001递增。
+
+### 家具类
+| 子品类 | 编码 |
+|--------|------|
+| Sofas 沙发 | SOF |
+| Beds 床 | BED |
+| Cabinets 柜子 | CAB |
+
 家具三大系列：揽辰LC(轻奢)、锦栖JQ(新中式)、云眠YM(简约)
-家具编码：SY-JJ-系列-材质-序号（例SY-JJ-LC-PC-01），材质码：PC真皮、KC科技布、SC实木、CC储物
-非家具编码：SY-品类-序号（例SY-DJ-001），从001开始
+材质码：PC真皮、KC科技布、SC实木、CC储物
+家具编码格式：SY-{编码}-{序号}，例：SY-SOF-001、SY-BED-001
+
+### 灯具类
+| 子品类 | 编码 |
+|--------|------|
+| Desk Lamps 台灯 | DSK |
+| Pendant Lights 吊灯 | PEN |
+| Floor Lamps 落地灯 | FLR |
+| Portable Lights 便携灯 | PTL |
+| Industrial Lights 工矿灯 | IND |
+| Floodlights 投光灯 | FLD |
+| Solar Lights 太阳能灯 | SOL |
+| Street Lights 路灯 | STL |
+
+灯具编码格式：SY-{编码}-{序号}，例：SY-DSK-001
+
+### 建材类
+| 子品类 | 编码 |
+|--------|------|
+| Adhesives 胶粘剂 | ADH |
+| Panels 板材 | PNL |
+
+### 五金类
+| 子品类 | 编码 |
+|--------|------|
+| Fasteners 紧固件 | FAS |
+| Door & Window 门窗五金 | DRW |
+| Bathroom 卫浴五金 | BTH |
+
+### 家电类
+| 子品类 | 编码 |
+|--------|------|
+| Fans 风扇 | FAN |
+| Heaters 取暖器 | HTR |
+| Kitchen 厨房电器 | KIT |
+
+### 其他类
+| 编码 |
+|------|
+| OTH |
 
 ## 命名规则
 产品名必须以「盛煜」开头。家具：盛煜+系列+单品名；其他：盛煜+风格/功能+产品名
@@ -41,7 +88,7 @@ export async function POST(request: Request) {
     const lastMsg = body.messages?.[body.messages.length - 1]?.content || "请仔细观察这张产品图片，根据图片中的实际外观、材质、颜色、造型生成产品文案，并应用到产品";
 
     // Build content array with optional image
-    const content: any[] = [];
+    const content: { type: string; text?: string; image_url?: { url: string } }[] = [];
     if (body.imageBase64) {
       const mime = body.imageType || "image/jpeg";
       // Validate base64
@@ -89,7 +136,8 @@ export async function POST(request: Request) {
     const data = await res.json();
     const reply = data.choices?.[0]?.message?.content || "无响应";
     return NextResponse.json({ reply });
-  } catch (e: any) {
-    return NextResponse.json({ reply: `错误: ${e.message}` });
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Unknown error";
+    return NextResponse.json({ reply: `错误: ${message}` });
   }
 }

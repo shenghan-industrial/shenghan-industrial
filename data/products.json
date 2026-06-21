@@ -95,7 +95,8 @@
     "promoTag": "热卖",
     "notes": "米白色科技布包裹，弧形轮廓设计，搭配实木框架与高密度海绵填充，现代轻奢风格，柔软舒适且耐用。",
     "images": [],
-    "model": "SY-JJ-LC-KC-01"
+    "model": "SY-JJ-LC-KC-01",
+    "status": "published"
   },
   {
     "id": "sofa-02",
@@ -185,7 +186,8 @@
     "promoTag": "热卖",
     "images": [],
     "notes": "浅灰科技布面料，L型模块化设计，现代轻奢风格，柔软饱满坐感，适配大户型客厅布局。",
-    "model": "SY-JJ-LC-KC-02"
+    "model": "SY-JJ-LC-KC-02",
+    "status": "published"
   },
   {
     "id": "sofa-03",
@@ -276,7 +278,8 @@
     "weeklySales": 1892,
     "images": [],
     "notes": "灰绿色科技布艺包裹，模块化设计，内置储物格与氛围灯，简约线条融合实用功能，打造现代客厅舒适空间。",
-    "model": "SY-JJ-YM-KC-03"
+    "model": "SY-JJ-YM-KC-03",
+    "status": "published"
   },
   {
     "id": "sofa-04",
@@ -364,7 +367,8 @@
     "weeklySales": 1654,
     "images": [],
     "notes": "浅灰科技布面料，简约线条设计，一侧嵌入实木储物格，兼具舒适与实用功能。",
-    "model": "SY-JJ-YM-KC-04"
+    "model": "SY-JJ-YM-KC-04",
+    "status": "published"
   },
   {
     "id": "sofa-05",
@@ -454,7 +458,8 @@
     "promoTag": "新品",
     "images": [],
     "notes": "灰色科技布包裹，搭配深色木纹茶几台面，L型模块化设计，简约利落，适合现代客厅布局。",
-    "model": "SY-JJ-YM-KC-05"
+    "model": "SY-JJ-YM-KC-05",
+    "status": "published"
   },
   {
     "id": "sofa-06",
@@ -540,7 +545,8 @@
     "weeklySales": 1356,
     "images": [],
     "notes": "米色科技布面料，弧形模块设计，柔软饱满靠垫，现代简约风格，营造温馨舒适客厅氛围。",
-    "model": "SY-JJ-YM-KC-06"
+    "model": "SY-JJ-YM-KC-06",
+    "status": "published"
   },
   {
     "id": "sofa-07",
@@ -626,7 +632,8 @@
     "weeklySales": 1201,
     "images": [],
     "notes": "深灰科技布包裹，圆润弧形轮廓，低矮脚设计，简约现代风格，舒适与美学兼具。",
-    "model": "SY-JJ-YM-KC-07"
+    "model": "SY-JJ-YM-KC-07",
+    "status": "published"
   },
   {
     "id": "sofa-08",
@@ -716,7 +723,8 @@
     "weeklySales": 1045,
     "images": [],
     "notes": "浅灰科技布包裹，绗缝纹理设计，木质扶手点缀，简约线条勾勒现代质感，舒适与美学兼具。",
-    "model": "SY-JJ-YM-KC-08"
+    "model": "SY-JJ-YM-KC-08",
+    "status": "published"
   },
   {
     "id": "sofa-09",
@@ -804,7 +812,8 @@
     "weeklySales": 987,
     "images": [],
     "notes": "湖蓝色真皮沙发，菱格绗缝设计，金属边框点缀，轻奢现代风格，舒适与格调兼具。",
-    "model": "SY-JJ-LC-PC-09"
+    "model": "SY-JJ-LC-PC-09",
+    "status": "published"
   },
   {
     "id": "sofa-10",
@@ -890,7 +899,8 @@
     "weeklySales": 845,
     "images": [],
     "notes": "深棕真皮搭配金属底座，经典纽扣拉扣设计，轻奢质感与舒适坐感兼具，适合现代客厅空间。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "sofa-11",
@@ -976,7 +986,8 @@
     "weeklySales": 723,
     "images": [],
     "notes": "深灰科技布面料，简约弧形靠背设计，金属细腿支撑，轻盈现代感十足，适合极简空间。",
-    "model": "SY-JJ-YM-KC-01"
+    "model": "SY-JJ-YM-KC-01",
+    "status": "published"
   },
   {
     "id": "sofa-12",
@@ -1064,7 +1075,8 @@
     "weeklySales": 612,
     "images": [],
     "notes": "米白色科技布面料，简约线条设计，低矮靠背搭配柔软坐垫，营造静谧舒适的空间氛围。",
-    "model": "SY-JJ-YM-KC-01"
+    "model": "SY-JJ-YM-KC-01",
+    "status": "published"
   },
   {
     "id": "sofa-13",
@@ -1152,7 +1164,8 @@
     "weeklySales": 534,
     "images": [],
     "notes": "深灰色科技布面料，简约线条设计，L型结构搭配脚踏，舒适耐脏，适合现代家居空间。",
-    "model": "SY-JJ-YM-KC-01"
+    "model": "SY-JJ-YM-KC-01",
+    "status": "published"
   },
   {
     "id": "sofa-14",
@@ -1240,7 +1253,8 @@
     "weeklySales": 456,
     "images": [],
     "notes": "米灰双色科技布艺，极简方正轮廓，低矮悬浮设计，搭配同色系抱枕与脚凳，营造静谧舒适空间氛围。",
-    "model": "SY-JJ-YM-KC-01"
+    "model": "SY-JJ-YM-KC-01",
+    "status": "published"
   },
   {
     "id": "sofa-15",
@@ -1326,7 +1340,8 @@
     "weeklySales": 389,
     "images": [],
     "notes": "深灰色科技布面料，简约流畅线条设计，模块化拼接结构，舒适包裹感强，适合现代家居空间。",
-    "model": "SY-JJ-YM-KC-01"
+    "model": "SY-JJ-YM-KC-01",
+    "status": "published"
   },
   {
     "id": "bed-01",
@@ -1420,7 +1435,8 @@
     "promoTag": "热卖",
     "images": [],
     "notes": "米白色真皮软包床体，竖条纹靠背设计，中央金属饰条点缀，两侧嵌入式阅读灯，现代轻奢风格，舒适与格调兼具。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "bed-02",
@@ -1508,7 +1524,8 @@
     "weeklySales": 1456,
     "images": [],
     "notes": "米色科技布绗缝软包床，简约低矮造型，整体包裹式设计，舒适透气，现代家居理想之选。",
-    "model": "SY-JJ-YM-KC-02"
+    "model": "SY-JJ-YM-KC-02",
+    "status": "published"
   },
   {
     "id": "bed-03",
@@ -1594,7 +1611,8 @@
     "weeklySales": 1203,
     "images": [],
     "notes": "米色科技布软包床，高靠背菱格拉扣设计，简约轻奢风格，搭配黑色脚垫，整体优雅舒适。",
-    "model": "SY-JJ-LC-KC-03"
+    "model": "SY-JJ-LC-KC-03",
+    "status": "published"
   },
   {
     "id": "bed-04",
@@ -1682,7 +1700,8 @@
     "weeklySales": 987,
     "images": [],
     "notes": "棕咖色科技布软包床，全围包裹式设计，绗缝格纹细节，现代简约风格，舒适贴合睡眠空间。",
-    "model": "SY-JJ-YM-KC-04"
+    "model": "SY-JJ-YM-KC-04",
+    "status": "published"
   },
   {
     "id": "bed-05",
@@ -1770,7 +1789,8 @@
     "weeklySales": 756,
     "images": [],
     "notes": "灰色科技布包裹，低矮简约设计，软包靠背一体成型，现代卧室舒适之选。",
-    "model": "SY-JJ-YM-KC-05"
+    "model": "SY-JJ-YM-KC-05",
+    "status": "published"
   },
   {
     "id": "bed-06",
@@ -1858,7 +1878,8 @@
     "weeklySales": 621,
     "images": [],
     "notes": "灰褐色科技布软包床，几何绗缝靠背设计，简约轻奢风格，高回弹海绵填充，舒适耐用。",
-    "model": "SY-JJ-LC-KC-06"
+    "model": "SY-JJ-LC-KC-06",
+    "status": "published"
   },
   {
     "id": "furniture-cabinets-display-cabinet",
@@ -1951,7 +1972,8 @@
     "badgeZh": "新品",
     "badgeEs": "Nuevo",
     "price": "$85",
-    "weeklySales": 1890
+    "weeklySales": 1890,
+    "status": "published"
   },
   {
     "id": "furniture-cabinets-tv-stand-cabinet",
@@ -2041,7 +2063,8 @@
     ],
     "image": "/images/product-7.svg",
     "price": "$85",
-    "weeklySales": 1456
+    "weeklySales": 1456,
+    "status": "published"
   },
   {
     "id": "furniture-cabinets-storage-cabinet",
@@ -2131,7 +2154,8 @@
     ],
     "image": "/images/product-8.svg",
     "price": "$85",
-    "weeklySales": 2341
+    "weeklySales": 2341,
+    "status": "published"
   },
   {
     "id": "silicone-sealant-sg9000",
@@ -2182,7 +2206,8 @@
     "monthlyBest": true,
     "price": "$12/L",
     "weeklySales": 4521,
-    "promoTag": "爆款"
+    "promoTag": "爆款",
+    "status": "published"
   },
   {
     "id": "building-materials-adhesives-weatherproof-sealant-ws-7000",
@@ -2272,7 +2297,8 @@
     ],
     "image": "/images/product-3.svg",
     "price": "$15",
-    "weeklySales": 987
+    "weeklySales": 987,
+    "status": "published"
   },
   {
     "id": "building-materials-adhesives-epoxy-stone-adhesive-sa-5000",
@@ -2362,7 +2388,8 @@
     ],
     "image": "/images/product-4.svg",
     "price": "$15",
-    "weeklySales": 1654
+    "weeklySales": 1654,
+    "status": "published"
   },
   {
     "id": "building-materials-panels-mdf-board",
@@ -2453,7 +2480,8 @@
     "image": "/images/product-8.svg",
     "monthlyBest": true,
     "price": "$15",
-    "weeklySales": 2103
+    "weeklySales": 2103,
+    "status": "published"
   },
   {
     "id": "building-materials-panels-plywood-panel",
@@ -2543,7 +2571,8 @@
     ],
     "image": "/images/product-9.svg",
     "price": "$15",
-    "weeklySales": 756
+    "weeklySales": 756,
+    "status": "published"
   },
   {
     "id": "building-materials-panels-particle-board",
@@ -2633,7 +2662,8 @@
     ],
     "image": "/images/product-10.svg",
     "price": "$15",
-    "weeklySales": 1320
+    "weeklySales": 1320,
+    "status": "published"
   },
   {
     "id": "anchor-kit-hw500",
@@ -2684,7 +2714,8 @@
     "monthlyBest": true,
     "price": "$28/kit",
     "weeklySales": 3210,
-    "promoTag": "热卖"
+    "promoTag": "热卖",
+    "status": "published"
   },
   {
     "id": "hardware-fasteners-self-tapping-screw-set",
@@ -2774,7 +2805,8 @@
     ],
     "image": "/images/product-11.svg",
     "price": "$22",
-    "weeklySales": 2890
+    "weeklySales": 2890,
+    "status": "published"
   },
   {
     "id": "hardware-fasteners-expansion-bolt-kit",
@@ -2864,7 +2896,8 @@
     ],
     "image": "/images/product-12.svg",
     "price": "$22",
-    "weeklySales": 654
+    "weeklySales": 654,
+    "status": "published"
   },
   {
     "id": "hardware-door---window-door-handle-set",
@@ -2954,7 +2987,8 @@
     ],
     "image": "/images/product-13.svg",
     "price": "$22",
-    "weeklySales": 1123
+    "weeklySales": 1123,
+    "status": "published"
   },
   {
     "id": "hardware-door---window-window-hinge-kit",
@@ -3044,7 +3078,8 @@
     ],
     "image": "/images/product-14.svg",
     "price": "$22",
-    "weeklySales": 876
+    "weeklySales": 876,
+    "status": "published"
   },
   {
     "id": "hardware-bathroom-towel-rack-set",
@@ -3134,7 +3169,8 @@
     ],
     "image": "/images/product-15.svg",
     "price": "$22",
-    "weeklySales": 1543
+    "weeklySales": 1543,
+    "status": "published"
   },
   {
     "id": "hardware-bathroom-shower-hinge-kit",
@@ -3224,7 +3260,8 @@
     ],
     "image": "/images/product-16.svg",
     "price": "$22",
-    "weeklySales": 1987
+    "weeklySales": 1987,
+    "status": "published"
   },
   {
     "id": "appliances-fans-industrial-stand-fan",
@@ -3315,7 +3352,8 @@
     "image": "/images/product-17.svg",
     "onPromotion": true,
     "price": "$35",
-    "weeklySales": 723
+    "weeklySales": 723,
+    "status": "published"
   },
   {
     "id": "appliances-fans-wall-mounted-fan",
@@ -3405,7 +3443,8 @@
     ],
     "image": "/images/product-18.svg",
     "price": "$35",
-    "weeklySales": 432
+    "weeklySales": 432,
+    "status": "published"
   },
   {
     "id": "appliances-heaters-infrared-heater",
@@ -3495,7 +3534,8 @@
     ],
     "image": "/images/product-19.svg",
     "price": "$35",
-    "weeklySales": 1890
+    "weeklySales": 1890,
+    "status": "published"
   },
   {
     "id": "appliances-heaters-oil-filled-radiator",
@@ -3585,7 +3625,8 @@
     ],
     "image": "/images/product-20.svg",
     "price": "$35",
-    "weeklySales": 1456
+    "weeklySales": 1456,
+    "status": "published"
   },
   {
     "id": "appliances-kitchen-electric-kettle",
@@ -3675,7 +3716,8 @@
     ],
     "image": "/images/product-21.svg",
     "price": "$35",
-    "weeklySales": 2341
+    "weeklySales": 2341,
+    "status": "published"
   },
   {
     "id": "appliances-kitchen-blender-set",
@@ -3765,7 +3807,8 @@
     ],
     "image": "/images/product-22.svg",
     "price": "$35",
-    "weeklySales": 987
+    "weeklySales": 987,
+    "status": "published"
   },
   {
     "id": "lighting-desk-lamps-led-desk-lamp",
@@ -3855,7 +3898,8 @@
     ],
     "image": "/images/product-23.svg",
     "price": "$28",
-    "weeklySales": 1654
+    "weeklySales": 1654,
+    "status": "published"
   },
   {
     "id": "lighting-desk-lamps-architect-task-lamp",
@@ -3945,7 +3989,8 @@
     ],
     "image": "/images/product-24.svg",
     "price": "$28",
-    "weeklySales": 2103
+    "weeklySales": 2103,
+    "status": "published"
   },
   {
     "id": "led-highbay-lt200",
@@ -3993,7 +4038,8 @@
     "monthlyBest": true,
     "price": "$45",
     "weeklySales": 2678,
-    "promoTag": "新品"
+    "promoTag": "新品",
+    "status": "published"
   },
   {
     "id": "lighting-pendant-lights-crystal-pendant-light",
@@ -4084,7 +4130,8 @@
     "image": "/images/product-25.svg",
     "onPromotion": true,
     "price": "$28",
-    "weeklySales": 756
+    "weeklySales": 756,
+    "status": "published"
   },
   {
     "id": "lighting-pendant-lights-modern-dome-pendant",
@@ -4174,7 +4221,8 @@
     ],
     "image": "/images/product-26.svg",
     "price": "$28",
-    "weeklySales": 1320
+    "weeklySales": 1320,
+    "status": "published"
   },
   {
     "id": "lighting-floor-lamps-tripod-floor-lamp",
@@ -4264,7 +4312,8 @@
     ],
     "image": "/images/product-27.svg",
     "price": "$28",
-    "weeklySales": 2890
+    "weeklySales": 2890,
+    "status": "published"
   },
   {
     "id": "lighting-floor-lamps-arc-floor-lamp",
@@ -4354,7 +4403,8 @@
     ],
     "image": "/images/product-28.svg",
     "price": "$28",
-    "weeklySales": 654
+    "weeklySales": 654,
+    "status": "published"
   },
   {
     "id": "industrial-degreaser-cc300",
@@ -4399,7 +4449,8 @@
     "image": "/images/product-5.svg",
     "monthlyBest": true,
     "price": "$8/L",
-    "weeklySales": 1890
+    "weeklySales": 1890,
+    "status": "published"
   },
   {
     "id": "furniture-mattresses-208",
@@ -4491,7 +4542,8 @@
     "partnerId": "shenghan-industrial",
     "images": [],
     "notes": "米白色黄麻纤维面料，绗缝纹理细腻，搭配深棕边框设计，简约大气。三防海绵与独立弹簧支撑系统，透气抗菌，静音护脊，稳固不塌陷。",
-    "model": "SY-JJ-YM-PC-01"
+    "model": "SY-JJ-YM-PC-01",
+    "status": "published"
   },
   {
     "id": "furniture-beds",
@@ -4583,7 +4635,8 @@
     "partnerId": "shenghan-industrial",
     "images": [],
     "notes": "琥珀色头层牛皮包裹，绗缝工艺点缀，搭配黑色金属腿，轻奢质感尽显。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "furniture-product",
@@ -4675,7 +4728,8 @@
     "images": [],
     "notes": "意式轻奢环抱式真皮软床，双层泡芙软包床头舒缓肩颈压力，耐磨防污真皮面料，金属高脚方便清扫，实木静音床架，适配多种家装风格。",
     "model": "SY-JJ-LC-PC-02",
-    "subCategory": "Beds"
+    "subCategory": "Beds",
+    "status": "published"
   },
   {
     "id": "verify-save",
@@ -4767,7 +4821,8 @@
     "price": "",
     "images": [],
     "notes": "深咖色头层牛皮软包床体，搭配金属细腿设计，轻奢质感十足，简约线条勾勒现代卧室美学。",
-    "model": "SY-JJ-LC-PC-02"
+    "model": "SY-JJ-LC-PC-02",
+    "status": "published"
   },
   {
     "id": "draft-1781685950479-zkij",
@@ -4853,7 +4908,8 @@
     "price": "",
     "images": [],
     "notes": "米色头层牛皮包裹，绗缝靠背设计，金属细腿支撑，轻奢质感与舒适并存。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685952348-mn0x",
@@ -4941,7 +4997,8 @@
     "images": [],
     "notes": "米色真皮软包床头，简约线条设计，搭配高密度海绵填充，触感柔软，整体造型优雅大气，提升卧室格调。",
     "model": "SY-JJ-LC-PC-01",
-    "subCategory": "Beds"
+    "subCategory": "Beds",
+    "status": "published"
   },
   {
     "id": "draft-1781685953921-q3cg",
@@ -5029,7 +5086,8 @@
     "price": "",
     "images": [],
     "notes": "米色真皮软包床头，绗缝工艺设计，搭配高箱储物床体，简约轻奢风格，提升卧室质感。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685954737-x8xm",
@@ -5117,7 +5175,8 @@
     "price": "",
     "images": [],
     "notes": "米色真皮软包床头采用绗缝工艺，线条细腻优雅，搭配高箱储物底座，整体造型简约而不失轻奢质感，床体轮廓流畅，细节考究，彰显现代家居美学。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685955531-0k23",
@@ -5203,7 +5262,8 @@
     "price": "",
     "images": [],
     "notes": "米色真皮软包靠背，搭配浅灰印花床垫，悬浮式金属底座，轻奢现代风格，舒适与质感兼具。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685956219-gpor",
@@ -5291,7 +5351,8 @@
     "price": "",
     "images": [],
     "notes": "橙色真皮靠背搭配黑色金属床架，现代轻奢风格，简约线条勾勒高级质感，舒适与美学兼具。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685957197-97ih",
@@ -5381,7 +5442,8 @@
     "price": "",
     "images": [],
     "notes": "棕褐色真皮软包床体，金属支脚支撑，头板三段式设计，搭配浅色床垫与毛毯，轻奢现代风格。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685958825-swcu",
@@ -5467,7 +5529,8 @@
     "price": "",
     "images": [],
     "notes": "灰白织纹面料搭配深色包边，整体呈现轻奢质感，兼具透气性与支撑力，细腻纹理提升空间格调。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685959562-ysqo",
@@ -5555,7 +5618,8 @@
     "price": "",
     "images": [],
     "notes": "白色绗缝面料搭配深灰织边，饰以典雅刺绣图案，真皮包裹侧边，轻奢质感尽显，舒适支撑兼具高阶美学。",
-    "model": "SY-JJ-LC-PC-01"
+    "model": "SY-JJ-LC-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685960216-0x0j",
@@ -5643,7 +5707,8 @@
     "price": "",
     "images": [],
     "notes": "深灰色科技布面料，绗缝纹理设计，边缘加固，简约现代风格，舒适支撑兼具耐用性。",
-    "model": "SY-JJ-YM-PC-01"
+    "model": "SY-JJ-YM-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685960994-qeiz",
@@ -5731,7 +5796,8 @@
     "price": "",
     "images": [],
     "notes": "灰色科技布面料，绗缝分区设计，黑色包边加固，简约现代风格，舒适支撑兼具耐用性。",
-    "model": "SY-JJ-YM-PC-01"
+    "model": "SY-JJ-YM-PC-01",
+    "status": "published"
   },
   {
     "id": "draft-1781685961928-mfvx",
@@ -5825,6 +5891,335 @@
     "price": "",
     "images": [],
     "notes": "米白色绗缝面料，波浪纹压花设计，边缘包边加固，整体简约大气，舒适透气，适合现代家居。",
-    "model": "SY-JJ-YM-SC-01"
+    "model": "SY-JJ-YM-SC-01",
+    "status": "published"
+  },
+  {
+    "id": "batch-001",
+    "name": {
+      "en": "Portable Emergency Light",
+      "zh": "移动应急充电灯",
+      "es": "Luz de Emergencia Portátil"
+    },
+    "category": "Lighting",
+    "subCategory": "Portable Emergency Rechargeable Light",
+    "image": "/uploads/products/1782014001640-_______________.jpg",
+    "model": "SY-LIPO-001",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014001640-_______________.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.695Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-002",
+    "name": {
+      "en": "Industrial Mining Lamp",
+      "zh": "工矿灯",
+      "es": "Lámpara de Minería Industrial"
+    },
+    "category": "Lighting",
+    "subCategory": "Industrial Mining Lamp",
+    "image": "/uploads/products/1782014002485-_________.jpg",
+    "model": "SY-LIMI-001",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014002485-_________.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-003",
+    "name": {
+      "en": "Floodlight",
+      "zh": "投光灯",
+      "es": "Reflector"
+    },
+    "category": "Lighting",
+    "subCategory": "Floodlight",
+    "image": "/uploads/products/1782014003355-________.jpg",
+    "model": "SY-LIFL-001",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014003355-________.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-004",
+    "name": {
+      "en": "Solar Floodlight",
+      "zh": "太阳能投光灯",
+      "es": "Reflector Solar"
+    },
+    "category": "Lighting",
+    "subCategory": "Solar Floodlight",
+    "image": "/uploads/products/1782014004104-________.jpg",
+    "model": "SY-LISF-001",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014004104-________.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-005",
+    "name": {
+      "en": "Solar Street Light",
+      "zh": "太阳能路灯",
+      "es": "Farola Solar"
+    },
+    "category": "Lighting",
+    "subCategory": "Solar Street Light",
+    "image": "/uploads/products/1782014004985-_______.jpg",
+    "model": "SY-LISS-001",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014004985-_______.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-006",
+    "name": {
+      "en": "LED Light",
+      "zh": "LED灯",
+      "es": "Luz LED"
+    },
+    "category": "Lighting",
+    "subCategory": "Light",
+    "image": "/uploads/products/1782014005858-__________.jpg",
+    "model": "SY-LILI-001",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014005858-__________.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-007",
+    "name": {
+      "en": "Light",
+      "zh": "灯",
+      "es": "Lámpara"
+    },
+    "category": "Lighting",
+    "subCategory": "Light",
+    "image": "/uploads/products/1782014006598-______.jpg",
+    "model": "SY-LILI-002",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014006598-______.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
+  },
+  {
+    "id": "batch-008",
+    "name": {
+      "en": "Light",
+      "zh": "灯",
+      "es": "Lámpara"
+    },
+    "category": "Lighting",
+    "subCategory": "Light",
+    "image": "/uploads/products/1782014007399-________.jpg",
+    "model": "SY-LILI-003",
+    "status": "published",
+    "price": "",
+    "subtitle": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "zh": "",
+      "es": ""
+    },
+    "features": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "specs": {
+      "en": [],
+      "zh": [],
+      "es": []
+    },
+    "gallery": [
+      "/uploads/products/1782014007399-________.jpg"
+    ],
+    "tags": [],
+    "downloads": [],
+    "createdAt": "2026-06-21T06:58:45.698Z",
+    "updatedAt": "2026-06-21T06:58:45.698Z"
   }
 ]
