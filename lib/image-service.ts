@@ -2,7 +2,6 @@
  * Image processing service — sharp-based WebP/AVIF conversion + resize.
  * Uses dynamic import + any-typed sharp calls to avoid ESM type complexity.
  */
-import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 
@@ -42,8 +41,10 @@ export function validateImage(file: File): { valid: false; error: string } | { v
 }
 
 // ── Hashing + Dedup ────────────────────────────────────────
-export function computeHash(buffer: Buffer): string {
-  return crypto.createHash("sha256").update(buffer).digest("hex").slice(0, 16);
+export async function computeHash(buffer: Buffer): Promise<string> {
+  // Web Crypto API (Edge Runtime compatible)
+  const hashBuffer = await crypto.subtle.digest("SHA-256", new Uint8Array(buffer));
+  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 16);
 }
 
 const HASH_INDEX_PATH = path.join(process.cwd(), ".data", "image-hashes.json");
@@ -121,7 +122,7 @@ export async function processImage(
       medium: { filename: "", url: "", width: 600, format: "webp" },
       large: { filename: "", url: "", width: 1200, format: "webp" },
     },
-    hash: computeHash(buffer),
+    hash: await computeHash(buffer),
   };
 
   // Skip variant generation for SVG
@@ -199,7 +200,7 @@ export async function uploadToR2(r2: any, prefix: string, buffer: Buffer, mime: 
       medium: { filename: "", url: "", width: 600, format: "webp" },
       large: { filename: "", url: "", width: 1200, format: "webp" },
     },
-    hash: computeHash(buffer),
+    hash: await computeHash(buffer),
   };
 
   if (!sharp || mime === "image/svg+xml") return result;

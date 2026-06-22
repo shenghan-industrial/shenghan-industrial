@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import path from "path";
-import fs from "fs";
 import { hasR2, getR2 } from "@/lib/kv-storage";
 import {
   validateImage,
@@ -90,54 +88,11 @@ export async function POST(request: Request) {
       });
     }
 
-    // ── Local filesystem ────────────────────────────────────
-    const uploadDir = path.join(process.cwd(), "public", "uploads", "products");
-    console.log("[upload] Local path, buffer.length:", bytes.length);
-    console.log("[upload] process.cwd():", process.cwd());
-    console.log("[upload] uploadDir:", uploadDir);
-    console.log("[upload] baseName:", baseName);
-    const result = await processImage(bytes, file.type, baseName, uploadDir);
-    console.log("[upload] original.url:", result.variants.original.url);
-    console.log("[upload] original.filename:", result.variants.original.filename);
-
-    // Verify the file was actually written
-    const expectedPath = path.join(uploadDir, result.variants.original.filename);
-    console.log("[upload] expectedPath:", expectedPath);
-    console.log("[upload] file exists after write:", fs.existsSync(expectedPath));
-    console.log("[upload] === ACCESS TEST ===");
-    console.log("[upload] Browser URL: http://localhost:3000" + result.variants.original.url);
-    console.log("[upload] File path:", expectedPath);
-    console.log("[upload] public dir:", path.join(process.cwd(), "public"));
-    console.log("[upload] file in public relative:", path.relative(path.join(process.cwd(), "public"), expectedPath));
-
-    // 10-second delayed check to detect file deletion
-    const delayedPath = expectedPath;
-    const delayedUrl = result.variants.original.url;
-    setTimeout(() => {
-      try {
-        const stillExists = fs.existsSync(delayedPath);
-        console.log("[upload] === 10s DELAYED CHECK ===");
-        console.log("[upload] after 10s, file exists:", stillExists);
-        console.log("[upload] URL:", "http://localhost:3000" + delayedUrl);
-        if (!stillExists) {
-          console.error("[upload] FILE WAS DELETED within 10 seconds! Path:", delayedPath);
-        }
-      } catch (err) {
-        console.error("[upload] delayed check error:", err);
-      }
-    }, 10000);
-
-    try { registerHash(hash, `uploads/products/${baseName}`); }
-    catch (e) { console.error("[upload] registerHash failed (non-fatal):", e); }
-
-    return NextResponse.json({
-      url: result.variants.original.url,    // top-level for backward compat
-      ...result.variants,
-      avifVariants: result.avifVariants,
-      hash,
-      sizes: SIZES,
-      maxFileSize: MAX_FILE_SIZE,
-    });
+    // ── Local fallback (not available in Edge) ──────────────
+    return NextResponse.json(
+      { error: "Image upload requires R2 (not available without Cloudflare R2 binding)" },
+      { status: 503 }
+    );
   } catch (e) {
     console.error("Upload failed:", e);
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });
