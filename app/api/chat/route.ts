@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextResponse } from "next/server";
 import { products as productsRaw } from "@/data/products";
 import { migrateProduct } from "@/data/products";

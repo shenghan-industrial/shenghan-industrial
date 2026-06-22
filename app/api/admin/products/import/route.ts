@@ -3,7 +3,7 @@ import { categories } from "@/data/categories";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 import { requirePermission } from "@/lib/auth";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 // ── generateProduct (unchanged logic, adds Phase 2 fields) ──
 function generateProduct(

@@ -8,7 +8,7 @@ import {
 } from "@/lib/categories-db";
 import { requirePermission } from "@/lib/auth";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 function checkPermission(request: Request): NextResponse | null {
   try {

@@ -14,7 +14,7 @@ import {
 } from "@/lib/image-service";
 import { requirePermission } from "@/lib/auth";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 export async function POST(request: Request) {
   // RBAC check (any authenticated admin can upload)

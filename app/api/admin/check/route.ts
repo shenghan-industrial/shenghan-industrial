@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifyJWT, getCookieName } from "@/lib/auth";

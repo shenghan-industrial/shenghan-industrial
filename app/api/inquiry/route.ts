@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { NextResponse } from "next/server";
 import type { Resend } from "resend";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";

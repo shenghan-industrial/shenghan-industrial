@@ -3,7 +3,7 @@ import { getR2 } from "@/lib/kv-storage";
 import fs from "fs";
 import path from "path";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 const CONTENT_TYPES: Record<string, string> = {
   webp: "image/webp",
