@@ -81,8 +81,8 @@ function HomeContent() {
       {/* 2. Trust Bar — immediately after Hero */}
       <TrustBar />
 
-      {/* 3. Best Sellers — products first (conversion priority) */}
-      <section className="py-8 md:py-20 bg-white dark:bg-[#1A1816]">
+      {/* 3. Best Sellers — temporarily hidden */}
+      {false && <section className="py-8 md:py-20 bg-white dark:bg-[#1A1816]">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-8">
           <div className="mb-9">
             <span className="text-xs text-[#B8A080] font-semibold uppercase tracking-[0.15em]">
@@ -200,7 +200,7 @@ function HomeContent() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* 4. Feature Cards */}
       <section className="pt-8 md:pt-16 pb-2 md:pb-4">

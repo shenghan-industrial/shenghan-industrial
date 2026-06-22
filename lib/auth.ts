@@ -56,22 +56,22 @@ function getJWTSecret(): Uint8Array {
   return new TextEncoder().encode(secret);
 }
 
-const JWT_SECRET = getJWTSecret();
-
 const COOKIE_NAME = "admin_token";
 const JWT_MAX_AGE = 60 * 60 * 24; // 1 day in seconds
 
 export async function signJWT(payload: Omit<AdminPayload, "iat" | "exp">): Promise<string> {
+  const secret = getJWTSecret();
   return new SignJWT({ ...payload })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime(`${JWT_MAX_AGE}s`)
-    .sign(JWT_SECRET);
+    .sign(secret);
 }
 
 export async function verifyJWT(token: string): Promise<AdminPayload | null> {
   try {
-    const { payload } = await jwtVerify(token, JWT_SECRET);
+    const secret = getJWTSecret();
+    const { payload } = await jwtVerify(token, secret);
     return payload as unknown as AdminPayload;
   } catch {
     return null;
