@@ -1,18 +1,33 @@
 // Cloudflare KV + file-based fallback (Node.js dev)
-import fs from "fs";
-import path from "path";
+// Uses require() for Node.js modules so Edge Runtime can skip them
 
-const DATA_DIR = path.join(process.cwd(), ".data");
-const memory = new Map<string, string>();
+function getFs(): typeof import("fs") | null {
+  try { return require("fs"); } catch { return null; }
+}
+function getPath(): typeof import("path") | null {
+  try { return require("path"); } catch { return null; }
+}
+
+function getDataDir(): string {
+  const path = getPath();
+  if (!path) return ".data"; // fallback
+  return path.join(process.cwd(), ".data");
+}
 
 function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+  const fs = getFs();
+  if (!fs) return;
+  const dir = getDataDir();
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
   }
 }
 
 function filePath(key: string): string {
-  return path.join(DATA_DIR, `${key}.json`);
+  const path = getPath();
+  const dir = getDataDir();
+  if (path) return path.join(dir, `${key}.json`);
+  return `${dir}/${key}.json`;
 }
 
 function getKV(): KVNamespace | null {
@@ -32,10 +47,13 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     return (val ?? fallback) as T | undefined;
   }
   // File-based fallback
+  const fs = getFs();
+  if (!fs) return fallback;
   try {
     ensureDataDir();
-    if (fs.existsSync(filePath(key))) {
-      const raw = fs.readFileSync(filePath(key), "utf-8");
+    const fp = filePath(key);
+    if (fs.existsSync(fp)) {
+      const raw = fs.readFileSync(fp, "utf-8");
       return JSON.parse(raw) as T;
     }
   } catch { /* ignore */ }
@@ -48,7 +66,8 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
     await kv.put(key, JSON.stringify(value));
     return;
   }
-  // File-based fallback
+  const fs = getFs();
+  if (!fs) return;
   try {
     ensureDataDir();
     fs.writeFileSync(filePath(key), JSON.stringify(value, null, 2), "utf-8");

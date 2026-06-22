@@ -2,8 +2,9 @@
  * Image processing service — sharp-based WebP/AVIF conversion + resize.
  * Uses dynamic import + any-typed sharp calls to avoid ESM type complexity.
  */
-import fs from "fs";
-import path from "path";
+// Use require() for Node.js modules — Edge bundler will skip if unavailable
+const fs = (() => { try { return require("fs"); } catch { return null; } })() as typeof import("fs") | null;
+const path = (() => { try { return require("path"); } catch { return null; } })() as typeof import("path") | null;
 
 // ── Types ──────────────────────────────────────────────────
 export interface ImageVariants {
@@ -51,7 +52,7 @@ const HASH_INDEX_PATH = path.join(process.cwd(), ".data", "image-hashes.json");
 
 function readHashIndex(): Record<string, string> {
   try {
-    if (fs.existsSync(HASH_INDEX_PATH)) return JSON.parse(fs.readFileSync(HASH_INDEX_PATH, "utf-8"));
+    if (fs?.existsSync(HASH_INDEX_PATH)) return JSON.parse(fs?.readFileSync(HASH_INDEX_PATH, "utf-8"));
   } catch (e) {
     console.error("[image-service] readHashIndex failed:", e instanceof Error ? e.message : e);
   }
@@ -60,8 +61,8 @@ function readHashIndex(): Record<string, string> {
 
 function writeHashIndex(index: Record<string, string>): void {
   const dir = path.dirname(HASH_INDEX_PATH);
-  if (!dir.endsWith(".data")) fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(HASH_INDEX_PATH, JSON.stringify(index, null, 2), "utf-8");
+  if (!dir.endsWith(".data")) fs?.mkdirSync(dir, { recursive: true });
+  fs?.writeFileSync(HASH_INDEX_PATH, JSON.stringify(index, null, 2), "utf-8");
 }
 
 export function findExistingByHash(hash: string): string | null {
@@ -100,15 +101,15 @@ export async function processImage(
   const ext = mime.split("/")[1] === "jpeg" ? "jpg" : mime.split("/")[1] || "bin";
 
   // Ensure upload dir
-  fs.mkdirSync(uploadDir, { recursive: true });
+  fs?.mkdirSync(uploadDir, { recursive: true });
 
   // Save original
   const originalFilename = `${filenameBase}.${ext}`;
   const originalPath = path.join(uploadDir, originalFilename);
   console.log("[image-service] before writeFileSync, buffer.length:", buffer.length);
   console.log("[image-service] target path:", originalPath);
-  fs.writeFileSync(originalPath, buffer);
-  console.log("[image-service] after writeFileSync, existsSync:", fs.existsSync(originalPath));
+  fs?.writeFileSync(originalPath, buffer);
+  console.log("[image-service] after writeFileSync, existsSync:", fs?.existsSync(originalPath));
 
   const result: UploadResult = {
     variants: {
@@ -140,8 +141,8 @@ export async function processImage(
 
       const fname = `${filenameBase}-${label}.webp`;
       const fpath = path.join(uploadDir, fname);
-      fs.writeFileSync(fpath, webpBuf);
-      console.log("[image-service] webp written, existsSync:", fs.existsSync(fpath));
+      fs?.writeFileSync(fpath, webpBuf);
+      console.log("[image-service] webp written, existsSync:", fs?.existsSync(fpath));
 
       (result.variants as unknown as Record<string, unknown>)[label] = {
         filename: fname,
@@ -161,8 +162,8 @@ export async function processImage(
 
       const avifName = `${filenameBase}-${label}.avif`;
       const apath = path.join(uploadDir, avifName);
-      fs.writeFileSync(apath, avifBuf);
-      console.log("[image-service] avif written, existsSync:", fs.existsSync(apath));
+      fs?.writeFileSync(apath, avifBuf);
+      console.log("[image-service] avif written, existsSync:", fs?.existsSync(apath));
 
       if (!result.avifVariants) result.avifVariants = {};
       result.avifVariants[`${label}_avif`] = {
@@ -261,10 +262,10 @@ export async function deleteFromR2(r2: any, prefix: string): Promise<void> {
 
 export function deleteLocalImages(uploadDir: string, prefix: string): void {
   try {
-    if (!fs.existsSync(uploadDir)) return;
-    const files = fs.readdirSync(uploadDir);
+    if (!fs?.existsSync(uploadDir)) return;
+    const files = fs?.readdirSync(uploadDir);
     for (const f of files) {
-      if (f.startsWith(prefix)) fs.unlinkSync(path.join(uploadDir, f));
+      if (f.startsWith(prefix)) fs?.unlinkSync(path.join(uploadDir, f));
     }
   } catch (e) { console.error("[image-service] deleteLocalImages failed:", e instanceof Error ? e.message : e); }
 }
