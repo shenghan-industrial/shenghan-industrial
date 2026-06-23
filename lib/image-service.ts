@@ -49,7 +49,7 @@ export async function computeHash(buffer: Buffer): Promise<string> {
   return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 16);
 }
 
-const HASH_INDEX_PATH = path ? path.join(process.cwd(), ".data", "image-hashes.json") : "";
+const HASH_INDEX_PATH = path ? path!.join(process.cwd(), ".data", "image-hashes.json") : "";
 
 function readHashIndex(): Record<string, string> {
   // Only available in Node.js (local dev). Returns empty on Edge/Cloudflare.
@@ -66,7 +66,7 @@ function writeHashIndex(index: Record<string, string>): void {
   // Only available in Node.js (local dev). No-op on Edge/Cloudflare.
   if (!fs || !path || !HASH_INDEX_PATH) return;
   try {
-    const dir = path.dirname(HASH_INDEX_PATH);
+    const dir = path!.dirname(HASH_INDEX_PATH);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(HASH_INDEX_PATH, JSON.stringify(index, null, 2), "utf-8");
   } catch (e) {
@@ -114,7 +114,7 @@ export async function processImage(
 
   // Save original
   const originalFilename = `${filenameBase}.${ext}`;
-  const originalPath = path.join(uploadDir, originalFilename);
+  const originalPath = path!.join(uploadDir, originalFilename);
   console.log("[image-service] before writeFileSync, buffer.length:", buffer.length);
   console.log("[image-service] target path:", originalPath);
   fs?.writeFileSync(originalPath, buffer);
@@ -149,7 +149,7 @@ export async function processImage(
       console.log("[image-service] webp variant", label, "buffer.length:", webpBuf.length);
 
       const fname = `${filenameBase}-${label}.webp`;
-      const fpath = path.join(uploadDir, fname);
+      const fpath = path!.join(uploadDir, fname);
       fs?.writeFileSync(fpath, webpBuf);
       console.log("[image-service] webp written, existsSync:", fs?.existsSync(fpath));
 
@@ -170,7 +170,7 @@ export async function processImage(
       console.log("[image-service] avif variant", label, "buffer.length:", avifBuf.length);
 
       const avifName = `${filenameBase}-${label}.avif`;
-      const apath = path.join(uploadDir, avifName);
+      const apath = path!.join(uploadDir, avifName);
       fs?.writeFileSync(apath, avifBuf);
       console.log("[image-service] avif written, existsSync:", fs?.existsSync(apath));
 
@@ -274,7 +274,7 @@ export function deleteLocalImages(uploadDir: string, prefix: string): void {
     if (!fs?.existsSync(uploadDir)) return;
     const files = fs?.readdirSync(uploadDir);
     for (const f of files) {
-      if (f.startsWith(prefix)) fs?.unlinkSync(path.join(uploadDir, f));
+      if (f.startsWith(prefix)) fs?.unlinkSync(path!.join(uploadDir, f));
     }
   } catch (e) { console.error("[image-service] deleteLocalImages failed:", e instanceof Error ? e.message : e); }
 }
