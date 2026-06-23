@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   serverExternalPackages: [
     "sharp",
     "detect-libc",
-    "bcryptjs",
   ],
   // Skip image optimization at build time to avoid OOM
   images: {
