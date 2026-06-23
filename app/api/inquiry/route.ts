@@ -169,8 +169,8 @@ export async function POST(request: Request) {
         <p style="color:#999;font-size:12px;margin-top:16px">Status: ${inquiry.status} | ID: ${inquiry.id}</p>
       </div>`;
 
-    // Send email with retry (non-blocking)
-    sendEmailWithRetry(emailHtml).catch(() => {});
+    // Send email with retry
+    const emailSent = await sendEmailWithRetry(emailHtml);
 
     return NextResponse.json({ success: true, id: inquiry.id });
   } catch (e) {

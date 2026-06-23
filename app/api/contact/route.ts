@@ -121,8 +121,8 @@ export async function POST(request: Request) {
 
     const { data } = validation;
 
-    // Send email with retry (non-blocking)
-    sendEmailWithRetry(data).catch(() => {});
+    // Send email with retry
+    const emailSent = await sendEmailWithRetry(data);
 
     return NextResponse.json({
       success: true,
