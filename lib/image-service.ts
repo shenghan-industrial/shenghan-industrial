@@ -1,8 +1,10 @@
 /**
  * Image processing service — sharp-based WebP/AVIF conversion + resize.
+ * Uses dynamic import + any-typed sharp calls to avoid ESM type complexity.
  */
-import fs from "fs";
-import path from "path";
+// Use require() for Node.js modules — Edge bundler will skip if unavailable
+const fs = (() => { try { return require("fs"); } catch { return null; } })() as typeof import("fs") | null;
+const path = (() => { try { return require("path"); } catch { return null; } })() as typeof import("path") | null;
 
 // ── Types ──────────────────────────────────────────────────
 export interface ImageVariants {
@@ -87,7 +89,7 @@ let _sharp: unknown = null;
 async function loadSharp(): Promise<unknown> {
   if (_sharp) return _sharp;
   try {
-    const mod = await import("sharp");
+    const mod = await import(/* webpackIgnore: true */ "sharp");
     _sharp = (mod as Record<string, unknown>).default || mod;
     return _sharp;
   } catch (e) {
@@ -252,4 +254,26 @@ export async function uploadToR2(r2: any, prefix: string, buffer: Buffer, mime: 
   }
 
   return result;
+}
+
+// ── Delete helpers ─────────────────────────────────────────
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function deleteFromR2(r2: any, prefix: string): Promise<void> {
+  try {
+    const list = await r2.list({ prefix });
+    for (const obj of list.objects) {
+      await r2.delete(obj.key);
+    }
+    if (list.truncated) await deleteFromR2(r2, prefix);
+  } catch (e) { console.error("[image-service] deleteFromR2 failed:", e instanceof Error ? e.message : e); }
+}
+
+export function deleteLocalImages(uploadDir: string, prefix: string): void {
+  try {
+    if (!fs?.existsSync(uploadDir)) return;
+    const files = fs?.readdirSync(uploadDir);
+    for (const f of files) {
+      if (f.startsWith(prefix)) fs?.unlinkSync(path.join(uploadDir, f));
+    }
+  } catch (e) { console.error("[image-service] deleteLocalImages failed:", e instanceof Error ? e.message : e); }
 }
