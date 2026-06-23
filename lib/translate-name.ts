@@ -1,6 +1,9 @@
 // Shared Chinese→English/Spanish translation for product names
 // Extracted from app/api/admin/products/quick/route.ts
-import pinyin from "pinyin";
+// Lazy-load pinyin — skips on Edge/Cloudflare to keep Worker small
+function getPinyin() {
+  try { return require("pinyin"); } catch { return null; }
+}
 
 interface KeywordResult {
   type: string;
@@ -187,9 +190,10 @@ export function translateCategory(zh: string): { name: string; nameEs: string; p
       name = parts.join(" ");
     } else {
       // 3. Pinyin fallback
-      name = pinyin(zh, { style: pinyin.STYLE_NORMAL, heteronym: false })
+      const py = getPinyin();
+      name = py ? py(zh, { style: py.STYLE_NORMAL, heteronym: false })
         .map((item: string[]) => item[0].charAt(0).toUpperCase() + item[0].slice(1))
-        .join("");
+        .join("") : zh;
     }
   }
 
@@ -217,9 +221,10 @@ export function translateSubCategory(zh: string, catProductCategory: string): { 
       name = parts.join(" ");
     } else {
       // 3. Pinyin fallback — convert Chinese to readable English
-      name = pinyin(zh, { style: pinyin.STYLE_NORMAL, heteronym: false })
+      const py = getPinyin();
+      name = py ? py(zh, { style: py.STYLE_NORMAL, heteronym: false })
         .map((item: string[]) => item[0].charAt(0).toUpperCase() + item[0].slice(1))
-        .join("");
+        .join("") : zh;
     }
   }
 
