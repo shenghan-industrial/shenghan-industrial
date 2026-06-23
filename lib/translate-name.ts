@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // Shared Chinese→English/Spanish translation for product names
 // Extracted from app/api/admin/products/quick/route.ts
 // Lazy-load pinyin — skips on Edge/Cloudflare to keep Worker small
