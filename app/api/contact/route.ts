@@ -1,18 +1,9 @@
 export const runtime = "edge";
 
 import { NextResponse } from "next/server";
-import type { Resend } from "resend";
 import { verifyTurnstile } from "@/lib/turnstile";
 
-let resend: Resend | null = null;
-async function getResend() {
-  if (!process.env.RESEND_API_KEY) return null;
-  if (!resend) {
-    const { Resend: R } = await import("resend");
-    resend = new R(process.env.RESEND_API_KEY);
-  }
-  return resend;
-}
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 
 interface ContactBody {
   name: string;
@@ -50,14 +41,13 @@ function validate(body: Partial<ContactBody>): { valid: true; data: ContactBody 
   };
 }
 
+// Email via Resend HTTP API (Edge-compatible)
 async function sendEmailWithRetry(
   data: ContactBody,
   maxRetries = 3
 ): Promise<boolean> {
   const notifyEmail = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
-  const r = await getResend();
-
-  if (!r) {
+  if (!RESEND_API_KEY) {
     console.warn("[contact] Resend not configured");
     return false;
   }
@@ -76,20 +66,30 @@ async function sendEmailWithRetry(
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      await r.emails.send({
-        from: "Shengyu Website <noreply@shenghanindustrial.com>",
-        to: notifyEmail,
-        replyTo: data.email,
-        subject: `New inquiry from ${data.name} — Shengyu Website`,
-        html,
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Shengyu Website <noreply@shenghanindustrial.com>",
+          to: notifyEmail,
+          reply_to: data.email,
+          subject: `New inquiry from ${data.name} — Shengyu Website`,
+          html,
+        }),
       });
-      console.log(`[contact] Email sent on attempt ${attempt}`);
-      return true;
+      if (res.ok) {
+        console.log(`[contact] Email sent on attempt ${attempt}`);
+        return true;
+      }
+      console.error(`[contact] Email attempt ${attempt}/${maxRetries} failed: HTTP ${res.status}`);
     } catch (e) {
       console.error(`[contact] Email attempt ${attempt}/${maxRetries} failed:`, e);
-      if (attempt < maxRetries) {
-        await new Promise((r) => setTimeout(r, 1000 * (attempt * 2 - 1)));
-      }
+    }
+    if (attempt < maxRetries) {
+      await new Promise((r) => setTimeout(r, 1000 * (attempt * 2 - 1)));
     }
   }
   return false;

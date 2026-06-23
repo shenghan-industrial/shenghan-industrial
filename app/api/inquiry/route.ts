@@ -1,7 +1,6 @@
 export const runtime = "edge";
 
 import { NextResponse } from "next/server";
-import type { Resend } from "resend";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 import { verifyTurnstile } from "@/lib/turnstile";
 
@@ -33,16 +32,7 @@ interface Inquiry {
 
 // ── Helpers ────────────────────────────────────────────────
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
-
-let resend: Resend | null = null;
-async function getResend() {
-  if (!process.env.RESEND_API_KEY) return null;
-  if (!resend) {
-    const { Resend: R } = await import("resend");
-    resend = new R(process.env.RESEND_API_KEY);
-  }
-  return resend;
-}
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 
 async function readInquiries(): Promise<Inquiry[]> {
   try {
@@ -56,33 +46,41 @@ async function writeInquiries(list: Inquiry[]): Promise<void> {
   await kvPutJSON("inquiries", list);
 }
 
-// ── Email with retry ──────────────────────────────────────
+// ── Email via Resend HTTP API (Edge-compatible) ────────────
 async function sendEmailWithRetry(
   html: string,
   maxRetries = 3
 ): Promise<boolean> {
-  const r = await getResend();
-  if (!r) {
+  if (!RESEND_API_KEY) {
     console.warn("[inquiry] Resend not configured, skipping email");
     return false;
   }
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      await r.emails.send({
-        from: "Shengyu Industrial <noreply@shenghanindustrial.com>",
-        to: NOTIFY_EMAIL,
-        subject: "New Inquiry Received — Shengyu Industrial",
-        html,
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: "Shengyu Industrial <noreply@shenghanindustrial.com>",
+          to: NOTIFY_EMAIL,
+          subject: "New Inquiry Received — Shengyu Industrial",
+          html,
+        }),
       });
-      console.log(`[inquiry] Email sent on attempt ${attempt}`);
-      return true;
+      if (res.ok) {
+        console.log(`[inquiry] Email sent on attempt ${attempt}`);
+        return true;
+      }
+      console.error(`[inquiry] Email attempt ${attempt}/${maxRetries} failed: HTTP ${res.status}`);
     } catch (e) {
       console.error(`[inquiry] Email attempt ${attempt}/${maxRetries} failed:`, e);
-      if (attempt < maxRetries) {
-        // Exponential backoff: 1s, 3s, 5s
-        await new Promise((r) => setTimeout(r, 1000 * (attempt * 2 - 1)));
-      }
+    }
+    if (attempt < maxRetries) {
+      await new Promise((r) => setTimeout(r, 1000 * (attempt * 2 - 1)));
     }
   }
   console.error(`[inquiry] Email failed after ${maxRetries} attempts`);
