@@ -84,17 +84,19 @@ export async function hashPassword(password: string): Promise<string> {
 }
 
 export async function verifyPassword(password: string, hash: string): Promise<boolean> {
-  // Try bcrypt first (Node.js local dev)
-  try {
-    return await bcrypt.compare(password, hash);
-  } catch {
-    // Edge Runtime fallback: compare against SHA-256 hash from env
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const digest = await crypto.subtle.digest("SHA-256", data);
-    const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
-    return hex === hash;
+  // Auto-detect: bcrypt hashes start with $2b$ or $2a$
+  if (hash.startsWith("$2")) {
+    try {
+      return await bcrypt.compare(password, hash);
+    } catch {
+      // bcrypt not available on Edge, fall through to SHA-256
+    }
   }
+  // SHA-256 fallback (Edge Runtime)
+  const encoder = new TextEncoder();
+  const digest = await crypto.subtle.digest("SHA-256", encoder.encode(password));
+  const hex = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
+  return hex === hash;
 }
 
 // ── Cookie helpers ──────────────────────────────────────────
