@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { getAllProducts, createProduct } from "@/lib/products-db";
 import { requirePermission } from "@/lib/auth";
 
-export const runtime = "edge";
 
 import { cookies } from "next/headers";
 import { verifyJWT, getCookieName } from "@/lib/auth";

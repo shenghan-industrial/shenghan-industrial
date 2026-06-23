@@ -2,9 +2,7 @@ import { NextResponse } from "next/server";
 import { getProductById, updateProduct, deleteProduct } from "@/lib/products-db";
 import { requirePermission } from "@/lib/auth";
 import { hasR2, getR2 } from "@/lib/kv-storage";
-import { deleteFromR2, deleteLocalImages } from "@/lib/image-service";
-
-export const runtime = "edge";
+import { deleteFromR2, deleteLocalImages } from "@/lib/image-delete";
 
 export async function GET(_: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

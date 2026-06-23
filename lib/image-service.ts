@@ -48,11 +48,13 @@ export async function computeHash(buffer: Buffer): Promise<string> {
   return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 16);
 }
 
-const HASH_INDEX_PATH = path.join(process.cwd(), ".data", "image-hashes.json");
+const HASH_INDEX_PATH = path ? path.join(process.cwd(), ".data", "image-hashes.json") : "";
 
 function readHashIndex(): Record<string, string> {
+  // Only available in Node.js (local dev). Returns empty on Edge/Cloudflare.
+  if (!fs || !path || !HASH_INDEX_PATH) return {};
   try {
-    if (fs?.existsSync(HASH_INDEX_PATH)) return JSON.parse(fs?.readFileSync(HASH_INDEX_PATH, "utf-8"));
+    if (fs.existsSync(HASH_INDEX_PATH)) return JSON.parse(fs.readFileSync(HASH_INDEX_PATH, "utf-8"));
   } catch (e) {
     console.error("[image-service] readHashIndex failed:", e instanceof Error ? e.message : e);
   }
@@ -60,9 +62,15 @@ function readHashIndex(): Record<string, string> {
 }
 
 function writeHashIndex(index: Record<string, string>): void {
-  const dir = path.dirname(HASH_INDEX_PATH);
-  if (!dir.endsWith(".data")) fs?.mkdirSync(dir, { recursive: true });
-  fs?.writeFileSync(HASH_INDEX_PATH, JSON.stringify(index, null, 2), "utf-8");
+  // Only available in Node.js (local dev). No-op on Edge/Cloudflare.
+  if (!fs || !path || !HASH_INDEX_PATH) return;
+  try {
+    const dir = path.dirname(HASH_INDEX_PATH);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(HASH_INDEX_PATH, JSON.stringify(index, null, 2), "utf-8");
+  } catch (e) {
+    console.error("[image-service] writeHashIndex failed:", e instanceof Error ? e.message : e);
+  }
 }
 
 export function findExistingByHash(hash: string): string | null {
@@ -246,26 +254,4 @@ export async function uploadToR2(r2: any, prefix: string, buffer: Buffer, mime: 
   }
 
   return result;
-}
-
-// ── Delete helpers ─────────────────────────────────────────
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function deleteFromR2(r2: any, prefix: string): Promise<void> {
-  try {
-    const list = await r2.list({ prefix });
-    for (const obj of list.objects) {
-      await r2.delete(obj.key);
-    }
-    if (list.truncated) await deleteFromR2(r2, prefix);
-  } catch (e) { console.error("[image-service] deleteFromR2 failed:", e instanceof Error ? e.message : e); }
-}
-
-export function deleteLocalImages(uploadDir: string, prefix: string): void {
-  try {
-    if (!fs?.existsSync(uploadDir)) return;
-    const files = fs?.readdirSync(uploadDir);
-    for (const f of files) {
-      if (f.startsWith(prefix)) fs?.unlinkSync(path.join(uploadDir, f));
-    }
-  } catch (e) { console.error("[image-service] deleteLocalImages failed:", e instanceof Error ? e.message : e); }
 }

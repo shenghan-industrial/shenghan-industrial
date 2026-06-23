@@ -5,7 +5,21 @@ const nextConfig: NextConfig = {
   serverExternalPackages: [
     "sharp",
     "detect-libc",
+    "bcryptjs",
   ],
+  // Allow images from Cloudflare R2 / CDN
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.r2.cloudflarestorage.com",
+      },
+      {
+        protocol: "https",
+        hostname: "**.r2.dev",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

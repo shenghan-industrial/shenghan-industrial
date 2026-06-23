@@ -3,7 +3,6 @@ import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 import { genEnName, genEsName, catZhMap } from "@/lib/translate-name";
 import { requirePermission } from "@/lib/auth";
 
-export const runtime = "edge";
 
 export async function POST(request: Request) {
   try {

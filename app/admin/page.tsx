@@ -16,6 +16,7 @@ export default function AdminDashboard() {
   const [search, setSearch] = useState("");
   const [catFilter, setCatFilter] = useState("");
   const [sort, setSort] = useState<"newest" | "name" | "cat">("newest");
+  const [refetchKey, setRefetchKey] = useState(0);
   const [page, setPage] = useState(() => parseInt(searchParams.get("page") || "0", 10));
   const [loading, setLoading] = useState(true);
 
@@ -29,19 +30,36 @@ export default function AdminDashboard() {
     router.replace(`/admin?${params.toString()}`, { scroll: false });
   };
 
-  const fetchProducts = async () => {
-    const res = await fetch("/api/admin/products");
-    const data = await res.json();
-    setProducts(data);
-    setLoading(false);
-  };
-
-  useEffect(() => { fetchProducts(); }, []);
   useEffect(() => {
+    const controller = new AbortController();
+
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("/api/admin/products", { signal: controller.signal });
+        if (!res.ok) {
+          console.error("API error:", res.status, await res.text());
+          return;
+        }
+        const data = await res.json();
+        setProducts(data);
+      } catch (e) {
+        if (e instanceof Error && e.name === "AbortError") return; // 正常取消，忽略
+        console.error("fetchProducts failed:", e);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+
     const onFocus = () => fetchProducts();
     window.addEventListener("focus", onFocus);
-    return () => window.removeEventListener("focus", onFocus);
-  }, []);
+
+    return () => {
+      controller.abort();
+      window.removeEventListener("focus", onFocus);
+    };
+  }, [refetchKey]);
 
   const handleDelete = async (id: string, name: string) => {
     if (!confirm(`确定删除 "${name}"？`)) return;
@@ -98,7 +116,7 @@ export default function AdminDashboard() {
             <option value="name">名称排序</option>
             <option value="cat">品类排序</option>
           </select>
-          <button onClick={fetchProducts}
+          <button onClick={() => setRefetchKey(k => k + 1)}
             className="px-3 py-2 rounded-lg text-xs text-[#6B6058] dark:text-white/40 hover:bg-white dark:hover:bg-white/5 border border-[#E8E2DC] dark:border-white/10 transition-colors">
             刷新
           </button>

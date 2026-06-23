@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 
-export const runtime = "edge";
 
 export async function GET() {
   try {

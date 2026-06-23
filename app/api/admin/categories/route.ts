@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { getAllCategories, saveAllCategories, createCategory } from "@/lib/categories-db";
 import { requirePermission } from "@/lib/auth";
 
-export const runtime = "edge";
 
 export async function GET() {
   try {

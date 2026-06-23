@@ -5,14 +5,13 @@ import {
   computeHash,
   findExistingByHash,
   registerHash,
-  processImage,
   uploadToR2,
   SIZES,
   MAX_FILE_SIZE,
 } from "@/lib/image-service";
 import { requirePermission } from "@/lib/auth";
 
-export const runtime = "edge";
+// NOTE: No edge runtime here — uses Buffer and sharp (Node.js only)
 
 export async function POST(request: Request) {
   // RBAC check (any authenticated admin can upload)
@@ -38,21 +37,16 @@ export async function POST(request: Request) {
     const bytes = Buffer.from(await file.arrayBuffer());
 
     // ── Hash dedup ──────────────────────────────────────────
-    const hash = computeHash(bytes);
+    const hash = await computeHash(bytes); // FIX: was missing await
     const existing = findExistingByHash(hash);
     if (existing) {
       const ext = file.type.split("/")[1] === "jpeg" ? "jpg" : file.type.split("/")[1];
-      // `existing` is a prefix like "uploads/products/baseName" (local) or
-      // "images/products/baseName" (R2). Construct the correct full URL.
       const dedupFilename = `${existing.split("/").pop()}.${ext}`;
-
-      // Determine URL prefix based on whether R2 is in use
       const urlPrefix = hasR2() ? "/api/images" : "";
       const dedupUrl = `${urlPrefix}/${existing}.${ext}`;
 
-      // Return consistent structure: always include `original` wrapper + top-level `url`
       return NextResponse.json({
-        url: dedupUrl,                           // top-level fallback for legacy consumers
+        url: dedupUrl,
         original: {
           url: dedupUrl,
           filename: dedupFilename,
@@ -65,10 +59,6 @@ export async function POST(request: Request) {
       });
     }
 
-    // ── Sanitize filename ───────────────────────────────────
-    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-    const baseName = `${Date.now()}-${safeName.replace(/\.[^.]+$/, "")}`;
-
     // ── R2 path ─────────────────────────────────────────────
     if (hasR2()) {
       console.log("[upload] R2 path, buffer.length:", bytes.length);
@@ -79,7 +69,7 @@ export async function POST(request: Request) {
       catch (e) { console.error("[upload] registerHash failed (non-fatal):", e); }
 
       return NextResponse.json({
-        url: result.variants.original.url,    // top-level for backward compat
+        url: result.variants.original.url,
         ...result.variants,
         avifVariants: result.avifVariants,
         hash,
@@ -88,9 +78,8 @@ export async function POST(request: Request) {
       });
     }
 
-    // ── Local fallback (not available in Edge) ──────────────
     return NextResponse.json(
-      { error: "Image upload requires R2 (not available without Cloudflare R2 binding)" },
+      { error: "Image upload requires R2 (Cloudflare R2 binding not configured)" },
       { status: 503 }
     );
   } catch (e) {

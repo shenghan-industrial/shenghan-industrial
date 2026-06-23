@@ -31,14 +31,15 @@ export interface Category {
 
 // ── Sub-category 3-letter code map ─────────────────────────
 // Used for SKU/model generation: SY-{code}-{seq}
-// Furniture has special series+material encoding
 export const SUB_CATEGORY_CODES: Record<string, string> = {
   // Furniture 家具
-  "Sofas": "SOF", "Beds": "BED", "Cabinets": "CAB",
-  // Lighting 灯具
-  "Desk Lamps": "DSK", "Pendant Lights": "PEN", "Floor Lamps": "FLR",
-  "Portable Lights": "PTL", "Industrial Lights": "IND", "Floodlights": "FLD",
-  "Solar Lights": "SOL", "Street Lights": "STL",
+  "Sofas": "SOF", "Beds": "BED", "Mattresses": "MAT",
+  // Lighting 灯具 — Outdoor
+  "Portable Emergency Rechargeable Light": "PEL",
+  "Industrial Mining Lamp": "IML",
+  "Floodlight": "FLD",
+  "Solar Floodlight": "SFL",
+  "Solar Street Light": "SSL",
   // Building Materials 建材
   "Adhesives": "ADH", "Panels": "PNL",
   // Hardware 五金
@@ -75,7 +76,7 @@ export const categories: Category[] = [
     children: [
       { id: "sofas", name: "Sofas", nameZh: "沙发", nameEs: "Sofás", productSubCategory: "Sofas", productCategory: "Furniture" },
       { id: "beds", name: "Beds", nameZh: "床", nameEs: "Camas", productSubCategory: "Beds", productCategory: "Furniture" },
-      { id: "cabinets", name: "Cabinets", nameZh: "柜子", nameEs: "Armarios", productSubCategory: "Cabinets", productCategory: "Furniture" },
+      { id: "mattresses", name: "Mattresses", nameZh: "床垫", nameEs: "Colchones", productSubCategory: "Mattresses", productCategory: "Furniture" },
     ],
   },
   {
@@ -90,18 +91,20 @@ export const categories: Category[] = [
         name: "Indoor Lighting",
         nameZh: "室内灯具",
         nameEs: "Iluminación Interior",
-        children: [
-          { id: "desk-lamps", name: "Desk Lamps", nameZh: "台灯", nameEs: "Lámparas de Escritorio", productSubCategory: "Desk Lamps", productCategory: "Lighting" },
-          { id: "pendant-lights", name: "Pendant Lights", nameZh: "吊灯", nameEs: "Lámparas Colgantes", productSubCategory: "Pendant Lights", productCategory: "Lighting" },
-          { id: "floor-lamps", name: "Floor Lamps", nameZh: "落地灯", nameEs: "Lámparas de Pie", productSubCategory: "Floor Lamps", productCategory: "Lighting" },
-        ],
+        children: [],
       },
       {
         id: "outdoor-lighting",
         name: "Outdoor Lighting",
         nameZh: "室外灯具",
         nameEs: "Iluminación Exterior",
-        children: [],
+        children: [
+          { id: "portable-emergency", name: "Mobile Emergency Charging Light", nameZh: "移动应急充电灯", nameEs: "Lámpara de emergencia portátil", productSubCategory: "Portable Emergency Rechargeable Light", productCategory: "Lighting" },
+          { id: "industrial-mining", name: "Industrial Mining Lamp", nameZh: "工矿灯", nameEs: "Lámpara de Minería Industrial", productSubCategory: "Industrial Mining Lamp", productCategory: "Lighting" },
+          { id: "floodlight", name: "Floodlight", nameZh: "投光灯", nameEs: "Lámpara de proyección", productSubCategory: "Floodlight", productCategory: "Lighting" },
+          { id: "solar-flood", name: "Solar Floodlight", nameZh: "太阳能投光灯", nameEs: "Lámpara de luz solar", productSubCategory: "Solar Floodlight", productCategory: "Lighting" },
+          { id: "solar-street", name: "Solar Street Light", nameZh: "太阳能路灯", nameEs: "Farol de luz solar", productSubCategory: "Solar Street Light", productCategory: "Lighting" },
+        ],
       },
     ],
   },
@@ -111,10 +114,7 @@ export const categories: Category[] = [
     nameZh: "建材类",
     nameEs: "Materiales de Construcción",
     productCategory: "Building Materials",
-    children: [
-      { id: "adhesives", name: "Adhesives & Sealants", nameZh: "胶粘剂", nameEs: "Adhesivos y Selladores", productSubCategory: "Adhesives", productCategory: "Building Materials" },
-      { id: "panels", name: "Engineered Panels", nameZh: "板材", nameEs: "Paneles de Ingeniería", productSubCategory: "Panels", productCategory: "Building Materials" },
-    ],
+    children: [],
   },
   {
     id: "hardware",
@@ -122,11 +122,7 @@ export const categories: Category[] = [
     nameZh: "五金类",
     nameEs: "Ferretería",
     productCategory: "Hardware",
-    children: [
-      { id: "fasteners", name: "Fasteners", nameZh: "紧固件", nameEs: "Sujetadores", productSubCategory: "Fasteners", productCategory: "Hardware" },
-      { id: "door-window", name: "Door & Window", nameZh: "门窗五金", nameEs: "Puertas y Ventanas", productSubCategory: "Door & Window", productCategory: "Hardware" },
-      { id: "bathroom", name: "Bathroom", nameZh: "卫浴五金", nameEs: "Accesorios de Baño", productSubCategory: "Bathroom", productCategory: "Hardware" },
-    ],
+    children: [],
   },
   {
     id: "appliances",
@@ -134,11 +130,7 @@ export const categories: Category[] = [
     nameZh: "家电类",
     nameEs: "Electrodomésticos",
     productCategory: "Appliances",
-    children: [
-      { id: "fans", name: "Fans", nameZh: "风扇", nameEs: "Ventiladores", productSubCategory: "Fans", productCategory: "Appliances" },
-      { id: "heaters", name: "Heaters", nameZh: "取暖器", nameEs: "Calefactores", productSubCategory: "Heaters", productCategory: "Appliances" },
-      { id: "kitchen", name: "Kitchen Appliances", nameZh: "厨房电器", nameEs: "Electrodomésticos de Cocina", productSubCategory: "Kitchen", productCategory: "Appliances" },
-    ],
+    children: [],
   },
   {
     id: "others",
