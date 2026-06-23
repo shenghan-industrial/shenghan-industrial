@@ -1,10 +1,8 @@
 /**
  * Image processing service — sharp-based WebP/AVIF conversion + resize.
- * Uses dynamic import + any-typed sharp calls to avoid ESM type complexity.
  */
-// Use require() for Node.js modules — Edge bundler will skip if unavailable
-const fs = (() => { try { return require("fs"); } catch { return null; } })() as typeof import("fs") | null;
-const path = (() => { try { return require("path"); } catch { return null; } })() as typeof import("path") | null;
+import fs from "fs";
+import path from "path";
 
 // ── Types ──────────────────────────────────────────────────
 export interface ImageVariants {

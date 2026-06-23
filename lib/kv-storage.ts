@@ -1,33 +1,17 @@
-// Cloudflare KV + file-based fallback (Node.js dev)
-// Uses require() for Node.js modules so Edge Runtime can skip them
+// KV + file-based storage (Node.js runtime)
+import fs from "fs";
+import path from "path";
 
-function getFs(): typeof import("fs") | null {
-  try { return require("fs"); } catch { return null; }
-}
-function getPath(): typeof import("path") | null {
-  try { return require("path"); } catch { return null; }
-}
-
-function getDataDir(): string {
-  const path = getPath();
-  if (!path) return ".data"; // fallback
-  return path.join(process.cwd(), ".data");
-}
+const DATA_DIR = path.join(process.cwd(), ".data");
 
 function ensureDataDir() {
-  const fs = getFs();
-  if (!fs) return;
-  const dir = getDataDir();
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
   }
 }
 
 function filePath(key: string): string {
-  const path = getPath();
-  const dir = getDataDir();
-  if (path) return path.join(dir, `${key}.json`);
-  return `${dir}/${key}.json`;
+  return path.join(DATA_DIR, `${key}.json`);
 }
 
 function getKV(): KVNamespace | null {
@@ -47,8 +31,6 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     return (val ?? fallback) as T | undefined;
   }
   // File-based fallback
-  const fs = getFs();
-  if (!fs) return fallback;
   try {
     ensureDataDir();
     const fp = filePath(key);
@@ -66,8 +48,6 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
     await kv.put(key, JSON.stringify(value));
     return;
   }
-  const fs = getFs();
-  if (!fs) return;
   try {
     ensureDataDir();
     fs.writeFileSync(filePath(key), JSON.stringify(value, null, 2), "utf-8");
@@ -76,7 +56,7 @@ export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
 
 export async function kvSeedIfEmpty<T>(key: string, seed: T): Promise<void> {
   const existing = await kvGetJSON<T>(key);
-  if (existing === undefined || existing === null) {
+  if (existing === undefined || existing === null || (Array.isArray(existing) && existing.length === 0)) {
     await kvPutJSON(key, seed);
   }
 }
