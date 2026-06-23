@@ -7,8 +7,9 @@ const nextConfig: NextConfig = {
     "detect-libc",
     "bcryptjs",
   ],
-  // Allow images from Cloudflare R2 / CDN
+  // Skip image optimization at build time to avoid OOM
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
