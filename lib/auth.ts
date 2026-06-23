@@ -84,31 +84,22 @@ export async function hashPassword(password: string): Promise<string> {
 }
 
 export async function verifyPassword(password: string, hash: string): Promise<boolean> {
-  // Always try SHA-256 first (works on both Node.js and Edge)
+  // Plain text comparison (Edge-compatible)
+  if (password === hash) return true;
+
+  // Try SHA-256
   const encoder = new TextEncoder();
   const digest = await crypto.subtle.digest("SHA-256", encoder.encode(password));
   const sha256 = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
   if (sha256 === hash) return true;
 
-  // Try bcrypt if hash looks like bcrypt format
+  // Try bcrypt
   if (hash.startsWith("$2")) {
-    try {
-      return await bcrypt.compare(password, hash);
-    } catch { /* not available */ }
+    try { return await bcrypt.compare(password, hash); } catch { }
   }
   return false;
 }
 
-// ── Cookie helpers ──────────────────────────────────────────
-export function getTokenMaxAge(): number {
-  return JWT_MAX_AGE;
-}
-
-export function getCookieName(): string {
-  return COOKIE_NAME;
-}
-
-// ── Admin user store (in-memory until Supabase migration) ──
 export interface AdminUser {
   username: string;
   passwordHash: string;
@@ -117,10 +108,15 @@ export interface AdminUser {
 
 export function getDefaultAdmins(): AdminUser[] {
   const username = process.env.ADMIN_USERNAME;
+  const password = process.env.ADMIN_PASSWORD;
   const passwordHash = process.env.ADMIN_PASSWORD_HASH;
 
+  // Use plain text ADMIN_PASSWORD if set (Edge-compatible)
+  if (username && password) {
+    return [{ username, passwordHash: password, role: "SUPER_ADMIN" }];
+  }
+
   if (!username || !passwordHash) {
-    // Development: allow default admin/admin123 for local dev
     if (process.env.NODE_ENV === "development") {
       return [
         {
@@ -131,19 +127,20 @@ export function getDefaultAdmins(): AdminUser[] {
       ];
     }
     throw new Error(
-      "FATAL: ADMIN_USERNAME and ADMIN_PASSWORD_HASH environment variables are required in production.\n" +
-      "Set them in your deployment environment variables.\n" +
-      'Generate password hash: node -e "const bcrypt = require(\'bcryptjs\'); console.log(bcrypt.hashSync(\'yourpassword\', 10));"'
+      "FATAL: ADMIN_USERNAME and ADMIN_PASSWORD/ADMIN_PASSWORD_HASH environment variables are required in production."
     );
   }
 
-  return [
-    {
-      username,
-      passwordHash,
-      role: "SUPER_ADMIN",
-    },
-  ];
+  return [{ username, passwordHash, role: "SUPER_ADMIN" }];
+}
+
+// ── Cookie helpers ──────────────────────────────────────────
+export function getTokenMaxAge(): number {
+  return JWT_MAX_AGE;
+}
+
+export function getCookieName(): string {
+  return COOKIE_NAME;
 }
 
 export function findAdminByUsername(username: string): AdminUser | undefined {
