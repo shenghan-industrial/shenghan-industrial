@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
+/* eslint-disable @typescript-eslint/no-require-imports, no-eval */
 // Shared Chinese→English/Spanish translation for product names
 // Extracted from app/api/admin/products/quick/route.ts
-// Lazy-load pinyin — skips on Edge/Cloudflare to keep Worker small
+// Lazy-load pinyin — eval bypasses webpack bundling, skips on Edge/Cloudflare
 function getPinyin() {
-  try { return require("pinyin"); } catch { return null; }
+  try { return eval("require")("pinyin"); } catch { return null; }
 }
 
 interface KeywordResult {
