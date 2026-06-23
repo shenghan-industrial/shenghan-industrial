@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { getR2 } from "@/lib/kv-storage";
 
-export const runtime = "edge";
 
 const CONTENT_TYPES: Record<string, string> = {
   webp: "image/webp",
