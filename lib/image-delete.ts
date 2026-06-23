@@ -1,8 +1,5 @@
 // lib/image-delete.ts
-// Image delete helpers — no sharp dependency
-
-import fs from "fs";
-import path from "path";
+// Edge-compatible — no sharp/fs imports at top level
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function deleteFromR2(r2: any, prefix: string): Promise<void> {
@@ -16,6 +13,9 @@ export async function deleteFromR2(r2: any, prefix: string): Promise<void> {
 }
 
 export function deleteLocalImages(uploadDir: string, prefix: string): void {
+  const fs = (() => { try { return require("fs"); } catch { return null; } })();
+  const path = (() => { try { return require("path"); } catch { return null; } })();
+  if (!fs || !path) return;
   try {
     if (!fs.existsSync(uploadDir)) return;
     for (const f of fs.readdirSync(uploadDir)) {

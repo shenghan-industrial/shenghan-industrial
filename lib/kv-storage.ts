@@ -1,25 +1,37 @@
-// KV + file-based storage (Node.js runtime)
-import fs from "fs";
-import path from "path";
+// Cloudflare KV + file-based fallback
+// Uses require() for Node.js modules so Edge Runtime can skip them
 
-const DATA_DIR = path.join(process.cwd(), ".data");
+function getFs(): typeof import("fs") | null {
+  try { return require("fs"); } catch { return null; }
+}
+function getPath(): typeof import("path") | null {
+  try { return require("path"); } catch { return null; }
+}
+
+function getDataDir(): string {
+  const path = getPath();
+  if (!path) return ".data";
+  return path.join(process.cwd(), ".data");
+}
 
 function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
+  const fs = getFs();
+  if (!fs) return;
+  const dir = getDataDir();
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 }
 
 function filePath(key: string): string {
-  return path.join(DATA_DIR, `${key}.json`);
+  const path = getPath();
+  const dir = getDataDir();
+  if (path) return path.join(dir, `${key}.json`);
+  return `${dir}/${key}.json`;
 }
 
 function getKV(): KVNamespace | null {
   try {
     const binding = (process.env as Record<string, unknown>).KV_STORE;
-    if (binding && typeof (binding as KVNamespace).get === "function") {
-      return binding as KVNamespace;
-    }
+    if (binding && typeof (binding as KVNamespace).get === "function") return binding as KVNamespace;
   } catch { /* not on Cloudflare */ }
   return null;
 }
@@ -30,28 +42,23 @@ export async function kvGetJSON<T>(key: string, fallback?: T): Promise<T | undef
     const val = await kv.get(key, "json");
     return (val ?? fallback) as T | undefined;
   }
-  // File-based fallback
+  const fs = getFs();
+  if (!fs) return fallback;
   try {
     ensureDataDir();
     const fp = filePath(key);
-    if (fs.existsSync(fp)) {
-      const raw = fs.readFileSync(fp, "utf-8");
-      return JSON.parse(raw) as T;
-    }
+    if (fs.existsSync(fp)) return JSON.parse(fs.readFileSync(fp, "utf-8")) as T;
   } catch { /* ignore */ }
   return fallback;
 }
 
 export async function kvPutJSON<T>(key: string, value: T): Promise<void> {
   const kv = getKV();
-  if (kv) {
-    await kv.put(key, JSON.stringify(value));
-    return;
-  }
-  try {
-    ensureDataDir();
-    fs.writeFileSync(filePath(key), JSON.stringify(value, null, 2), "utf-8");
-  } catch { /* ignore */ }
+  if (kv) { await kv.put(key, JSON.stringify(value)); return; }
+  const fs = getFs();
+  if (!fs) return;
+  try { ensureDataDir(); fs.writeFileSync(filePath(key), JSON.stringify(value, null, 2), "utf-8"); }
+  catch { /* ignore */ }
 }
 
 export async function kvSeedIfEmpty<T>(key: string, seed: T): Promise<void> {

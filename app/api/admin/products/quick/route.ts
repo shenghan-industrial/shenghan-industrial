@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
 import { kvGetJSON, kvPutJSON } from "@/lib/kv-storage";
 import { genEnName, genEsName, catZhMap } from "@/lib/translate-name";

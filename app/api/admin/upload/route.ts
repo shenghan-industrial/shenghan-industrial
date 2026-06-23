@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
 import { hasR2, getR2 } from "@/lib/kv-storage";
 import {
