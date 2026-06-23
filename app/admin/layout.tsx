@@ -34,9 +34,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   };
 
   const roleLabel =
-    user.role === "SUPER_ADMIN"
+    user!.role === "SUPER_ADMIN"
       ? "超级管理员"
-      : user.role === "ADMIN"
+      : user!.role === "ADMIN"
         ? "管理员"
         : "编辑";
 
@@ -53,7 +53,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <span className="text-sm">后台管理</span>
             </Link>
             <span className="text-[10px] text-[#9B8E7E] bg-[#F5F2EF] dark:bg-white/5 px-2 py-0.5 rounded-full">
-              {roleLabel} · {user.username}
+              {roleLabel} · {user!.username}
             </span>
             <Link
               href="/admin"
