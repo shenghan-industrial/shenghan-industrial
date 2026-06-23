@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation"; // disabled - no auth
 import Link from "next/link";
 import { Package, Plus, LogOut, LayoutGrid, Mail, Upload } from "lucide-react";
 
@@ -11,23 +11,14 @@ interface AdminUser {
 }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-  const router = useRouter();
   const [user, setUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/admin/check")
-      .then(async (r) => {
-        if (r.ok) {
-          const data = await r.json();
-          setUser(data.user || null);
-        } else {
-          router.replace("/admin-login");
-        }
-      })
-      .catch(() => router.replace("/admin-login"))
-      .finally(() => setLoading(false));
-  }, [router]);
+    // Auth disabled — set default admin
+    setUser({ username: "admin", role: "SUPER_ADMIN" });
+    setLoading(false);
+  }, []);
 
   if (loading) {
     return (
@@ -36,8 +27,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </div>
     );
   }
-
-  if (!user) return null;
 
   const logout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
