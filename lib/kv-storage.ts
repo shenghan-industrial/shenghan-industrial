@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // Cloudflare KV + file-based fallback
 // Uses require() for Node.js modules so Edge Runtime can skip them
 

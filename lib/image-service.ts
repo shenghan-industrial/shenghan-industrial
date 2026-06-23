@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 /**
  * Image processing service — sharp-based WebP/AVIF conversion + resize.
  * Uses dynamic import + any-typed sharp calls to avoid ESM type complexity.

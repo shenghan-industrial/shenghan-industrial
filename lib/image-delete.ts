@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 // lib/image-delete.ts
 // Edge-compatible — no sharp/fs imports at top level
 
