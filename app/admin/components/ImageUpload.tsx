@@ -22,7 +22,7 @@ export function ImageUpload({ value, onChange }: ImageUploadProps) {
         // API returns { original: {url}, thumbnail: {url}, ... } for normal uploads
         // or { url, deduplicated, ... } for dedup hits
         const imageUrl = data.original?.url || data.url;
-        if (imageUrl) onChange(imageUrl.startsWith("/") ? imageUrl : `/${imageUrl}`);
+        if (imageUrl) onChange(imageUrl);
         else setError("上传失败：" + (data.error || "未知错误"));
       } else { setError("上传失败，请检查服务器"); }
     } catch { setError("网络错误，请确认服务器在运行"); }
