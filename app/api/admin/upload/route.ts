@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: validation.error }, { status: 400 });
     }
 
-    const bytes = Buffer.from(await file.arrayBuffer());
+    const bytes = new Uint8Array(await file.arrayBuffer());
 
     // ── Hash dedup ──────────────────────────────────────────
     const hash = await computeHash(bytes); // FIX: was missing await

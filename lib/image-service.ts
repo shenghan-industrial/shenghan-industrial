@@ -43,7 +43,7 @@ export function validateImage(file: File): { valid: false; error: string } | { v
 }
 
 // ── Hashing + Dedup ────────────────────────────────────────
-export async function computeHash(buffer: Buffer): Promise<string> {
+export async function computeHash(buffer: Uint8Array): Promise<string> {
   // Web Crypto API (Edge Runtime compatible)
   const hashBuffer = await crypto.subtle.digest("SHA-256", new Uint8Array(buffer));
   return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 16);
@@ -187,7 +187,7 @@ export async function processImage(
 
 // ── R2 upload pipeline ─────────────────────────────────────
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function uploadToR2(r2: any, prefix: string, buffer: Buffer, mime: string): Promise<UploadResult> {
+export async function uploadToR2(r2: any, prefix: string, buffer: Uint8Array, mime: string): Promise<UploadResult> {
   const sharp = await loadSharp();
   const ext = mime.split("/")[1] === "jpeg" ? "jpg" : mime.split("/")[1] || "bin";
   const baseKey = `${prefix}/${Date.now()}`;
