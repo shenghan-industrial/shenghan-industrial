@@ -26,7 +26,7 @@ export const ALLOWED_MIMES = [
   "image/jpeg", "image/png", "image/webp", "image/avif", "image/svg+xml",
 ] as const;
 
-export const MAX_FILE_SIZE = parseInt(process.env.MAX_UPLOAD_SIZE || "10485760", 10);
+export const MAX_FILE_SIZE = parseInt(process.env.MAX_UPLOAD_SIZE || "20971520", 10);
 
 export const SIZES = { thumbnail: 150, medium: 600, large: 1200 } as const;
 
@@ -138,7 +138,7 @@ export async function processImage(
   // Skip variant generation for SVG
   if (!sharp || mime === "image/svg+xml") return result;
 
-  const s = sharp as (buf: Buffer) => Record<string, (...a: unknown[]) => Record<string, (...a: unknown[]) => { toBuffer(): Promise<Buffer> }>>;
+  const s = sharp as (buf: Uint8Array) => Record<string, (...a: unknown[]) => Record<string, (...a: unknown[]) => { toBuffer(): Promise<Buffer> }>>;
 
   for (const [label, w] of Object.entries(SIZES)) {
     try {
@@ -215,7 +215,7 @@ export async function uploadToR2(r2: any, prefix: string, buffer: Uint8Array, mi
 
   if (!sharp || mime === "image/svg+xml") return result;
 
-  const s = sharp as (buf: Buffer) => Record<string, (...a: unknown[]) => Record<string, (...a: unknown[]) => { toBuffer(): Promise<Buffer> }>>;
+  const s = sharp as (buf: Uint8Array) => Record<string, (...a: unknown[]) => Record<string, (...a: unknown[]) => { toBuffer(): Promise<Buffer> }>>;
 
   for (const [label, w] of Object.entries(SIZES)) {
     // WebP
