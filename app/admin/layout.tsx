@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import { useRouter } from "next/navigation"; // disabled - no auth
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Package, Plus, LogOut, LayoutGrid, Mail, Upload } from "lucide-react";
 
@@ -11,14 +11,23 @@ interface AdminUser {
 }
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [user, setUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Auth disabled — set default admin
-    setUser({ username: "admin", role: "SUPER_ADMIN" });
-    setLoading(false);
-  }, []);
+    fetch("/api/admin/check")
+      .then(async (r) => {
+        if (r.ok) {
+          const data = await r.json();
+          setUser(data.user || null);
+        } else {
+          router.replace("/admin-login");
+        }
+      })
+      .catch(() => router.replace("/admin-login"))
+      .finally(() => setLoading(false));
+  }, [router]);
 
   if (loading) {
     return (
@@ -28,15 +37,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     );
   }
 
+  if (!user) return null;
+
   const logout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
     window.location.href = "/admin-login";
   };
 
   const roleLabel =
-    user!.role === "SUPER_ADMIN"
+    user.role === "SUPER_ADMIN"
       ? "超级管理员"
-      : user!.role === "ADMIN"
+      : user.role === "ADMIN"
         ? "管理员"
         : "编辑";
 
@@ -53,7 +64,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <span className="text-sm">后台管理</span>
             </Link>
             <span className="text-[10px] text-[#9B8E7E] bg-[#F5F2EF] dark:bg-white/5 px-2 py-0.5 rounded-full">
-              {roleLabel} · {user!.username}
+              {roleLabel} · {user.username}
             </span>
             <Link
               href="/admin"

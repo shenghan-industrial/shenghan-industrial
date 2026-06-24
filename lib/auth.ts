@@ -164,6 +164,13 @@ export function getRoleFromRequest(request: Request): AdminRole | null {
  * Require a specific permission. Throws 401/403 Response if not authorized.
  * Returns the role if authorized.
  */
-export function requirePermission(_request: Request, _permission: string): AdminRole {
-  return "SUPER_ADMIN"; // Auth disabled — always return super admin
+export function requirePermission(request: Request, permission: string): AdminRole {
+  const role = getRoleFromRequest(request);
+  if (!role) {
+    throw new Error("UNAUTHORIZED: No role header");
+  }
+  if (!hasPermission(role, permission)) {
+    throw new Error(`FORBIDDEN: ${role} lacks ${permission}`);
+  }
+  return role;
 }
