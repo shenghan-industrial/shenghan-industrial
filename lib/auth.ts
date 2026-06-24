@@ -1,5 +1,4 @@
 import { SignJWT, jwtVerify } from "jose";
-import bcrypt from "bcryptjs";
 
 // ── RBAC Roles ──────────────────────────────────────────────
 export type AdminRole = "SUPER_ADMIN" | "ADMIN" | "EDITOR";
@@ -80,24 +79,20 @@ export async function verifyJWT(token: string): Promise<AdminPayload | null> {
 
 // ── Password helpers ────────────────────────────────────────
 export async function hashPassword(password: string): Promise<string> {
-  return bcrypt.hash(password, 10);
+  const encoder = new TextEncoder();
+  const digest = await crypto.subtle.digest("SHA-256", encoder.encode(password));
+  return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
 export async function verifyPassword(password: string, hash: string): Promise<boolean> {
-  // Plain text comparison (Edge-compatible)
+  // Plain text comparison
   if (password === hash) return true;
 
-  // Try SHA-256
+  // SHA-256 comparison (Web Crypto, works on Edge and Node.js)
   const encoder = new TextEncoder();
   const digest = await crypto.subtle.digest("SHA-256", encoder.encode(password));
   const sha256 = Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
-  if (sha256 === hash) return true;
-
-  // Try bcrypt
-  if (hash.startsWith("$2")) {
-    try { return await bcrypt.compare(password, hash); } catch { }
-  }
-  return false;
+  return sha256 === hash;
 }
 
 export interface AdminUser {
@@ -121,7 +116,7 @@ export function getDefaultAdmins(): AdminUser[] {
       return [
         {
           username: "admin",
-          passwordHash: "$2b$10$mY3K.yQdCLtiDbSYIVF1v.ksBTWpLDCkDklpCqPAnQQoxkuPqlffW",
+          passwordHash: "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
           role: "SUPER_ADMIN",
         },
       ];
