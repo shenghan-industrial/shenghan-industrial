@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { signJWT, verifyPassword, findAdminByUsername, getCookieName, getTokenMaxAge } from "@/lib/auth";
