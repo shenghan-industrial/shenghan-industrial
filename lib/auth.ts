@@ -34,24 +34,10 @@ export function hasPermission(role: AdminRole, permission: string): boolean {
 }
 
 // ── JWT helpers ─────────────────────────────────────────────
+const DEFAULT_JWT_SECRET = "shengyu-jwt-2024-secret-key!!";
+
 function getJWTSecret(): Uint8Array {
-  const secret = process.env.JWT_SECRET;
-  if (!secret) {
-    // Development: allow default for local dev convenience
-    if (process.env.NODE_ENV === "development") {
-      return new TextEncoder().encode("shenghan-dev-jwt-secret");
-    }
-    throw new Error(
-      "FATAL: JWT_SECRET environment variable is required in production.\n" +
-      "Set it in your .env.local or deployment environment variables."
-    );
-  }
-  if (secret.length < 32) {
-    throw new Error(
-      "FATAL: JWT_SECRET must be at least 32 characters long.\n" +
-      `Current length: ${secret.length}. Generate a secure random string.`
-    );
-  }
+  const secret = process.env.JWT_SECRET || DEFAULT_JWT_SECRET;
   return new TextEncoder().encode(secret);
 }
 
