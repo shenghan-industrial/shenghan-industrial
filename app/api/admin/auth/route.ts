@@ -1,50 +1,28 @@
 export const runtime = "edge";
 import { NextResponse } from "next/server";
-import { signJWT, verifyPassword, findAdminByUsername, getCookieName, getTokenMaxAge } from "@/lib/auth";
-import { checkRateLimit, getRateLimitKey } from "@/lib/rate-limit";
+import { SignJWT } from "jose";
 
 export async function POST(request: Request) {
-  const key = `login:${getRateLimitKey(request)}`;
-  const { allowed } = checkRateLimit(key, 5, 60_000);
-  if (!allowed) {
-    return NextResponse.json(
-      { error: "Too many attempts. Please try again in 1 minute." },
-      { status: 429 }
-    );
-  }
-
   const { username, password } = await request.json();
-  if (!username || !password) {
-    return NextResponse.json(
-      { error: "Username and password are required" },
-      { status: 400 }
-    );
+
+  const correctUser = process.env.ADMIN_USERNAME || "admin";
+  const correctPass = process.env.ADMIN_PASSWORD || "admin123";
+
+  if (username !== correctUser || password !== correctPass) {
+    return NextResponse.json({ error: "账号或密码错误" }, { status: 401 });
   }
 
-  const admin = findAdminByUsername(username);
-  if (!admin) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
-  }
-
-  const valid = await verifyPassword(password, admin.passwordHash);
-  if (!valid) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
-  }
-
-  const token = await signJWT({
-    username: admin.username,
-    role: admin.role,
-  });
-
-  const cookieName = getCookieName();
-  const maxAge = getTokenMaxAge();
-  const cookieValue = `${cookieName}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${maxAge}`;
+  const secret = new TextEncoder().encode(process.env.JWT_SECRET || "shengyu-jwt-2024-secret-key!!");
+  const token = await new SignJWT({ username, role: "SUPER_ADMIN" })
+    .setProtectedHeader({ alg: "HS256" })
+    .setExpirationTime("24h")
+    .sign(secret);
 
   return NextResponse.json(
-    { success: true, user: { username: admin.username, role: admin.role } },
+    { success: true, user: { username, role: "SUPER_ADMIN" } },
     {
       headers: {
-        "Set-Cookie": cookieValue,
+        "Set-Cookie": `admin_token=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=86400`,
       },
     }
   );
