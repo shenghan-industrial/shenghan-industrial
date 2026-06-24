@@ -14,7 +14,7 @@ function base64UrlDecode(str: string): Uint8Array<ArrayBuffer> {
 }
 
 function getSecret(): Uint8Array<ArrayBuffer> {
-  const secret = process.env.JWT_SECRET || "shenghan-dev-jwt-secret";
+  const secret = process.env.JWT_SECRET || "shengyu-jwt-2024-secret-key!!";
   return new TextEncoder().encode(secret) as Uint8Array<ArrayBuffer>;
 }
 
