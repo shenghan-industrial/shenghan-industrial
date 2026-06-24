@@ -33,12 +33,15 @@ async function verifyJWT(token: string) {
 
 // ── Routes ──────────────────────────────────────────────────
 const PUBLIC = ["/admin-login", "/api/admin/auth"];
+const PUBLIC_READ = ["/api/admin/products", "/api/admin/categories"];
 const PROTECTED = ["/admin", "/api/admin"];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (PUBLIC.some(p => pathname.startsWith(p))) return NextResponse.next();
+  // Allow public GET for products and categories (frontend needs them)
+  if (PUBLIC_READ.some(p => pathname.startsWith(p)) && request.method === "GET") return NextResponse.next();
   if (!PROTECTED.some(p => pathname.startsWith(p))) return NextResponse.next();
 
   const token = request.cookies.get(COOKIE_NAME)?.value;
