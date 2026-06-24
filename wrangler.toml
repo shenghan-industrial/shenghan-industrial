@@ -4,10 +4,7 @@ compatibility_flags = ["nodejs_compat"]
 
 [[kv_namespaces]]
 binding = "KV_STORE"
-# IMPORTANT: Replace with your actual KV namespace ID from:
-# Cloudflare Dashboard → Workers & Pages → KV → your namespace → copy "Namespace ID"
-# Then run: node scripts/seed-kv.mjs  (to upload your products/categories to KV)
-id = "KV_NAMESPACE_ID_PLACEHOLDER"
+id = "ff146b1a3c19496b954ff070edf41440"
 
 [[r2_buckets]]
 binding = "R2_STORE"
