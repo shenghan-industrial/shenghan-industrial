@@ -1,10 +1,9 @@
+export const runtime = "edge";
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { signJWT, verifyPassword, findAdminByUsername, getCookieName, getTokenMaxAge } from "@/lib/auth";
 import { checkRateLimit, getRateLimitKey } from "@/lib/rate-limit";
 
 export async function POST(request: Request) {
-  // Rate limit: max 5 attempts per minute per IP
   const key = `login:${getRateLimitKey(request)}`;
   const { allowed } = checkRateLimit(key, 5, 60_000);
   if (!allowed) {
@@ -15,7 +14,6 @@ export async function POST(request: Request) {
   }
 
   const { username, password } = await request.json();
-
   if (!username || !password) {
     return NextResponse.json(
       { error: "Username and password are required" },
@@ -33,27 +31,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
-  // Generate JWT
   const token = await signJWT({
     username: admin.username,
     role: admin.role,
   });
 
-  // Set HttpOnly cookie
-  const cookieStore = await cookies();
-  cookieStore.set(getCookieName(), token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
-    path: "/",
-    maxAge: getTokenMaxAge(),
-  });
+  const cookieName = getCookieName();
+  const maxAge = getTokenMaxAge();
+  const cookieValue = `${cookieName}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${maxAge}`;
 
-  return NextResponse.json({
-    success: true,
-    user: {
-      username: admin.username,
-      role: admin.role,
-    },
-  });
+  return NextResponse.json(
+    { success: true, user: { username: admin.username, role: admin.role } },
+    {
+      headers: {
+        "Set-Cookie": cookieValue,
+      },
+    }
+  );
 }
