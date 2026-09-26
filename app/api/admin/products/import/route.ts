@@ -68,14 +68,14 @@ function generateProduct(
     subCategory: subCategory || undefined,
     description: {
       en: notes
-        ? `${notes}. ${subCategory} — ${name}. Factory direct from Shengyu Industrial.`
-        : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${name}. Manufactured in our own facilities.`,
+        ? `${notes}. ${subCategory} — ${name}. Factory direct from DEXOREN.`
+        : `DEXOREN ${subCategory?.toLowerCase() || ""} — ${name}. Manufactured in our own facilities.`,
       zh: notes
-        ? `${notes}。${subZh} — ${zhName}。盛煜实业工厂直供。`
-        : `盛煜实业 ${subZh} — ${zhName}。自有工厂制造，严格品控。`,
+        ? `${notes}。${subZh} — ${zhName}。DEXOREN工厂直供。`
+        : `DEXOREN ${subZh} — ${zhName}。自有工厂制造，严格品控。`,
       es: notes
-        ? `${notes}. ${subCategory} — ${esName}. Directo de fábrica de Shengyu Industrial.`
-        : `Shengyu Industrial ${subCategory?.toLowerCase() || ""} — ${esName}. Fabricado en nuestras propias instalaciones.`,
+        ? `${notes}. ${subCategory} — ${esName}. Directo de fábrica de DEXOREN.`
+        : `DEXOREN ${subCategory?.toLowerCase() || ""} — ${esName}. Fabricado en nuestras propias instalaciones.`,
     },
     features: { en: ft.en, zh: ft.zh, es: ft.en.map(f => f) },
     specs: {
@@ -133,6 +133,10 @@ const validSubs = new Set<string>();
 categories.forEach(c => {
   (c.children || c.groups?.flatMap(g => g.children) || []).forEach(child => {
     if (child.productSubCategory) validSubs.add(child.productSubCategory);
+  });
+  // groups can act as sub-categories too (e.g. Home & General Merchandise)
+  c.groups?.forEach(g => {
+    if (g.productSubCategory) validSubs.add(g.productSubCategory);
   });
 });
 

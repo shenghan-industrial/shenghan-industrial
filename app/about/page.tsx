@@ -60,7 +60,7 @@ export default function AboutPage() {
 
       <Section>
         <div className="max-w-3xl mx-auto px-4 lg:px-8 py-10 md:py-24">
-          <SectionHeader label={t("about.positioning")} title={t("about.aboutShengyu")} />
+          <SectionHeader label={t("about.positioning")} title={t("about.aboutDEXOREN")} />
           <div className="space-y-5 text-[15px] leading-relaxed text-[#6B6058] dark:text-white/50">
             <p>{t("about.introP1")}</p>
             <p>{t("about.introP2")}</p>

@@ -19,8 +19,8 @@ function getDefaults() {
     heroTitleZh: "全球化家居建材源头制造品牌",
     heroSubEn: "Factory direct pricing, reliable logistics, full compliance, global after-sales",
     heroSubZh: "集自主研发、规模化生产、全球销售与一站式供应链服务",
-    aboutTitleEn: "About Shengyu Industrial",
-    aboutTitleZh: "关于盛煜实业",
+    aboutTitleEn: "About DEXOREN",
+    aboutTitleZh: "关于DEXOREN",
     aboutDescEn: "",
     aboutDescZh: "",
   };

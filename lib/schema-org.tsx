@@ -8,16 +8,16 @@ export function organizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Shengyu Industrial",
+    name: "DEXOREN",
     alternateName: "Shenghan Industrial",
     url: "https://shenghanindustrial.com",
     logo: "https://shenghanindustrial.com/favicon.ico",
-    description: "Global manufacturer of home furniture, building materials, hardware, lighting, and appliances — one-stop B2B supply chain from China.",
+    description: "One-stop home & general merchandise supply chain partner. 8,000㎡ wholesale showroom, 30,000+ SKUs, factory-direct pricing and reliable export logistics — serving importers, retailers and B2B buyers worldwide.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
-      telephone: "+86-13800000000",
-      email: "shenghanind@163.com",
+      telephone: "+86-13800138000",
+      email: "sales@shenghanindustrial.com",
       availableLanguage: ["English", "Chinese", "Spanish"],
     },
     sameAs: [
@@ -43,11 +43,11 @@ export function productSchema(product: Product) {
     image: product.gallery || product.images || [product.image],
     brand: {
       "@type": "Brand",
-      name: "Shengyu Industrial",
+      name: "DEXOREN",
     },
     manufacturer: {
       "@type": "Organization",
-      name: "Shengyu Industrial",
+      name: "DEXOREN",
     },
     category: product.category,
     offers: {

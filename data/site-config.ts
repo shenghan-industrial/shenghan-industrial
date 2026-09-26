@@ -13,16 +13,15 @@ import {
 export const siteConfig = {
   // --- Brand ---
   brand: {
-    name: "Shengyu Industrial",
-    shortName: "Shengyu",
-    slogan: "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
-    sloganZh: "全球家居建材制造商 | 一站式供应链合作伙伴",
-    sloganEs: "Fabricante Global de Materiales para el Hogar y Construcción | Socio de Cadena de Suministro Integral",
+    name: "DEXOREN",
+    shortName: "DEXOREN",
+    slogan: "Home & General Merchandise Supply Chain | 8,000㎡ Showroom & 30,000+ SKUs",
+    sloganZh: "家居百货一站式供应链 | 8,000㎡展厅 · 30,000+单品",
+    sloganEs: "Cadena de Suministro de Artículos del Hogar | 8.000 m² Showroom y 30.000+ SKUs",
     description:
-      "Shengyu Industrial is a global manufacturer and one-stop supply chain partner. Factory direct pricing, reliable logistics, full compliance, and global after-sales — serving importers, contractors, and B2B buyers worldwide.",
+      "DEXOREN is a one-stop home & general merchandise supply chain partner. From our 8,000㎡ wholesale showroom and integrated warehouse, we supply 30,000+ household SKUs across stationery, beauty & skincare, fashion accessories, toys, hygiene products, hardware supplies, home appliances, sports & outdoor, plastic products, furniture and lighting. Factory-direct pricing, reliable export logistics, and multilingual support for importers, retailers and B2B buyers worldwide.",
     logo: {
-      text: "S", // fallback letter if no image logo
-      /** Set to a path like "/images/logo.svg" to use an image logo */
+      text: "D",
       image: undefined as string | undefined,
     },
   },
@@ -43,24 +42,24 @@ export const siteConfig = {
 
   // --- Contact ---
   contact: {
-    phone: { display: "+86 138 0013 8000", href: "https://wa.me/8613800138000" },
-    email: "shenghanind@163.com",
+    phone: { display: "+86 151 6391 6007", href: "https://wa.me/8615163916007" },
+    email: "sales@shenghanindustrial.com",
     address: {
       line1: "Linyi, Shandong, China",
       line1Zh: "中国山东省临沂市",
       line1Es: "Linyi, Shandong, China",
-      line2: "Global Warehouses: Europe · SE Asia · CIS",
-      line2Zh: "全球仓储网络：欧洲 · 东南亚 · 独联体",
-      line2Es: "Almacenes Globales: Europa · Sudeste Asiático · CEI",
-      line3: "山东省临沂市 · 全球仓储：欧洲·东南亚·独联体",
+      line2: "Warehouses: SE Asia (Bangkok · Kuala Lumpur) · Middle East (Dubai)",
+      line2Zh: "全球仓储网络：东南亚（曼谷 · 吉隆坡） · 中东（迪拜）",
+      line2Es: "Almacenes: Sudeste Asiático (Bangkok · Kuala Lumpur) · Medio Oriente (Dubai)",
+      line3: "山东省临沂市 · 仓储：东南亚 · 中东",
     },
     hours: {
-      weekday: "24/7 Multilingual Support",
-      weekdayZh: "24小时多语言支持",
-      weekdayEs: "Soporte Multilingüe 24/7",
-      saturday: "7 Languages · No Time Zone Gaps",
-      saturdayZh: "7种语言 · 无时差服务",
-      saturdayEs: "7 Idiomas · Sin Brechas Horarias",
+      weekday: "Fast Reply — Usually Within 12h (GMT+8)",
+      weekdayZh: "快速回复 — 通常 12 小时内（GMT+8）",
+      weekdayEs: "Respuesta Rápida — Normalmente en 12h (GMT+8)",
+      saturday: "Support in EN · 中文 · Español",
+      saturdayZh: "支持 英 · 中 · 西 三语",
+      saturdayEs: "Soporte en EN · 中文 · Español",
       note: "Global After-Sales Service",
       noteZh: "全球售后服务",
       noteEs: "Servicio Postventa Global",
@@ -83,9 +82,15 @@ export const siteConfig = {
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/8613800138000",
+      href: "https://wa.me/8615163916007",
       icon: "whatsapp" as const,
       description: "Chat on WhatsApp",
+    },
+    {
+      name: "TikTok",
+      href: "https://www.tiktok.com/@tony.wang526",
+      icon: "tiktok" as const,
+      description: "Follow us on TikTok",
     },
     {
       name: "Facebook",
@@ -97,32 +102,33 @@ export const siteConfig = {
 
   // --- Statistics (shown in Hero + StatsCounter) ---
   stats: [
-    { value: 25, suffix: "+", label: "Certifications" },
-    { value: 3200, suffix: "+", label: "Projects Completed" },
-    { value: 50000, suffix: " tons", label: "Annual Capacity" },
+    { value: 30000, suffix: "+", label: "Home Goods SKUs" },
+    { value: 8000, suffix: " m²", label: "Wholesale Showroom" },
+    { value: 30, suffix: "+", label: "Export Markets" },
   ],
 
   // --- Footer ---
   footer: {
     tagline:
-      "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner — factory direct pricing, reliable logistics, and full after-sales support for B2B buyers worldwide.",
+      "DEXOREN — your one-stop home & general merchandise supply chain partner. 8,000㎡ wholesale showroom, 30,000+ SKUs, factory-direct pricing and reliable export logistics for B2B buyers worldwide.",
     taglineZh:
-      "全球家居建材制造商 | 一站式供应链合作伙伴 — 工厂直供价格、可靠物流、完善的售后服务，服务全球B2B采购商。",
+      "DEXOREN——您的家居百货一站式供应链合作伙伴。8,000㎡批发展厅、30,000+单品、工厂直供价格与可靠出口物流，服务全球B2B采购商。",
     taglineEs:
-      "Fabricante Global de Materiales para el Hogar y Construcción | Socio de Cadena de Suministro Integral — precios directos de fábrica, logística confiable y soporte postventa completo para compradores B2B en todo el mundo.",
+      "DEXOREN — su socio integral de la cadena de suministro de artículos del hogar. Showroom mayorista de 8.000 m², más de 30.000 SKUs, precios directos de fábrica y logística de exportación confiable para compradores B2B en todo el mundo.",
     column1Title: "Products",
     column1Links: [
+      { label: "Home & General Merchandise", href: "/products" },
+      { label: "Kitchen & Dining", href: "/products" },
+      { label: "Cleaning & Storage", href: "/products" },
+      { label: "Home Textiles & Décor", href: "/products" },
       { label: "Furniture", href: "/products" },
-      { label: "Building Materials", href: "/products" },
-      { label: "Hardware", href: "/products" },
-      { label: "Appliances", href: "/products" },
-      { label: "Lighting", href: "/products" },
-      { label: "Others", href: "/products" },
+      { label: "Lighting & Hardware", href: "/products" },
     ],
     column2Title: "Company",
     column2Links: [
       { label: "About Us", href: "/about" },
-      { label: "Certifications", href: "/about" },
+      { label: "Certifications", href: "/certifications" },
+      { label: "Trade Terms", href: "/trade-terms" },
       { label: "Contact", href: "/contact" },
     ],
     legalLinks: [

@@ -44,5 +44,15 @@ yarn-error.log*
 next-env.d.ts
 
 # local KV data (not for deployment)
+.data
 
-.vercel
+# nested unrelated projects (never commit)
+/florin-admin-next
+/florin-b2b-next
+/viktor-oddy
+
+# local build/state
+/.wrangler
+/.sd-state
+/.next_temp
+/.next

@@ -1,39 +1,39 @@
 "use client";
 
-import { Factory, ShieldCheck, Globe, Clock } from "lucide-react";
+import { Package, Store, Globe, Clock } from "lucide-react";
 import { useT } from "@/lib/LanguageContext";
 
 const trustItems = [
   {
-    key: "factory",
-    value: "20+ yrs",
-    labelEn: "Factory Direct",
-    labelZh: "自有工厂",
-    labelEs: "Fábrica Propia",
-    icon: Factory,
+    key: "skus",
+    value: "30,000+",
+    labelEn: "Home Goods SKUs",
+    labelZh: "家居百货单品",
+    labelEs: "Artículos del Hogar",
+    icon: Package,
   },
   {
-    key: "iso",
-    value: "ISO",
-    labelEn: "Certified",
-    labelZh: "ISO认证",
-    labelEs: "Certificado",
-    icon: ShieldCheck,
+    key: "showroom",
+    value: "8,000 m²",
+    labelEn: "Wholesale Showroom",
+    labelZh: "批发展厅",
+    labelEs: "Showroom Mayorista",
+    icon: Store,
   },
   {
     key: "countries",
     value: "30+",
-    labelEn: "Countries",
-    labelZh: "服务国家",
-    labelEs: "Países",
+    labelEn: "Export Markets",
+    labelZh: "出口市场",
+    labelEs: "Mercados",
     icon: Globe,
   },
   {
     key: "response",
     value: "< 24h",
-    labelEn: "Response",
-    labelZh: "快速响应",
-    labelEs: "Respuesta",
+    labelEn: "Quote Response",
+    labelZh: "报价响应",
+    labelEs: "Respuesta <24h",
     icon: Clock,
   },
 ];

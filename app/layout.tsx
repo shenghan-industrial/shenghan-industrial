@@ -16,16 +16,15 @@ const BASE = "https://shenghanindustrial.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
   title: {
-    default: "Shengyu Industrial | Global Home & Building Materials Manufacturer",
-    template: "%s | Shengyu Industrial",
+    default: "DEXOREN | Home & General Merchandise Supply Chain",
+    template: "%s | DEXOREN",
   },
   description:
-    "Shengyu Industrial is a global B2B manufacturer. Factory direct pricing, reliable multi-channel logistics, full global compliance, and 24/7 after-sales support — serving importers, contractors, and wholesalers worldwide.",
+    "DEXOREN is a one-stop home & general merchandise supply chain partner. 8,000㎡ wholesale showroom, 30,000+ SKUs, factory-direct pricing and reliable export logistics — serving importers, retailers and B2B buyers worldwide.",
   keywords: [
-    "building materials manufacturer", "home furniture factory", "hardware supplier",
-    "LED lighting factory", "global B2B manufacturer", "Shengyu Industrial",
-    "factory direct supply", "one-stop supply chain", "OEM ODM manufacturer",
-    "global logistics", "wholesale building materials",
+    "home goods wholesale", "general merchandise supplier", "home products factory", "household items bulk",
+    "home goods supply chain", "kitchenware wholesale", "home textiles supplier", "B2B home products",
+    "wholesale showroom China", "DEXOREN", "one-stop sourcing", "household appliances wholesale",
   ],
   alternates: {
     canonical: BASE,
@@ -37,17 +36,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    siteName: "Shengyu Industrial",
-    title: "Shengyu Industrial | Global Home & Building Materials Manufacturer",
-    description: "Factory direct B2B manufacturer — furniture, building materials, hardware, lighting, and appliances.",
+    siteName: "DEXOREN",
+    title: "DEXOREN | Home & General Merchandise Supply Chain",
+    description: "One-stop home goods supply chain — 8,000㎡ wholesale showroom, 30,000+ SKUs, factory-direct export.",
     url: BASE,
     locale: "en_US",
     alternateLocale: ["zh_CN", "es_ES"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shengyu Industrial | Global B2B Manufacturer",
-    description: "Factory direct B2B manufacturer — one-stop supply chain from China.",
+    title: "DEXOREN | Home & General Merchandise Supply Chain",
+    description: "One-stop home goods supply chain — 8,000㎡ showroom, 30,000+ SKUs.",
   },
   robots: {
     index: true,

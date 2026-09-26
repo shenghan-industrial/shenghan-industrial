@@ -2,7 +2,7 @@
 
 export const runtime = "edge";
 
-import { use, useState, useRef, useCallback } from "react";
+import { use, useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -17,6 +17,10 @@ import {
   Factory,
   ShieldCheck,
   Clock,
+  Package,
+  Ship,
+  Tag,
+  BadgeCheck,
 } from "lucide-react";
 import { ProductCard } from "@/components/ProductCard";
 import { ResponsiveImage } from "@/components/ResponsiveImage";
@@ -29,6 +33,20 @@ import { useInquiryCart } from "@/lib/InquiryContext";
 import { useProducts } from "@/lib/use-products";
 import { productSchema, breadcrumbSchema, JsonLD } from "@/lib/schema-org";
 import { siteConfig } from "@/data/site-config";
+
+function TradeItem({ icon: Icon, label, value, note }: { icon: React.ComponentType<{ className?: string }>; label: string; value?: string; note?: string }) {
+  if (!value) return null;
+  return (
+    <div>
+      <div className="flex items-center gap-1.5 text-gray-400 dark:text-white/30 text-xs mb-1">
+        <Icon className="w-3.5 h-3.5 text-[#B8A080]" />
+        {label}
+      </div>
+      <div className="text-sm font-medium text-gray-800 dark:text-white/80 leading-snug">{value}</div>
+      {note && <div className="text-[10px] text-gray-400 dark:text-white/20 mt-0.5">{note}</div>}
+    </div>
+  );
+}
 
 export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -65,6 +83,33 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
     setZoomPos({ x, y });
     imgSize.current = { w: rect.width, h: rect.height };
   }, []);
+
+  // Apply per-product SEO metadata to <head>. The page is a client component
+  // (edge runtime), so metadata is set imperatively on mount / locale change.
+  useEffect(() => {
+    if (!localized) return;
+    const title = localized.seoTitle || localized.name;
+    const desc = localized.seoDescription || localized.description;
+    const keywords = localized.seoKeywords;
+
+    if (title) document.title = title;
+
+    const setMeta = (attr: "name" | "property", key: string, content?: string) => {
+      if (!content) return;
+      let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
+      if (!el) {
+        el = document.createElement("meta");
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
+      }
+      el.setAttribute("content", content);
+    };
+
+    setMeta("name", "description", desc);
+    setMeta("name", "keywords", keywords);
+    setMeta("property", "og:title", title);
+    setMeta("property", "og:description", desc);
+  }, [localized]);
 
   if (!product && loaded) notFound();
 
@@ -243,6 +288,39 @@ export default function ProductDetailPage({ params }: { params: Promise<{ id: st
 
       {/* Details section — full width, simple */}
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8">
+        {/* Trade & Shipping */}
+        <div className="bg-white dark:bg-[#1A1816] rounded border border-gray-200 dark:border-white/5 p-5 mb-5">
+          <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-3 pb-3 border-b border-gray-100 dark:border-white/5 flex items-center gap-2">
+            <Ship className="w-4 h-4 text-[#B8A080]" />
+            {t("detail.tradeTitle")}
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-4">
+            <TradeItem icon={Package} label={t("detail.tradeMoq")} value={product.moq} />
+            <TradeItem icon={Clock} label={t("detail.tradeLead")} value={product.leadTime} />
+            <TradeItem icon={Tag} label={t("detail.tradeTerm")} value={product.tradeTerm} />
+            <TradeItem icon={Package} label={t("detail.tradePack")} value={product.packaging} />
+            <TradeItem icon={BadgeCheck} label={t("detail.tradeBrand")} value={product.brand} />
+            <TradeItem
+              icon={Ship}
+              label={t("detail.tradePrice")}
+              value={product.price || undefined}
+              note={t("detail.tradePriceNote")}
+            />
+          </div>
+          {product.certifications && product.certifications.length > 0 && (
+            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/5">
+              <p className="text-xs text-gray-400 dark:text-white/30 mb-2">{t("detail.tradeCert")}</p>
+              <div className="flex flex-wrap gap-2">
+                {product.certifications.map((c) => (
+                  <span key={c} className="px-2.5 py-1 rounded-full bg-[#B8A080]/10 text-[#B8A080] text-xs font-semibold">
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
         {/* Description */}
         <div className="bg-white dark:bg-[#1A1816] rounded border border-gray-200 dark:border-white/5 p-5 mb-5">
           <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-3 pb-3 border-b border-gray-100 dark:border-white/5">{t("detail.productDesc")}</h2>

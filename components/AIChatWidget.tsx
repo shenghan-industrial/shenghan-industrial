@@ -42,13 +42,13 @@ export function AIChatWidget() {
           role: "assistant",
           content:
             locale === "zh"
-              ? `你好！我是盛煜实业的AI客服助手 👋
+              ? `你好！我是DEXOREN的AI客服助手 👋
 我可以帮你查询产品信息、价格、起订量等。
 直接提问即可！
 如需人工服务，随时输入 转人工`
               : locale === "es"
-                ? "¡Hola! Soy el asistente AI de Shengyu Industrial 👋\n\nPuedo ayudarte con información de productos, precios, MOQ. ¡Pregúntame!\n\nEscribe 'humano' para hablar con una persona real."
-                : "Hi! I'm Shengyu Industrial's AI assistant 👋\n\nI can help with product info, pricing, MOQ, and more. Just ask!\n\nType 'human' anytime to speak with a real person.",
+                ? "¡Hola! Soy el asistente AI de DEXOREN 👋\n\nPuedo ayudarte con información de productos, precios, MOQ. ¡Pregúntame!\n\nEscribe 'humano' para hablar con una persona real."
+                : "Hi! I'm DEXOREN's AI assistant 👋\n\nI can help with product info, pricing, MOQ, and more. Just ask!\n\nType 'human' anytime to speak with a real person.",
         },
       ]);
     }

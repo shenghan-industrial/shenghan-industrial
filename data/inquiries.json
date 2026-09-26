@@ -8,19 +8,19 @@
     "items": [
       {
         "productId": "sofa-01",
-        "name": "Shengyu Sofa 01",
+        "name": "DEXOREN Sofa 01",
         "quantity": 2,
         "category": "Furniture"
       },
       {
         "productId": "sofa-02",
-        "name": "Shengyu Sofa 02",
+        "name": "DEXOREN Sofa 02",
         "quantity": 1,
         "category": "Furniture"
       },
       {
         "productId": "sofa-09",
-        "name": "Shengyu Sofa 09",
+        "name": "DEXOREN Sofa 09",
         "quantity": 1,
         "category": "Furniture"
       }

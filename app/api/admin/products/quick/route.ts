@@ -33,14 +33,14 @@ export async function POST(request: Request) {
     const zhName = nameZh + (sub ? " — " + sub : "");
 
     const enDesc = notesZh
-      ? `${notesZh}. ${sub} — ${enName}. Factory direct from Shengyu Industrial, custom orders welcome.`
-      : `${sub} — ${enName}. Factory direct from Shengyu Industrial, custom orders welcome.`;
+      ? `${notesZh}. ${sub} — ${enName}. Factory direct from DEXOREN, custom orders welcome.`
+      : `${sub} — ${enName}. Factory direct from DEXOREN, custom orders welcome.`;
     const zhDesc = notesZh
-      ? `${notesZh}。${zhName}。盛煜实业工厂直供，支持定制。`
-      : `${zhName}。盛煜实业自有工厂制造，严格品控。`;
+      ? `${notesZh}。${zhName}。DEXOREN工厂直供，支持定制。`
+      : `${zhName}。DEXOREN自有工厂制造，严格品控。`;
     const esDesc = notesZh
-      ? `${notesZh}. ${sub} — ${esName}. Directo de fábrica de Shengyu Industrial.`
-      : `${esName}. ${sub} — Directo de fábrica de Shengyu Industrial. Pedidos personalizados disponibles.`;
+      ? `${notesZh}. ${sub} — ${esName}. Directo de fábrica de DEXOREN.`
+      : `${esName}. ${sub} — Directo de fábrica de DEXOREN. Pedidos personalizados disponibles.`;
 
     const baseId = (category + "-" + (sub || "product") + "-" + nameZh)
       .toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     const product = {
       id,
       name: { en: enName, zh: zhName, es: esName },
-      subtitle: { en: (sub || category) + " — Shengyu Industrial", zh: (sub || catZh) + " — 盛煜实业", es: (sub || category) + " — Shengyu Industrial" },
+      subtitle: { en: (sub || category) + " — DEXOREN", zh: (sub || catZh) + " — DEXOREN", es: (sub || category) + " — DEXOREN" },
       category, subCategory: sub || undefined,
       description: { en: enDesc, zh: zhDesc, es: esDesc },
       features: {

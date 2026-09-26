@@ -46,7 +46,7 @@ async function sendEmailWithRetry(
   data: ContactBody,
   maxRetries = 3
 ): Promise<boolean> {
-  const notifyEmail = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
+  const notifyEmail = process.env.NOTIFY_EMAIL || "sales@shenghanindustrial.com";
   if (!RESEND_API_KEY) {
     console.warn("[contact] Resend not configured");
     return false;
@@ -73,10 +73,10 @@ async function sendEmailWithRetry(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Shengyu Website <noreply@shenghanindustrial.com>",
+          from: "DEXOREN Website <noreply@shenghanindustrial.com>",
           to: notifyEmail,
           reply_to: data.email,
-          subject: `New inquiry from ${data.name} — Shengyu Website`,
+          subject: `New inquiry from ${data.name} — DEXOREN Website`,
           html,
         }),
       });

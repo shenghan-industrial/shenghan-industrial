@@ -5,23 +5,23 @@ import { IconWhatsApp, IconMail, IconMapPin } from "@/components/icons";
 import { SocialIcons } from "./SocialIcons";
 import { useT } from "@/lib/LanguageContext";
 import { siteConfig } from "@/data/site-config";
+import { categories } from "@/data/categories";
 
 export function Footer() {
   const { t, locale } = useT();
   const { brand, contact } = siteConfig;
 
-  const productLinks = [
-    { label: t("footer.productsList.furniture"), href: "/products" },
-    { label: t("footer.productsList.buildingMaterials"), href: "/products" },
-    { label: t("footer.productsList.hardware"), href: "/products" },
-    { label: t("footer.productsList.appliances"), href: "/products" },
-    { label: t("footer.productsList.lighting"), href: "/products" },
-    { label: t("footer.productsList.others"), href: "/products" },
-  ];
+  // Build footer product links from the current clean categories (mini-program aligned + Furniture + Lighting)
+  const productLinks = categories.map((cat) => ({
+    label: locale === "zh" && cat.nameZh ? cat.nameZh : cat.name,
+    href: `/products?cat=${encodeURIComponent(cat.productCategory)}`,
+  }));
 
   const companyLinks = [
     { label: t("footer.companyList.about"), href: "/about" },
-    { label: t("footer.companyList.certs"), href: "/about" },
+    { label: t("footer.companyList.certs"), href: "/certifications" },
+    { label: t("footer.companyList.tradeTerms"), href: "/trade-terms" },
+    { label: t("footer.companyList.faq"), href: "/faq" },
     { label: t("footer.companyList.contact"), href: "/contact" },
   ];
 

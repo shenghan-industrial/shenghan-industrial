@@ -31,7 +31,7 @@ interface Inquiry {
 }
 
 // ── Helpers ────────────────────────────────────────────────
-const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "shenghanind@163.com";
+const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "sales@shenghanindustrial.com";
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 
 async function readInquiries(): Promise<Inquiry[]> {
@@ -65,9 +65,9 @@ async function sendEmailWithRetry(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Shengyu Industrial <noreply@shenghanindustrial.com>",
+          from: "DEXOREN <noreply@shenghanindustrial.com>",
           to: NOTIFY_EMAIL,
-          subject: "New Inquiry Received — Shengyu Industrial",
+          subject: "New Inquiry Received — DEXOREN",
           html,
         }),
       });

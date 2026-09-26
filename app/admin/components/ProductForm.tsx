@@ -76,20 +76,20 @@ function generateProduct(nameZh: string, category: string, subCategory: string, 
 
   // Descriptions
   const zhDescription = notes
-    ? `${notesClean}。${nameZh}，盛煜实业工厂直供。支持来样定制，ISO认证生产流程，出口标准包装。`
-    : `${nameZh}，盛煜实业工厂直供。自有工厂严格品控，支持来样定制，ISO认证生产流程，出口标准包装。`;
+    ? `${notesClean}。${nameZh}，DEXOREN工厂直供。支持来样定制，ISO认证生产流程，出口标准包装。`
+    : `${nameZh}，DEXOREN工厂直供。自有工厂严格品控，支持来样定制，ISO认证生产流程，出口标准包装。`;
 
   const enDescKeywords = [enStyle, enMaterial ? enMaterial.toLowerCase() : "", enType.toLowerCase()].filter(Boolean);
   const enDescLead = enDescKeywords.length > 0
     ? `${enDescKeywords.join(", ")} design.`
     : "Quality craftsmanship and functional design.";
-  const enDescription = `${enName} — ${enDescLead} Factory direct from Shengyu Industrial. ISO-certified, custom specs available, export-grade packaging.`;
+  const enDescription = `${enName} — ${enDescLead} Factory direct from DEXOREN. ISO-certified, custom specs available, export-grade packaging.`;
 
   const esDescKeywords = [esStyle?.toLowerCase(), esMaterial?.toLowerCase(), esType?.toLowerCase()].filter(Boolean);
   const esDescLead = esDescKeywords.length > 0
     ? `Diseño ${esDescKeywords.join(", ")}.`
     : "Calidad artesanal y diseño funcional.";
-  const esDescription = `${esName} — ${esDescLead} Directo de fábrica de Shengyu Industrial. Certificación ISO, especificaciones personalizadas, embalaje de exportación.`;
+  const esDescription = `${esName} — ${esDescLead} Directo de fábrica de DEXOREN. Certificación ISO, especificaciones personalizadas, embalaje de exportación.`;
 
   const enSubtitle = (enStyle ? enStyle + " " : "") + (enMaterial || subCategory || "Product") + " — factory direct";
   const zhSubtitle = (notesClean ? notesClean.substring(0, 30) + " — " : "") + subZh + " — 工厂直供品质";

@@ -1,6 +1,6 @@
 import type { Product, MultiLangText } from "@/data/products";
 
-export type Locale = "en" | "zh" | "es";
+export type Locale = "en" | "zh" | "th" | "ms" | "fr" | "es";
 
 export function localizeProduct(product: Product, locale: Locale) {
   return {
@@ -12,6 +12,7 @@ export function localizeProduct(product: Product, locale: Locale) {
     badge: product.badge?.[locale] || product.badge?.en,
     seoTitle: product.seoTitle?.[locale] || product.seoTitle?.en,
     seoDescription: product.seoDescription?.[locale] || product.seoDescription?.en,
+    seoKeywords: product.seoKeywords?.[locale] || product.seoKeywords?.en,
   };
 }
 

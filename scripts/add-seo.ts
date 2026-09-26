@@ -12,33 +12,33 @@ const products = JSON.parse(fs.readFileSync(PRODUCTS_PATH, "utf-8")) as Record<s
 // SEO templates per category
 const seoTemplates: Record<string, { title: string; desc: string; keywords: string[] }> = {
   Furniture: {
-    title: "Factory Direct {name} — Custom {subcategory} Manufacturer | Shengyu Industrial",
-    desc: "Premium {name} manufactured by Shengyu Industrial. {subcategory} factory direct pricing, OEM/ODM available, ISO-certified production. Global shipping.",
+    title: "Factory Direct {name} — Custom {subcategory} Manufacturer | DEXOREN",
+    desc: "Premium {name} manufactured by DEXOREN. {subcategory} factory direct pricing, OEM/ODM available, ISO-certified production. Global shipping.",
     keywords: ["{name}", "{subcategory}", "furniture manufacturer", "factory direct furniture", "OEM furniture", "wholesale furniture", "China furniture factory"],
   },
   "Building Materials": {
-    title: "Wholesale {name} — {subcategory} Supplier | Shengyu Industrial",
-    desc: "High-performance {name} from Shengyu Industrial. {subcategory} factory direct, ISO-certified, bulk supply available. Global logistics.",
+    title: "Wholesale {name} — {subcategory} Supplier | DEXOREN",
+    desc: "High-performance {name} from DEXOREN. {subcategory} factory direct, ISO-certified, bulk supply available. Global logistics.",
     keywords: ["{name}", "{subcategory}", "building materials supplier", "construction materials", "wholesale building materials", "China building materials"],
   },
   Hardware: {
-    title: "{name} — {subcategory} Factory Direct | Shengyu Industrial",
-    desc: "Industrial-grade {name} by Shengyu Industrial. {subcategory} corrosion-resistant, TUV-tested, precision engineering. Factory direct pricing.",
+    title: "{name} — {subcategory} Factory Direct | DEXOREN",
+    desc: "Industrial-grade {name} by DEXOREN. {subcategory} corrosion-resistant, TUV-tested, precision engineering. Factory direct pricing.",
     keywords: ["{name}", "{subcategory}", "hardware supplier", "industrial hardware", "China hardware", "fasteners", "door hardware"],
   },
   Appliances: {
-    title: "{name} — Energy-Efficient {subcategory} | Shengyu Industrial",
-    desc: "{name} manufactured by Shengyu Industrial. {subcategory} energy-efficient design, safety-certified, bulk supply. Factory direct from China.",
+    title: "{name} — Energy-Efficient {subcategory} | DEXOREN",
+    desc: "{name} manufactured by DEXOREN. {subcategory} energy-efficient design, safety-certified, bulk supply. Factory direct from China.",
     keywords: ["{name}", "{subcategory}", "home appliances", "kitchen appliances", "China appliances factory", "OEM appliances"],
   },
   Lighting: {
-    title: "{name} — LED {subcategory} Manufacturer | Shengyu Industrial",
-    desc: "Energy-efficient {name} by Shengyu Industrial. {subcategory} 150 lm/W, IP65 rated, long lifespan. Factory direct LED lighting from China.",
+    title: "{name} — LED {subcategory} Manufacturer | DEXOREN",
+    desc: "Energy-efficient {name} by DEXOREN. {subcategory} 150 lm/W, IP65 rated, long lifespan. Factory direct LED lighting from China.",
     keywords: ["{name}", "{subcategory}", "LED lighting", "industrial lighting", "China LED factory", "commercial lighting"],
   },
   Others: {
-    title: "{name} — Industrial Grade {category} | Shengyu Industrial",
-    desc: "{name} from Shengyu Industrial. Professional-grade {category}, factory direct pricing, bulk supply, global shipping available.",
+    title: "{name} — Industrial Grade {category} | DEXOREN",
+    desc: "{name} from DEXOREN. Professional-grade {category}, factory direct pricing, bulk supply, global shipping available.",
     keywords: ["{name}", "{category}", "industrial products", "China manufacturer", "bulk supply", "factory direct"],
   },
 };
@@ -67,7 +67,7 @@ for (const p of products) {
 
   // Add seoTitle
   if (!p.seoTitle) {
-    p.seoTitle = fill(tpl.title, p) + " | Shengyu Industrial";
+    p.seoTitle = fill(tpl.title, p) + " | DEXOREN";
     // Limit to ~60 chars for SEO
     const title = p.seoTitle as string;
     if (title.length > 65) p.seoTitle = title.slice(0, 62) + "...";

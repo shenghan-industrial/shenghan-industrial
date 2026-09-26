@@ -4,29 +4,40 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconCart, IconMenu, IconClose } from "@/components/icons";
+import { IconCart, IconMenu, IconClose, IconChevronDown } from "@/components/icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { useT } from "@/lib/LanguageContext";
 import { useInquiryCart } from "@/lib/InquiryContext";
 import { siteConfig } from "@/data/site-config";
+import { categories } from "@/data/categories";
+import { localizeCategoryName, type Locale } from "@/lib/localizeProduct";
+
+interface NavItem {
+  key: string;
+  label: string;
+  href: string;
+  mega?: boolean;
+}
 
 export function Navbar() {
   const { t, locale } = useT();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const { totalItems, setCartOpen } = useInquiryCart();
   const pathname = usePathname();
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
-  useEffect(() => { closeMobile(); }, [pathname, closeMobile]);
+  useEffect(() => { closeMobile(); setMegaOpen(false); }, [pathname, closeMobile]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeMobile(); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { closeMobile(); setMegaOpen(false); } };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [closeMobile]);
@@ -36,12 +47,24 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const { brand } = siteConfig;
-  const navigation = [
-    { label: t("nav.home"), href: "/" },
-    { label: t("nav.products"), href: "/products" },
-    { label: t("nav.about"), href: "/about" },
-    { label: t("nav.contact"), href: "/contact" },
+
+  const navItems: NavItem[] = [
+    { key: "home", label: t("nav.home"), href: "/" },
+    { key: "products", label: t("nav.products"), href: "/products", mega: true },
+    { key: "services", label: t("nav.services"), href: "/services" },
+    { key: "newArrivals", label: t("nav.newArrivals"), href: "/new-arrivals" },
+    { key: "flashDeals", label: t("nav.flashDeals"), href: "/flash-deals" },
+    { key: "promotions", label: t("nav.promotions"), href: "/promotions" },
+    { key: "rankings", label: t("nav.rankings"), href: "/rankings" },
+    { key: "certifications", label: t("nav.certifications"), href: "/certifications" },
+    { key: "tradeTerms", label: t("nav.tradeTerms"), href: "/trade-terms" },
+    { key: "faq", label: t("nav.faq"), href: "/faq" },
+    { key: "about", label: t("nav.about"), href: "/about" },
+    { key: "contact", label: t("nav.contact"), href: "/contact" },
   ];
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <>
@@ -76,20 +99,77 @@ export function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center gap-0.5">
-            {navigation.map((link) => {
-              const isActive = pathname === link.href;
+            {navItems.map((item) => {
+              if (item.mega) {
+                return (
+                  <div
+                    key={item.key}
+                    className="relative"
+                    onMouseEnter={() => setMegaOpen(true)}
+                    onMouseLeave={() => setMegaOpen(false)}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`relative flex items-center gap-1 px-3 py-[13px] text-[13px] font-medium tracking-wide transition-all duration-300 rounded-lg ${
+                        isActive(item.href)
+                          ? "text-[#3D3730] dark:text-white bg-[#E8E2DC]/60 dark:bg-white/10"
+                          : "text-[#7B7068] dark:text-white/40 hover:text-[#3D3730] dark:hover:text-white hover:bg-[#E8E2DC]/30 dark:hover:bg-white/5"
+                      }`}
+                    >
+                      {item.label}
+                      <IconChevronDown size={14} className={`transition-transform duration-200 ${megaOpen ? "rotate-180" : ""}`} />
+                    </Link>
+                    <AnimatePresence>
+                      {megaOpen && (
+                        <div className="absolute left-0 top-full pt-2">
+                          <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 8 }}
+                            transition={{ duration: 0.15 }}
+                            className="w-[740px] max-w-[90vw] bg-white dark:bg-[#1A1816] rounded-2xl shadow-2xl border border-gray-100 dark:border-white/10 p-6"
+                          >
+                            <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100 dark:border-white/5">
+                              <span className="text-xs font-semibold uppercase tracking-wider text-[#7B7068] dark:text-white/40">{t("nav.productCategories")}</span>
+                              <Link
+                                href="/products"
+                                onClick={() => setMegaOpen(false)}
+                                className="text-xs font-medium text-[#B8A080] hover:underline"
+                              >
+                                {t("common.viewAll")}
+                              </Link>
+                            </div>
+                            <div className="grid grid-cols-3 gap-x-5 gap-y-0.5">
+                              {categories.map((cat) => (
+                                <Link
+                                  key={cat.id}
+                                  href={`/products?cat=${encodeURIComponent(cat.productCategory)}`}
+                                  onClick={() => setMegaOpen(false)}
+                                  className="flex items-center px-3 py-2 rounded-lg text-sm text-[#3D3730] dark:text-white/70 hover:bg-[#E8E2DC]/60 dark:hover:bg-white/5 hover:text-[#B8A080] transition-colors font-medium"
+                                >
+                                  {localizeCategoryName(cat, locale as Locale)}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        </div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
               return (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`relative px-5 py-[13px] text-[13px] font-medium tracking-wide transition-all duration-300 rounded-lg ${
-                    isActive
+                  key={item.key}
+                  href={item.href}
+                  className={`relative px-3 py-[13px] text-[13px] font-medium tracking-wide transition-all duration-300 rounded-lg ${
+                    isActive(item.href)
                       ? "text-[#3D3730] dark:text-white bg-[#E8E2DC]/60 dark:bg-white/10"
                       : "text-[#7B7068] dark:text-white/40 hover:text-[#3D3730] dark:hover:text-white hover:bg-[#E8E2DC]/30 dark:hover:bg-white/5"
                   }`}
                 >
-                  {link.label}
-                  {isActive && (
+                  {item.label}
+                  {isActive(item.href) && (
                     <motion.span
                       layoutId="nav-indicator"
                       className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-5 h-[2px] rounded-full bg-[#B8A080]"
@@ -132,14 +212,47 @@ export function Navbar() {
         {mobileOpen && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-40 lg:hidden">
             <div className="absolute inset-0 bg-[#3D3730]/98 dark:bg-black/98 backdrop-blur-xl" onClick={closeMobile} />
-            <motion.nav initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} className="relative flex flex-col items-center justify-center h-full gap-6">
-              {navigation.map((link, i) => (
-                <motion.div key={link.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 * i }}>
-                  <Link href={link.href} onClick={closeMobile} className="text-2xl font-semibold text-white/80 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+            <motion.nav initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} className="relative flex flex-col items-center justify-center h-full gap-4 overflow-y-auto py-16">
+              {navItems.map((item, i) => {
+                if (item.mega) {
+                  return (
+                    <motion.div key={item.key} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * i }} className="w-full max-w-xs">
+                      <button
+                        onClick={() => setMobileProductsOpen((o) => !o)}
+                        className="w-full flex items-center justify-center gap-1.5 text-xl font-semibold text-white/80 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                        <IconChevronDown size={16} className={`transition-transform ${mobileProductsOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileProductsOpen && (
+                          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden mt-2">
+                            <div className="grid grid-cols-2 gap-1 px-2">
+                              {categories.map((cat) => (
+                                <Link
+                                  key={cat.id}
+                                  href={`/products?cat=${encodeURIComponent(cat.productCategory)}`}
+                                  onClick={closeMobile}
+                                  className="px-3 py-2 text-sm text-white/55 hover:text-white rounded-lg hover:bg-white/5 transition-colors text-center"
+                                >
+                                  {localizeCategoryName(cat, locale as Locale)}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  );
+                }
+                return (
+                  <motion.div key={item.key} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * i }}>
+                    <Link href={item.href} onClick={closeMobile} className="text-xl font-semibold text-white/80 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="w-32 h-px bg-white/10" />
               <motion.button
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}

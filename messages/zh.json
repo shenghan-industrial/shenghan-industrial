@@ -2,12 +2,21 @@
   "nav": {
     "home": "首页",
     "products": "产品",
+    "productCategories": "全部分类",
+    "services": "服务",
+    "newArrivals": "新品上架",
+    "flashDeals": "限时抢购",
+    "promotions": "促销优惠",
+    "rankings": "热销排行",
+    "certifications": "资质认证",
+    "tradeTerms": "贸易条款",
+    "faq": "常见问题",
     "about": "关于我们",
     "contact": "联系我们",
     "call": "WhatsApp"
   },
   "hero": {
-    "title": "全球家居建材源头制造品牌",
+    "title": "家居百货一站式供应链合作伙伴",
     "subtitle": "工厂直供价格 · 可靠物流 · 全域合规 — 全球B端一站式供应链合作伙伴",
     "slide1": {
       "tagline": "工厂直供制造商",
@@ -114,14 +123,14 @@
   },
   "about": {
     "label": "关于我们",
-    "title": "关于盛煜实业",
-    "desc": "始于2002年——家具、建材、五金、灯具及工业清洁用品的工厂直供制造商。",
+    "title": "关于DEXOREN",
+    "desc": "创立于2002年——从源头制造商升级为家居百货一站式供应链平台。8,000㎡批发展厅、大型供应链仓库，整合三万余个单品，覆盖厨房餐饮、清洁用品、收纳整理、家纺布艺、家居装饰、宠物用品等全场景家用类目。",
     "storyLabel": "品牌故事",
     "storyTitle1": "以技术为根基",
     "storyTitle2": "以品质铸品牌",
-    "storyP1": "盛煜实业成立于2002年，是一家集研发、生产、全球销售于一体的综合性制造企业，拥有80,000平方米现代化生产基地，覆盖五大核心产品线。",
+    "storyP1": "DEXOREN成立于2002年，是一家集研发、生产、全球销售于一体的综合性制造企业，拥有80,000平方米现代化生产基地，覆盖五大核心产品线。",
     "storyP2": "公司建有CNAS认可实验室，配备国际先进的检测设备和研发仪器，拥有20余项国家专利。产品涵盖家具、建筑胶粘剂与密封胶、LED照明、建筑五金及工业清洁解决方案。",
-    "storyP3": "二十余年来，盛煜实业始终坚持以技术创新为驱动，以产品品质为生命线，为全球3,200+客户提供可靠的工厂直供产品。",
+    "storyP3": "二十余年来，DEXOREN始终坚持以技术创新为驱动，以产品品质为生命线，为全球3,200+客户提供可靠的工厂直供产品。",
     "journeyLabel": "发展历程",
     "journeyTitle": "发展历程",
     "journeyDesc": "二十余年砥砺前行，每一步都坚实有力。",
@@ -129,7 +138,7 @@
       {
         "year": "2002",
         "title": "公司成立",
-        "desc": "盛煜实业在广州成立，起步于建材贸易业务。"
+        "desc": "DEXOREN在广州成立，起步于建材贸易业务。"
       },
       {
         "year": "2008",
@@ -211,11 +220,11 @@
       "title": "100%透明流程",
       "desc": "远程视频看厂、实时参与验货、订单后台全权限开放——我们看到的，您都能看到。"
     },
-    "heroTitle": "全球化家居建材源头制造品牌",
+    "heroTitle": "家居百货一站式供应链",
     "heroSubtitle": "集自主研发、规模化生产、全球销售与一站式供应链服务于一体的现代化制造品牌",
     "positioning": "品牌定位",
-    "aboutShengyu": "关于盛煜实业",
-    "introP1": "盛煜实业创立于2002年，是一家集自主研发、规模化生产、全球销售、一站式供应链服务于一体的现代化家居建材制造品牌。我们以自有生产基地为核心，面向全球进口商、工程承包商、连锁零售商、跨境B端卖家提供工厂直供全品类建材与一体化解决方案。",
+    "aboutDEXOREN": "关于DEXOREN",
+    "introP1": "DEXOREN总部位于山东临沂，是一家家居百货一站式供应链合作伙伴。我们拥有8,000㎡批发展厅与大型供应链仓库，整合家居百货三万余个单品，覆盖厨房餐饮、清洁用品、收纳整理、家纺布艺、家居装饰、宠物用品、文具玩具等全场景家用类目；同时保留家具、灯具、建材、五金、家电等传统优势品类，面向全球进口商、连锁零售商、跨境B端卖家提供工厂直供与一体化采购解决方案。",
     "introP2": "深耕行业二十余年，我们秉持「品质为基、合规为先、服务为本、长期共赢」的核心价值观。不依靠产品差价盈利，仅收取标准化服务费用。如今产品与服务已覆盖全球30+国家，成为众多海外工程企业、连锁商超、区域分销商的长期战略合作伙伴。",
     "philosophy": "品牌理念",
     "teamLabel": "专业团队",
@@ -244,7 +253,7 @@
     "appointment": "欢迎预约参观",
     "connectLabel": "关注我们",
     "connectTitle": "关注我们的社媒",
-    "connectDesc": "关注盛煜实业官方社媒账号，获取最新产品资讯和行业动态。",
+    "connectDesc": "关注DEXOREN官方社媒账号，获取最新产品资讯和行业动态。",
     "formTitle": "在线咨询",
     "faq": {
       "label": "常见问题",
@@ -259,7 +268,7 @@
       "q4": "可以在大货前获取样品吗？",
       "a4": "可以。样品费用在首单中退还。我们通过DHL/FedEx/UPS发货并提供追踪。",
       "q5": "接受哪些付款方式？",
-      "a5": "我们接受T/T（30%定金，70%发货前）、即期信用证和西联汇款。长期合作伙伴可申请账期。",
+      "a5": "我们接受电汇 T/T 与即期信用证（L/C at sight）。首次合作可用 Trade Assurance / 第三方担保，样品及小额款项可用 PayPal 或西联汇款。定金与尾款条件按订单商定。",
       "q6": "是否提供物流和运输支持？",
       "a6": "是的。我们与主要货代合作，可安排FOB/CIF/DDP全球运输，含集装箱优化。"
     }
@@ -285,16 +294,18 @@
     "needHelp": "需要帮助？",
     "helpHours": "7×24小时 多语种全球客服",
     "productsList": {
+      "homeMerchandise": "家居百货",
       "furniture": "家居/家具",
       "buildingMaterials": "建材",
       "hardware": "五金",
       "appliances": "家电",
-      "lighting": "照明",
-      "others": "其他"
+      "lighting": "照明"
     },
     "companyList": {
       "about": "关于我们",
       "certs": "资质认证",
+      "tradeTerms": "贸易条款",
+      "faq": "常见问题",
       "contact": "联系我们"
     }
   },
@@ -302,6 +313,15 @@
     "trustFactory": "自有工厂",
     "trustISO": "ISO认证",
     "trustResponse": "24h内回复",
+    "tradeTitle": "贸易与物流",
+    "tradeMoq": "最小起订量",
+    "tradeLead": "生产交期",
+    "tradeTerm": "贸易条款",
+    "tradePack": "包装方式",
+    "tradeCert": "资质认证",
+    "tradeBrand": "品牌",
+    "tradePrice": "参考价格（FOB）",
+    "tradePriceNote": "仅供参考，最终以报价为准",
     "requestQuote": "立即询价",
     "whatsappLabel": "WhatsApp咨询"
   },
@@ -401,8 +421,8 @@
     "daysLeft": "仅剩 {n} 天 — 售完为止"
   },
   "common": {
-    "brand": "盛煜实业",
-    "slogan": "全球家居建材制造商 | 一站式供应链合作伙伴",
+    "brand": "DEXOREN",
+    "slogan": "家居百货一站式供应链 | 8,000㎡展厅 · 30,000+单品",
     "search": "搜索",
     "searchPlaceholder": "搜索产品、品类...",
     "backToHome": "返回首页",
@@ -455,5 +475,70 @@
     "ctaDesc": "我们不靠服务赚钱——服务是我们的差异化壁垒。九大增值服务对合作客户完全免费，仅第三方工本费按实收取。",
     "getStarted": "立即咨询",
     "browseProducts": "浏览产品"
+  },
+  "certifications": {
+    "heroLabel": "合规与信任",
+    "heroTitle": "资质认证与合规",
+    "heroSubtitle": "所有证书均为工厂原件，可按目的国提供下载。我们协助您顺利清关，满足全球各地的本地法规要求。",
+    "introTitle": "为国际贸易而生的合规体系",
+    "introDesc": "DEXOREN每一款产品都具备国际权威认证支撑——让您的货物顺畅清关，让买家对货架上的商品深信不疑。",
+    "applicableTo": "适用类目",
+    "region": "适用地区",
+    "standard": "标准",
+    "requestTitle": "需要您所在市场的证书文件？",
+    "requestDesc": "我们提供目的国原件证书副本（PDF）及第三方检测报告（SGS、TÜV、Intertek），助力您的进口清关与投标。",
+    "requestBtn": "索取证书",
+    "downloadNote": "证书按订单与目的国出具。告知目标市场，我们即发送您所需的完整文件包。"
+  },
+  "tradeTerms": {
+    "heroLabel": "我们的合作方式",
+    "heroTitle": "贸易条款 · 付款 · 物流",
+    "heroSubtitle": "透明、灵活、出口就绪。从贸易术语到付款与交付，一切都为让跨境采购更简单、低风险而设计。",
+    "incotermsTitle": "支持的贸易术语",
+    "incotermsSub": "选择最适合您物流安排的交货条款。多数订单以 FOB 或 CIF 自中国主要港口发运。",
+    "paymentsTitle": "付款方式",
+    "paymentsSub": "为从单个样品到整柜订单的各类业务提供灵活、安全的付款选择。",
+    "logisticsTitle": "运输与物流",
+    "logisticsSub": "我们与主流承运商合作并设有海外仓，确保货物准时送达全球任何地点。",
+    "factsTitle": "订单要点",
+    "moqTitle": "最小起订量（MOQ）",
+    "moqDesc": "现货：10 件/SKU 起；OEM 贴牌：500–1,000 件/SKU 起。多个 SKU 可拼柜出运，降低单件成本。",
+    "leadTimeTitle": "生产交期",
+    "leadTimeDesc": "标准品 25–35 天；定制/OEM 订单 35–45 天；可安排加急生产。",
+    "sampleTitle": "样品",
+    "sampleDesc": "提供样品，经 DHL/FedEx/UPS 带追踪发货；样品费可在首笔大货订单中抵扣。",
+    "packagingTitle": "包装",
+    "packagingDesc": "标准出口纸箱加缓冲材料；可定制彩盒、条码与打托。木质托盘/木箱可按要求做 ISPM-15 熏蒸并加盖官方标识。",
+    "ctaTitle": "准备洽谈您的订单？",
+    "ctaDesc": "告诉我们目标市场、产品与数量，我们将为您推荐最优贸易术语、付款方案与运输路线。",
+    "ctaBtn": "联系我们的团队",
+    "paymentsLabel": "安全 · 灵活",
+    "logisticsLabel": "卖到哪里，送到哪里",
+    "factsLabel": "下单前必读",
+    "complianceLabel": "质检 · 索赔 · 合规",
+    "complianceTitle": "质量检验、索赔与合规",
+    "complianceSub": "出货前、运输中与到货后，我们如何保障您的品质、货款与市场准入。",
+    "qualityTitle": "质量检验",
+    "qualityDesc": "支持出货前由 SGS、必维（BV）或 Intertek 等第三方验货——可您指定机构，也可由我方安排。不良率超出约定 AQL 时，我方负责返工或按数量赔付。",
+    "claimsTitle": "索赔与售后",
+    "claimsDesc": "到货后 7 天内凭照片或视频提出短装、破损或错发。经确认的索赔，我方以补货、下笔订单抵扣或退款方式处理。",
+    "certTitle": "认证与合规",
+    "certDesc": "可协助办理目的国合规认证：沙特 SASO、阿联酋 ESMA、肯尼亚 PVOC、尼日利亚 SONCAP 及装前检验 COC；食品接触类可提供 FDA / LFGB / EU 1935/2004。费用与周期按产品另议。",
+    "oemTitle": "OEM 与贴牌",
+    "oemDesc": "支持定制 logo、颜色、包装与条码，500–1,000 件/SKU 起。我方负责设计稿、模具与外箱设计，量产前先确认样品。",
+    "quoteTitle": "报价与币种",
+    "quoteDesc": "报价以美元出具（可按需提供人民币价），有效期 30 天。定金与尾款条件按订单商定。",
+    "catalogBtn": "索取产品目录（PDF）"
+  },
+  "faqPage": {
+    "heroLabel": "买家支持",
+    "heroTitle": "常见问题解答",
+    "heroSubtitle": "在下首单之前，B2B 买家最常问的起订量、价格、打样、合规与运输问题，这里都有答案。",
+    "linkCerts": "资质认证",
+    "linkCertsDesc": "我们可按订单出具的合规文件",
+    "linkTrade": "贸易条款",
+    "linkTradeDesc": "贸易术语、付款方式与交期",
+    "ctaTitle": "还有其他问题？",
+    "ctaDesc": "通过 WhatsApp 联系我们或提交询盘——外贸团队 24 小时内回复。"
   }
 }

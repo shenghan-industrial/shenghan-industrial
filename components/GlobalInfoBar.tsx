@@ -48,25 +48,37 @@ function useWorldClocks(locale: string) {
 
 function useRates() {
   const [rates, setRates] = useState<Rates>({});
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
+
   useEffect(() => {
-    fetch("https://open.er-api.com/v6/latest/USD")
-      .then((r) => r.json())
-      .then((d) => {
-        if (d?.rates) {
+    let cancelled = false;
+
+    const load = () => {
+      fetch("https://open.er-api.com/v6/latest/USD", { cache: "no-store" })
+        .then((r) => r.json())
+        .then((d) => {
+          if (cancelled || !d?.rates) return;
           const f: Rates = {};
           CURRENCIES.forEach((c) => { if (d.rates[c.code]) f[c.code] = d.rates[c.code]; });
           setRates(f);
-        }
-      })
-      .catch(() => {});
+          setUpdatedAt(new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" }));
+        })
+        .catch(() => {});
+    };
+
+    load();
+    // Keep the ticker live: re-fetch every 10 minutes.
+    const id = setInterval(load, 10 * 60 * 1000);
+    return () => { cancelled = true; clearInterval(id); };
   }, []);
-  return rates;
+
+  return { rates, updatedAt };
 }
 
 export function GlobalInfoBar() {
   const { locale } = useT();
   const times = useWorldClocks(locale);
-  const rates = useRates();
+  const { rates, updatedAt } = useRates();
   const fallback: Rates = { EUR: 0.92, GBP: 0.79, AED: 3.67, SAR: 3.75, CNY: 7.25, THB: 36.5, RUB: 91.5, JPY: 154, KRW: 1350 };
   const r = Object.keys(rates).length > 0 ? rates : fallback;
   const fmt = (v: number) => v >= 50 ? Math.round(v).toLocaleString() : v.toFixed(2);
@@ -75,6 +87,8 @@ export function GlobalInfoBar() {
     worldTime: { en: "World Time", zh: "世界时间", es: "Hora Mundial" },
     exchangeRate: { en: "Exchange Rate", zh: "实时汇率", es: "Tipo de Cambio" },
     equals: { en: "1 USD =", zh: "1 美元 =", es: "1 USD =" },
+    live: { en: "Live", zh: "实时", es: "En vivo" },
+    updated: { en: "Updated", zh: "更新于", es: "Actualizado" },
   };
 
   const currencyNames: Record<string, Record<string, string>> = {
@@ -108,8 +122,17 @@ export function GlobalInfoBar() {
           <span className="text-[10px] md:text-sm text-[#B8A080] font-semibold uppercase tracking-wider flex items-center gap-1.5">
             <DollarSign className="w-3 h-3 md:w-4 md:h-4" />
             {labels.exchangeRate[locale] || labels.exchangeRate.en}
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-emerald-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              {labels.live[locale] || labels.live.en}
+            </span>
           </span>
           <span className="text-white/50 text-[11px] md:text-sm">{labels.equals[locale] || labels.equals.en}</span>
+          {updatedAt && (
+            <span className="text-[10px] md:text-xs text-white/35">
+              {labels.updated[locale] || labels.updated.en} {updatedAt}
+            </span>
+          )}
           {CURRENCIES.map((c) => (
             <span key={c.code} className="text-[13px] md:text-base text-white/70 whitespace-nowrap">
               <span className="text-white font-bold">{fmt(r[c.code] || 0)}</span>

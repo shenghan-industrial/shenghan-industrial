@@ -2,12 +2,21 @@
   "nav": {
     "home": "Inicio",
     "products": "Productos",
+    "productCategories": "Todas las Categorías",
+    "services": "Servicios",
+    "newArrivals": "Novedades",
+    "flashDeals": "Ofertas Flash",
+    "promotions": "Promociones",
+    "rankings": "Clasificaciones",
+    "certifications": "Certificaciones",
+    "tradeTerms": "Términos Comerciales",
+    "faq": "FAQ",
     "about": "Nosotros",
     "contact": "Contacto",
     "call": "WhatsApp"
   },
   "hero": {
-    "title": "Fabricante Global de Materiales para el Hogar y Construcción",
+    "title": "Su Socio Integral para Artículos del Hogar",
     "subtitle": "Precios directos de fábrica, logística confiable, cumplimiento global — socio integral de cadena de suministro para compradores B2B.",
     "slide1": {
       "tagline": "Fabricante Directo de Fábrica",
@@ -114,14 +123,14 @@
   },
   "about": {
     "label": "Sobre Nosotros",
-    "title": "Sobre Shengyu Industrial",
-    "desc": "Desde 2002 — fabricante directo de fábrica de muebles, materiales de construcción, ferretería, iluminación y productos de limpieza industrial.",
+    "title": "Sobre DEXOREN",
+    "desc": "Desde 2002 — de fabricante de origen a socio integral de la cadena de suministro de artículos del hogar. Showroom mayorista de 8.000 m², almacén integrado y más de 30.000 SKUs en cocina, limpieza, almacenaje, textiles, decoración, mascotas y más.",
     "storyLabel": "Nuestra Historia",
     "storyTitle1": "Construido en Tecnología",
     "storyTitle2": "Definido por la Calidad",
-    "storyP1": "Fundada en 2002, Shengyu Industrial es un fabricante integral que integra I+D, fabricación y distribución global en cinco líneas principales de productos. Con sede en Guangzhou, operamos una moderna instalación de producción de 80.000 m².",
+    "storyP1": "Fundada en 2002, DEXOREN es un fabricante integral que integra I+D, fabricación y distribución global en cinco líneas principales de productos. Con sede en Guangzhou, operamos una moderna instalación de producción de 80.000 m².",
     "storyP2": "Nuestro laboratorio acreditado CNAS alberga equipos de prueba de clase mundial e instrumentación de I+D, respaldado por más de 20 patentes nacionales. Nuestra cartera de productos abarca muebles, adhesivos y selladores para construcción, iluminación LED, ferretería para construcción y soluciones de limpieza industrial.",
-    "storyP3": "Durante más de dos décadas, Shengyu Industrial ha sido impulsada por la innovación tecnológica y definida por la calidad del producto — entregando productos confiables directamente de fábrica a más de 3.200 clientes en todo el mundo.",
+    "storyP3": "Durante más de dos décadas, DEXOREN ha sido impulsada por la innovación tecnológica y definida por la calidad del producto — entregando productos confiables directamente de fábrica a más de 3.200 clientes en todo el mundo.",
     "journeyLabel": "Nuestro Trayecto",
     "journeyTitle": "Nuestro Trayecto",
     "journeyDesc": "Más de dos décadas de progreso incansable — cada paso ha sido firme y decidido.",
@@ -129,7 +138,7 @@
       {
         "year": "2002",
         "title": "Fundación de la Empresa",
-        "desc": "Shengyu Industrial se estableció en Guangzhou, comenzando como un negocio de comercio de materiales de construcción."
+        "desc": "DEXOREN se estableció en Guangzhou, comenzando como un negocio de comercio de materiales de construcción."
       },
       {
         "year": "2008",
@@ -211,11 +220,11 @@
       "title": "Proceso 100% Transparente",
       "desc": "Recorridos de fábrica por video remoto, participación en inspección en tiempo real y acceso completo a su panel de pedidos — usted ve todo lo que nosotros vemos."
     },
-    "heroTitle": "Marca Global de Fabricación de Materiales",
+    "heroTitle": "Cadena de Suministro Integral de Artículos del Hogar",
     "heroSubtitle": "Marca moderna que integra I+D, producción a gran escala y servicios globales de cadena de suministro",
     "positioning": "Posicionamiento",
-    "aboutShengyu": "Sobre Shengyu Industrial",
-    "introP1": "Shengyu Industrial, fundada en 2002, es una marca moderna de fabricación que integra I+D, producción a gran escala, ventas globales y servicios de cadena de suministro. Proporcionamos productos directos de fábrica para importadores, contratistas y minoristas globales.",
+    "aboutDEXOREN": "Sobre DEXOREN",
+    "introP1": "DEXOREN, fundada en 2002, es una marca moderna de fabricación que integra I+D, producción a gran escala, ventas globales y servicios de cadena de suministro. Proporcionamos productos directos de fábrica para importadores, contratistas y minoristas globales.",
     "introP2": "Con más de 20 años en la industria, nos adherimos a los valores de Calidad, Cumplimiento, Servicio y Cooperación. No dependemos del margen de productos. Hoy servimos a clientes en más de 30 países.",
     "philosophy": "Filosofía",
     "teamLabel": "Equipo Profesional",
@@ -259,7 +268,7 @@
       "q4": "¿Puedo obtener muestras antes del pedido al por mayor?",
       "a4": "Sí, hay muestras disponibles. El costo de la muestra es reembolsable con su primer pedido al por mayor. Enviamos por DHL/FedEx/UPS con seguimiento.",
       "q5": "¿Qué condiciones de pago aceptan?",
-      "a5": "Aceptamos T/T (30% depósito, 70% antes del envío), L/C a la vista y Western Union. Los socios a largo plazo pueden calificar para términos netos.",
+      "a5": "Aceptamos transferencia bancaria T/T y L/C a la vista. Trade Assurance / depósito en garantía disponible para nuevos compradores, y PayPal o Western Union para muestras e importes pequeños. El anticipo y el saldo se acuerdan por pedido.",
       "q6": "¿Ofrecen soporte logístico y de envío?",
       "a6": "Sí. Tenemos asociaciones con los principales transitarios y podemos organizar envíos FOB/CIF/DDP a todo el mundo. Optimización de contenedores incluida."
     }
@@ -285,16 +294,18 @@
     "needHelp": "¿Necesita ayuda?",
     "helpHours": "Soporte Multilingüe 24/7",
     "productsList": {
+      "homeMerchandise": "Artículos del Hogar",
       "furniture": "Muebles",
       "buildingMaterials": "Materiales de Construcción",
       "hardware": "Ferretería",
       "appliances": "Electrodomésticos",
-      "lighting": "Iluminación",
-      "others": "Otros"
+      "lighting": "Iluminación"
     },
     "companyList": {
       "about": "Sobre Nosotros",
       "certs": "Certificaciones",
+      "tradeTerms": "Términos Comerciales",
+      "faq": "FAQ",
       "contact": "Contacto"
     }
   },
@@ -302,6 +313,15 @@
     "trustFactory": "Fábrica Propia",
     "trustISO": "Cert. ISO",
     "trustResponse": "Resp. < 24h",
+    "tradeTitle": "Comercio y Envío",
+    "tradeMoq": "Pedido Mínimo",
+    "tradeLead": "Plazo de Producción",
+    "tradeTerm": "Términos Comerciales",
+    "tradePack": "Embalaje",
+    "tradeCert": "Certificaciones",
+    "tradeBrand": "Marca",
+    "tradePrice": "Precio de Referencia (FOB)",
+    "tradePriceNote": "Solo indicativo — precio final según cotización",
     "requestQuote": "Solicitar Cotización",
     "whatsappLabel": "Chatear por WhatsApp"
   },
@@ -401,8 +421,8 @@
     "daysLeft": "Solo quedan {n} días — hasta agotar existencias"
   },
   "common": {
-    "brand": "Shengyu Industrial",
-    "slogan": "Fabricante Global de Materiales | Socio Integral de Cadena de Suministro",
+    "brand": "DEXOREN",
+    "slogan": "Cadena de Suministro de Artículos del Hogar | Showroom de 8.000 m² · Más de 30.000 SKUs",
     "search": "Buscar",
     "searchPlaceholder": "Buscar productos...",
     "backToHome": "Volver al Inicio",
@@ -455,5 +475,70 @@
     "ctaDesc": "No ganamos con los servicios — son nuestra ventaja competitiva. Los nueve servicios son gratuitos para clientes cooperativos.",
     "getStarted": "Comenzar",
     "browseProducts": "Ver Productos"
+  },
+  "certifications": {
+    "heroLabel": "Cumplimiento y Confianza",
+    "heroTitle": "Certificaciones y Cumplimiento",
+    "heroSubtitle": "Todos los certificados son originales de fábrica y se pueden descargar por país bajo pedido. Le ayudamos a despachar aduanas y cumplir regulaciones locales en todo el mundo.",
+    "introTitle": "Cumplimiento Integrado para el Comercio Global",
+    "introDesc": "Cada producto DEXOREN cuenta con certificaciones internacionales reconocidas, para que sus envíos despachen sin problemas y sus compradores confíen en lo que hay en el estante.",
+    "applicableTo": "Aplica a",
+    "region": "Región",
+    "standard": "Norma",
+    "requestTitle": "¿Necesita Certificados para su Mercado?",
+    "requestDesc": "Proporcionamos copias originales de certificados por país (PDF) e informes de pruebas de terceros (SGS, TÜV, Intertek) para apoyar su despacho aduanero y licitaciones.",
+    "requestBtn": "Solicitar Certificados",
+    "downloadNote": "Los certificados se emiten por pedido y país de destino. Díganos su mercado objetivo y le enviaremos el conjunto de documentos exacto."
+  },
+  "tradeTerms": {
+    "heroLabel": "Cómo Trabajamos Con Usted",
+    "heroTitle": "Términos, Pago y Envío",
+    "heroSubtitle": "Transparente, flexible y listo para exportar. Desde los Incoterms hasta el pago y la entrega, todo está pensado para simplificar su abastecimiento transfronterizo.",
+    "incotermsTitle": "Incoterms que Manejamos",
+    "incotermsSub": "Elija el término de entrega que se ajuste a su logística. La mayoría de los pedidos sale FOB o CIF desde puertos chinos principales.",
+    "paymentsTitle": "Métodos de Pago",
+    "paymentsSub": "Opciones flexibles y seguras para pedidos de cualquier tamaño, desde una muestra hasta un contenedor completo.",
+    "logisticsTitle": "Envío y Logística",
+    "logisticsSub": "Colaboramos con las principales navieras y operamos almacenes en el extranjero para que su mercancía llegue a tiempo, a cualquier lugar.",
+    "factsTitle": "Datos del Pedido",
+    "moqTitle": "Pedido Mínimo (MOQ)",
+    "moqDesc": "Stock disponible: desde 10 pzs por SKU. OEM / marca privada: 500–1.000 pzs por SKU. Varios SKU pueden consolidarse en un contenedor para reducir el costo unitario.",
+    "leadTimeTitle": "Plazo de Producción",
+    "leadTimeDesc": "Productos estándar: 25–35 días. Pedidos OEM: 35–45 días. Producción exprés disponible bajo pedido.",
+    "sampleTitle": "Muestras",
+    "sampleDesc": "Muestras disponibles y enviadas por DHL/FedEx/UPS con seguimiento. El costo de la muestra se devuelve en su primer pedido grande.",
+    "packagingTitle": "Embalaje",
+    "packagingDesc": "Cajas de exportación estándar con protección; cajas de color, códigos de barras y paletizado a pedido. Pallets y cajas de madera fumigados ISPM-15 con marcado oficial cuando se requiera.",
+    "ctaTitle": "¿Listo para Hablar de su Pedido?",
+    "ctaDesc": "Díganos su mercado, productos y cantidades — le propondremos el mejor Incoterm, plan de pago y ruta de envío.",
+    "ctaBtn": "Contacte a Nuestro Equipo",
+    "paymentsLabel": "Seguro y Flexible",
+    "logisticsLabel": "Llegamos Donde Vendes",
+    "factsLabel": "Antes de Pedir",
+    "complianceLabel": "Calidad, Reclamos y Cumplimiento",
+    "complianceTitle": "Inspección de Calidad, Reclamos y Cumplimiento",
+    "complianceSub": "Cómo protegemos su calidad, su dinero y su acceso al mercado — antes, durante y después del envío.",
+    "qualityTitle": "Inspección de Calidad",
+    "qualityDesc": "Aceptamos inspección previa al envío por SGS, Bureau Veritas o Intertek — usted designa el inspector o lo coordinamos nosotros. Si la tasa de defectos supera el AQL acordado, reprocesamos o acreditamos las unidades afectadas.",
+    "claimsTitle": "Reclamos y Posventa",
+    "claimsDesc": "Reporte faltantes, daños o envíos incorrectos dentro de los 7 días posteriores a la llegada con evidencia fotográfica o en video. Resolvemos reclamos válidos con reposición, crédito o reembolso, según cada caso.",
+    "certTitle": "Certificaciones y Cumplimiento",
+    "certDesc": "Apoyamos la conformidad del mercado destino: SASO (Arabia Saudita), ESMA (EAU), PVOC (Kenia), SONCAP (Nigeria) e inspección COC, además de FDA / LFGB / UE 1935/2004 para contacto alimentario. Costo y plazo según producto.",
+    "oemTitle": "OEM y Marca Privada",
+    "oemDesc": "Logo, color, empaque y códigos de barras personalizados desde 500–1.000 pzs por SKU. Gestionamos arte, moldes y diseño de caja, con aprobación de muestra antes de la producción.",
+    "quoteTitle": "Cotización y Moneda",
+    "quoteDesc": "Cotizamos en USD (CNY a pedido) y las ofertas son válidas por 30 días. El anticipo y el saldo se acuerdan por pedido.",
+    "catalogBtn": "Solicitar Catálogo (PDF)"
+  },
+  "faqPage": {
+    "heroLabel": "Soporte al Comprador",
+    "heroTitle": "Preguntas, resueltas",
+    "heroSubtitle": "Todo lo que los compradores B2B suelen preguntar sobre MOQ, precios, muestras, cumplimiento y envío antes del primer pedido.",
+    "linkCerts": "Certificaciones",
+    "linkCertsDesc": "Documentos de cumplimiento que emitimos por pedido",
+    "linkTrade": "Términos Comerciales",
+    "linkTradeDesc": "Incoterms, métodos de pago y plazos",
+    "ctaTitle": "¿Tiene otra pregunta?",
+    "ctaDesc": "Escríbanos por WhatsApp o envíe una consulta — nuestro equipo de exportación responde en 24 horas."
   }
 }

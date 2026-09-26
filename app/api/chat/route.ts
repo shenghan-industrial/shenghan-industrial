@@ -4,8 +4,8 @@ import { NextResponse } from "next/server";
 import { products as productsRaw } from "@/data/products";
 import { migrateProduct } from "@/data/products";
 import { siteConfig } from "@/data/site-config";
+import { llmChat, llmConfigured } from "@/lib/llm";
 
-const DASHSCOPE_KEY = process.env.DASHSCOPE_API_KEY;
 const WHATSAPP = siteConfig.contact.phone.href;
 
 // Build a searchable product index
@@ -65,7 +65,7 @@ function searchProducts(query: string, max = 8): ProductEntry[] {
 }
 
 export async function POST(request: Request) {
-  if (!DASHSCOPE_KEY) {
+  if (!llmConfigured()) {
     return NextResponse.json({ reply: "AI chat not configured." });
   }
 
@@ -89,7 +89,7 @@ export async function POST(request: Request) {
     const dashMessages = [
       {
         role: "system",
-        content: `你是盛煜实业(Shengyu Industrial)的B2B客服助手。根据下面的产品信息简洁回答客户问题。用客户的语言回复。列出产品时包含名称和价格。不要说"没有相关信息"——如果匹配不精准，推荐最相关的品类。`,
+        content: `你是DEXOREN(DEXOREN)的B2B客服助手。根据下面的产品信息简洁回答客户问题。用客户的语言回复。列出产品时包含名称和价格。不要说"没有相关信息"——如果匹配不精准，推荐最相关的品类。`,
       },
       {
         role: "system",
@@ -101,32 +101,9 @@ export async function POST(request: Request) {
       })),
     ];
 
-    const res = await fetch(
-      "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${DASHSCOPE_KEY}`,
-        },
-        body: JSON.stringify({
-          model: "qwen-turbo",
-          messages: dashMessages,
-          max_tokens: 400,
-          temperature: 0.2,
-        }),
-        signal: AbortSignal.timeout(15000),
-      }
-    );
+    const reply = await llmChat(dashMessages, { maxTokens: 400, temperature: 0.75 });
 
-    const data = (await res.json()) as {
-      choices?: { message?: { content?: string } }[];
-    };
-
-    const reply = data.choices?.[0]?.message?.content ||
-      "Sorry, I couldn't process that. Would you like to speak with our team via WhatsApp?";
-
-    return NextResponse.json({ reply });
+    return NextResponse.json({ reply: reply || "Sorry, I couldn't process that. Would you like to speak with our team via WhatsApp?" });
   } catch (e) {
     console.error("[chat] Error:", e);
     return NextResponse.json({
@@ -136,5 +113,5 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  return NextResponse.json({ configured: !!DASHSCOPE_KEY, whatsappUrl: WHATSAPP });
+  return NextResponse.json({ configured: llmConfigured(), whatsappUrl: WHATSAPP });
 }

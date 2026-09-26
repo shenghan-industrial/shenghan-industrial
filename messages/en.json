@@ -2,12 +2,21 @@
   "nav": {
     "home": "Home",
     "products": "Products",
+    "productCategories": "All Categories",
+    "services": "Services",
+    "newArrivals": "New Arrivals",
+    "flashDeals": "Flash Deals",
+    "promotions": "Promotions",
+    "rankings": "Rankings",
+    "certifications": "Certifications",
+    "tradeTerms": "Trade Terms",
+    "faq": "FAQ",
     "about": "About",
     "contact": "Contact",
     "call": "WhatsApp"
   },
   "hero": {
-    "title": "Global Home & Building Materials Manufacturer",
+    "title": "Your One-Stop Home & General Merchandise Partner",
     "subtitle": "Factory direct pricing, reliable logistics, full compliance — one-stop supply chain partner for B2B buyers worldwide.",
     "slide1": {
       "tagline": "Direct Factory Manufacturer",
@@ -114,14 +123,14 @@
   },
   "about": {
     "label": "About Us",
-    "title": "About Shengyu Industrial",
-    "desc": "Since 2002 — a direct factory manufacturer of furniture, building materials, hardware, lighting, and industrial cleaning products.",
+    "title": "About DEXOREN",
+    "desc": "Since 2002 — from a trusted manufacturer to a one-stop home & general merchandise supply chain. 8,000㎡ wholesale showroom, integrated warehouse, 30,000+ SKUs covering kitchen, cleaning, storage, textiles, décor, pet and more.",
     "storyLabel": "Our Story",
     "storyTitle1": "Built on Technology",
     "storyTitle2": "Defined by Quality",
-    "storyP1": "Founded in 2002, Shengyu Industrial is a comprehensive manufacturer integrating R&D, manufacturing, and global distribution across five core product lines. Headquartered in Guangzhou, we operate an 80,000 m² modern production facility.",
+    "storyP1": "Founded in 2002, DEXOREN is a comprehensive manufacturer integrating R&D, manufacturing, and global distribution across five core product lines. Headquartered in Guangzhou, we operate an 80,000 m² modern production facility.",
     "storyP2": "Our CNAS-accredited laboratory houses world-class testing equipment and R&D instrumentation, supported by 20+ national patents. Our product portfolio spans furniture, building adhesives & sealants, LED lighting, construction hardware, and industrial cleaning solutions.",
-    "storyP3": "For over two decades, Shengyu Industrial has been driven by technological innovation and defined by product quality — delivering reliable, factory-direct products to 3,200+ clients worldwide.",
+    "storyP3": "For over two decades, DEXOREN has been driven by technological innovation and defined by product quality — delivering reliable, factory-direct products to 3,200+ clients worldwide.",
     "journeyLabel": "Our Journey",
     "journeyTitle": "Our Journey",
     "journeyDesc": "Over two decades of relentless progress — every step has been purposeful and resolute.",
@@ -129,7 +138,7 @@
       {
         "year": "2002",
         "title": "Company Founded",
-        "desc": "Shengyu Industrial was established in Guangzhou, starting as a building materials trading business."
+        "desc": "DEXOREN was established in Guangzhou, starting as a building materials trading business."
       },
       {
         "year": "2008",
@@ -211,11 +220,11 @@
       "title": "100% Transparent Process",
       "desc": "Remote video factory tours, real-time inspection participation, and full access to your order dashboard — you see everything we see."
     },
-    "heroTitle": "Global Home & Building Materials Manufacturer",
+    "heroTitle": "One-Stop Home & General Merchandise Supply Chain",
     "heroSubtitle": "Integrating R&D, large-scale production, global distribution and supply chain services",
     "positioning": "Positioning",
-    "aboutShengyu": "About Shengyu Industrial",
-    "introP1": "Shengyu Industrial was founded in 2002 — a modern manufacturing brand integrating R&D, large-scale production, global sales and supply chain services. Operating self-owned production bases, we deliver factory-direct products and integrated solutions for global importers, contractors, chain retailers and B2B cross-border sellers.",
+    "aboutDEXOREN": "About DEXOREN",
+    "introP1": "DEXOREN was founded in 2002 — a modern manufacturing brand integrating R&D, large-scale production, global sales and supply chain services. Operating self-owned production bases, we deliver factory-direct products and integrated solutions for global importers, contractors, chain retailers and B2B cross-border sellers.",
     "introP2": "With over 20 years of expertise, we uphold Quality First, Compliance First, Service-Oriented and Win-win Cooperation. We do not profit from product markup — charging only standardized service fees. Today we serve B2B partners across 30+ countries.",
     "philosophy": "Philosophy",
     "teamLabel": "Professional Team",
@@ -259,7 +268,7 @@
       "q4": "Can I get samples before bulk order?",
       "a4": "Yes, samples are available. Sample cost is refundable with your first bulk order. We ship via DHL/FedEx/UPS with tracking.",
       "q5": "What payment terms do you accept?",
-      "a5": "We accept T/T (30% deposit, 70% before shipment), L/C at sight, and Western Union. Long-term partners may qualify for net terms.",
+      "a5": "We accept T/T bank transfer and L/C at sight. Trade Assurance / escrow is available for first-time buyers, and PayPal or Western Union for samples and small amounts. Deposit and balance terms are agreed per order.",
       "q6": "Do you provide logistics and shipping support?",
       "a6": "Yes. We have partnerships with major freight forwarders and can arrange FOB/CIF/DDP shipping worldwide. Container optimization included."
     }
@@ -285,16 +294,18 @@
     "needHelp": "Need help?",
     "helpHours": "24/7 Multilingual Global Support",
     "productsList": {
+      "homeMerchandise": "Home & General Merchandise",
       "furniture": "Furniture",
       "buildingMaterials": "Building Materials",
       "hardware": "Hardware",
       "appliances": "Appliances",
-      "lighting": "Lighting",
-      "others": "Others"
+      "lighting": "Lighting"
     },
     "companyList": {
       "about": "About Us",
       "certs": "Certifications",
+      "tradeTerms": "Trade Terms",
+      "faq": "FAQ",
       "contact": "Contact"
     }
   },
@@ -302,6 +313,15 @@
     "trustFactory": "Own Factory",
     "trustISO": "ISO Certified",
     "trustResponse": "Reply < 24h",
+    "tradeTitle": "Trade & Shipping",
+    "tradeMoq": "MOQ",
+    "tradeLead": "Lead Time",
+    "tradeTerm": "Trade Terms",
+    "tradePack": "Packaging",
+    "tradeCert": "Certifications",
+    "tradeBrand": "Brand",
+    "tradePrice": "Reference Price (FOB)",
+    "tradePriceNote": "Indicative only — final price confirmed on quote",
     "requestQuote": "Request Quote",
     "whatsappLabel": "Chat on WhatsApp"
   },
@@ -401,8 +421,8 @@
     "daysLeft": "{n} days left — while stocks last"
   },
   "common": {
-    "brand": "Shengyu Industrial",
-    "slogan": "Global Home & Building Materials Manufacturer | One-stop Supply Chain Partner",
+    "brand": "DEXOREN",
+    "slogan": "Home & General Merchandise Supply Chain | 8,000㎡ Showroom · 30,000+ SKUs",
     "search": "Search",
     "searchPlaceholder": "Search products...",
     "backToHome": "Back to Home",
@@ -455,5 +475,70 @@
     "ctaDesc": "We don't profit from services — they are our competitive edge. All nine services free for cooperative clients.",
     "getStarted": "Get Started",
     "browseProducts": "Browse Products"
+  },
+  "certifications": {
+    "heroLabel": "Compliance & Trust",
+    "heroTitle": "Certifications & Compliance",
+    "heroSubtitle": "All certificates are factory-original and available for per-country download upon request. We help you clear customs and meet local regulatory requirements worldwide.",
+    "introTitle": "Built-In Compliance for Global Trade",
+    "introDesc": "Every DEXOREN product is backed by internationally recognized certifications — so your shipments clear customs smoothly and your buyers trust what's on the shelf.",
+    "applicableTo": "Applies To",
+    "region": "Region",
+    "standard": "Standard",
+    "requestTitle": "Need Certificate Files for Your Market?",
+    "requestDesc": "We provide original, per-country certificate copies (PDF) and third-party test reports (SGS, TÜV, Intertek) to support your import clearance and tenders.",
+    "requestBtn": "Request Certificates",
+    "downloadNote": "Certificates are issued per order and destination country. Tell us your target market and we'll send the exact documentation set you need."
+  },
+  "tradeTerms": {
+    "heroLabel": "How We Work With You",
+    "heroTitle": "Trade Terms, Payment & Shipping",
+    "heroSubtitle": "Transparent, flexible and export-ready. From Incoterms to payment and delivery, everything is designed to make cross-border sourcing simple and low-risk.",
+    "incotermsTitle": "Incoterms We Support",
+    "incotermsSub": "Choose the delivery term that fits your logistics setup. Most orders ship FOB or CIF from major Chinese ports.",
+    "paymentsTitle": "Payment Methods",
+    "paymentsSub": "Flexible, secure options for orders of every size — from a single sample to a full container.",
+    "logisticsTitle": "Shipping & Logistics",
+    "logisticsSub": "We partner with major carriers and run overseas warehouses so your goods arrive on time, anywhere.",
+    "factsTitle": "Order Essentials",
+    "moqTitle": "Minimum Order Quantity",
+    "moqDesc": "In-stock items: from 10 pcs per SKU / design. OEM & private label: 500–1,000 pcs per SKU. Mixed SKUs can be consolidated into one container to lower your per-unit cost.",
+    "leadTimeTitle": "Production Lead Time",
+    "leadTimeDesc": "Standard products: 25–35 days. Custom/OEM orders: 35–45 days. Rush production available on request.",
+    "sampleTitle": "Samples",
+    "sampleDesc": "Samples are available and ship via DHL/FedEx/UPS with tracking. Sample cost is refundable against your first bulk order.",
+    "packagingTitle": "Packaging",
+    "packagingDesc": "Standard export cartons with cushioning; custom color boxes, barcodes and palletization available. Wooden pallets and crates are ISPM-15 fumigated with official marking on request.",
+    "ctaTitle": "Ready to Discuss Your Order?",
+    "ctaDesc": "Tell us your target market, products and quantities — we'll propose the best Incoterm, payment plan and shipping route.",
+    "ctaBtn": "Contact Our Team",
+    "paymentsLabel": "Secure & Flexible",
+    "logisticsLabel": "Reach Anywhere You Sell",
+    "factsLabel": "Know Before You Order",
+    "complianceLabel": "Quality, Claims & Compliance",
+    "complianceTitle": "Quality Inspection, Claims & Compliance",
+    "complianceSub": "How we protect your quality, your money and your market access — before, during and after shipment.",
+    "qualityTitle": "Quality Inspection",
+    "qualityDesc": "Pre-shipment inspection by SGS, Bureau Veritas or Intertek is welcome — you appoint the inspector, or we arrange one. If the defect rate exceeds the agreed AQL, we re-make or credit the affected units.",
+    "claimsTitle": "Claims & After-Sales",
+    "claimsDesc": "Report shortage, damage or wrong shipment within 7 days of arrival with photo or video evidence. We settle valid claims by replacement, credit against your next order, or refund — agreed case by case.",
+    "certTitle": "Certifications & Compliance",
+    "certDesc": "We support destination-market conformity: SASO (Saudi Arabia), ESMA (UAE), PVOC (Kenya), SONCAP (Nigeria) and COC pre-shipment inspection, plus FDA / LFGB / EU 1935/2004 for food-contact items. Cost and lead time quoted per product.",
+    "oemTitle": "OEM & Private Label",
+    "oemDesc": "Custom logo, colour, packaging and barcodes from 500–1,000 pcs per SKU. We handle artwork, tooling and export carton design, with sample approval before mass production.",
+    "quoteTitle": "Quotation & Currency",
+    "quoteDesc": "Quotes are issued in USD (CNY available on request) and remain valid for 30 days. Deposit and balance terms are agreed per order.",
+    "catalogBtn": "Request Catalog (PDF)"
+  },
+  "faqPage": {
+    "heroLabel": "Buyer Support",
+    "heroTitle": "Questions, answered",
+    "heroSubtitle": "Everything B2B buyers usually ask about MOQ, pricing, sampling, compliance and shipping — before placing the first order.",
+    "linkCerts": "Certifications",
+    "linkCertsDesc": "Compliance documents we can issue per order",
+    "linkTrade": "Trade Terms",
+    "linkTradeDesc": "Incoterms, payment methods and lead times",
+    "ctaTitle": "Still have a question?",
+    "ctaDesc": "Message us on WhatsApp or send an enquiry — our export team replies within 24 hours."
   }
 }

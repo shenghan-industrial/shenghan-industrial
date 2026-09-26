@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
+import { llmChat, llmConfigured, getLLMConfig } from "@/lib/llm";
 
 export const runtime = "edge";
 
-const API_KEY = process.env.DASHSCOPE_API_KEY || "";
-const API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions";
-
-const SYSTEM_PROMPT = `你是盛煜实业产品文案专员。**必须仔细观察用户上传的图片**，根据图片中产品的实际外观（颜色、材质、造型、风格）生成文案。禁止使用模板话术，每款产品文案必须不同。
+const SYSTEM_PROMPT = `你是DEXOREN产品文案专员。**必须仔细观察用户上传的图片**，根据图片中产品的实际外观（颜色、材质、造型、风格）生成文案。禁止使用模板话术，每款产品文案必须不同。
 
 ## 编码规则
 品牌SY，每个子品类有专属3字母编码，编码唯一不变，序号从001递增。
@@ -61,7 +59,7 @@ const SYSTEM_PROMPT = `你是盛煜实业产品文案专员。**必须仔细观�
 | OTH |
 
 ## 命名规则
-产品名必须以「盛煜」开头。家具：盛煜+系列+单品名；其他：盛煜+风格/功能+产品名
+产品名必须以「DEXOREN」开头。家具：DEXOREN+系列+单品名；其他：DEXOREN+风格/功能+产品名
 
 ## 输出格式（直接输出，无开场白）
 ### 产品编码：
@@ -77,7 +75,7 @@ const SYSTEM_PROMPT = `你是盛煜实业产品文案专员。**必须仔细观�
 
 export async function POST(request: Request) {
   try {
-    if (!API_KEY) return NextResponse.json({ reply: "请先配置 DASHSCOPE_API_KEY 环境变量" });
+    if (!llmConfigured()) return NextResponse.json({ reply: "请先配置 LLM_API_KEY 环境变量" });
 
     const body = (await request.json()) as {
       messages?: { role: string; content: string }[];
@@ -106,11 +104,12 @@ export async function POST(request: Request) {
     }
     content.push({ type: "text", text: lastMsg });
 
-    const res = await fetch(API_URL, {
+    const cfg = getLLMConfig();
+    const res = await fetch(cfg.baseUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${cfg.apiKey}`,
       },
       body: JSON.stringify({
         model: "qwen-vl-max",

@@ -1,12 +1,31 @@
 export type ProductStatus = "draft" | "published" | "archived";
 
 // ── Phase 3: Multi-language types ─────────────────────────
-export interface MultiLangText { en: string; zh: string; es: string; }
-export interface MultiLangArray { en: string[]; zh: string[]; es: string[]; }
+// th / ms / fr are optional: legacy records only carry en / zh / es and the
+// UI falls back to English when a locale is absent.
+export interface MultiLangText {
+  en: string;
+  zh: string;
+  es: string;
+  th?: string;
+  ms?: string;
+  fr?: string;
+}
+export interface MultiLangArray {
+  en: string[];
+  zh: string[];
+  es: string[];
+  th?: string[];
+  ms?: string[];
+  fr?: string[];
+}
 export interface MultiLangSpecs {
   en: { label: string; value: string }[];
   zh: { label: string; value: string }[];
   es: { label: string; value: string }[];
+  th?: { label: string; value: string }[];
+  ms?: { label: string; value: string }[];
+  fr?: { label: string; value: string }[];
 }
 
 // ── Product Interface (Phase 3: object-based i18n) ────────
@@ -33,6 +52,13 @@ export interface Product {
   sku?: string;
   slug?: string;
   status?: ProductStatus;
+  moq?: string;
+  minOrder?: string;
+  leadTime?: string;
+  tradeTerm?: string;
+  packaging?: string;
+  brand?: string;
+  certifications?: string[];
   seoTitle?: MultiLangText;
   seoDescription?: MultiLangText;
   seoKeywords?: MultiLangText;
@@ -85,12 +111,36 @@ function isOldFormat(p: Record<string, unknown>): boolean {
   return typeof p.name === "string";
 }
 
+/** Per-category trade defaults — applied by migrateProduct when a field is missing.
+ *  Source of truth for the legacy (TS-module) products that seed the Edge in-memory KV. */
+const TRADE_DEFAULTS: Record<string, { moq: number; packaging: string; certifications: string[]; price: string }> = {
+  "Stationery Supplies": { moq: 100, packaging: "Export carton + inner box", certifications: ["ISO 9001", "BSCI"], price: "US$ 0.20–1.50 / pc" },
+  "Fashion Accessories": { moq: 50, packaging: "OPP bag + export carton", certifications: ["ISO 9001", "BSCI"], price: "US$ 0.50–3.00 / pc" },
+  "Beauty & Skincare": { moq: 100, packaging: "Color box + export carton", certifications: ["ISO 9001", "REACH"], price: "US$ 0.80–4.00 / pc" },
+  "Hardware Supplies": { moq: 200, packaging: "Blister card + export carton", certifications: ["ISO 9001"], price: "US$ 0.30–2.50 / pc" },
+  "Hygiene Products": { moq: 500, packaging: "Export carton", certifications: ["ISO 9001", "REACH"], price: "US$ 0.10–0.80 / pc" },
+  "Toys & Entertainment": { moq: 100, packaging: "Window box + export carton", certifications: ["CE", "EN71", "ISO 9001"], price: "US$ 1.00–8.00 / pc" },
+  "Sports & Outdoor": { moq: 100, packaging: "Carry pouch + export carton", certifications: ["ISO 9001", "BSCI"], price: "US$ 2.00–15.00 / pc" },
+  "Home Appliances": { moq: 50, packaging: "Gift box + export carton + foam", certifications: ["CE", "RoHS", "UL"], price: "US$ 5.00–40.00 / pc" },
+  "Lighting": { moq: 50, packaging: "Inner box + export carton", certifications: ["CE", "RoHS"], price: "US$ 2.00–25.00 / pc" },
+  "Furniture": { moq: 5, packaging: "KD carton + foam + corner guard", certifications: ["FSC", "ISO 9001"], price: "US$ 30–150 / pc" },
+  "Plastic Products": { moq: 300, packaging: "Export carton", certifications: ["ISO 9001", "REACH"], price: "US$ 0.20–1.80 / pc" },
+};
+const TRADE_FALLBACK = { moq: 100, packaging: "Export carton", certifications: ["ISO 9001"], price: "US$ 1.00–10.00 / pc" };
+const TRADE_TERMS = "EXW · FOB · CIF · DDP";
+const DEFAULT_BRAND = "DEXOREN";
+const DEFAULT_LEAD_TIME = "25–35 days";
+
+function tradeDefaultsFor(category?: string) {
+  return TRADE_DEFAULTS[category || ""] || TRADE_FALLBACK;
+}
+
 /** Migrate an old-format product to new MultiLang format */
 export function migrateProduct(raw: Record<string, unknown>): Product {
   if (!isOldFormat(raw)) return raw as unknown as Product;
   const p = raw as unknown as OldProduct;
   const now = new Date().toISOString();
-  return {
+  const result: Product = {
     id: p.id as string,
     name: mlv(p.name, p.nameZh, p.nameEs),
     subtitle: mlv(p.subtitle, p.subtitleZh, p.subtitleEs),
@@ -121,7 +171,56 @@ export function migrateProduct(raw: Record<string, unknown>): Product {
     gallery: p.gallery as string[] | undefined,
     createdAt: (p.createdAt as string) || now,
     updatedAt: (p.updatedAt as string) || now,
+    moq: p.moq as string | undefined,
+    minOrder: p.minOrder as string | undefined,
+    leadTime: p.leadTime as string | undefined,
+    tradeTerm: p.tradeTerm as string | undefined,
+    packaging: p.packaging as string | undefined,
+    brand: p.brand as string | undefined,
+    certifications: p.certifications as string[] | undefined,
   };
+
+  // Fill trade & shipping defaults when the source product lacks them.
+  const d = tradeDefaultsFor(result.category);
+  const moqStr = `${d.moq} pcs`;
+  if (!result.moq) result.moq = moqStr;
+  if (!result.minOrder) result.minOrder = moqStr;
+  if (!result.leadTime) result.leadTime = DEFAULT_LEAD_TIME;
+  if (!result.tradeTerm) result.tradeTerm = TRADE_TERMS;
+  if (!result.packaging) result.packaging = d.packaging;
+  if (!result.brand) result.brand = DEFAULT_BRAND;
+  if (!result.certifications || result.certifications.length === 0) result.certifications = d.certifications;
+  if (!result.price) result.price = d.price;
+
+  // SEO defaults for legacy products that carry no metadata.
+  const enName = result.name?.en || "";
+  const zhName = result.name?.zh || enName;
+  const cat = result.category || "General Merchandise";
+  if (!result.seoTitle || !result.seoTitle.en) {
+    const full = `${enName} | Factory Direct ${cat}`;
+    result.seoTitle = {
+      en: full.length > 60 ? `${enName} | DEXOREN` : full,
+      zh: `${zhName} | 厂家直供${cat}`,
+      es: `${enName} | ${cat} directo de fábrica`,
+    };
+  }
+  if (!result.seoDescription || !result.seoDescription.en) {
+    const lead = result.leadTime || DEFAULT_LEAD_TIME;
+    result.seoDescription = {
+      en: `${enName} — factory-direct ${cat.toLowerCase()} from DEXOREN. Minimum order ${result.moq}, lead time ${lead}. OEM/ODM customization, export packaging, worldwide delivery.`,
+      zh: `${zhName} — DEXOREN厂家直供${cat}。起订量${result.moq}，交期${lead}。支持OEM/ODM定制、出口包装及全球配送。`,
+      es: `${enName} — ${cat} directo de fábrica de DEXOREN. Pedido mínimo ${result.moq}, plazo ${lead}. Personalización OEM/ODM, embalaje de exportación y envío mundial.`,
+    };
+  }
+  if (!result.seoKeywords || !result.seoKeywords.en) {
+    result.seoKeywords = {
+      en: [enName, `wholesale ${cat.toLowerCase()}`, `${cat.toLowerCase()} supplier`, `China ${cat.toLowerCase()} manufacturer`, "factory direct", "DEXOREN"].filter(Boolean).join(", "),
+      zh: `${zhName},批发${cat},${cat}供应商,厂家直供,贴牌定制`,
+      es: `${enName}, ${cat} al por mayor, proveedor de ${cat}, fábrica directa`,
+    };
+  }
+
+  return result;
 }
 
 // ── Static seed data (old format, migrated at runtime) ──
@@ -160,9 +259,9 @@ function legacyPlaceholder(name: string, cat: string, sub: string, img: string, 
     subtitleEs: (subEsMap[sub] || sub) + " — calidad directa de fábrica",
     category: cat, subCategory: sub,
     partnerId: categoryPartnerMap[cat] || "shenghan-industrial",
-    description: "Shengyu Industrial " + sub.toLowerCase() + " — " + name + ". Manufactured in our own facilities.",
-    descriptionZh: "盛煜实业 " + (subZhMap[sub] || sub) + " — " + zhName + "。自有工厂制造。",
-    descriptionEs: "Shengyu Industrial " + (subEsMap[sub] || sub).toLowerCase() + " — " + esName + ". Fabricado en nuestras propias instalaciones.",
+    description: "DEXOREN " + sub.toLowerCase() + " — " + name + ". Manufactured in our own facilities.",
+    descriptionZh: "DEXOREN " + (subZhMap[sub] || sub) + " — " + zhName + "。自有工厂制造。",
+    descriptionEs: "DEXOREN " + (subEsMap[sub] || sub).toLowerCase() + " — " + esName + ". Fabricado en nuestras propias instalaciones.",
     features: ["Premium materials", "ISO-certified", "Custom specs available", "Export packaging"],
     featuresZh: ["优质材料", "ISO认证", "支持定制", "出口包装"],
     featuresEs: ["Materiales premium", "Certificado ISO", "Especificaciones personalizadas", "Embalaje de exportación"],
@@ -189,13 +288,13 @@ function legacyPlaceholder(name: string, cat: string, sub: string, img: string, 
 const sofas: Record<string, unknown>[] = Array.from({ length: 15 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return {
-    id: "sofa-" + n, name: "Shengyu Sofa " + n, nameZh: "盛煜沙发 " + n, nameEs: "Shengyu Sofá " + n,
+    id: "sofa-" + n, name: "DEXOREN Sofa " + n, nameZh: "DEXOREN沙发 " + n, nameEs: "DEXOREN Sofá " + n,
     subtitle: "Premium upholstered sofa — factory direct",
     subtitleZh: "高端软体沙发 — 工厂直供", subtitleEs: "Sofá tapizado premium — directo de fábrica",
     category: "Furniture", subCategory: "Sofas",
-    description: "Shengyu designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame.",
-    descriptionZh: "盛煜设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。",
-    descriptionEs: "Sofá de diseño Shengyu con tapizado premium, espuma de alta resiliencia y estructura de madera maciza.",
+    description: "DEXOREN designer sofa with premium fabric/leather upholstery, high-resilience foam, and solid wood frame.",
+    descriptionZh: "DEXOREN设计师沙发，采用高端布艺/真皮面料、高回弹海绵和实木框架。",
+    descriptionEs: "Sofá de diseño DEXOREN con tapizado premium, espuma de alta resiliencia y estructura de madera maciza.",
     features: [
       "High-density foam with premium fabric or genuine leather",
       "Solid hardwood frame with reinforced joinery",
@@ -225,13 +324,13 @@ const sofas: Record<string, unknown>[] = Array.from({ length: 15 }, (_, i) => {
 const beds: Record<string, unknown>[] = Array.from({ length: 6 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return {
-    id: "bed-" + n, name: "Shengyu Bed " + n, nameZh: "盛煜床 " + n, nameEs: "Shengyu Cama " + n,
+    id: "bed-" + n, name: "DEXOREN Bed " + n, nameZh: "DEXOREN床 " + n, nameEs: "DEXOREN Cama " + n,
     subtitle: "Luxurious upholstered bed — factory direct",
     subtitleZh: "豪华软体床 — 工厂直供", subtitleEs: "Cama tapizada de lujo — directo de fábrica",
     category: "Furniture", subCategory: "Beds",
-    description: "Shengyu premium soft bed with elegant upholstered headboard and solid wood slatted base.",
-    descriptionZh: "盛煜高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。",
-    descriptionEs: "Cama suave premium Shengyu con elegante cabecero tapizado y base de listones de madera maciza.",
+    description: "DEXOREN premium soft bed with elegant upholstered headboard and solid wood slatted base.",
+    descriptionZh: "DEXOREN高端软床，优雅布艺/皮革床头板搭配实木排骨架底座。",
+    descriptionEs: "Cama suave premium DEXOREN con elegante cabecero tapizado y base de listones de madera maciza.",
     features: ["Soft-touch fabric headboard", "Solid wood slatted base", "Modern to luxury styles", "Tool-free assembly"],
     featuresZh: ["亲肤面料软包床头板", "实木排骨架底座", "现代至奢华款式", "免工具安装"],
     featuresEs: ["Cabecero tapizado en tela suave", "Base de listones de madera maciza", "Estilos modernos a lujo", "Montaje sin herramientas"],
@@ -257,8 +356,8 @@ const cabinets = ["Display Cabinet", "TV Stand Cabinet", "Storage Cabinet"].map(
 
 const adhesives = [
   {
-    id: "silicone-sealant-sg9000", name: "Shengyu SG-9000 Silicone Structural Sealant",
-    nameZh: "盛煜 SG-9000 硅酮结构密封胶", nameEs: "Shengyu SG-9000 Sellador Estructural de Silicona",
+    id: "silicone-sealant-sg9000", name: "DEXOREN SG-9000 Silicone Structural Sealant",
+    nameZh: "DEXOREN SG-9000 硅酮结构密封胶", nameEs: "DEXOREN SG-9000 Sellador Estructural de Silicona",
     subtitle: "For high-rise curtain wall structural bonding",
     category: "Building Materials", subCategory: "Adhesives",
     description: "Two-component silicone structural sealant for high-rise building curtain walls.",
@@ -278,8 +377,8 @@ const panels = ["MDF Board", "Plywood Panel", "Particle Board"].map((name, i) =>
 
 const fasteners = [
   {
-    id: "anchor-kit-hw500", name: "Shengyu Heavy-Duty Anchor Fastener Kit HW-500",
-    nameZh: "盛煜 重型锚固套件 HW-500", nameEs: "Shengyu Kit de Anclaje de Alta Resistencia HW-500",
+    id: "anchor-kit-hw500", name: "DEXOREN Heavy-Duty Anchor Fastener Kit HW-500",
+    nameZh: "DEXOREN 重型锚固套件 HW-500", nameEs: "DEXOREN Kit de Anclaje de Alta Resistencia HW-500",
     subtitle: "Professional anchoring for concrete and masonry",
     category: "Hardware", subCategory: "Fasteners",
     description: "High-strength AISI 304 stainless steel anchor fastener kit.",
@@ -314,8 +413,8 @@ const deskLamps = ["LED Desk Lamp", "Architect Task Lamp"].map((name, i) =>
 
 const pendantLights = [
   {
-    id: "led-highbay-lt200", name: "Shengyu LED High Bay Light LT-200", nameZh: "盛煜 LED 高棚灯 LT-200",
-    nameEs: "Shengyu Luz LED de Alta Bahía LT-200", subtitle: "Energy-efficient industrial lighting",
+    id: "led-highbay-lt200", name: "DEXOREN LED High Bay Light LT-200", nameZh: "DEXOREN LED 高棚灯 LT-200",
+    nameEs: "DEXOREN Luz LED de Alta Bahía LT-200", subtitle: "Energy-efficient industrial lighting",
     category: "Lighting", subCategory: "Pendant Lights",
     description: "High-efficiency LED industrial pendant/high bay light delivering 150 lm/W. IP65-rated.",
     features: ["150 lm/W efficiency", "IP65 dustproof/waterproof", "Flicker-free 0-10V dimming", "50,000-hour lifespan"],
@@ -333,8 +432,8 @@ const floorLamps = ["Tripod Floor Lamp", "Arc Floor Lamp"].map((name, i) =>
   legacyPlaceholder(name, "Lighting", "Floor Lamps", "/images/product-" + (i + 27) + ".svg"));
 
 const others = [{
-  id: "industrial-degreaser-cc300", name: "Shengyu Industrial Multi-Surface Degreaser CC-300",
-  nameZh: "盛煜 工业多表面除油剂 CC-300", nameEs: "Shengyu Industrial Desengrasante Multiuso CC-300",
+  id: "industrial-degreaser-cc300", name: "DEXOREN Multi-Surface Degreaser CC-300",
+  nameZh: "DEXOREN 工业多表面除油剂 CC-300", nameEs: "DEXOREN Desengrasante Multiuso CC-300",
   subtitle: "Heavy-duty cleaning for commercial and industrial use",
   category: "Others",
   description: "Professional-grade water-based degreaser. Biodegradable and phosphate-free.",
@@ -347,10 +446,12 @@ const others = [{
 }];
 
 // Assemble all static products (legacy format)
+// NOTE: Building Materials / Hardware / Appliances / Others were removed — they are
+// not 七夕优品汇 mini-program categories. Only Furniture + Lighting are kept as
+// supplementary categories (per user decision).
 const staticProductsRaw: Record<string, unknown>[] = [
-  ...sofas, ...beds, ...cabinets, ...adhesives, ...panels,
-  ...fasteners, ...doorWindowHw, ...bathroomHw, ...fans, ...heaters,
-  ...kitchenApps, ...deskLamps, ...pendantLights, ...floorLamps, ...others,
+  ...sofas, ...beds, ...cabinets,
+  ...deskLamps, ...pendantLights, ...floorLamps,
 ];
 
 // Merge with products.json overrides
@@ -399,7 +500,9 @@ export const products = productsRaw;
 export { staticProductsRaw as staticProducts };
 
 export const productCategories = [
-  "All Products", "Furniture", "Building Materials", "Hardware", "Appliances", "Lighting", "Others",
+  "All Products", "Stationery Supplies", "Beauty & Skincare", "Fashion Accessories",
+  "Toys & Entertainment", "Hygiene Products", "Hardware Supplies", "Home Appliances",
+  "Sports & Outdoor", "Plastic Products", "Lighting", "Furniture",
 ];
 
 export const subCategoryMap: Record<string, string[]> = {

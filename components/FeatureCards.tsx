@@ -41,7 +41,27 @@ export function FeatureCards() {
               className="group relative rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-1.5 min-h-[220px] md:min-h-[280px]"
               style={{ boxShadow: "0 1px 2px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03)" }}
             >
-              <div className="absolute inset-0" style={{ background: gradients[i] }} />
+              {/* Background photo + brand-brown overlay for text readability */}
+              {card.image && (
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(58,51,44,0.62) 0%, rgba(43,38,33,0.78) 55%, rgba(26,24,22,0.9) 100%)",
+                }}
+              />
+              <div className="absolute inset-0" style={{ background: gradients[i], opacity: 0.28 }} />
               <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")` }} />
               <div className="absolute top-0 left-0 w-1/2 h-1/2 opacity-25" style={{ background: `radial-gradient(ellipse at top left, ${lights[i]} 0%, transparent 70%)` }} />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 70%)" }} />

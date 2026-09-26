@@ -1,0 +1,544 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "productCategories": "Toutes les catégories",
+    "services": "Services",
+    "newArrivals": "Nouveautés",
+    "flashDeals": "Ventes flash",
+    "promotions": "Promotions",
+    "rankings": "Classements",
+    "certifications": "Certifications",
+    "tradeTerms": "Conditions commerciales",
+    "faq": "FAQ",
+    "about": "À propos",
+    "contact": "Contact",
+    "call": "WhatsApp"
+  },
+  "hero": {
+    "title": "Votre partenaire unique en articles de maison et produits généraux",
+    "subtitle": "Prix direct usine, logistique fiable, conformité totale — un partenaire de chaîne d'approvisionnement tout-en-un pour les acheteurs B2B du monde entier.",
+    "slide1": {
+      "tagline": "Fabricant en direct d'usine",
+      "title": "Direct usine",
+      "accent": "Qualité mondiale",
+      "desc": "Meubles, matériaux de construction, quincaillerie, éclairage et produits de nettoyage industriels — fabriqués dans nos propres installations, expédiés dans le monde entier."
+    },
+    "slide2": {
+      "tagline": "Fabrication avancée",
+      "title": "La précision",
+      "accent": "À chaque étape",
+      "desc": "8 lignes de production automatisées fonctionnant 24h/24 avec un contrôle qualité en temps réel, de la matière première au produit fini."
+    },
+    "slide3": {
+      "tagline": "Assurance qualité",
+      "title": "Chaque lot",
+      "accent": "Rigoureusement testé",
+      "desc": "Notre laboratoire accrédité CNAS effectue 12 tests obligatoires par lot — rien n'est expédié sans les avoir réussis."
+    },
+    "slide4": {
+      "tagline": "Portés par l'innovation",
+      "title": "25 ans",
+      "accent": "D'excellence technique",
+      "desc": "Plus de 20 brevets nationaux et une équipe R&D dédiée qui repousse les limites de la technologie des matériaux."
+    },
+    "explore": "Découvrir les produits",
+    "touch": "Nous contacter",
+    "stats": {
+      "cert": "Certifications",
+      "projects": "Projets réalisés",
+      "capacity": "Capacité annuelle"
+    },
+    "overlay": {
+      "title": "De l'usine à votre projet",
+      "sub": "Direct usine · Prix compétitif · Logistique fiable · Service après-vente mondial",
+      "explore": "Découvrir les solutions",
+      "consult": "Consultation gratuite"
+    }
+  },
+  "media": {
+    "slogan": "Direct usine, portée mondiale",
+    "desc": "De l'approvisionnement en matières premières à l'inspection finale, chaque étape de notre processus de fabrication est certifiée ISO. Regardez la visite de notre usine pour voir nos installations en action.",
+    "watch": "Voir la visite d'usine"
+  },
+  "products": {
+    "searchPrefix": "Recherche : ",
+    "allCategories": "Toutes les catégories"
+  },
+  "factory": {
+    "label": "Notre usine",
+    "title": "Une fabrication de pointe",
+    "desc": "Notre base de production de 80 000 m² abrite 8 lignes de production automatisées d'une capacité annuelle de 50 000 tonnes. De la synthèse des matières premières à l'emballage du produit fini, chaque étape est contrôlée et surveillée avec précision.",
+    "features": [
+      "8 lignes de production entièrement automatisées, 24h/24",
+      "Laboratoire accrédité CNAS avec plus de 50 instruments de test",
+      "Contrôle qualité en temps réel à chaque étape de production",
+      "Entrepôt intelligent à température contrôlée"
+    ],
+    "badge": "ISO 9001"
+  },
+  "quality": {
+    "label": "Contrôle qualité",
+    "title": "Chaque lot, rigoureusement testé",
+    "desc": "Notre laboratoire accrédité CNAS effectue 12 tests obligatoires sur chaque lot de production — de la résistance à la traction et à l'allongement au vieillissement UV et à la résistance chimique. Rien n'est expédié sans les avoir réussis.",
+    "features": [
+      "12 tests qualité obligatoires par lot de production",
+      "Plus de 1 000 heures de simulation de vieillissement accéléré",
+      "Traçabilité complète, de la matière première au produit fini",
+      "Certification tierce SGS/TÜV disponible"
+    ],
+    "badge": "Laboratoire CNAS"
+  },
+  "gallery": {
+    "label": "Galerie",
+    "title": "À l'intérieur de notre usine",
+    "desc": "Découvrez nos installations de production de pointe et nos processus de contrôle qualité.",
+    "all": "Tout",
+    "categories": [
+      "Tout",
+      "Usine",
+      "Produits",
+      "Qualité"
+    ],
+    "view": "Voir"
+  },
+  "stats": {
+    "capacity": "Capacité annuelle",
+    "projects": "Projets réalisés",
+    "clients": "Clients entreprises",
+    "experience": "Expérience sectorielle",
+    "unit1": "K tonnes",
+    "unit2": "+",
+    "unit3": "+",
+    "unit4": " ans"
+  },
+  "partners": {
+    "prev": "Partenaires précédents",
+    "next": "Partenaires suivants"
+  },
+  "cta": {
+    "label": "Contact",
+    "title": "Obtenez votre solution sur mesure",
+    "desc": "Parlez-nous des exigences de votre projet. Notre équipe technique concevra la solution produit optimale pour vous."
+  },
+  "about": {
+    "label": "À propos",
+    "title": "À propos de DEXOREN",
+    "desc": "Depuis 2002 — d'un fabricant de confiance à une chaîne d'approvisionnement tout-en-un en articles de maison et produits généraux. Showroom de gros de 8 000 m², entrepôt intégré, plus de 30 000 références couvrant la cuisine, le nettoyage, le rangement, le textile, la décoration, les animaux de compagnie et plus encore.",
+    "storyLabel": "Notre histoire",
+    "storyTitle1": "Bâtie sur la technologie",
+    "storyTitle2": "Définie par la qualité",
+    "storyP1": "Fondée en 2002, DEXOREN est un fabricant complet intégrant la R&D, la production et la distribution mondiale sur cinq gammes de produits principales. Basée à Guangzhou, nous exploitons une installation de production moderne de 80 000 m².",
+    "storyP2": "Notre laboratoire accrédité CNAS abrite des équipements de test et des instruments de R&D de classe mondiale, soutenus par plus de 20 brevets nationaux. Notre portefeuille couvre les meubles, les adhésifs et mastics pour la construction, l'éclairage LED, la quincaillerie de construction et les solutions de nettoyage industriel.",
+    "storyP3": "Depuis plus de deux décennies, DEXOREN est portée par l'innovation technologique et définie par la qualité de ses produits — livrant des produits fiables, directement d'usine, à plus de 3 200 clients dans le monde.",
+    "journeyLabel": "Notre parcours",
+    "journeyTitle": "Notre parcours",
+    "journeyDesc": "Plus de deux décennies de progrès constants — chaque étape a été délibérée et résolue.",
+    "timeline": [
+      {
+        "year": "2002",
+        "title": "Création de l'entreprise",
+        "desc": "DEXOREN est fondée à Guangzhou, en démarrant comme entreprise de négoce de matériaux de construction."
+      },
+      {
+        "year": "2008",
+        "title": "Lancement de la production",
+        "desc": "Mise en service de notre première ligne de fabrication, passant du négoce à la production."
+      },
+      {
+        "year": "2013",
+        "title": "Diversification des produits",
+        "desc": "Extension au-delà des matériaux de construction vers le mobilier et la quincaillerie — posant les bases d'un portefeuille multi-catégories."
+      },
+      {
+        "year": "2018",
+        "title": "Expansion nationale",
+        "desc": "Construction d'un réseau de vente national servant plus de 300 clients entreprises en Chine."
+      },
+      {
+        "year": "2022",
+        "title": "Nouvelles gammes de produits",
+        "desc": "Lancement des gammes d'éclairage LED et de nettoyage industriel, complétant notre offre à cinq catégories."
+      },
+      {
+        "year": "2025",
+        "title": "Ouverture à l'international",
+        "desc": "Extension des exportations vers l'Asie du Sud-Est, le Moyen-Orient et l'Afrique — début de notre aventure mondiale."
+      }
+    ],
+    "valuesLabel": "Valeurs fondamentales",
+    "certsLabel": "Certifications",
+    "values": [
+      {
+        "title": "Mission",
+        "desc": "Donner aux acheteurs du monde entier accès à des produits de qualité direct usine à des prix compétitifs."
+      },
+      {
+        "title": "Vision",
+        "desc": "Devenir un fabricant multi-catégories de classe mondiale et un partenaire d'exportation de confiance."
+      },
+      {
+        "title": "Valeurs fondamentales",
+        "desc": "L'intégrité d'abord, la qualité avant tout, portés par l'innovation, collaboration gagnant-gagnant."
+      },
+      {
+        "title": "Compétence clé",
+        "desc": "25 ans d'expertise en fabrication, portefeuille multi-catégories, contrôle qualité de bout en bout."
+      }
+    ],
+    "certs": [
+      {
+        "title": "ISO 9001:2015",
+        "desc": "Système de management de la qualité"
+      },
+      {
+        "title": "ISO 14001:2015",
+        "desc": "Management environnemental"
+      },
+      {
+        "title": "Laboratoire CNAS",
+        "desc": "Accréditation nationale chinoise"
+      },
+      {
+        "title": "Marquage CE",
+        "desc": "Conformité européenne certifiée"
+      }
+    ],
+    "tagline": "Nous supprimons la marge de l'intermédiaire, mais conservons les services d'intermédiaire dont vous avez réellement besoin.",
+    "team": {
+      "title": "Rencontrez notre équipe",
+      "designer": "Designer d'intérieur",
+      "designerDesc": "Crée des plans 2D/3D adaptés à l'esthétique de votre marché local et à votre budget.",
+      "qc": "Ingénieur qualité",
+      "qcDesc": "Contrôle qualité sur toute la chaîne, de la matière première au produit fini. Rapports d'inspection en temps réel.",
+      "supply": "Spécialiste de la chaîne d'approvisionnement",
+      "supplyDesc": "Intègre plus de 100 usines sources. Un seul contact, toutes les catégories couvertes.",
+      "promo": "Responsable de la promotion mondiale",
+      "promoDesc": "Fournit gratuitement du matériel marketing, du contenu pour les réseaux sociaux et une stratégie de promotion pour votre marché."
+    },
+    "process": {
+      "title": "Processus 100 % transparent",
+      "desc": "Visites d'usine en vidéo à distance, participation aux inspections en temps réel et accès complet au tableau de bord de votre commande — vous voyez tout ce que nous voyons."
+    },
+    "heroTitle": "Chaîne d'approvisionnement tout-en-un en articles de maison et produits généraux",
+    "heroSubtitle": "Intégrant la R&D, la production à grande échelle, la distribution mondiale et les services de chaîne d'approvisionnement",
+    "positioning": "Positionnement",
+    "aboutDEXOREN": "À propos de DEXOREN",
+    "introP1": "DEXOREN a été fondée en 2002 — une marque de fabrication moderne intégrant la R&D, la production à grande échelle, les ventes mondiales et les services de chaîne d'approvisionnement. Exploitant nos propres bases de production, nous livrons des produits direct usine et des solutions intégrées aux importateurs, entrepreneurs, détaillants en chaîne et vendeurs B2B transfrontaliers du monde entier.",
+    "introP2": "Forts de plus de 20 ans d'expertise, nous défendons la qualité d'abord, la conformité d'abord, l'orientation service et la coopération gagnant-gagnant. Nous ne tirons pas profit d'une marge sur les produits — nous ne facturons que des frais de service standardisés. Aujourd'hui, nous servons des partenaires B2B dans plus de 30 pays.",
+    "philosophy": "Philosophie",
+    "teamLabel": "Équipe professionnelle",
+    "teamSubtitle": "Quatre équipes spécialisées couvrant la R&D, le contrôle qualité, le commerce international et la logistique",
+    "beyondLabel": "Au-delà des produits",
+    "beyondTitle": "9 services à valeur ajoutée pour dynamiser votre entreprise",
+    "beyondDesc": "De la conception à la logistique — découvrez notre système de services complet",
+    "viewServices": "Voir tous les services",
+    "partnership": "Partenariat",
+    "partnershipTitle": "Devenez notre partenaire stratégique à long terme",
+    "partnershipDesc": "Que vous soyez un petit détaillant, un vendeur transfrontalier ou un grand groupe d'ingénierie — nous offrons des normes de marque unifiées et des capacités professionnelles en tant que partenaire de chaîne d'approvisionnement mondial de confiance.",
+    "getInTouch": "Nous contacter",
+    "compliance": "Conformité",
+    "complianceSubtitle": "Tous les certificats sont des originaux d'usine, téléchargeables par pays",
+    "access": "Accès"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Nous contacter",
+    "desc": "Nous serions ravis de vous entendre — que vous ayez une question produit ou une demande de partenariat.",
+    "call": "WhatsApp",
+    "email": "Nous écrire",
+    "visit": "Nous rendre visite",
+    "hours": "Heures d'ouverture",
+    "respond": "Nous répondons sous 24 heures",
+    "appointment": "Visites sur rendez-vous",
+    "connectLabel": "Suivez-nous",
+    "connectTitle": "Suivez notre parcours",
+    "connectDesc": "Restez informé de nos derniers lancements de produits, de nos analyses sectorielles et des actualités de l'entreprise sur les réseaux sociaux.",
+    "formTitle": "Envoyez-nous un message",
+    "faq": {
+      "label": "FAQ",
+      "title": "Questions fréquentes",
+      "desc": "Questions courantes sur les produits, les commandes et la logistique",
+      "q1": "Quelle est la quantité minimale de commande (MOQ) ?",
+      "a1": "La MOQ varie selon le produit. La plupart des articles commencent à 10 unités par modèle. Contactez-nous pour les détails de MOQ d'un produit précis — nous pouvons accepter des commandes d'essai.",
+      "q2": "Proposez-vous la personnalisation OEM/ODM ?",
+      "a2": "Oui. Nous fournissons des services OEM/ODM complets incluant dimensions, matériaux, couleurs, finitions et marque personnalisés. Notre équipe d'ingénierie travaille selon vos spécifications.",
+      "q3": "Quel est le délai de production habituel ?",
+      "a3": "Le délai standard est de 25 à 35 jours pour la plupart des produits. Les commandes personnalisées peuvent prendre 35 à 45 jours. Commandes urgentes sur demande.",
+      "q4": "Puis-je obtenir des échantillons avant une commande en gros ?",
+      "a4": "Oui, des échantillons sont disponibles. Le coût de l'échantillon est remboursable sur votre première commande en gros. Nous expédions via DHL/FedEx/UPS avec suivi.",
+      "q5": "Quelles conditions de paiement acceptez-vous ?",
+      "a5": "Nous acceptons le virement bancaire T/T et la L/C à vue. Trade Assurance / séquestre disponible pour les nouveaux acheteurs, et PayPal ou Western Union pour les échantillons et petits montants. L'acompte et le solde sont convenus commande par commande.",
+      "q6": "Fournissez-vous une assistance logistique et d'expédition ?",
+      "a6": "Oui. Nous collaborons avec de grands transitaires et pouvons organiser des expéditions FOB/CIF/DDP dans le monde entier. Optimisation du conteneur incluse."
+    }
+  },
+  "form": {
+    "name": "Votre nom",
+    "phone": "Numéro de téléphone",
+    "email": "Adresse e-mail",
+    "message": "Parlez-nous de vos besoins...",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi...",
+    "thanks": "Merci pour votre demande",
+    "reply": "Nous vous répondrons sous 24 heures.",
+    "again": "Envoyer un autre message"
+  },
+  "footer": {
+    "products": "Produits",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "rights": "Tous droits réservés.",
+    "needHelp": "Besoin d'aide ?",
+    "helpHours": "Réponse rapide — généralement sous 12 h (GMT+8)",
+    "productsList": {
+      "homeMerchandise": "Articles de maison et produits généraux",
+      "furniture": "Mobilier",
+      "buildingMaterials": "Matériaux de construction",
+      "hardware": "Quincaillerie",
+      "appliances": "Électroménager",
+      "lighting": "Éclairage"
+    },
+    "companyList": {
+      "about": "À propos de nous",
+      "certs": "Certifications",
+      "tradeTerms": "Conditions commerciales",
+      "faq": "FAQ",
+      "contact": "Contact"
+    }
+  },
+  "detail": {
+    "trustFactory": "Notre propre usine",
+    "trustISO": "Certifié ISO",
+    "trustResponse": "Réponse < 24 h",
+    "tradeTitle": "Commerce et expédition",
+    "tradeMoq": "MOQ",
+    "tradeLead": "Délai de production",
+    "tradeTerm": "Conditions commerciales",
+    "tradePack": "Emballage",
+    "tradeCert": "Certifications",
+    "tradeBrand": "Marque",
+    "tradePrice": "Prix de référence (FOB)",
+    "tradePriceNote": "Indicatif uniquement — prix final confirmé sur devis",
+    "requestQuote": "Demander un devis",
+    "whatsappLabel": "Discuter sur WhatsApp"
+  },
+  "cart": {
+    "title": "Liste de demandes",
+    "empty": "Votre liste de demandes est vide. Parcourez les produits et ajoutez les articles qui vous intéressent.",
+    "quantity": "Qté",
+    "category": "Catégorie",
+    "inquiryList": "LISTE DE DEMANDES",
+    "total": "Total",
+    "items": "articles",
+    "website": "Site web",
+    "copy": "Copier le texte",
+    "copied": "Copié",
+    "download": "Télécharger",
+    "contactChat": "Contactez-nous pour un devis",
+    "clearAll": "Tout effacer",
+    "submitInquiry": "Envoyer la demande",
+    "formName": "Votre nom *",
+    "formEmail": "Adresse e-mail *",
+    "formMessage": "Remarques supplémentaires (facultatif)",
+    "cancel": "Annuler",
+    "formPhone": "WhatsApp / Téléphone *",
+    "successTitle": "Demande envoyée !",
+    "successMsg": "Nous vous répondrons sous 24 heures."
+  },
+  "cookie": {
+    "title": "Notice sur les cookies",
+    "desc": "Nous utilisons des cookies essentiels pour assurer le bon fonctionnement du site. Aucun cookie de suivi ou publicitaire n'est utilisé sans votre consentement.",
+    "learn": "En savoir plus",
+    "accept": "Accepter et continuer"
+  },
+  "modal": {
+    "features": "Caractéristiques",
+    "specs": "Spécifications"
+  },
+  "promo": {
+    "title": "Vente flash mensuelle",
+    "subtitle": "Quantités limitées — jusqu'à épuisement du stock",
+    "viewAll": "Voir toutes les offres",
+    "limited": "Limité",
+    "daysLeft": "Plus que {n} jours"
+  },
+  "bestseller": {
+    "title": "Meilleures ventes du mois",
+    "subtitle": "Les plus appréciés des acheteurs du monde entier",
+    "label": "Sélection"
+  },
+  "home": {
+    "featured": "En vedette",
+    "newThisMonth": "Nouveautés du mois",
+    "topPicks": "Sélection",
+    "bestSellers": "Meilleures ventes du mois",
+    "rankedBy7Days": "Classé par volume de ventes sur 7 jours — mis à jour quotidiennement",
+    "hotRanking": "Meilleures ventes",
+    "viewAll": "Voir tout",
+    "backToHome": "Retour à l'accueil",
+    "selectCategory": "Sélectionnez une catégorie dans la barre latérale",
+    "noProducts": "Aucun produit disponible",
+    "moreProducts": "Plus de produits",
+    "noProductsInCategory": "Aucun produit dans cette catégorie pour le moment",
+    "allProducts": "Tous les produits",
+    "search": "Rechercher des produits... Appuyez sur Entrée",
+    "searchPlaceholder": "Rechercher des produits... Appuyez sur Entrée",
+    "loadMore": "Charger plus",
+    "items": "articles",
+    "all": "Tout",
+    "customerReviews": "Ce que disent nos clients",
+    "verifiedBuyer": "Acheteur vérifié",
+    "reviewRated": "a donné la note de",
+    "reviewStars": "étoiles",
+    "valueCards": {
+      "design": {
+        "title": "Conception + Sélection",
+        "desc": "Consultation gratuite en design d'intérieur et sélection de produits pour votre marché"
+      },
+      "quality": {
+        "title": "Contrôle qualité",
+        "desc": "Inspection d'usine sur toute la chaîne et tests tiers pour chaque lot"
+      },
+      "delivery": {
+        "title": "Livraison tout-en-un",
+        "desc": "Consolidation multi-catégories, logistique porte-à-porte dans le monde entier"
+      }
+    },
+    "trust": {
+      "countries": "Plus de 30 pays desservis",
+      "containers": "Plus de 1 200 conteneurs expédiés",
+      "rating": "Note Google 4,8★",
+      "clients": "Plus de 3 200 clients dans le monde"
+    }
+  },
+  "rankings": {
+    "suffix": " Top"
+  },
+  "promotions": {
+    "daysLeft": "Plus que {n} jours — jusqu'à épuisement du stock"
+  },
+  "common": {
+    "brand": "DEXOREN",
+    "slogan": "Chaîne d'approvisionnement en articles de maison et produits généraux | Showroom de 8 000 m² · Plus de 30 000 références",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher des produits...",
+    "backToHome": "Retour à l'accueil",
+    "noProducts": "Aucun produit disponible",
+    "noProductsInCategory": "Aucun produit dans cette catégorie pour le moment",
+    "selectCategory": "Sélectionnez une catégorie dans la barre latérale",
+    "viewAll": "Voir tout",
+    "comingSoon": "Bientôt disponible",
+    "subline": "Direct usine · Prix compétitif · Logistique fiable · Service après-vente mondial"
+  },
+  "search": {
+    "placeholder": "Rechercher des produits... Appuyez sur Entrée",
+    "inlinePlaceholder": "Rechercher...",
+    "button": "Rechercher",
+    "categoryTag": "Catégorie",
+    "productTag": "Produit"
+  },
+  "flashDeals": {
+    "title": "Vente flash quotidienne",
+    "subtitle": "Ouvre à des heures aléatoires, jusqu'à épuisement du stock",
+    "tag": "Flash",
+    "emptyState": "Ventes flash bientôt disponibles — restez à l'écoute !"
+  },
+  "newArrivals": {
+    "title": "Nouveautés 2026",
+    "subtitle": "Découvrez nos derniers produits de l'année",
+    "emptyState": "Nouveautés bientôt disponibles — revenez plus tard !"
+  },
+  "quickInquiry": {
+    "title": "Demande rapide",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre e-mail",
+    "phonePlaceholder": "WhatsApp / Téléphone",
+    "submit": "Envoyer la demande",
+    "sending": "Envoi...",
+    "success": "Demande envoyée !",
+    "successMsg": "Nous vous contacterons sous 24 heures",
+    "close": "Fermer",
+    "footerNote": "Nous répondons sous 24 heures",
+    "validationError": "Veuillez renseigner votre nom et votre e-mail",
+    "networkError": "Erreur réseau. Veuillez réessayer."
+  },
+  "weeklySold": "Vendus 7 j : ",
+  "weeklySoldSuffix": "",
+  "services": {
+    "heroLabel": "Au-delà de l'approvisionnement · Un accompagnement complet",
+    "heroTitle": "Des services à valeur ajoutée complets",
+    "heroSubtitle": "De la conception à la logistique — neuf modules de services essentiels pour les partenaires B2B mondiaux",
+    "ctaTitle": "Tous les services sont gratuits pour les clients partenaires",
+    "ctaDesc": "Nous ne tirons pas profit des services — ils constituent notre avantage concurrentiel. Les neuf services sont gratuits pour les clients partenaires.",
+    "getStarted": "Commencer",
+    "browseProducts": "Parcourir les produits"
+  },
+  "certifications": {
+    "heroLabel": "Conformité et confiance",
+    "heroTitle": "Certifications et conformité",
+    "heroSubtitle": "Tous les certificats sont des originaux d'usine et disponibles au téléchargement par pays sur demande. Nous vous aidons à dédouaner et à respecter les exigences réglementaires locales du monde entier.",
+    "introTitle": "Une conformité intégrée pour le commerce mondial",
+    "introDesc": "Chaque produit DEXOREN est soutenu par des certifications reconnues internationalement — pour que vos expéditions passent la douane sans encombre et que vos acheteurs fassent confiance à ce qui est en rayon.",
+    "applicableTo": "S'applique à",
+    "region": "Région",
+    "standard": "Norme",
+    "requestTitle": "Besoin des certificats pour votre marché ?",
+    "requestDesc": "Nous fournissons des copies originales de certificats par pays (PDF) et des rapports de tests tiers (SGS, TÜV, Intertek) pour appuyer vos dédouanements et appels d'offres.",
+    "requestBtn": "Demander les certificats",
+    "downloadNote": "Les certificats sont délivrés par commande et par pays de destination. Indiquez-nous votre marché cible et nous vous enverrons l'ensemble exact de documents dont vous avez besoin."
+  },
+  "tradeTerms": {
+    "heroLabel": "Comment nous travaillons avec vous",
+    "heroTitle": "Conditions commerciales, paiement et expédition",
+    "heroSubtitle": "Transparent, flexible et prêt pour l'export. Des Incoterms au paiement et à la livraison, tout est conçu pour rendre l'approvisionnement transfrontalier simple et à faible risque.",
+    "incotermsTitle": "Incoterms que nous acceptons",
+    "incotermsSub": "Choisissez le terme de livraison adapté à votre logistique. La plupart des commandes partent en FOB ou CIF depuis les grands ports chinois.",
+    "paymentsTitle": "Moyens de paiement",
+    "paymentsSub": "Des options flexibles et sécurisées pour les commandes de toute taille — d'un simple échantillon à un conteneur complet.",
+    "logisticsTitle": "Expédition et logistique",
+    "logisticsSub": "Nous travaillons avec de grands transporteurs et exploitons des entrepôts à l'étranger pour que vos marchandises arrivent à l'heure, où que ce soit.",
+    "factsTitle": "Informations essentielles sur la commande",
+    "moqTitle": "Quantité minimale de commande",
+    "moqDesc": "Articles en stock : à partir de 10 pièces par SKU/modèle. OEM et marque propre : 500 à 1 000 pièces par SKU. Plusieurs SKU peuvent être regroupés dans un même conteneur pour réduire votre coût unitaire.",
+    "leadTimeTitle": "Délai de production",
+    "leadTimeDesc": "Produits standards : 25 à 35 jours. Commandes personnalisées/OEM : 35 à 45 jours. Production urgente sur demande.",
+    "sampleTitle": "Échantillons",
+    "sampleDesc": "Des échantillons sont disponibles et expédiés via DHL/FedEx/UPS avec suivi. Le coût de l'échantillon est remboursable sur votre première commande en gros.",
+    "packagingTitle": "Emballage",
+    "packagingDesc": "Cartons d'exportation standards avec calage ; boîtes couleur, codes-barres et palettisation personnalisés disponibles. Palettes et caisses en bois fumigées selon la norme ISPM-15 avec marquage officiel sur demande.",
+    "ctaTitle": "Prêt à discuter de votre commande ?",
+    "ctaDesc": "Indiquez-nous votre marché cible, vos produits et vos quantités — nous vous proposerons le meilleur Incoterm, le meilleur échéancier de paiement et la meilleure route d'expédition.",
+    "ctaBtn": "Contacter notre équipe",
+    "paymentsLabel": "Sécurisé et flexible",
+    "logisticsLabel": "Livraison partout où vous vendez",
+    "factsLabel": "À savoir avant de commander",
+    "complianceLabel": "Qualité, réclamations et conformité",
+    "complianceTitle": "Inspection qualité, réclamations et conformité",
+    "complianceSub": "Comment nous protégeons votre qualité, votre argent et votre accès au marché — avant, pendant et après l'expédition.",
+    "qualityTitle": "Inspection qualité",
+    "qualityDesc": "L'inspection avant expédition par SGS, Bureau Veritas ou Intertek est bienvenue — vous désignez l'inspecteur, ou nous le coordonnons. Si le taux de défauts dépasse l'AQL convenu, nous refabriquons ou créditons les unités concernées.",
+    "claimsTitle": "Réclamations et service après-vente",
+    "claimsDesc": "Signalez tout manquant, dommage ou erreur d'expédition dans les 7 jours suivant l'arrivée, avec photos ou vidéos à l'appui. Nous réglons les réclamations valides par remplacement, avoir sur votre prochaine commande ou remboursement, au cas par cas.",
+    "certTitle": "Certifications et conformité",
+    "certDesc": "Nous accompagnons la conformité du marché de destination : SASO (Arabie saoudite), ESMA (Émirats arabes unis), PVOC (Kenya), SONCAP (Nigeria) et inspection avant expédition COC, ainsi que FDA / LFGB / UE 1935/2004 pour les articles au contact des denrées. Coût et délai selon le produit.",
+    "oemTitle": "OEM et marque propre",
+    "oemDesc": "Logo, couleur, emballage et codes-barres personnalisés à partir de 500 à 1 000 pièces par SKU. Nous gérons les maquettes, les outillages et la conception du carton d'exportation, avec approbation d'échantillon avant la production en série.",
+    "quoteTitle": "Devis et devise",
+    "quoteDesc": "Les devis sont établis en USD (CNY sur demande) et restent valables 30 jours. L'acompte et le solde sont convenus commande par commande.",
+    "catalogBtn": "Demander le catalogue (PDF)"
+  },
+  "faqPage": {
+    "heroLabel": "Assistance aux acheteurs",
+    "heroTitle": "Vos questions, nos réponses",
+    "heroSubtitle": "Tout ce que les acheteurs B2B demandent habituellement sur la MOQ, les prix, les échantillons, la conformité et l'expédition — avant de passer leur première commande.",
+    "linkCerts": "Certifications",
+    "linkCertsDesc": "Documents de conformité que nous pouvons délivrer par commande",
+    "linkTrade": "Conditions commerciales",
+    "linkTradeDesc": "Incoterms, moyens de paiement et délais de production",
+    "ctaTitle": "Encore une question ?",
+    "ctaDesc": "Écrivez-nous sur WhatsApp ou envoyez une demande — notre équipe export répond sous 24 heures."
+  }
+}

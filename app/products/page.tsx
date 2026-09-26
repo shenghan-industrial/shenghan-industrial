@@ -28,8 +28,10 @@ function ProductsContent() {
   const { products } = useProducts();
 
   useEffect(() => {
-    if (subFilter && catFilter) {
-      const found = categories.find((c) => c.productCategory === catFilter);
+    if (catFilter) {
+      const found = categories.find(
+        (c) => c.productCategory === catFilter || c.id === catFilter
+      );
       if (found) setActiveCategoryId(found.id);
     }
     if (qFilter) {
@@ -81,7 +83,9 @@ function ProductsContent() {
     }
 
     return filtered;
-  }, [activeCategoryId, subFilter, catFilter, qFilter, catSearchMap]);
+    // `products` must be a dependency: it loads asynchronously, and without it
+    // this memo stays empty on direct URL loads (SPA nav masked the bug).
+  }, [products, activeCategoryId, subFilter, catFilter, qFilter, catSearchMap, categories]);
 
   const visibleProducts = filteredProducts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredProducts.length;

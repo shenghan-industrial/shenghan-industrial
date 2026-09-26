@@ -1,0 +1,544 @@
+{
+  "nav": {
+    "home": "Utama",
+    "products": "Produk",
+    "productCategories": "Semua Kategori",
+    "services": "Perkhidmatan",
+    "newArrivals": "Produk Baharu",
+    "flashDeals": "Jualan Kilat",
+    "promotions": "Promosi",
+    "rankings": "Kedudukan Teratas",
+    "certifications": "Pensijilan",
+    "tradeTerms": "Terma Perdagangan",
+    "faq": "Soalan Lazim",
+    "about": "Tentang Kami",
+    "contact": "Hubungi Kami",
+    "call": "WhatsApp"
+  },
+  "hero": {
+    "title": "Rakan Kongsi Sehenti Anda untuk Barangan Rumah & Keperluan Am",
+    "subtitle": "Harga terus dari kilang, logistik yang boleh dipercayai, pematuhan penuh — rakan kongsi rantaian bekalan sehenti untuk pembeli B2B di seluruh dunia.",
+    "slide1": {
+      "tagline": "Pengilang Terus dari Kilang",
+      "title": "Terus dari Kilang",
+      "accent": "Kualiti Global",
+      "desc": "Perabot, bahan binaan, perkakasan, pencahayaan dan produk pembersihan industri — dikeluarkan di kemudahan kami sendiri, dihantar ke seluruh dunia."
+    },
+    "slide2": {
+      "tagline": "Pembuatan Termaju",
+      "title": "Ketepatan",
+      "accent": "Di Setiap Peringkat",
+      "desc": "8 barisan pengeluaran automatik beroperasi 24/7 dengan pemantauan kualiti masa nyata dari bahan mentah hingga produk siap."
+    },
+    "slide3": {
+      "tagline": "Jaminan Kualiti",
+      "title": "Setiap Kelompok",
+      "accent": "Diuji Dengan Ketat",
+      "desc": "Makmal bertauliah CNAS menjalankan 12 ujian wajib bagi setiap kelompok — tiada produk dihantar tanpa lulus ujian."
+    },
+    "slide4": {
+      "tagline": "Didorong Inovasi",
+      "title": "25 Tahun",
+      "accent": "Kecemerlangan Teknikal",
+      "desc": "Lebih 20 paten kebangsaan dan pasukan R&D yang berdedikasi terus mengembangkan batasan teknologi bahan."
+    },
+    "explore": "Terokai Produk",
+    "touch": "Hubungi Kami",
+    "stats": {
+      "cert": "Pensijilan",
+      "projects": "Projek Siap",
+      "capacity": "Kapasiti Tahunan"
+    },
+    "overlay": {
+      "title": "Dari Kilang ke Projek Anda",
+      "sub": "Terus dari Kilang · Harga Kompetitif · Logistik Boleh Dipercayai · Sokongan Selepas Jualan Global",
+      "explore": "Terokai Penyelesaian",
+      "consult": "Konsultasi Percuma"
+    }
+  },
+  "media": {
+    "slogan": "Terus dari Kilang, Capaian Global",
+    "desc": "Dari pemerolehan bahan mentah hingga pemeriksaan akhir, setiap langkah proses pembuatan kami diperakui ISO. Tonton lawatan kilang kami untuk melihat kemudahan pengeluaran kami beroperasi.",
+    "watch": "Tonton Lawatan Kilang"
+  },
+  "products": {
+    "searchPrefix": "Cari: ",
+    "allCategories": "Semua Kategori"
+  },
+  "factory": {
+    "label": "Kilang Kami",
+    "title": "Pembuatan Bertaraf Tinggi",
+    "desc": "Pangkalan pengeluaran seluas 80,000 m² kami menempatkan 8 barisan pengeluaran automatik dengan kapasiti tahunan 50,000 tan. Dari sintesis bahan mentah hingga pembungkusan produk siap, setiap langkah dikawal dan dipantau dengan tepat.",
+    "features": [
+      "8 barisan pengeluaran automatik sepenuhnya beroperasi 24/7",
+      "Makmal bertauliah CNAS dengan lebih 50 instrumen ujian",
+      "Pemantauan kualiti masa nyata di setiap peringkat pengeluaran",
+      "Gudang pintar dengan kawalan suhu"
+    ],
+    "badge": "ISO 9001"
+  },
+  "quality": {
+    "label": "Kawalan Kualiti",
+    "title": "Setiap Kelompok, Diuji Dengan Ketat",
+    "desc": "Makmal bertauliah CNAS kami menjalankan 12 ujian wajib ke atas setiap kelompok pengeluaran — dari kekuatan tegangan dan pemanjangan hingga penuaan UV dan ketahanan kimia. Tiada produk dihantar tanpa lulus ujian.",
+    "features": [
+      "12 ujian kualiti wajib bagi setiap kelompok pengeluaran",
+      "Lebih 1,000 jam simulasi penuaan dipercepatkan",
+      "Kebolehkesanan penuh dari bahan mentah hingga produk siap",
+      "Pensijilan pihak ketiga SGS/TÜV tersedia"
+    ],
+    "badge": "Makmal CNAS"
+  },
+  "gallery": {
+    "label": "Galeri",
+    "title": "Di Dalam Kilang Kami",
+    "desc": "Lihat kemudahan pengeluaran bertaraf tinggi dan proses kawalan kualiti kami.",
+    "all": "Semua",
+    "categories": [
+      "Semua",
+      "Kilang",
+      "Produk",
+      "Kualiti"
+    ],
+    "view": "Lihat"
+  },
+  "stats": {
+    "capacity": "Kapasiti Tahunan",
+    "projects": "Projek Siap",
+    "clients": "Pelanggan Korporat",
+    "experience": "Pengalaman Industri",
+    "unit1": "Ribu tan",
+    "unit2": "+",
+    "unit3": "+",
+    "unit4": " tahun"
+  },
+  "partners": {
+    "prev": "Rakan kongsi sebelumnya",
+    "next": "Rakan kongsi seterusnya"
+  },
+  "cta": {
+    "label": "Hubungi",
+    "title": "Dapatkan Penyelesaian Tersuai Anda",
+    "desc": "Beritahu kami keperluan projek anda. Pasukan teknikal kami akan mereka bentuk penyelesaian produk yang paling sesuai untuk anda."
+  },
+  "about": {
+    "label": "Tentang Kami",
+    "title": "Tentang DEXOREN",
+    "desc": "Sejak 2002 — daripada pengilang yang dipercayai kepada rantaian bekalan sehenti bagi barangan rumah dan keperluan am. Bilik pameran borong 8,000 m², gudang bersepadu, lebih 30,000 SKU merangkumi dapur, pembersihan, penyimpanan, tekstil, hiasan, haiwan peliharaan dan banyak lagi.",
+    "storyLabel": "Kisah Kami",
+    "storyTitle1": "Dibina Atas Teknologi",
+    "storyTitle2": "Ditakrifkan oleh Kualiti",
+    "storyP1": "Ditubuhkan pada 2002, DEXOREN ialah pengilang komprehensif yang mengintegrasikan R&D, pembuatan dan pengedaran global merentasi lima barisan produk teras. Beribu pejabat di Guangzhou, kami mengendalikan kemudahan pengeluaran moden seluas 80,000 m².",
+    "storyP2": "Makmal bertauliah CNAS kami menempatkan peralatan ujian dan instrumentasi R&D bertaraf dunia, disokong oleh lebih 20 paten kebangsaan. Portfolio produk kami merangkumi perabot, pelekat & sealant binaan, pencahayaan LED, perkakasan pembinaan dan penyelesaian pembersihan industri.",
+    "storyP3": "Selama lebih dua dekad, DEXOREN didorong oleh inovasi teknologi dan ditakrifkan oleh kualiti produk — menghantar produk terus dari kilang yang boleh dipercayai kepada lebih 3,200 pelanggan di seluruh dunia.",
+    "journeyLabel": "Perjalanan Kami",
+    "journeyTitle": "Perjalanan Kami",
+    "journeyDesc": "Lebih dua dekad kemajuan yang berterusan — setiap langkah penuh tujuan dan keteguhan.",
+    "timeline": [
+      {
+        "year": "2002",
+        "title": "Syarikat Ditubuhkan",
+        "desc": "DEXOREN ditubuhkan di Guangzhou, bermula sebagai perniagaan perdagangan bahan binaan."
+      },
+      {
+        "year": "2008",
+        "title": "Pelancaran Pengeluaran",
+        "desc": "Mentauliahkan barisan pembuatan pertama kami, beralih daripada perdagangan kepada pengeluaran."
+      },
+      {
+        "year": "2013",
+        "title": "Peluasan Produk",
+        "desc": "Berkembang melangkaui bahan binaan kepada perabot dan perkakasan — meletakkan asas bagi portfolio pelbagai kategori."
+      },
+      {
+        "year": "2018",
+        "title": "Pengembangan Nasional",
+        "desc": "Membina rangkaian jualan seluruh negara yang berkhidmat kepada lebih 300 pelanggan korporat di China."
+      },
+      {
+        "year": "2022",
+        "title": "Barisan Produk Baharu",
+        "desc": "Melancarkan barisan pencahayaan LED dan produk pembersihan industri, melengkapkan lima kategori kami."
+      },
+      {
+        "year": "2025",
+        "title": "Ke Pasaran Global",
+        "desc": "Mengembangkan eksport ke Asia Tenggara, Timur Tengah dan Afrika — memulakan perjalanan global kami."
+      }
+    ],
+    "valuesLabel": "Nilai Teras",
+    "certsLabel": "Pensijilan",
+    "values": [
+      {
+        "title": "Misi",
+        "desc": "Memperkasakan pembeli global dengan produk berkualiti terus dari kilang pada harga yang kompetitif."
+      },
+      {
+        "title": "Visi",
+        "desc": "Menjadi pengilang pelbagai kategori bertaraf dunia dan rakan kongsi eksport yang dipercayai."
+      },
+      {
+        "title": "Nilai Teras",
+        "desc": "Integriti diutamakan, kualiti sebagai keutamaan, didorong inovasi, kerjasama menang-menang."
+      },
+      {
+        "title": "Kecekapan Teras",
+        "desc": "25 tahun kepakaran pembuatan, portfolio produk pelbagai kategori, kawalan kualiti menyeluruh."
+      }
+    ],
+    "certs": [
+      {
+        "title": "ISO 9001:2015",
+        "desc": "Sistem Pengurusan Kualiti"
+      },
+      {
+        "title": "ISO 14001:2015",
+        "desc": "Pengurusan Alam Sekitar"
+      },
+      {
+        "title": "Makmal CNAS",
+        "desc": "Akreditasi Kebangsaan China"
+      },
+      {
+        "title": "Penandaan CE",
+        "desc": "Pematuhan Eropah Diperakui"
+      }
+    ],
+    "tagline": "Kami menghapuskan markup orang tengah, tetapi mengekalkan perkhidmatan orang tengah yang anda benar-benar perlukan.",
+    "team": {
+      "title": "Kenali Pasukan Kami",
+      "designer": "Pereka Dalaman",
+      "designerDesc": "Menghasilkan pelan reka bentuk 2D/3D yang disesuaikan dengan citarasa pasaran tempatan dan bajet anda.",
+      "qc": "Jurutera Kawalan Kualiti",
+      "qcDesc": "Pemantauan kualiti seluruh rantaian dari bahan mentah hingga produk siap. Laporan pemeriksaan masa nyata.",
+      "supply": "Pakar Rantaian Bekalan",
+      "supplyDesc": "Mengintegrasikan lebih 100 kilang sumber. Satu hubungan, semua kategori diliputi.",
+      "promo": "Ketua Promosi Global",
+      "promoDesc": "Menyediakan bahan pemasaran, kandungan media sosial dan strategi promosi percuma untuk pasaran anda."
+    },
+    "process": {
+      "title": "Proses 100% Telus",
+      "desc": "Lawatan kilang melalui video jarak jauh, penyertaan pemeriksaan masa nyata, dan akses penuh ke papan pemuka pesanan anda — anda melihat semua yang kami lihat."
+    },
+    "heroTitle": "Rantaian Bekalan Sehenti Barangan Rumah & Keperluan Am",
+    "heroSubtitle": "Mengintegrasikan R&D, pengeluaran berskala besar, pengedaran global dan perkhidmatan rantaian bekalan",
+    "positioning": "Kedudukan",
+    "aboutDEXOREN": "Tentang DEXOREN",
+    "introP1": "DEXOREN ditubuhkan pada 2002 — jenama pembuatan moden yang mengintegrasikan R&D, pengeluaran berskala besar, jualan global dan perkhidmatan rantaian bekalan. Dengan mengendalikan pangkalan pengeluaran sendiri, kami menghantar produk terus dari kilang dan penyelesaian bersepadu kepada pengimport, kontraktor, peruncit rangkaian dan penjual B2B rentas sempadan di seluruh dunia.",
+    "introP2": "Dengan kepakaran lebih 20 tahun, kami memegang teguh Kualiti Diutamakan, Pematuhan Diutamakan, Berorientasikan Perkhidmatan dan Kerjasama Menang-Menang. Kami tidak mengaut untung daripada markup produk — kami hanya mengenakan yuran perkhidmatan piawai. Kini kami berkhidmat kepada rakan kongsi B2B di lebih 30 negara.",
+    "philosophy": "Falsafah",
+    "teamLabel": "Pasukan Profesional",
+    "teamSubtitle": "Empat pasukan khusus merangkumi R&D, kawalan kualiti, perniagaan global dan logistik",
+    "beyondLabel": "Melangkaui Produk",
+    "beyondTitle": "9 Perkhidmatan Nilai Tambah Untuk Memperkasa Perniagaan Anda",
+    "beyondDesc": "Dari reka bentuk hingga logistik — terokai sistem perkhidmatan lengkap kami",
+    "viewServices": "Lihat Semua Perkhidmatan",
+    "partnership": "Perkongsian",
+    "partnershipTitle": "Jadilah Rakan Kongsi Strategik Jangka Panjang Kami",
+    "partnershipDesc": "Sama ada peruncit kecil, penjual rentas sempadan atau kumpulan kejuruteraan besar — kami menyediakan piawaian jenama yang seragam dan keupayaan profesional sebagai rakan kongsi rantaian bekalan global anda yang dipercayai.",
+    "getInTouch": "Hubungi Kami",
+    "compliance": "Pematuhan",
+    "complianceSubtitle": "Semua sijil adalah asli dari kilang, tersedia untuk dimuat turun mengikut negara",
+    "access": "Akses"
+  },
+  "contact": {
+    "label": "Hubungi",
+    "title": "Hubungi Kami",
+    "desc": "Kami sudi mendengar daripada anda — sama ada anda ada soalan tentang produk atau pertanyaan kerjasama.",
+    "call": "WhatsApp",
+    "email": "E-mel Kami",
+    "visit": "Lawati Kami",
+    "hours": "Waktu Perniagaan",
+    "respond": "Kami membalas dalam masa 24 jam",
+    "appointment": "Lawatan dengan temu janji",
+    "connectLabel": "Berhubung Dengan Kami",
+    "connectTitle": "Ikuti Perjalanan Kami",
+    "connectDesc": "Dapatkan kemas kini pelancaran produk terkini, pandangan industri dan berita syarikat kami di media sosial.",
+    "formTitle": "Hantar Mesej Kepada Kami",
+    "faq": {
+      "label": "Soalan Lazim",
+      "title": "Soalan Lazim",
+      "desc": "Soalan biasa tentang produk, pesanan dan logistik",
+      "q1": "Berapakah kuantiti pesanan minimum (MOQ)?",
+      "a1": "MOQ berbeza mengikut produk. Kebanyakan item bermula dari 10 unit setiap rekaan. Hubungi kami untuk butiran MOQ produk tertentu — kami boleh mempertimbangkan pesanan percubaan.",
+      "q2": "Adakah anda menawarkan penyesuaian OEM/ODM?",
+      "a2": "Ya. Kami menyediakan perkhidmatan OEM/ODM penuh termasuk dimensi, bahan, warna, kemasan dan penjenamaan tersuai. Pasukan kejuruteraan kami bekerja mengikut spesifikasi anda.",
+      "q3": "Berapakah tempoh masa penghantaran biasa?",
+      "a3": "Tempoh standard ialah 25–35 hari untuk kebanyakan produk. Pesanan tersuai mungkin mengambil masa 35–45 hari. Pesanan segera tersedia atas permintaan.",
+      "q4": "Bolehkah saya mendapatkan sampel sebelum pesanan pukal?",
+      "a4": "Ya, sampel tersedia. Kos sampel boleh dikembalikan dengan pesanan pukal pertama anda. Kami menghantar melalui DHL/FedEx/UPS dengan penjejakan.",
+      "q5": "Apakah terma pembayaran yang anda terima?",
+      "a5": "Kami menerima pindahan bank T/T dan L/C pada pandangan. Trade Assurance / escrow tersedia untuk pembeli kali pertama, dan PayPal atau Western Union untuk sampel serta jumlah kecil. Terma deposit dan baki dipersetujui mengikut pesanan.",
+      "q6": "Adakah anda menyediakan sokongan logistik dan penghantaran?",
+      "a6": "Ya. Kami mempunyai kerjasama dengan penghantar barang utama dan boleh mengatur penghantaran FOB/CIF/DDP ke seluruh dunia. Pengoptimuman kontena disertakan."
+    }
+  },
+  "form": {
+    "name": "Nama Anda",
+    "phone": "Nombor Telefon",
+    "email": "Alamat E-mel",
+    "message": "Beritahu kami keperluan anda...",
+    "submit": "Hantar Pertanyaan",
+    "sending": "Menghantar...",
+    "thanks": "Terima Kasih Atas Pertanyaan Anda",
+    "reply": "Kami akan menghubungi anda kembali dalam masa 24 jam.",
+    "again": "Hantar mesej lain"
+  },
+  "footer": {
+    "products": "Produk",
+    "company": "Syarikat",
+    "contact": "Hubungi",
+    "privacy": "Dasar Privasi",
+    "terms": "Terma Perkhidmatan",
+    "rights": "Semua hak terpelihara.",
+    "needHelp": "Perlukan bantuan?",
+    "helpHours": "Balasan pantas — biasanya dalam 12 jam (GMT+8)",
+    "productsList": {
+      "homeMerchandise": "Barangan Rumah & Keperluan Am",
+      "furniture": "Perabot",
+      "buildingMaterials": "Bahan Binaan",
+      "hardware": "Perkakasan",
+      "appliances": "Peralatan Elektrik",
+      "lighting": "Pencahayaan"
+    },
+    "companyList": {
+      "about": "Tentang Kami",
+      "certs": "Pensijilan",
+      "tradeTerms": "Terma Perdagangan",
+      "faq": "Soalan Lazim",
+      "contact": "Hubungi Kami"
+    }
+  },
+  "detail": {
+    "trustFactory": "Kilang Sendiri",
+    "trustISO": "Diperakui ISO",
+    "trustResponse": "Balas < 24 jam",
+    "tradeTitle": "Perdagangan & Penghantaran",
+    "tradeMoq": "MOQ",
+    "tradeLead": "Tempoh Pengeluaran",
+    "tradeTerm": "Terma Perdagangan",
+    "tradePack": "Pembungkusan",
+    "tradeCert": "Pensijilan",
+    "tradeBrand": "Jenama",
+    "tradePrice": "Harga Rujukan (FOB)",
+    "tradePriceNote": "Anggaran sahaja — harga akhir disahkan pada sebut harga",
+    "requestQuote": "Minta Sebut Harga",
+    "whatsappLabel": "Sembang di WhatsApp"
+  },
+  "cart": {
+    "title": "Senarai Pertanyaan",
+    "empty": "Senarai pertanyaan anda kosong. Semak imbas produk dan tambah item yang anda minati.",
+    "quantity": "Kuantiti",
+    "category": "Kategori",
+    "inquiryList": "SENARAI PERTANYAAN",
+    "total": "Jumlah",
+    "items": "item",
+    "website": "Laman web",
+    "copy": "Salin Teks",
+    "copied": "Disalin",
+    "download": "Muat Turun",
+    "contactChat": "Hubungi Kami Untuk Sebut Harga",
+    "clearAll": "Kosongkan Semua",
+    "submitInquiry": "Hantar Pertanyaan",
+    "formName": "Nama Anda *",
+    "formEmail": "Alamat E-mel *",
+    "formMessage": "Catatan tambahan (pilihan)",
+    "cancel": "Batal",
+    "formPhone": "WhatsApp / Telefon *",
+    "successTitle": "Pertanyaan Dihantar!",
+    "successMsg": "Kami akan membalas dalam masa 24 jam."
+  },
+  "cookie": {
+    "title": "Notis Kuki",
+    "desc": "Kami menggunakan kuki penting untuk memastikan laman web berfungsi dengan baik. Tiada kuki penjejakan atau pengiklanan digunakan tanpa persetujuan anda.",
+    "learn": "Ketahui lebih lanjut",
+    "accept": "Terima & Teruskan"
+  },
+  "modal": {
+    "features": "Ciri-ciri",
+    "specs": "Spesifikasi"
+  },
+  "promo": {
+    "title": "Jualan Kilat Bulanan",
+    "subtitle": "Kuantiti terhad — selagi stok masih ada",
+    "viewAll": "Lihat Semua Tawaran",
+    "limited": "Terhad",
+    "daysLeft": "Tinggal {n} hari lagi"
+  },
+  "bestseller": {
+    "title": "Produk Terlaris Bulanan",
+    "subtitle": "Paling digemari pembeli global",
+    "label": "Pilihan Utama"
+  },
+  "home": {
+    "featured": "Pilihan",
+    "newThisMonth": "Baharu Bulan Ini",
+    "topPicks": "Pilihan Utama",
+    "bestSellers": "Produk Terlaris Bulanan",
+    "rankedBy7Days": "Disusun mengikut jumlah jualan 7 hari — dikemas kini setiap hari",
+    "hotRanking": "Terlaris",
+    "viewAll": "Lihat Semua",
+    "backToHome": "Kembali ke Utama",
+    "selectCategory": "Pilih kategori dari bar sisi",
+    "noProducts": "Tiada produk tersedia",
+    "moreProducts": "Lebih Banyak Produk",
+    "noProductsInCategory": "Belum ada produk dalam kategori ini",
+    "allProducts": "Semua Produk",
+    "search": "Cari produk... Tekan Enter",
+    "searchPlaceholder": "Cari produk... Tekan Enter",
+    "loadMore": "Muat Lebih Banyak",
+    "items": "item",
+    "all": "Semua",
+    "customerReviews": "Kata Pelanggan Kami",
+    "verifiedBuyer": "Pembeli Disahkan",
+    "reviewRated": "memberi penarafan",
+    "reviewStars": "bintang",
+    "valueCards": {
+      "design": {
+        "title": "Reka Bentuk + Pemilihan",
+        "desc": "Konsultasi reka bentuk dalaman dan padanan produk percuma untuk pasaran anda"
+      },
+      "quality": {
+        "title": "Kawalan Kualiti",
+        "desc": "Pemeriksaan kilang seluruh rantaian dan ujian pihak ketiga bagi setiap kelompok"
+      },
+      "delivery": {
+        "title": "Penghantaran Sehenti",
+        "desc": "Penggabungan pelbagai kategori, logistik dari pintu ke pintu ke seluruh dunia"
+      }
+    },
+    "trust": {
+      "countries": "30+ Negara Dilayan",
+      "containers": "1,200+ Kontena Dihantar",
+      "rating": "Penarafan Google 4.8★",
+      "clients": "3,200+ Pelanggan Seluruh Dunia"
+    }
+  },
+  "rankings": {
+    "suffix": " Teratas"
+  },
+  "promotions": {
+    "daysLeft": "Tinggal {n} hari lagi — selagi stok masih ada"
+  },
+  "common": {
+    "brand": "DEXOREN",
+    "slogan": "Rantaian Bekalan Barangan Rumah & Keperluan Am | Bilik Pameran 8,000 m² · 30,000+ SKU",
+    "search": "Cari",
+    "searchPlaceholder": "Cari produk...",
+    "backToHome": "Kembali ke Utama",
+    "noProducts": "Tiada produk tersedia",
+    "noProductsInCategory": "Belum ada produk dalam kategori ini",
+    "selectCategory": "Pilih kategori dari bar sisi",
+    "viewAll": "Lihat semua",
+    "comingSoon": "Akan datang",
+    "subline": "Terus dari Kilang · Harga Kompetitif · Logistik Boleh Dipercayai · Sokongan Selepas Jualan Global"
+  },
+  "search": {
+    "placeholder": "Cari produk... Tekan Enter",
+    "inlinePlaceholder": "Cari...",
+    "button": "Cari",
+    "categoryTag": "Kategori",
+    "productTag": "Produk"
+  },
+  "flashDeals": {
+    "title": "Jualan Kilat Harian",
+    "subtitle": "Dibuka pada masa rawak, selagi stok masih ada",
+    "tag": "Kilat",
+    "emptyState": "Jualan kilat akan datang — nantikan!"
+  },
+  "newArrivals": {
+    "title": "Produk Baharu 2026",
+    "subtitle": "Temui produk terbaharu kami tahun ini",
+    "emptyState": "Produk baharu akan datang — semak semula nanti!"
+  },
+  "quickInquiry": {
+    "title": "Pertanyaan Pantas",
+    "namePlaceholder": "Nama Anda",
+    "emailPlaceholder": "E-mel Anda",
+    "phonePlaceholder": "WhatsApp / Telefon",
+    "submit": "Hantar Pertanyaan",
+    "sending": "Menghantar...",
+    "success": "Pertanyaan Dihantar!",
+    "successMsg": "Kami akan menghubungi anda dalam masa 24 jam",
+    "close": "Tutup",
+    "footerNote": "Kami membalas dalam masa 24 jam",
+    "validationError": "Sila isi nama dan e-mel anda",
+    "networkError": "Ralat rangkaian. Sila cuba semula."
+  },
+  "weeklySold": "Terjual 7h: ",
+  "weeklySoldSuffix": "",
+  "services": {
+    "heroLabel": "Melangkaui Bekalan · Pemerkasaan Penuh",
+    "heroTitle": "Perkhidmatan Nilai Tambah Yang Menyeluruh",
+    "heroSubtitle": "Dari reka bentuk hingga logistik — sembilan modul perkhidmatan teras untuk rakan kongsi B2B global",
+    "ctaTitle": "Semua Perkhidmatan Percuma Untuk Pelanggan Kerjasama",
+    "ctaDesc": "Kami tidak mengaut untung daripada perkhidmatan — itulah kelebihan daya saing kami. Kesemua sembilan perkhidmatan percuma untuk pelanggan kerjasama.",
+    "getStarted": "Mulakan",
+    "browseProducts": "Semak Imbas Produk"
+  },
+  "certifications": {
+    "heroLabel": "Pematuhan & Kepercayaan",
+    "heroTitle": "Pensijilan & Pematuhan",
+    "heroSubtitle": "Semua sijil adalah asli dari kilang dan tersedia untuk dimuat turun mengikut negara atas permintaan. Kami membantu anda melepasi kastam dan memenuhi keperluan peraturan tempatan di seluruh dunia.",
+    "introTitle": "Pematuhan Terbina Untuk Perdagangan Global",
+    "introDesc": "Setiap produk DEXOREN disokong oleh pensijilan yang diiktiraf di peringkat antarabangsa — supaya penghantaran anda melepasi kastam dengan lancar dan pembeli anda mempercayai apa yang ada di rak.",
+    "applicableTo": "Terpakai Untuk",
+    "region": "Wilayah",
+    "standard": "Standard",
+    "requestTitle": "Perlukan Fail Sijil Untuk Pasaran Anda?",
+    "requestDesc": "Kami menyediakan salinan sijil asli mengikut negara (PDF) dan laporan ujian pihak ketiga (SGS, TÜV, Intertek) untuk menyokong pelepasan import dan tender anda.",
+    "requestBtn": "Minta Sijil",
+    "downloadNote": "Sijil dikeluarkan mengikut pesanan dan negara destinasi. Beritahu kami pasaran sasaran anda dan kami akan menghantar set dokumentasi tepat yang anda perlukan."
+  },
+  "tradeTerms": {
+    "heroLabel": "Cara Kami Bekerja Dengan Anda",
+    "heroTitle": "Terma Perdagangan, Pembayaran & Penghantaran",
+    "heroSubtitle": "Telus, fleksibel dan sedia untuk eksport. Dari Incoterms hingga pembayaran dan penghantaran, semuanya direka untuk menjadikan pemerolehan rentas sempadan mudah dan berisiko rendah.",
+    "incotermsTitle": "Incoterms Yang Kami Sokong",
+    "incotermsSub": "Pilih terma penghantaran yang sesuai dengan susunan logistik anda. Kebanyakan pesanan dihantar secara FOB atau CIF dari pelabuhan utama China.",
+    "paymentsTitle": "Kaedah Pembayaran",
+    "paymentsSub": "Pilihan yang fleksibel dan selamat untuk pesanan pelbagai saiz — dari satu sampel hingga satu kontena penuh.",
+    "logisticsTitle": "Penghantaran & Logistik",
+    "logisticsSub": "Kami bekerjasama dengan pengangkut utama dan mengendalikan gudang luar negara supaya barangan anda tiba tepat pada masanya, di mana sahaja.",
+    "factsTitle": "Maklumat Penting Pesanan",
+    "moqTitle": "Kuantiti Pesanan Minimum",
+    "moqDesc": "Item sedia ada: dari 10 keping setiap SKU/rekaan. OEM & jenama sendiri: 500–1,000 keping setiap SKU. Pelbagai SKU boleh digabungkan dalam satu kontena untuk mengurangkan kos seunit anda.",
+    "leadTimeTitle": "Tempoh Pengeluaran",
+    "leadTimeDesc": "Produk standard: 25–35 hari. Pesanan tersuai/OEM: 35–45 hari. Pengeluaran segera tersedia atas permintaan.",
+    "sampleTitle": "Sampel",
+    "sampleDesc": "Sampel tersedia dan dihantar melalui DHL/FedEx/UPS dengan penjejakan. Kos sampel boleh dikembalikan dengan pesanan pukal pertama anda.",
+    "packagingTitle": "Pembungkusan",
+    "packagingDesc": "Karton eksport standard dengan pelapik pelindung; kotak warna tersuai, kod bar dan peletan tersedia. Palet dan peti kayu difumigasi mengikut ISPM-15 dengan penandaan rasmi atas permintaan.",
+    "ctaTitle": "Sedia Untuk Bincangkan Pesanan Anda?",
+    "ctaDesc": "Beritahu kami pasaran sasaran, produk dan kuantiti anda — kami akan mencadangkan Incoterm, pelan pembayaran dan laluan penghantaran yang terbaik.",
+    "ctaBtn": "Hubungi Pasukan Kami",
+    "paymentsLabel": "Selamat & Fleksibel",
+    "logisticsLabel": "Sampai Ke Mana Anda Berniaga",
+    "factsLabel": "Perlu Tahu Sebelum Memesan",
+    "complianceLabel": "Kualiti, Tuntutan & Pematuhan",
+    "complianceTitle": "Pemeriksaan Kualiti, Tuntutan & Pematuhan",
+    "complianceSub": "Bagaimana kami melindungi kualiti, wang dan akses pasaran anda — sebelum, semasa dan selepas penghantaran.",
+    "qualityTitle": "Pemeriksaan Kualiti",
+    "qualityDesc": "Pemeriksaan pra-penghantaran oleh SGS, Bureau Veritas atau Intertek dialu-alukan — anda melantik pemeriksa, atau kami mengaturnya. Jika kadar kecacatan melebihi AQL yang dipersetujui, kami menggantikan atau mengkreditkan unit yang terjejas.",
+    "claimsTitle": "Tuntutan & Selepas Jualan",
+    "claimsDesc": "Laporkan kekurangan, kerosakan atau salah hantar dalam tempoh 7 hari selepas ketibaan dengan bukti foto atau video. Kami menyelesaikan tuntutan yang sah melalui penggantian, kredit untuk pesanan seterusnya, atau bayaran balik — dipersetujui kes demi kes.",
+    "certTitle": "Pensijilan & Pematuhan",
+    "certDesc": "Kami menyokong pematuhan pasaran destinasi: SASO (Arab Saudi), ESMA (UAE), PVOC (Kenya), SONCAP (Nigeria) dan pemeriksaan pra-penghantaran COC, serta FDA / LFGB / EU 1935/2004 untuk item sentuhan makanan. Kos dan tempoh bergantung pada produk.",
+    "oemTitle": "OEM & Jenama Sendiri",
+    "oemDesc": "Logo, warna, pembungkusan dan kod bar tersuai dari 500–1,000 keping setiap SKU. Kami menguruskan karya seni, acuan dan reka bentuk karton eksport, dengan kelulusan sampel sebelum pengeluaran besar-besaran.",
+    "quoteTitle": "Sebut Harga & Mata Wang",
+    "quoteDesc": "Sebut harga dikeluarkan dalam USD (CNY atas permintaan) dan sah selama 30 hari. Terma deposit dan baki dipersetujui mengikut pesanan.",
+    "catalogBtn": "Minta Katalog (PDF)"
+  },
+  "faqPage": {
+    "heroLabel": "Sokongan Pembeli",
+    "heroTitle": "Soalan, dijawab",
+    "heroSubtitle": "Semua yang biasanya ditanya oleh pembeli B2B tentang MOQ, harga, sampel, pematuhan dan penghantaran — sebelum membuat pesanan pertama.",
+    "linkCerts": "Pensijilan",
+    "linkCertsDesc": "Dokumen pematuhan yang boleh kami keluarkan mengikut pesanan",
+    "linkTrade": "Terma Perdagangan",
+    "linkTradeDesc": "Incoterms, kaedah pembayaran dan tempoh pengeluaran",
+    "ctaTitle": "Masih ada soalan?",
+    "ctaDesc": "Mesej kami di WhatsApp atau hantar pertanyaan — pasukan eksport kami membalas dalam masa 24 jam."
+  }
+}

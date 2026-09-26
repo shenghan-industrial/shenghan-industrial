@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       description,
       url: `${BASE}/products/${product.id}`,
       images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630, alt: title }] : [],
-      siteName: "Shengyu Industrial",
+      siteName: "DEXOREN",
     },
     twitter: {
       card: "summary_large_image",

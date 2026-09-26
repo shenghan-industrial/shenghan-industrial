@@ -9,7 +9,9 @@ import {
   type ReactNode,
 } from "react";
 
-type Locale = "en" | "zh" | "es";
+type Locale = "en" | "zh" | "th" | "ms" | "fr" | "es";
+
+const LOCALES: Locale[] = ["en", "zh", "th", "ms", "fr", "es"];
 
 interface LanguageContextType {
   locale: Locale;
@@ -47,11 +49,14 @@ function getInitialLocale(): Locale {
   if (typeof window !== "undefined") {
     try {
       const stored = localStorage.getItem("locale");
-      if (stored === "zh" || stored === "en" || stored === "es") return stored;
+      if (stored && (LOCALES as string[]).includes(stored)) return stored as Locale;
     } catch {}
     // Fallback: browser language
     const nav = navigator.language || "";
     if (nav.startsWith("zh")) return "zh";
+    if (nav.startsWith("th")) return "th";
+    if (nav.startsWith("ms") || nav.startsWith("id")) return "ms";
+    if (nav.startsWith("fr")) return "fr";
     if (nav.startsWith("es")) return "es";
   }
   return "en";
@@ -63,6 +68,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
   const [hydrated, setHydrated] = useState(false);
   const [messages, setMessages] = useState<Record<string, unknown>>({});
+  // English messages are always loaded as a fallback: any key missing from the
+  // active locale degrades to English instead of rendering a raw key name.
+  const [enMsgs, setEnMsgs] = useState<Record<string, unknown>>({});
+
+  useEffect(() => {
+    loadMessages("en").then(setEnMsgs);
+  }, []);
 
   useEffect(() => {
     if (!hydrated) {
@@ -83,9 +95,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const t = useCallback(
     (key: string): string => {
-      return getNested(messages, key);
+      const v = getNested(messages, key);
+      if (v !== key) return v;
+      return getNested(enMsgs, key);
     },
-    [messages]
+    [messages, enMsgs]
   );
 
   return (

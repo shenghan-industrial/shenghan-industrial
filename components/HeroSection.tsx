@@ -11,6 +11,9 @@ export function HeroSection() {
   const { t, locale } = useT();
   const hero = siteContent.hero;
   const slides = hero.slides;
+  const title = locale === "zh" ? hero.titleZh : locale === "es" ? hero.titleEs : hero.title;
+  const subtitle = locale === "zh" ? hero.subtitleZh : locale === "es" ? hero.subtitleEs : hero.subtitle;
+  const tagline = locale === "zh" ? hero.taglineZh : locale === "es" ? hero.taglineEs : hero.tagline;
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -58,33 +61,48 @@ export function HeroSection() {
         >
           <img
             src={getSlideImage(slides[current])}
-            alt="Shengyu Industrial"
+            alt="DEXOREN"
             className="w-full h-full object-cover"
           />
         </motion.div>
       </AnimatePresence>
 
-      {/* Subtle bottom gradient — helps buttons stand out */}
+      {/* Left-to-right gradient for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-      {/* Content — buttons only, centered at bottom */}
-      <div className="absolute inset-0 z-10 flex items-end justify-center pb-16 md:pb-20">
-        <motion.div
-          key={`cta-${current}`}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap items-center justify-center gap-3"
-        >
-          <Link href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 md:px-7 md:py-3 rounded-xl bg-[#C8A14C] text-white font-bold text-sm hover:bg-[#B8943A] transition-all shadow-lg">
-            <Send className="w-4 h-4" />{t("detail.requestQuote")}
-          </Link>
-          <Link href="/products"
-            className="inline-flex items-center gap-2 px-5 py-2.5 md:px-7 md:py-3 rounded-xl border-2 border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-all">
-            {t("hero.explore")}<ArrowRight className="w-4 h-4" />
-          </Link>
-        </motion.div>
+      {/* Content — left aligned, vertically centered */}
+      <div className="absolute inset-0 z-10 flex items-center">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-8 w-full">
+          <motion.div
+            key={`text-${current}-${locale}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="max-w-xl md:max-w-2xl"
+          >
+            <span className="inline-block px-3 py-1.5 rounded-full bg-[#C8A14C]/20 border border-[#C8A14C]/30 text-[#C8A14C] text-[10px] md:text-xs font-semibold tracking-wider uppercase mb-3 md:mb-4">
+              {tagline}
+            </span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] tracking-tight">
+              {title}
+            </h1>
+            <p className="mt-3 md:mt-4 text-sm md:text-base lg:text-lg text-white/80 leading-relaxed max-w-xl">
+              {subtitle}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-3 mt-6 md:mt-8">
+              <Link href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 md:px-7 md:py-3 rounded-xl bg-[#C8A14C] text-white font-bold text-sm hover:bg-[#B8943A] transition-all shadow-lg">
+                <Send className="w-4 h-4" />{t("detail.requestQuote")}
+              </Link>
+              <Link href="/products"
+                className="inline-flex items-center gap-2 px-5 py-2.5 md:px-7 md:py-3 rounded-xl border-2 border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-all">
+                {t("hero.explore")}<ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Arrows */}
