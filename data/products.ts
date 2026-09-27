@@ -449,9 +449,13 @@ const others = [{
 // NOTE: Building Materials / Hardware / Appliances / Others were removed — they are
 // not 七夕优品汇 mini-program categories. Only Furniture + Lighting are kept as
 // supplementary categories (per user decision).
+// RE: 灯具图丢失 fix — placeholder-SVG filler products (cabinets / deskLamps /
+// pendantLights / floorLamps) were removed because they pointed at black
+// /images/product-N.svg placeholders (product-28.svg was even 404). The real
+// DEXOREN inventory now supplies all Lighting + Cabinet products via products.json
+// (real /uploads/products/*.jpg photos). Keep sofas/beds only (real .webp images).
 const staticProductsRaw: Record<string, unknown>[] = [
-  ...sofas, ...beds, ...cabinets,
-  ...deskLamps, ...pendantLights, ...floorLamps,
+  ...sofas, ...beds,
 ];
 
 // Merge with products.json overrides
